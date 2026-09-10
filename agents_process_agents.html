@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIRP Process Automation Agents - AgenticProfessionals.Net</title>
+  <meta name="description" content="Deterministic statutory workflow agents for Insolvency Professionals: Section 29A screening, PUFE forensic audits, and Reg 40A statutory timeline management.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+
+  <style>
+    .page-hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px solid var(--border-color);
+      padding: 3rem 1.75rem 2.5rem;
+    }
+    .page-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1.25rem;
+    }
+    .breadcrumb-nav a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--primary);
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-institutional {
+      background-color: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .hero-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 0.75rem 0 0.5rem;
+    }
+    .hero-heading {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 820px;
+      line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      max-width: var(--max-width);
+      margin: -1.75rem auto 2.5rem;
+      padding: 0 1.75rem;
+    }
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .metric-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.07);
+    }
+    .metric-icon-box {
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .metric-icon-emerald { background-color: #ecfdf5; color: #059669; }
+    .metric-icon-blue { background-color: #eff6ff; color: #2563eb; }
+    .metric-icon-amber { background-color: #fffbeb; color: #d97706; }
+    .metric-icon-purple { background-color: #f5f3ff; color: #7c3aed; }
+    .metric-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+      font-feature-settings: "tnum";
+    }
+    .metric-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .agent-pipeline-flow {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .flow-step-item {
+      background: var(--bg-muted);
+      border-radius: 8px;
+      padding: 1rem;
+      border-left: 4px solid var(--primary);
+    }
+    .flow-step-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    .flow-step-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+    .flow-step-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Header Section -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <span>Agents</span>
+        <span>/</span>
+        <span style="color: var(--text-primary); font-weight: 600;">Process Agents</span>
+      </div>
+
+      <div class="badge-pill badge-institutional">
+        <i class="fa-solid fa-diagram-project"></i> Deterministic CIRP Workflow Engines
+      </div>
+
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Autonomous Process Agents</h1>
+          <p class="hero-desc">
+            Deterministic workflow engines executing critical statutory screenings, avoidance analysis, look-back ledger arithmetic, and timeline tracking under the Insolvency and Bankruptcy Code, 2016.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="docs/FINAL_29A_COMPLIANCE_REPORT_APOGEE_ENTERPRISES.pdf" target="_blank" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-file-pdf" style="margin-right: 0.4rem;"></i> Sample 29A Dossier ↗
+          </a>
+          <a href="agents_reporting_agents.html" class="btn btn-secondary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-file-signature" style="margin-right: 0.4rem;"></i> Explore Reporting Agents
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Metric Cards -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-emerald">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+      <div>
+        <div class="metric-value">4 Agents</div>
+        <div class="metric-label">Autonomous Process Suite</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div>
+        <div class="metric-value">Sec 29A</div>
+        <div class="metric-label">Multi-Pass Screening</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-amber">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+      </div>
+      <div>
+        <div class="metric-value">PUFE</div>
+        <div class="metric-label">Sec 43, 45, 50, 66 Look-Back</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-purple">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+      </div>
+      <div>
+        <div class="metric-value">Reg 40A</div>
+        <div class="metric-label">330-Day Outer Boundary</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Middle Content Area -->
+  <main class="container" style="padding-bottom: 4rem;">
+
+    <!-- Process Pipeline Flow -->
+    <div class="agent-pipeline-flow">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem;">
+            Statutory CIRP Execution Pipeline
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
+            Deterministic sequencing synchronized to NCLT milestones and IBBI CIRP Regulations.
+          </p>
+        </div>
+        <span class="badge badge-success"><i class="fa-solid fa-check"></i> IBBI (CIRP) Reg 40A Compliant</span>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 01 &bull; T to T+14</div>
+          <div class="flow-step-title">Public Notice & Claims</div>
+          <div class="flow-step-desc">Forms B, C, D, E claim ingestion and automated proof-of-claim reconciliation against debtor ledgers.</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 02 &bull; T+75</div>
+          <div class="flow-step-title">Form G & Sec 29A</div>
+          <div class="flow-step-desc">EOI publication, PRA due diligence, and multi-jurisdictional Section 29A disqualify audit.</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 03 &bull; T+115</div>
+          <div class="flow-step-title">PUFE Forensic Audit</div>
+          <div class="flow-step-desc">Sections 43, 45, 50, 66 avoidance ledger review covering statutory 1-year and 2-year look-backs.</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 04 &bull; T+135 to T+180</div>
+          <div class="flow-step-title">Plan Evaluation & CoC</div>
+          <div class="flow-step-desc">Resolution plan feasibility checks, Section 30(2) verification, and electronic CoC voting minute compilation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process Agents Catalog -->
+    <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+      <span class="badge badge-primary">Process Agents</span>
+      <h2 class="section-title" style="margin-top: 0.5rem;">Autonomous Workflow Engines</h2>
+      <p class="section-desc">Statutory engines executing exhaustive verification and audit algorithms.</p>
+    </div>
+
+    <div class="catalog-grid">
+      <!-- Agent 1 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">Statutory Screener</span>
+          <span class="badge badge-success">IBBI Sec 29A</span>
+        </div>
+        <h3 class="catalog-card-title">Section 29A Eligibility Screener</h3>
+        <p class="catalog-card-desc">Automates comprehensive background checks on Prospective Resolution Applicants (PRAs), connected persons, related parties, and promoters against NPA classifications (&gt;1 year), willful defaulter lists, and criminal convictions.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-solid fa-robot"></i> Multi-Pass Agent</span>
+          <a href="docs/FINAL_29A_COMPLIANCE_REPORT_APOGEE_ENTERPRISES.pdf" target="_blank" class="badge badge-subtle" style="color: #1e40af; font-weight: 600; text-decoration: none;">
+            <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> View Sample Dossier ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Agent 2 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">Forensic Engine</span>
+          <span class="badge badge-success">PUFE Look-Back</span>
+        </div>
+        <h3 class="catalog-card-title">Avoidance & PUFE Auditor</h3>
+        <p class="catalog-card-desc">Scans multi-year accounting ledgers and bank statements during statutory look-back periods. Flags preferential (Sec 43), undervalued (Sec 45), extortionate (Sec 50), and fraudulent trading (Sec 66) transactions with evidentiary exhibits.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-solid fa-magnifying-glass-chart"></i> Graph Pattern Tracing</span>
+          <span><i class="fa-solid fa-code-branch"></i> Related Party Map</span>
+        </div>
+      </div>
+
+      <!-- Agent 3 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">Workflow Tracker</span>
+          <span class="badge badge-success">Reg 40A</span>
+        </div>
+        <h3 class="catalog-card-title">CIRP Timeline & Statutory Watcher</h3>
+        <p class="catalog-card-desc">Maintains continuous synchronization against Regulation 40A statutory deadlines. Automatically triggers alerts for Form G publication, provisional IM circulation, CoC meeting notices, and 330-day outer limits.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-solid fa-clock"></i> 330-Day Counter</span>
+          <span><i class="fa-solid fa-bell"></i> NCLT Filing Reminders</span>
+        </div>
+      </div>
+
+      <!-- Agent 4 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">Claim Verification</span>
+          <span class="badge badge-success">Forms B, C, D, E</span>
+        </div>
+        <h3 class="catalog-card-title">Creditor Claims & Voting Share Calculator</h3>
+        <p class="catalog-card-desc">Ingests electronic creditor claims, validates supporting contracts, calculates admitted debt, and deterministically computes voting shares for the Committee of Creditors (CoC) under Regulations 12 to 14.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-solid fa-calculator"></i> Deterministic Math</span>
+          <span><i class="fa-solid fa-users"></i> CoC Voting Share Matrix</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Shared Site Footer Component -->
+  <div id="shared-footer"></div>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/header.js?v=20260909_v5"></script>
+  <script src="js/footer.js?v=20260909_v5"></script>
+
+</body>
+</html>

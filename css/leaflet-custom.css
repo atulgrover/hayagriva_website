@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Custom Styling for Leaflet Map in AgenticProfessionals.Net
+   Clean, light, executive pins & popups
+   ========================================================================== */
+
+.custom-marker-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-marker-pin:hover {
+  transform: rotate(-45deg) scale(1.15);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.custom-marker-pin i,
+.custom-marker-pin span {
+  transform: rotate(45deg);
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.pin-ip { background-color: #1e40af; }
+.pin-rv { background-color: #0f766e; }
+.pin-counsel { background-color: #7e22ce; }
+
+/* Custom Popup Card */
+.leaflet-popup-content-wrapper {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.18);
+  border: 1px solid #e2e8f0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 1.1rem;
+  line-height: 1.4;
+  min-width: 240px;
+}
+
+.popup-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+}
+
+.popup-reg {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  margin-bottom: 0.5rem;
+}
+
+.popup-meta {
+  font-size: 0.8rem;
+  color: #475569;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.popup-cta {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background-color: #1e40af;
+  color: #ffffff !important;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+}

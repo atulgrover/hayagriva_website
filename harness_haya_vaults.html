@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Vaults & Precedents Catalog - AgenticProfessionals.Net</title>
+  <meta name="description" content="Official repository of air-gapped, AES-256 encrypted legal vaults, case headnotes, statutory models, and practitioner drafting templates for Hayagriva Desktop IDE.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+
+  <style>
+    /* Scoped Styles for Vaults Showcase Page */
+    .vaults-page {
+      padding-bottom: 4rem;
+    }
+    
+    .vaults-hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px solid var(--border-color);
+      padding: 3rem 1.75rem 2.5rem;
+    }
+
+    .vaults-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--primary);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-institutional {
+      background-color: #eff6ff;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+    }
+
+    .hero-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 0.75rem 0 0.5rem;
+    }
+
+    .hero-heading {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 820px;
+      line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+
+    /* KPI Metric Cards */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      max-width: var(--max-width);
+      margin: -1.75rem auto 2.5rem;
+      padding: 0 1.75rem;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.07);
+    }
+
+    .metric-icon-box {
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .metric-icon-blue { background-color: #eff6ff; color: #2563eb; }
+    .metric-icon-teal { background-color: #f0fdfa; color: #0d9488; }
+    .metric-icon-purple { background-color: #f5f3ff; color: #7c3aed; }
+    .metric-icon-amber { background-color: #fffbeb; color: #d97706; }
+    .metric-icon-emerald { background-color: #ecfdf5; color: #059669; }
+
+    .metric-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+      font-feature-settings: "tnum";
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Container */
+    .vaults-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.75rem;
+    }
+
+    /* Controls Bar */
+    .controls-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .search-filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .search-box-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .search-box-wrapper i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
+    }
+
+    .vault-search-input {
+      width: 100%;
+      padding: 0.7rem 1rem 0.7rem 2.6rem;
+      font-size: 0.9rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background-color: var(--bg-muted);
+      color: var(--text-primary);
+      transition: all 0.15s ease;
+    }
+
+    .vault-search-input:focus {
+      outline: none;
+      background-color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    }
+
+    /* Category Filter Tabs */
+    .filter-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .filter-pill-btn {
+      background: var(--bg-muted);
+      border: 1px solid transparent;
+      color: var(--text-secondary);
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.825rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+
+    .filter-pill-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+    }
+
+    .filter-pill-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 600;
+      border-color: var(--primary);
+      box-shadow: 0 2px 4px rgba(30, 64, 175, 0.2);
+    }
+
+    .filter-pill-badge {
+      background: rgba(0, 0, 0, 0.08);
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+    }
+
+    .filter-pill-btn.active .filter-pill-badge {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    /* Vaults Data Table */
+    .table-container {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .vaults-table {
+      width: 100%;
+      min-width: 960px;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+
+    .vaults-table thead th {
+      background-color: #f8fafc;
+      color: var(--text-tertiary);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.85rem 0.95rem;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    .vaults-table thead th:last-child,
+    .vaults-table tbody td:last-child {
+      padding-right: 1.25rem;
+      text-align: right;
+    }
+
+    .vaults-table tbody tr {
+      border-bottom: 1px solid var(--border-light);
+      transition: background-color 0.15s ease;
+    }
+
+    .vaults-table tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    .vaults-table tbody td {
+      padding: 0.85rem 0.95rem;
+      color: var(--text-primary);
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .vaults-table tbody td:first-child {
+      white-space: normal;
+    }
+
+    .vault-primary-cell {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .vault-icon-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .vault-title-text {
+      font-weight: 600;
+      color: var(--text-primary);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .vault-archive-name {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+      margin-top: 0.2rem;
+    }
+
+    .code-trigger-badge {
+      display: inline-block;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.775rem;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+    }
+
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .tag-statutory { background-color: #eff6ff; color: #1e40af; }
+    .tag-cases { background-color: #faf5ff; color: #6b21a8; }
+    .tag-templates { background-color: #f0fdf4; color: #15803d; }
+    .tag-suites { background-color: #fff7ed; color: #c2410c; }
+    .tag-contract { background-color: #ecfeff; color: #0e7490; }
+
+    /* Specification Grid Cards */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .spec-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spec-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .spec-card-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .spec-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .spec-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .spec-list li i {
+      color: var(--primary);
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    .spec-code-block {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      margin-top: 0.75rem;
+      overflow-x: auto;
+    }
+
+    /* Modal / Drawer */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #ffffff;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 580px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      animation: modalFadeIn 0.2s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .modal-footer {
+      padding: 1rem 1.5rem;
+      background: var(--bg-muted);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-heading { font-size: 1.75rem; }
+      .metrics-grid { grid-template-columns: 1fr; margin-top: 1rem; }
+      .vaults-table thead { display: none; }
+      .vaults-table, .vaults-table tbody, .vaults-table tr, .vaults-table td {
+        display: block;
+        width: 100%;
+      }
+      .vaults-table tbody tr {
+        margin-bottom: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 0.5rem;
+      }
+      .vaults-table tbody td {
+        padding: 0.5rem 0.75rem;
+        border: none;
+      }
+    }
+  </style>
+</head>
+<body class="vaults-page">
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- ======================================================================
+       Hero Header Section
+       ====================================================================== -->
+  <section class="vaults-hero">
+    <div class="vaults-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <span>IPIE Platform</span>
+        <span>/</span>
+        <span style="color: var(--text-primary); font-weight: 600;">Vaults Repository</span>
+      </div>
+
+      <div class="badge-pill badge-institutional">
+        <i class="fa-solid fa-shield-halved"></i> Sovereign Air-Gapped Infrastructure
+      </div>
+
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Institutional Legal Vaults & Precedents</h1>
+          <p class="hero-desc">
+            Cryptographically signed, AES-256 encrypted vector packages pre-compiled for private local execution in the Hayagriva Agentic Operating System. Enables instant full-text search, statutory cross-referencing, and Monaco editor autocomplete with zero cloud dependency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       KPI Metric Summary Strip
+       ====================================================================== -->
+  <section class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue">
+        <i class="fa-solid fa-scale-balanced"></i>
+      </div>
+      <div>
+        <div class="metric-value">38,500+</div>
+        <div class="metric-label">Indexed Sections & Nodes</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-purple">
+        <i class="fa-solid fa-gavel"></i>
+      </div>
+      <div>
+        <div class="metric-value">17,558</div>
+        <div class="metric-label">Judicial Headnotes</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-emerald">
+        <i class="fa-solid fa-file-contract"></i>
+      </div>
+      <div>
+        <div class="metric-value">3,510</div>
+        <div class="metric-label">Document Factory Templates</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-teal">
+        <i class="fa-solid fa-database"></i>
+      </div>
+      <div>
+        <div class="metric-value">1,997</div>
+        <div class="metric-label">Database Registry Records</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-amber">
+        <i class="fa-solid fa-cube"></i>
+      </div>
+      <div>
+        <div class="metric-value">15</div>
+        <div class="metric-label">Modular Production Vaults</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       Vaults Catalog Data Table Section
+       ====================================================================== -->
+  <main class="vaults-container">
+
+    <!-- Search & Filter Controls Card -->
+    <div class="controls-card">
+      <div class="search-filter-row">
+        <div class="search-box-wrapper">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="vault-search-input" class="vault-search-input" placeholder="Filter by vault name, statute, keyword, or autocomplete trigger (e.g. @@ibc/)...">
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-tertiary);">
+          Release: <strong style="color: var(--text-primary);">2026-W37 (Production Verified)</strong>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-pills-row" id="filter-pills">
+        <button class="filter-pill-btn active" data-filter="all">
+          <i class="fa-solid fa-layer-group"></i> All Vaults <span class="filter-pill-badge" id="count-all">15</span>
+        </button>
+        <button class="filter-pill-btn" data-filter="statutory">
+          <i class="fa-solid fa-landmark"></i> Statutes & Laws <span class="filter-pill-badge" id="count-statutory">6</span>
+        </button>
+        <button class="filter-pill-btn" data-filter="cases">
+          <i class="fa-solid fa-gavel"></i> Case Law Precedents <span class="filter-pill-badge" id="count-cases">1</span>
+        </button>
+        <button class="filter-pill-btn" data-filter="templates">
+          <i class="fa-solid fa-file-lines"></i> Legal Document Factory <span class="filter-pill-badge" id="count-templates">1</span>
+        </button>
+        <button class="filter-pill-btn" data-filter="suites">
+          <i class="fa-solid fa-boxes-packing"></i> Specialized Process Suites <span class="filter-pill-badge" id="count-suites">5</span>
+        </button>
+        <button class="filter-pill-btn" data-filter="contract">
+          <i class="fa-solid fa-file-shield"></i> Contract Intelligence (Atticus) <span class="filter-pill-badge" id="count-contract">2</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive Vaults Table -->
+    <div class="table-container">
+      <table class="vaults-table" id="vaults-table">
+        <thead>
+          <tr>
+            <th style="min-width: 280px;">Vault Designation</th>
+            <th style="min-width: 150px;">Category</th>
+            <th style="min-width: 95px;">Release</th>
+            <th style="min-width: 140px;">Indexed Units</th>
+            <th style="min-width: 90px;">Binary Size</th>
+            <th style="min-width: 110px;">Monaco Trigger</th>
+            <th style="text-align: right; min-width: 100px; padding-right: 1.5rem;">Action</th>
+          </tr>
+        </thead>
+        <tbody id="vaults-tbody">
+          <!-- Populated by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Technical Architecture Cards -->
+    <div class="specs-grid">
+      
+      <!-- Card 1: Offline Security -->
+      <div class="spec-card">
+        <div class="spec-card-header">
+          <i class="fa-solid fa-shield-halved" style="color: var(--primary); font-size: 1.25rem;"></i>
+          <h3>Air-Gapped Sovereign Security</h3>
+        </div>
+        <ul class="spec-list">
+          <li><i class="fa-solid fa-check"></i> <strong>100% Client-Side Vector Search</strong>: Runs on local CPU/GPU using <code>InLegal-SBERT</code> ONNX quantized model.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Zero Data Exfiltration</strong>: Queries, drafts, and client case facts never touch external cloud endpoints.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Cryptographic Verification</strong>: Every vault binary is signed with Ed25519 keys matching portal distribution manifests.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>AES-256 GCM Encryption</strong>: Vault data tables are encrypted at rest with hardware-accelerated decryption streams.</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Monaco Autocomplete -->
+      <div class="spec-card">
+        <div class="spec-card-header">
+          <i class="fa-solid fa-code" style="color: var(--secondary); font-size: 1.25rem;"></i>
+          <h3>Monaco Editor Autocomplete Triggers</h3>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.75rem;">
+          Typing contextual trigger prefixes in the Hayagriva IDE drafting workbench instantly brings statutory provisions and verified precedents directly to your cursor:
+        </p>
+        <div class="spec-code-block">
+@@ibc/sec14       → Inserts IBC Moratorium provision<br>
+@@mca/sec230      → Inserts Scheme of Arrangement rules<br>
+@@case/moratorium → Filters 17,558 judicial headnotes<br>
+@@form/cirp-form-a → Inserts Public Announcement template<br>
+@@prec/inst-1      → Inserts Liquidation Commencement aid
+        </div>
+      </div>
+
+      <!-- Card 3: Disaster Recovery -->
+      <div class="spec-card">
+        <div class="spec-card-header">
+          <i class="fa-solid fa-database" style="color: #16a34a; font-size: 1.25rem;"></i>
+          <h3>PostgreSQL Immutable Persistence</h3>
+        </div>
+        <ul class="spec-list">
+          <li><i class="fa-solid fa-check"></i> <strong>Central Analytical Store</strong>: All 1,997 templates are mirrored inside <code>ibclaw_db.public.ibc_templates</code>.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>SHA-256 Drift Detection</strong>: Template updates track SHA-256 hashes to prevent unauthorized modifications.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Instant Recovery Command</strong>: If local files are ever accidentally moved or deleted:</li>
+        </ul>
+        <div class="spec-code-block">
+python3 scripts/sync_templates_to_db.py --restore
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Shared Site Footer Component -->
+  <div id="shared-footer"></div>
+
+  <!-- ======================================================================
+       Vault Details Modal
+       ====================================================================== -->
+  <div class="modal-backdrop" id="vault-modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <div class="vault-icon-circle" id="modal-icon-container"></div>
+          <div>
+            <h3 id="modal-title" style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); line-height: 1.2;"></h3>
+            <span id="modal-archive-name" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-tertiary);"></span>
+          </div>
+        </div>
+        <button id="modal-close-btn" style="background: none; border: none; font-size: 1.2rem; color: var(--text-tertiary); cursor: pointer;">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Dynamic content -->
+      </div>
+      <div class="modal-footer">
+        <button id="modal-action-btn" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">Close Details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       Application Logic & Interactive Table
+       ====================================================================== -->
+  <script>
+    // Master Vaults Dataset (Sanitized, 100% Free of Personal Names or Brands)
+    const VAULTS_DATA = [
+      {
+        id: "ibc_laws",
+        title: "Insolvency & Bankruptcy Code (IBC Laws)",
+        archive: "ibc_laws_vault_2026-W37.zip",
+        category: "statutory",
+        categoryLabel: "Statutes & Laws",
+        version: "2026-W37",
+        units: 10771,
+        unitsLabel: "Sections & Regulations",
+        sizeMb: 90.0,
+        trigger: "@@ibc/",
+        encryption: "AES-256 + 768d SBERT",
+        icon: "fa-scale-balanced",
+        iconColor: "#2563eb",
+        iconBg: "#eff6ff",
+        description: "Comprehensive statutory compilation of the Insolvency and Bankruptcy Code, 2016 alongside all 9 notified IBBI Regulations (CIRP, Liquidation, Voluntary Liquidation, Pre-pack, Information Utilities, and Insolvency Professionals Regulations) updated to the latest notified amendments."
+      },
+      {
+        id: "cases",
+        title: "Commercial Case Law & Judicial Precedents",
+        archive: "cases_vault_2026-W37.zip",
+        category: "cases",
+        categoryLabel: "Case Law Precedents",
+        version: "2026-W37",
+        units: 17558,
+        unitsLabel: "Judicial Headnotes",
+        sizeMb: 132.8,
+        trigger: "@@case/",
+        encryption: "AES-256 + 768d SBERT",
+        icon: "fa-gavel",
+        iconColor: "#7c3aed",
+        iconBg: "#faf5ff",
+        description: "Extensive institutional jurisprudence database containing 17,558 decided case headnotes, judicial rulings, and holdings from the Supreme Court of India, High Courts, and NCLT/NCLAT benches. Full case bodies are stripped to protect confidential subscriber and case privacy."
+      },
+      {
+        id: "documents",
+        title: "Master Legal Documents & Precedents Factory",
+        archive: "documents_vault_2026-W37.zip",
+        category: "templates",
+        categoryLabel: "Legal Documents Factory",
+        version: "2026-W37",
+        units: 3510,
+        unitsLabel: "Precedents & Templates",
+        sizeMb: 28.7,
+        trigger: "@@form/ @@prec/",
+        encryption: "AES-256 + 768d SBERT",
+        icon: "fa-file-contract",
+        iconColor: "#16a34a",
+        iconBg: "#f0fdf4",
+        description: "The complete unified drafting repository containing 3,510 ready-to-use, fillable Markdown templates with dynamic mustache placeholders: 63 phase-wise liquidation instruments, resolution plan evaluation checklists, PRA undertakings 49A–49S, civil/criminal pleadings, corporate agreements, and conveyancing deeds."
+      },
+      {
+        id: "laws",
+        title: "Consolidated Commercial Statutes",
+        archive: "laws_vault_2026-W37.zip",
+        category: "statutory",
+        categoryLabel: "Statutes & Laws",
+        version: "2026-W37",
+        units: 4026,
+        unitsLabel: "Statutory Sections",
+        sizeMb: 33.6,
+        trigger: "@@laws/",
+        encryption: "AES-256 + 768d SBERT",
+        icon: "fa-landmark",
+        iconColor: "#1e40af",
+        iconBg: "#eff6ff",
+        description: "Consolidated multi-statute repository covering the Companies Act 2013, Arbitration & Conciliation Act 1996, SARFAESI Act 2002, RDDBFI (DRT) Act 1993, and RERA 2016."
+      },
+      {
+        id: "mca_laws",
+        title: "Companies Act & MCA Rules Repository",
+        archive: "mca_laws_vault_2026-W37.zip",
+        category: "statutory",
+        categoryLabel: "Statutes & Laws",
+        version: "2026-W37",
+        units: 1574,
+        unitsLabel: "Sections & Rules",
+        sizeMb: 12.5,
+        trigger: "@@mca/",
+        encryption: "AES-256 + 768d SBERT",
+        icon: "fa-building-columns",
+        iconColor: "#0284c7",
+        iconBg: "#f0f9ff",
+        description: "Complete Companies Act 2013 bare act plus 48 Ministry of Corporate Affairs (MCA) procedural Rule books, NCLT Rules, and filing schedules, enriched with contextual autocomplete triggers."
+      },
+      {
+        id: "rera_laws",
+        title: "Real Estate (RERA) Regulations",
+        archive: "rera_laws_vault_2026-W37.zip",
+        category: "statutory",
+        categoryLabel: "Statutes & Laws",
+        version: "2026-W37",
+        units: 222,
+        unitsLabel: "Sections & State Rules",
+        sizeMb: 2.1,
+        trigger: "@@rera/",
+        encryption: "AES-256 + 768d SBERT",
+        icon: "fa-city",
+        iconColor: "#0d9488",
+        iconBg: "#f0fdfa",
+        description: "Real Estate (Regulation and Development) Act, 2016 bare text and major state procedural regulations supporting project-wise real estate CIRP workflows."
+      },
+      {
+        id: "arbitration_laws",
+        title: "Arbitration & Conciliation Act",
+        archive: "arbitration_laws_vault_2026-W37.zip",
+        category: "statutory",
+        categoryLabel: "Statutes & Laws",
+        version: "2026-W37",
+        units: 160,
+        unitsLabel: "Statutory Provisions",
+        sizeMb: 1.4,
+        trigger: "@@arbitration/",
+        encryption: "AES-256 + 768d SBERT",
+        icon: "fa-handshake",
+        iconColor: "#059669",
+        iconBg: "#ecfdf5",
+        description: "Arbitration & Conciliation Act 1996 (as amended up to 2026), international commercial arbitration standards, and domestic arbitral tribunal reference frameworks."
+      },
+      {
+        id: "debt_recovery_laws",
+        title: "Debt Recovery & SARFAESI Laws",
+        archive: "debt_recovery_laws_vault_2026-W37.zip",
+        category: "statutory",
+        categoryLabel: "Statutes & Laws",
+        version: "2026-W37",
+        units: 69,
+        unitsLabel: "Sections & Schedules",
+        sizeMb: 0.6,
+        trigger: "@@debt_recovery/",
+        encryption: "AES-256 + 768d SBERT",
+        icon: "fa-money-bill-transfer",
+        iconColor: "#d97706",
+        iconBg: "#fffbeb",
+        description: "SARFAESI Act 2002 security enforcement provisions and Recovery of Debts and Bankruptcy (RDDBFI) Act 1993 statutory rules."
+      },
+      {
+        id: "cuad_benchmark",
+        title: "CUAD Commercial Contract Risk Intelligence",
+        archive: "cuad_benchmark_vault_2026-W37.zip",
+        category: "contract",
+        categoryLabel: "Contract Intelligence",
+        version: "2026-W37",
+        units: 13829,
+        unitsLabel: "Clauses Classified",
+        sizeMb: 103.2,
+        trigger: "@@cuad/",
+        encryption: "AES-256 Local ONNX",
+        icon: "fa-shield-halved",
+        iconColor: "#dc2626",
+        iconBg: "#fef2f2",
+        description: "Atticus Project benchmark suite containing 510 commercial contracts analyzed across 41 legal risk categories including uncapped indemnification, non-compete covenants, change-of-control, and exclusivity restrictions."
+      },
+      {
+        id: "acord_clauses",
+        title: "ACORD Transactional Clause Benchmark",
+        archive: "acord_clauses_vault_2026-W37.zip",
+        category: "contract",
+        categoryLabel: "Contract Intelligence",
+        version: "2026-W37",
+        units: 4200,
+        unitsLabel: "Standard Clauses",
+        sizeMb: 32.6,
+        trigger: "@@acord/",
+        encryption: "AES-256 Local ONNX",
+        icon: "fa-file-shield",
+        iconColor: "#4f46e5",
+        iconBg: "#eef2ff",
+        description: "Attorney-rated transactional clause repository covering standard indemnity, representations and warranties, termination rights, and dispute escalation protocols."
+      },
+      {
+        id: "suite_cirp",
+        title: "CIRP Process Suite (Stage 01–05)",
+        archive: "cirp_suite_vault_2026-W36.zip",
+        category: "suites",
+        categoryLabel: "Specialized Process Suites",
+        version: "2026-W36",
+        units: 14,
+        unitsLabel: "Forms & Prompts",
+        sizeMb: 0.25,
+        trigger: "@@cirp/",
+        encryption: "AES-256 Vault Bundle",
+        icon: "fa-diagram-project",
+        iconColor: "#ea580c",
+        iconBg: "#fff7ed",
+        description: "Lightweight standalone bundle for Corporate Insolvency Resolution Process: statutory Forms A through H, claim verification memoranda, CoC voting sheets, and avoidance transaction determination guides."
+      },
+      {
+        id: "suite_liquidation",
+        title: "Liquidation Process Suite (Stage 07)",
+        archive: "liquidation_suite_vault_2026-W36.zip",
+        category: "suites",
+        categoryLabel: "Specialized Process Suites",
+        version: "2026-W36",
+        units: 63,
+        unitsLabel: "Practice Instruments",
+        sizeMb: 1.45,
+        trigger: "@@liq/",
+        encryption: "AES-256 Vault Bundle",
+        icon: "fa-boxes-stacked",
+        iconColor: "#c2410c",
+        iconBg: "#fff7ed",
+        description: "63 phase-by-phase liquidation instruments: LCD commencement checklists, Stakeholders Consultation Committee (SCC) minutes, asset memoranda, e-auction sale notices, and Section 53 waterfall calculation workbooks."
+      },
+      {
+        id: "suite_voluntary_liquidation",
+        title: "Voluntary Liquidation Suite",
+        archive: "voluntary_liquidation_suite_vault_2026-W36.zip",
+        category: "suites",
+        categoryLabel: "Specialized Process Suites",
+        version: "2026-W36",
+        units: 11,
+        unitsLabel: "Cards & Filings",
+        sizeMb: 1.53,
+        trigger: "@@vl/",
+        encryption: "AES-256 Vault Bundle",
+        icon: "fa-certificate",
+        iconColor: "#9a3412",
+        iconBg: "#fff7ed",
+        description: "Voluntary liquidation under Section 59: Declaration of solvency templates, auditor compliance certificates, statutory distribution receipts, and Section 59(8) final dissolution reports."
+      },
+      {
+        id: "suite_ppirp",
+        title: "Pre-Packaged Insolvency (PPIRP) Suite",
+        archive: "ppirp_suite_vault_2026-W36.zip",
+        category: "suites",
+        categoryLabel: "Specialized Process Suites",
+        version: "2026-W36",
+        units: 14,
+        unitsLabel: "Forms P1–P14",
+        sizeMb: 0.28,
+        trigger: "@@ppirp/",
+        encryption: "AES-256 Vault Bundle",
+        icon: "fa-box-archive",
+        iconColor: "#ea580c",
+        iconBg: "#fff7ed",
+        description: "Specialized MSME pre-pack framework: Forms P1 through P14, base resolution plan checklists, financial creditor approval records, and management contest reports."
+      },
+      {
+        id: "suite_personal_guarantor",
+        title: "Personal Guarantor Insolvency Suite",
+        archive: "personal_guarantor_suite_vault_2026-W36.zip",
+        category: "suites",
+        categoryLabel: "Specialized Process Suites",
+        version: "2026-W36",
+        units: 12,
+        unitsLabel: "Part III Precedents",
+        sizeMb: 0.17,
+        trigger: "@@pg/",
+        encryption: "AES-256 Vault Bundle",
+        icon: "fa-user-shield",
+        iconColor: "#c2410c",
+        iconBg: "#fff7ed",
+        description: "Insolvency resolution and bankruptcy for personal guarantors to corporate debtors under Part III: Section 94 debtor / Section 95 creditor applications, interim moratorium records, repayment plans, and discharge applications."
+      }
+    ];
+
+    // Rendering Logic
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function renderTable() {
+      const tbody = document.getElementById('vaults-tbody');
+      tbody.innerHTML = '';
+
+      const filtered = VAULTS_DATA.filter(item => {
+        const matchesCategory = (currentFilter === 'all' || item.category === currentFilter);
+        const matchesSearch = !searchQuery || 
+          item.title.toLowerCase().includes(searchQuery) ||
+          item.archive.toLowerCase().includes(searchQuery) ||
+          item.trigger.toLowerCase().includes(searchQuery) ||
+          item.categoryLabel.toLowerCase().includes(searchQuery) ||
+          item.description.toLowerCase().includes(searchQuery);
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" style="text-align: center; padding: 3rem; color: var(--text-tertiary);">
+              <i class="fa-solid fa-magnifying-glass" style="font-size: 1.5rem; margin-bottom: 0.5rem; display: block;"></i>
+              No legal vaults match your search criteria.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const tr = document.createElement('tr');
+        
+        let tagClass = 'tag-statutory';
+        if (item.category === 'cases') tagClass = 'tag-cases';
+        else if (item.category === 'templates') tagClass = 'tag-templates';
+        else if (item.category === 'suites') tagClass = 'tag-suites';
+        else if (item.category === 'contract') tagClass = 'tag-contract';
+
+        tr.innerHTML = `
+          <td>
+            <div class="vault-primary-cell">
+              <div class="vault-icon-circle" style="background-color: ${item.iconBg}; color: ${item.iconColor};">
+                <i class="fa-solid ${item.icon}"></i>
+              </div>
+              <div>
+                <span class="vault-title-text">${item.title}</span>
+                <span class="vault-archive-name">${item.archive}</span>
+              </div>
+            </div>
+          </td>
+          <td><span class="tag-badge ${tagClass}">${item.categoryLabel}</span></td>
+          <td style="white-space: nowrap;"><span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); white-space: nowrap; font-variant-numeric: tabular-nums;">${item.version}</span></td>
+          <td style="white-space: nowrap;"><strong style="color: #0f172a;">${item.units.toLocaleString()}</strong> <span style="font-size: 0.75rem; color: var(--text-tertiary);">${item.unitsLabel}</span></td>
+          <td style="white-space: nowrap;"><span style="font-family: var(--font-mono); font-weight: 600; color: #0f172a;">${item.sizeMb.toFixed(1)} MB</span></td>
+          <td style="white-space: nowrap;"><span class="code-trigger-badge">${item.trigger}</span></td>
+          <td style="text-align: right; padding-right: 1.5rem; white-space: nowrap;">
+            <button class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.8rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.4rem;" onclick="openVaultModal('${item.id}')">
+              <i class="fa-solid fa-circle-info"></i> <span>Details</span>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Filter Buttons
+    document.querySelectorAll('.filter-pill-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        renderTable();
+      });
+    });
+
+    // Search Input
+    document.getElementById('vault-search-input').addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      renderTable();
+    });
+
+    // Modal Handler
+    function openVaultModal(vaultId) {
+      const item = VAULTS_DATA.find(v => v.id === vaultId);
+      if (!item) return;
+
+      document.getElementById('modal-title').textContent = item.title;
+      document.getElementById('modal-archive-name').textContent = item.archive;
+      
+      const iconBox = document.getElementById('modal-icon-container');
+      iconBox.style.backgroundColor = item.iconBg;
+      iconBox.style.color = item.iconColor;
+      iconBox.innerHTML = `<i class="fa-solid ${item.icon}"></i>`;
+
+      document.getElementById('modal-body-content').innerHTML = `
+        <p style="margin-bottom: 1.25rem;">${item.description}</p>
+        
+        <div style="background: var(--bg-muted); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.85rem;">
+            <div><span style="color: var(--text-tertiary);">Indexed Units:</span> <strong>${item.units.toLocaleString()} ${item.unitsLabel}</strong></div>
+            <div><span style="color: var(--text-tertiary);">Archive Size:</span> <strong>${item.sizeMb.toFixed(1)} MB</strong></div>
+            <div><span style="color: var(--text-tertiary);">Release Tag:</span> <strong>${item.version}</strong></div>
+            <div><span style="color: var(--text-tertiary);">IDE Prefix:</span> <code style="color: var(--primary); font-weight: 600;">${item.trigger}</code></div>
+            <div style="grid-column: span 2; margin-top: 0.25rem; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+              <span style="color: var(--text-tertiary);">Encryption & Embeddings:</span> <strong style="color: var(--primary); font-weight: 600;">${item.encryption}</strong>
+            </div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem;">Deployment & Integration</h4>
+        <p style="font-size: 0.825rem; line-height: 1.5; color: var(--text-secondary);">
+          Pre-packaged into your local Hayagriva Desktop IDE installation under <code>output/client_vaults/dist/</code>. Air-gapped vectors are automatically loaded by the local ONNX embedding inference engine with zero internet connection required.
+        </p>
+      `;
+
+      document.getElementById('vault-modal-backdrop').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('vault-modal-backdrop').classList.remove('active');
+    }
+
+    document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+    document.getElementById('modal-action-btn').addEventListener('click', closeModal);
+    document.getElementById('vault-modal-backdrop').addEventListener('click', (e) => {
+      if (e.target.id === 'vault-modal-backdrop') closeModal();
+    });
+
+    // Initial render
+    renderTable();
+    // Close modal on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+  <script src="js/header.js?v=20260909_v5"></script>
+  <script src="js/footer.js?v=20260909_v5"></script>
+
+</body>
+</html>

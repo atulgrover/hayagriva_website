@@ -1,0 +1,53 @@
+services:
+  # ============================================================================
+  # AgenticProfessionals.Net - Institutional Restructuring Operating System
+  # Render Static Site Deployment Blueprint
+  # Primary Domain: agenticprofessionals.net (or .com / .in)
+  # ============================================================================
+  - type: web
+    name: agentic-professionals
+    env: static
+    rootDir: .
+    buildCommand: ""
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /workbench
+        destination: /pipie_ide.html
+      - type: rewrite
+        source: /agents
+        destination: /pipie_assets.html
+      - type: rewrite
+        source: /chatrooms
+        destination: /chatroom.html
+      - type: rewrite
+        source: /chatroom
+        destination: /chatroom.html
+      - type: rewrite
+        source: /directories
+        destination: /directory_listing.html
+      - type: rewrite
+        source: /vaults
+        destination: /harness_haya_vaults.html
+      - type: rewrite
+        source: /blogs
+        destination: /blogs_articles.html
+      - type: rewrite
+        source: /articles
+        destination: /blogs_articles.html
+      - type: rewrite
+        source: /docs/*
+        destination: /docs/*
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin

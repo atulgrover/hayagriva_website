@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hayagriva Execution Engine - AgenticProfessionals.Net</title>
+  <meta name="description" content="Air-gapped, zero-leakage statutory parsing and multi-agent deterministic orchestrator designed specifically for insolvency resolution & restructuring workflows.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+
+  <style>
+    .page-hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px solid var(--border-color);
+      padding: 3rem 1.75rem 2.5rem;
+    }
+    .page-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1.25rem;
+    }
+    .breadcrumb-nav a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--primary);
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-institutional {
+      background-color: #eff6ff;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+    }
+    .hero-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 0.75rem 0 0.5rem;
+    }
+    .hero-heading {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 820px;
+      line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      max-width: var(--max-width);
+      margin: -1.75rem auto 2.5rem;
+      padding: 0 1.75rem;
+    }
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .metric-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.07);
+    }
+    .metric-icon-box {
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .metric-icon-blue { background-color: #eff6ff; color: #2563eb; }
+    .metric-icon-teal { background-color: #f0fdfa; color: #0d9488; }
+    .metric-icon-purple { background-color: #f5f3ff; color: #7c3aed; }
+    .metric-icon-amber { background-color: #fffbeb; color: #d97706; }
+    .metric-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.1;
+      font-feature-settings: "tnum";
+    }
+    .metric-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .engine-terminal-card {
+      background: #0f172a;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      padding: 1.75rem;
+      color: #e2e8f0;
+      font-family: var(--font-mono);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+      margin-bottom: 2.5rem;
+    }
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-amber { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+    .terminal-body {
+      line-height: 1.7;
+      font-size: 0.85rem;
+    }
+    .terminal-prompt { color: #38bdf8; }
+    .terminal-cmd { color: #f8fafc; font-weight: 600; }
+    .terminal-out { color: #94a3b8; }
+    .terminal-success { color: #4ade80; }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Header Section -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <span>Harness</span>
+        <span>/</span>
+        <span style="color: var(--text-primary); font-weight: 600;">Haya Engine</span>
+      </div>
+
+      <div class="badge-pill badge-institutional">
+        <i class="fa-solid fa-microchip"></i> Local Deterministic Runtime V4.2
+      </div>
+
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Hayagriva Execution Engine</h1>
+          <p class="hero-desc">
+            Air-gapped, zero-leakage statutory parsing and multi-agent deterministic orchestrator designed specifically for insolvency resolution & restructuring workflows. Runs entirely on practitioner hardware with zero cloud telemetry.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://hayagriva.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+            Launch hayagriva.app <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 0.4rem; font-size: 0.8rem;"></i>
+          </a>
+          <a href="harness_haya_vaults.html" class="btn btn-secondary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-vault" style="margin-right: 0.4rem;"></i> Explore Haya Vaults
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Metric Cards -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+      <div>
+        <div class="metric-value">&lt;12ms</div>
+        <div class="metric-label">Local Query Latency</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-teal">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div>
+        <div class="metric-value">AES-256</div>
+        <div class="metric-label">RAM-Only Decryption</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-purple">
+        <i class="fa-solid fa-network-wired"></i>
+      </div>
+      <div>
+        <div class="metric-value">100%</div>
+        <div class="metric-label">Air-Gapped Isolation</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-amber">
+        <i class="fa-solid fa-microchip"></i>
+      </div>
+      <div>
+        <div class="metric-value">Silicon</div>
+        <div class="metric-label">M-Series / AVX-512 Native</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Middle Content Area -->
+  <main class="container" style="padding-bottom: 4rem;">
+
+    <!-- Terminal Status Live Simulation -->
+    <div class="engine-terminal-card">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <div class="terminal-dot dot-red"></div>
+          <div class="terminal-dot dot-amber"></div>
+          <div class="terminal-dot dot-green"></div>
+        </div>
+        <div>hayagriva-engine-daemon — /var/run/hayagriva/engine.sock</div>
+        <div><span class="badge badge-success" style="background:#166534; color:#bbf7d0; border:none;">ACTIVE</span></div>
+      </div>
+      <div class="terminal-body">
+        <div><span class="terminal-prompt">$</span> <span class="terminal-cmd">haya-engine --air-gapped --enclave-mode --vaults-dir ./vaults</span></div>
+        <div class="terminal-out">[2026-09-09 09:30:14] Initializing Hayagriva Deterministic Runtime v4.2.1-prod...</div>
+        <div class="terminal-out">[2026-09-09 09:30:14] Hardware: Apple Silicon M3 Max (16-Core Neural Engine active)</div>
+        <div class="terminal-out">[2026-09-09 09:30:15] Loading AES-256 Vault: IBC_STATUTES_MASTER_2026.enc [Verified SHA-256]</div>
+        <div class="terminal-out">[2026-09-09 09:30:15] Loading AES-256 Vault: SC_NCLAT_PRECEDENTS_2016_2026.enc [Verified SHA-256]</div>
+        <div class="terminal-out">[2026-09-09 09:30:16] Inverted vector index mounted in volatile RAM: 142,500 statutory fragments.</div>
+        <div class="terminal-success">[2026-09-09 09:30:16] Hayagriva Local Engine READY. Zero outbound network sockets opened.</div>
+      </div>
+    </div>
+
+    <!-- Core Engine Subsystems Grid -->
+    <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+      <span class="badge badge-primary">Core Subsystems</span>
+      <h2 class="section-title" style="margin-top: 0.5rem;">Sovereign Architecture & Execution Specs</h2>
+      <p class="section-desc">Hardware-accelerated modules designed for strict attorney-client privilege and zero statutory hallucination.</p>
+    </div>
+
+    <div class="catalog-grid">
+      <!-- Card 1 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">Vector Core</span>
+          <span class="badge badge-success">Quantized</span>
+        </div>
+        <h3 class="catalog-card-title">Local ONNX Embedding Engine</h3>
+        <p class="catalog-card-desc">High-density embedding generation executed on practitioner GPU/NPU cores. Provides sub-12ms semantic search over tens of thousands of NCLT orders without sending text to any external cloud.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-solid fa-gauge-high"></i> 1,200 tokens/sec</span>
+          <span><i class="fa-solid fa-check"></i> Zero Telemetry</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">Memory Security</span>
+          <span class="badge badge-success">AES-256-GCM</span>
+        </div>
+        <h3 class="catalog-card-title">Volatile RAM Decryptor</h3>
+        <p class="catalog-card-desc">Pre-compiled legal vaults and precedent indices remain encrypted at rest on NVMe storage. Decryption keys reside exclusively in secure enclave volatile memory with automatic zeroization on process exit.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-solid fa-lock"></i> Zeroization on Exit</span>
+          <span><i class="fa-solid fa-key"></i> Enclave Tied</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">IDE Integration</span>
+          <span class="badge badge-success">Monaco AST</span>
+        </div>
+        <h3 class="catalog-card-title">Monaco Editor Semantic Autocomplete</h3>
+        <p class="catalog-card-desc">Hooks directly into the practitioner drafting workspace with instant prefix completions (<code>ibc:sec:29a</code>, <code>reg:cirp:39</code>, <code>rule:val:8</code>), auto-injecting verified statutory text with exact citations.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-solid fa-code"></i> Real-time AST</span>
+          <span><i class="fa-solid fa-bolt"></i> Instant Trigger</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">Audit Trail</span>
+          <span class="badge badge-success">Tamper-Proof</span>
+        </div>
+        <h3 class="catalog-card-title">Deterministic Evidence Ledger</h3>
+        <p class="catalog-card-desc">Every calculation, PUFE transaction look-back comparison, and Section 29A screening step generates a cryptographically sealed SHA-256 audit tree admissible before NCLT benches.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-solid fa-file-shield"></i> NCLT Admissible</span>
+          <span><i class="fa-solid fa-fingerprint"></i> SHA-256 Sealed</span>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">Agent Harness</span>
+          <span class="badge badge-success">Multi-Agent</span>
+        </div>
+        <h3 class="catalog-card-title">CIRP Pipeline Orchestrator</h3>
+        <p class="catalog-card-desc">Coordinates statutory agents across the CIRP timeline from Section 7/9/10 admission through Form G, Information Memorandum issuance, and final Regulation 39(4) Form H compliance.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-solid fa-diagram-project"></i> Multi-Step Workflow</span>
+          <span><i class="fa-solid fa-clock"></i> 330-Day Tracker</span>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="catalog-card">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary">Isolation</span>
+          <span class="badge badge-success">Sandboxed</span>
+        </div>
+        <h3 class="catalog-card-title">Rust / WASM Sandboxed Workers</h3>
+        <p class="catalog-card-desc">Complex financial ledger analysis and avoidance pattern matching execute within restricted WebAssembly/Rust sandboxes with zero disk write permissions and bounded memory allocations.</p>
+        <div class="catalog-meta-row">
+          <span><i class="fa-brands fa-rust"></i> Memory Safe</span>
+          <span><i class="fa-solid fa-shield-virus"></i> Strict Isolation</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Shared Site Footer Component -->
+  <div id="shared-footer"></div>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/header.js?v=20260909_v5"></script>
+  <script src="js/footer.js?v=20260909_v5"></script>
+
+</body>
+</html>

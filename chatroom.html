@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat-Rooms | Sovereign IBC Advisory &amp; LightRAG Intelligence</title>
+  <meta name="description"
+    content="Encrypted IBC Process Chat-Rooms with integrated LightRAG sovereign knowledge assistant. Air-gapped multi-agent intelligence for CoC advisories and deal collaboration.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .chatroom-layout {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - var(--header-height, 65px));
+      background: #f8fafc;
+      overflow: hidden;
+    }
+
+    .chatroom-statusbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1.25rem;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.8125rem;
+      flex-shrink: 0;
+    }
+
+    .chatroom-status-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .badge-airgap {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .badge-session {
+      background: #eff6ff;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+    }
+
+    .chatroom-status-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .chatroom-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #334155;
+      font-size: 0.775rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .chatroom-btn:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #94a3b8;
+    }
+
+    .chatroom-iframe-wrap {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: #ffffff;
+    }
+
+    .chatroom-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Shared Site Header -->
+  <div id="shared-header"></div>
+
+  <!-- Chatroom Main Application Environment -->
+  <main class="chatroom-layout">
+    
+    <!-- Top System Status Ribbon -->
+    <header class="chatroom-statusbar">
+      <div class="chatroom-status-left">
+        <h1 style="font-size: 0.875rem; font-weight: 700; color: #0f172a; margin: 0; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <i class="fa-solid fa-comments" style="color: #0284c7;"></i>
+          <span>IBC Process Chat-Rooms &amp; Sovereign Intelligence</span>
+        </h1>
+        <span class="status-badge badge-airgap">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+          100% Air-Gapped Zero Cloud Leakage
+        </span>
+        <span class="status-badge badge-session">
+          <i class="fa-solid fa-database"></i> LightRAG Knowledge Graph
+        </span>
+      </div>
+
+      <div class="chatroom-status-right">
+        <a href="pipie_assets.html" class="chatroom-btn" title="View Installed Agentic Assets">
+          <i class="fa-solid fa-cubes"></i>
+          <span>Agentic Assets</span>
+        </a>
+        <button type="button" class="chatroom-btn" id="btn-reload-iframe" title="Reload Local Session">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <span>Reload</span>
+        </button>
+        <button type="button" class="chatroom-btn" id="btn-fullscreen-toggle" title="Toggle Fullscreen">
+          <i class="fa-solid fa-expand"></i>
+          <span>Fullscreen</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- LightRAG Workspace Iframe -->
+    <div class="chatroom-iframe-wrap" id="chatroom-container">
+      <iframe id="iframe-lightrag" src="lightrag_workspace/workspace.html" title="LightRAG Knowledge Assistant"
+        allow="clipboard-read; clipboard-write;" class="chatroom-iframe">
+      </iframe>
+    </div>
+
+  </main>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="js/header.js"></script>
+  <script>
+    // System controls for Chatroom iframe
+    document.getElementById('btn-reload-iframe')?.addEventListener('click', () => {
+      const iframe = document.getElementById('iframe-lightrag');
+      if (iframe) iframe.src = iframe.src;
+    });
+
+    document.getElementById('btn-fullscreen-toggle')?.addEventListener('click', () => {
+      const container = document.getElementById('chatroom-container');
+      if (!document.fullscreenElement) {
+        container?.requestFullscreen?.();
+      } else {
+        document.exitFullscreen?.();
+      }
+    });
+  </script>
+
+</body>
+</html>
