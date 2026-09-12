@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rerankers (Cross-Encoder Precision Scoring) - AgenticProfessionals.Net</title>
+  <meta name="description" content="Quantized cross-encoder reranking models for zero-hallucination precision retrieval, joint attention scoring, and strict statutory verification in agentic RAG pipelines.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <link rel="stylesheet" href="css/inner-pages.css?v=20260911_v1">
+
+  <style>
+    .code-snippet-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      position: relative;
+      overflow-x: auto;
+      margin: 1rem 0;
+      border: 1px solid #334155;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    .spec-table th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .spec-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+    }
+    .spec-table tr:hover td {
+      background: #fffbeb;
+    }
+    .arch-flow-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03);
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .comparison-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .two-stage-diagram {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      margin: 1.25rem 0;
+    }
+    @media (max-width: 768px) {
+      .two-stage-diagram {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Header Section -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <span>Models</span>
+        <span>/</span>
+        <span style="color: var(--text-primary); font-weight: 600;">Rerankers</span>
+      </div>
+
+      <div class="badge-pill badge-institutional">
+        <i class="fa-solid fa-arrow-down-wide-short"></i> Precision Cross-Encoder Models
+      </div>
+
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Cross-Encoder Rerankers</h1>
+          <p class="hero-desc">
+            Ultra-fast, INT8-quantized cross-encoders delivering deep token-to-token attention scoring. Eliminating semantic false positives and guaranteeing zero-hallucination statutory verification in agentic retrieval pipelines.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="#local-reranker" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-download" style="margin-right: 0.4rem;"></i> Quantized ONNX Weights
+          </a>
+          <a href="#two-stage-arch" class="btn btn-secondary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-layer-group" style="margin-right: 0.4rem;"></i> Two-Stage Architecture
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Metric Cards -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-amber">
+        <i class="fa-solid fa-crosshairs"></i>
+      </div>
+      <div>
+        <div class="metric-value">22 MB</div>
+        <div class="metric-label">INT8 Quantized Footprint</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-emerald">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+      <div>
+        <div class="metric-value">&lt; 3 ms</div>
+        <div class="metric-label">Per-Candidate Scoring</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-purple">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+      <div>
+        <div class="metric-value">Full Attention</div>
+        <div class="metric-label">Query &times; Document Interaction</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div>
+        <div class="metric-value">Zero Hallucination</div>
+        <div class="metric-label">Statutory Rejection Gate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
+  <main class="container" style="padding-bottom: 4rem;">
+
+    <!-- Conceptual Foundation Section -->
+    <div id="two-stage-arch" class="arch-flow-box">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+        <span class="badge badge-primary">Why Rerankers are Essential</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">The Semantic Drift Challenge in Vector Search</h2>
+        <p class="section-desc">
+          Why bi-encoder vector similarity search (embeddings) alone is insufficient for high-stakes legal, financial, and regulatory reasoning.
+        </p>
+      </div>
+
+      <div class="two-stage-diagram">
+        <div style="background: #ffffff; padding: 1.25rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; text-transform: uppercase;">Stage 1: Bi-Encoder (Embeddings)</div>
+          <h4 style="margin: 0.4rem 0; color: #0f172a;">High Recall &bull; Broad Net</h4>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin: 0;">
+            Computes query and document vectors separately. Compares cosine angles across 100,000s of chunks in &lt;10ms. Returns top-50 candidates, but misses subtle negations or statutory sub-clause qualifications.
+          </p>
+        </div>
+
+        <div style="text-align: center; color: #d97706; font-size: 1.5rem;">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <div style="background: #fffbeb; padding: 1.25rem; border-radius: 8px; border: 1px solid #fde68a;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #b45309; text-transform: uppercase;">Stage 2: Cross-Encoder (Reranker)</div>
+          <h4 style="margin: 0.4rem 0; color: #78350f;">High Precision &bull; Joint Attention</h4>
+          <p style="font-size: 0.85rem; color: #92400e; line-height: 1.5; margin: 0;">
+            Feeds <code>[CLS] Query [SEP] Candidate [SEP]</code> together into transformer attention layers. Evaluates exact syntactic relationships, conditional clauses, and statutory thresholds to output a calibrated 0.0 to 1.0 relevance score.
+          </p>
+        </div>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-card" style="border-left: 4px solid #f59e0b;">
+          <h4 style="margin: 0 0 0.5rem; color: #b45309; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-ban"></i> Catching Statutory Negations
+          </h4>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">
+            In vector space, <em>"The promoter is disqualified under Section 29A"</em> and <em>"The promoter is NOT disqualified under Section 29A"</em> have nearly identical cosine similarity (0.94+). A cross-encoder spots the negation token immediately and scores the irrelevant passage near 0.0.
+          </p>
+        </div>
+
+        <div class="comparison-card" style="border-left: 4px solid #10b981;">
+          <h4 style="margin: 0 0 0.5rem; color: #047857; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-filter-circle-xmark"></i> Hard Rejection Thresholding
+          </h4>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">
+            When no statutory authority exists for an applicant's claim, vector search will still return the "least-bad" chunk. Our reranker enforces a hard gate (e.g. <code>score &gt; 0.65</code>). If no passage passes, the agent refuses to speculate, preventing hallucinated legal filings.
+          </p>
+        </div>
+
+        <div class="comparison-card" style="border-left: 4px solid #6366f1;">
+          <h4 style="margin: 0 0 0.5rem; color: #4338ca; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-memory"></i> Ultra-Low Overhead
+          </h4>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">
+            Because rerankers only process the top-50 candidates filtered by the vector index, scoring takes less than 150ms total on a standard laptop CPU, consuming only 22MB of memory.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Local Reranker in Our Stack -->
+    <div id="local-reranker" class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+      <span class="badge badge-primary">Available Weights</span>
+      <h2 class="section-title" style="margin-top: 0.5rem;">Reranker Model in Our Stack ()</h2>
+      <p class="section-desc">
+        INT8-quantized cross-encoder packaged with ONNX runtime for instant execution in our agentic pipelines.
+      </p>
+    </div>
+
+    <div class="catalog-grid" style="margin-bottom: 3rem;">
+
+      <!-- Reranker Model Card -->
+      <div class="catalog-card" style="border-top: 3px solid #d97706; grid-column: span 2;">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary" style="background: #fffbeb; color: #b45309; border: 1px solid #fde68a;">Cross-Encoder</span>
+          <span class="badge badge-success">ONNX INT8 Quantized</span>
+        </div>
+        <h3 class="catalog-card-title">ms-marco-MiniLM-L-6-v2 (Quantized Cross-Encoder)</h3>
+        <p class="catalog-card-desc">
+          Cross-attention passage reranker trained on the MS MARCO benchmark and fine-tuned for dense relevance scoring. Evaluates candidate passages pairwise with query tokens to produce precise relevance logits.
+        </p>
+        <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span class="model-spec-badge">Format: ONNX INT8</span>
+          <span class="model-spec-badge">Size: 22 MB</span>
+          <span class="model-spec-badge">Latency: ~2.8 ms / pair</span>
+          <span class="model-spec-badge">Vocab: WordPiece 30,522</span>
+        </div>
+        <div class="code-snippet-box" style="font-size: 0.75rem;">
+# Path in our repository:
+weights/reranker/ms-marco-MiniLM-L-6-v2/onnx/model_quantized.onnx
+weights/reranker/ms-marco-MiniLM-L-6-v2/tokenizer.json
+weights/reranker/ms-marco-MiniLM-L-6-v2/config.json
+        </div>
+        <div class="catalog-meta-row">
+          <span style="color: #b45309; font-weight: 600;">Relevance Logits: Normalized Sigmoid [0.0 &ndash; 1.0]</span>
+          <span class="badge badge-subtle">Auto-Integrated in Pipie RAG Pipeline</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Advanced Rerankers Ecosystem for Other Domains -->
+    <div class="arch-flow-box">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+        <span class="badge badge-primary">Ecosystem Index</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Open-Source Cross-Encoder &amp; Reranker Ecosystem</h2>
+        <p class="section-desc">
+          Advanced rerankers available in the open ecosystem that can be integrated into our ONNX / Python pipeline for specialized professional requirements:
+        </p>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Reranker Architecture</th>
+              <th>Context Window</th>
+              <th>Parameters</th>
+              <th>Ideal Domain Use Case</th>
+              <th>Key Strengths</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ms-marco-MiniLM-L-6-v2</strong><br><span style="font-size: 0.75rem; color: #16a34a;">&bull; In Our Stack</span></td>
+              <td>512 tokens</td>
+              <td>22M (quantized)</td>
+              <td>Statutory sections, headnotes, financial notes, case summaries.</td>
+              <td>Ultra-lightweight (&lt;25MB RAM), sub-3ms latency, runs anywhere without GPU.</td>
+            </tr>
+            <tr>
+              <td><strong>BGE-Reranker-v2-M3</strong><br><span style="font-size: 0.75rem; color: #64748b;">BAAI</span></td>
+              <td>8,192 tokens</td>
+              <td>560M</td>
+              <td>Multilingual legal codes (Hindi, Tamil, Marathi, English) and cross-border commercial litigation.</td>
+              <td>Supports 100+ languages, deep multi-lingual passage ranking, long-context contract clauses.</td>
+            </tr>
+            <tr>
+              <td><strong>Jina-Reranker-v2</strong><br><span style="font-size: 0.75rem; color: #64748b;">Jina AI</span></td>
+              <td>1,024 tokens</td>
+              <td>278M</td>
+              <td>Corporate annual reports, audited financial prospectuses, and code repositories.</td>
+              <td>FlashAttention-2 support, fast batch reranking, multilingual, function-aware scoring.</td>
+            </tr>
+            <tr>
+              <td><strong>ColBERTv2 / Late-Interaction</strong><br><span style="font-size: 0.75rem; color: #64748b;">Stanford</span></td>
+              <td>512 tokens</td>
+              <td>110M</td>
+              <td>Large-scale regulatory repositories (&gt;1,000,000 judgments) needing interactive sub-second scoring.</td>
+              <td>Token-level MaxSim indexing; balances cross-encoder expressiveness with bi-encoder pre-indexing speed.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- RAG Orchestration Flow -->
+    <div class="agent-pipeline-flow" style="margin-top: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem;">
+            Complete Two-Stage Retrieval Workflow
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
+            How Domain-SLMs, Embeddings, and Rerankers work together in the Hayagriva Operating System.
+          </p>
+        </div>
+        <span class="badge badge-success"><i class="fa-solid fa-check"></i> End-to-End Orchestrated</span>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step-item">
+          <div class="flow-step-num">Stage 01 &bull; Query</div>
+          <div class="flow-step-title">Agent Statutory Request</div>
+          <div class="flow-step-desc">An agent (e.g. §29A Screener) queries: <em>"Has the PRA been classified as a willful defaulter?"</em></div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Stage 02 &bull; Embeddings</div>
+          <div class="flow-step-title">InLegal-SBERT Search</div>
+          <div class="flow-step-desc">Dense vector index returns 50 candidate passages from RBI circulars and NCLT orders in &lt;10ms.</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Stage 03 &bull; Reranker</div>
+          <div class="flow-step-title">Cross-Encoder Filter</div>
+          <div class="flow-step-desc"><code>ms-marco-MiniLM</code> evaluates query vs each candidate, discarding false matches and ranking true hits (score &gt; 0.85).</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Stage 04 &bull; SLM Reasoning</div>
+          <div class="flow-step-title">LegalParam 2.9B Output</div>
+          <div class="flow-step-desc">The 3 verified passages are injected into <code>LegalParam 2.9B</code> to generate the deterministic compliance report.</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Shared Site Footer Component -->
+  <div id="shared-footer"></div>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="js/header.js?v=20260911_v1"></script>
+  <script src="js/footer.js?v=20260911_v1"></script>
+  <script src="js/page-common.js?v=20260911_v1"></script>
+
+</body>
+</html>

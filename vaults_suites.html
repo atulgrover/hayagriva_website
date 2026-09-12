@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specialized Practice Process Suites - AgenticProfessionals.Net</title>
+  <meta name="description" content="5 specialized role-based procedural suites for CIRP Practitioners, Liquidators, Voluntary Liquidators, and Personal Guarantor processes inside PIPIE-IDE.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <link rel="stylesheet" href="css/inner-pages.css?v=20260911_v1">
+
+  <style>
+    .suite-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .suite-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .suite-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+    }
+    .suite-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .suite-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    .suite-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 0.5rem;
+      line-height: 1.3;
+    }
+    .suite-desc {
+      font-size: 0.875rem;
+      color: #475569;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+    .suite-pills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .suite-pill {
+      font-size: 0.75rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 0.25rem 0.6rem;
+      border-radius: 5px;
+      color: #334155;
+      font-weight: 500;
+    }
+    .suite-footer {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+    .trigger-code {
+      font-family: var(--font-mono, monospace);
+      background: #0f172a;
+      color: #fb923c;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.775rem;
+      font-weight: 600;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+    }
+    .spec-table th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+    .spec-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+      vertical-align: middle;
+    }
+    .spec-table tr:hover td {
+      background: #f8fafc;
+    }
+    .code-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 8px;
+      padding: 1.25rem;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.825rem;
+      line-height: 1.6;
+      border: 1px solid #334155;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+    .process-timeline-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Header Section -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <a href="pipie_assets.html#vaults">Vaults</a>
+        <span>/</span>
+        <span class="current-crumb">4. Practice Process Suites</span>
+      </div>
+
+      <div class="badge-pill badge-institutional">
+        <i class="fa-solid fa-boxes-packing"></i> Role-Based Procedural Engines
+      </div>
+
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Specialized Practice Process Suites</h1>
+          <p class="hero-desc">
+            End-to-end procedural workflow packages tailored for Insolvency Professionals, Liquidators, and Corporate Turnaround Specialists. Bundles statutory timeline checklists, voting tally engines, Section 53 waterfall workbooks, and compliance audit cards into modular local vaults.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="harness_haya_vaults.html" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-layer-group" style="margin-right: 0.4rem;"></i> Explore Practice Suites
+          </a>
+          <a href="pipie_ide.html" class="btn btn-secondary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-play" style="margin-right: 0.4rem;"></i> Launch In PIPIE-IDE
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Metrics Strip -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-amber">
+        <i class="fa-solid fa-boxes-stacked"></i>
+      </div>
+      <div>
+        <div class="metric-value">5 Suites</div>
+        <div class="metric-label">Specialized Workflows</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue">
+        <i class="fa-solid fa-clipboard-check"></i>
+      </div>
+      <div>
+        <div class="metric-value">114 Units</div>
+        <div class="metric-label">Practice Instruments</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-emerald">
+        <i class="fa-solid fa-arrow-progress"></i>
+      </div>
+      <div>
+        <div class="metric-value">Stages 01–07</div>
+        <div class="metric-label">Full Lifecycle Coverage</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-purple">
+        <i class="fa-solid fa-fingerprint"></i>
+      </div>
+      <div>
+        <div class="metric-value">Keychain</div>
+        <div class="metric-label">Role-Based Entitlement</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
+  <main class="content-container">
+
+    <!-- Section 1: The 5 Specialized Practice Suites Grid -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h2 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin: 0 0 0.25rem;">
+          Role-Based Process Suites Matrix
+        </h2>
+        <p style="color: #64748b; font-size: 0.9rem; margin: 0;">
+          Each suite is isolated in its own encrypted vault binary with specific role entitlements matching professional tiers.
+        </p>
+      </div>
+      <span class="badge badge-success"><i class="fa-solid fa-check"></i> 2026-W36 Practice Release</span>
+    </div>
+
+    <div class="suite-grid">
+
+      <!-- Suite 1: CIRP Master Process Suite -->
+      <div class="suite-card">
+        <div>
+          <div class="suite-badge-row">
+            <div class="suite-icon" style="background: #fff7ed; color: #ea580c;">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <span class="badge badge-warning">Tier: CIRP Practitioner</span>
+          </div>
+          <h3 class="suite-title">CIRP Master Process Suite (Stages 01–05)</h3>
+          <p class="suite-desc">
+            Complete operating playbook for Corporate Insolvency Resolution: Day-01 admission checklist, claims verification memoranda, CoC agenda templates &amp; voting sheets, IM structures, and PRA eligibility undertakings 49A–49S.
+          </p>
+          <div class="suite-pills">
+            <span class="suite-pill"><i class="fa-solid fa-file-invoice"></i> 14 Core Instruments</span>
+            <span class="suite-pill"><i class="fa-solid fa-key"></i> vault-cirp</span>
+            <span class="suite-pill"><i class="fa-solid fa-file-zipper"></i> 260 KB ZIP</span>
+          </div>
+        </div>
+        <div class="suite-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@cirp/agenda</span>
+        </div>
+      </div>
+
+      <!-- Suite 2: Liquidation Suite -->
+      <div class="suite-card">
+        <div>
+          <div class="suite-badge-row">
+            <div class="suite-icon" style="background: #fff7ed; color: #c2410c;">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+            <span class="badge badge-warning">Tier: Liquidator</span>
+          </div>
+          <h3 class="suite-title">Liquidation Process (CILP) Suite (Stage 07)</h3>
+          <p class="suite-desc">
+            63 phase-by-phase instruments for court liquidators: LCD commencement checklists, Stakeholders Consultation Committee (SCC) minutes, asset sale memorandums, e-auction terms, and Section 53 waterfall calculation workbooks.
+          </p>
+          <div class="suite-pills">
+            <span class="suite-pill"><i class="fa-solid fa-list-check"></i> 63 Practice Instruments</span>
+            <span class="suite-pill"><i class="fa-solid fa-key"></i> vault-cilp</span>
+            <span class="suite-pill"><i class="fa-solid fa-file-zipper"></i> 1.52 MB ZIP</span>
+          </div>
+        </div>
+        <div class="suite-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@liq/waterfall-sec53</span>
+        </div>
+      </div>
+
+      <!-- Suite 3: Voluntary Liquidation Suite -->
+      <div class="suite-card">
+        <div>
+          <div class="suite-badge-row">
+            <div class="suite-icon" style="background: #fff7ed; color: #9a3412;">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <span class="badge badge-warning">Tier: Voluntary Liquidator</span>
+          </div>
+          <h3 class="suite-title">Voluntary Liquidation (CIVLP) Suite</h3>
+          <p class="suite-desc">
+            Section 59 voluntary liquidation suite: Board resolution formats, statutory declarations of solvency, auditor asset-liability statements, liquidation account distribution receipts, and Section 59(8) final dissolution reports.
+          </p>
+          <div class="suite-pills">
+            <span class="suite-pill"><i class="fa-solid fa-file-shield"></i> 11 Filings &amp; Cards</span>
+            <span class="suite-pill"><i class="fa-solid fa-key"></i> vault-civlp</span>
+            <span class="suite-pill"><i class="fa-solid fa-file-zipper"></i> 1.60 MB ZIP</span>
+          </div>
+        </div>
+        <div class="suite-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@vl/solvency-affidavit</span>
+        </div>
+      </div>
+
+      <!-- Suite 4: MSME Pre-Pack Suite -->
+      <div class="suite-card">
+        <div>
+          <div class="suite-badge-row">
+            <div class="suite-icon" style="background: #fff7ed; color: #ea580c;">
+              <i class="fa-solid fa-box-archive"></i>
+            </div>
+            <span class="badge badge-warning">Tier: PPIRP Practitioner</span>
+          </div>
+          <h3 class="suite-title">MSME Pre-Packaged Insolvency (PPIRP) Suite</h3>
+          <p class="suite-desc">
+            Accelerated resolution for MSME corporate debtors: Statutory Forms P1 through P14, Base Resolution Plan scoring sheets, Swiss challenge bidding evaluation protocols, and unrelated financial creditor approval trackers.
+          </p>
+          <div class="suite-pills">
+            <span class="suite-pill"><i class="fa-solid fa-file-lines"></i> 14 Forms P1–P14</span>
+            <span class="suite-pill"><i class="fa-solid fa-key"></i> vault-ppirp</span>
+            <span class="suite-pill"><i class="fa-solid fa-file-zipper"></i> 291 KB ZIP</span>
+          </div>
+        </div>
+        <div class="suite-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@ppirp/base-plan</span>
+        </div>
+      </div>
+
+      <!-- Suite 5: Personal Guarantor Suite -->
+      <div class="suite-card">
+        <div>
+          <div class="suite-badge-row">
+            <div class="suite-icon" style="background: #fff7ed; color: #c2410c;">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <span class="badge badge-warning">Tier: PG Practitioner</span>
+          </div>
+          <h3 class="suite-title">Personal Guarantor Insolvency Suite</h3>
+          <p class="suite-desc">
+            Part III insolvency workflow for corporate debtor promoters: Section 94/95 insolvency petitions, statutory demand notices, interim moratorium declarations, RP repayment plan reports, and discharge applications.
+          </p>
+          <div class="suite-pills">
+            <span class="suite-pill"><i class="fa-solid fa-user-check"></i> 12 Part III Instruments</span>
+            <span class="suite-pill"><i class="fa-solid fa-key"></i> vault-pg</span>
+            <span class="suite-pill"><i class="fa-solid fa-file-zipper"></i> 182 KB ZIP</span>
+          </div>
+        </div>
+        <div class="suite-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@pg/sec95-petition</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 2: Technical Specifications & Release Table -->
+    <div style="margin-top: 3rem;">
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+        Practice Suites Vault Registration &amp; Keychain Accounts
+      </h3>
+      <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.25rem;">
+        All suites are verified in <code>latest.json</code> and secured via macOS Keychain / Linux SecretService encryption accounts.
+      </p>
+
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; overflow-x: auto;">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Suite Identifier</th>
+              <th>Display Name</th>
+              <th>Instruments Count</th>
+              <th>Archive Filename</th>
+              <th>Size</th>
+              <th>Keychain Account</th>
+              <th>Trigger Prefix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>suite_cirp</code></td>
+              <td><strong>CIRP Master Process Suite</strong></td>
+              <td>14 Process Cards</td>
+              <td><code>cirp_suite_vault_2026-W36.zip</code></td>
+              <td>260 KB</td>
+              <td><code>vault-cirp</code></td>
+              <td><span class="trigger-code">@@cirp/</span></td>
+            </tr>
+            <tr>
+              <td><code>suite_liquidation</code></td>
+              <td><strong>Liquidation (CILP) Suite</strong></td>
+              <td>63 Instruments</td>
+              <td><code>liquidation_suite_vault_2026-W36.zip</code></td>
+              <td>1.52 MB</td>
+              <td><code>vault-cilp</code></td>
+              <td><span class="trigger-code">@@liq/</span></td>
+            </tr>
+            <tr>
+              <td><code>suite_voluntary_liquidation</code></td>
+              <td><strong>Voluntary Liquidation Suite</strong></td>
+              <td>11 Filings</td>
+              <td><code>voluntary_liquidation_suite_vault_2026-W36.zip</code></td>
+              <td>1.60 MB</td>
+              <td><code>vault-civlp</code></td>
+              <td><span class="trigger-code">@@vl/</span></td>
+            </tr>
+            <tr>
+              <td><code>suite_ppirp</code></td>
+              <td><strong>MSME Pre-pack (PPIRP) Suite</strong></td>
+              <td>14 Forms P1–P14</td>
+              <td><code>ppirp_suite_vault_2026-W36.zip</code></td>
+              <td>291 KB</td>
+              <td><code>vault-ppirp</code></td>
+              <td><span class="trigger-code">@@ppirp/</span></td>
+            </tr>
+            <tr>
+              <td><code>suite_personal_guarantor</code></td>
+              <td><strong>Personal Guarantors (PG) Suite</strong></td>
+              <td>12 Precedents</td>
+              <td><code>personal_guarantor_suite_vault_2026-W36.zip</code></td>
+              <td>182 KB</td>
+              <td><code>vault-pg</code></td>
+              <td><span class="trigger-code">@@pg/</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section 3: Monaco Autocomplete Live Demonstration -->
+    <div style="margin-top: 3.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem;">
+            Practice Process Autocomplete Triggers
+          </h3>
+          <p style="color: #64748b; font-size: 0.875rem; margin: 0;">
+            Invoke full meeting agendas, statutory compliance certificates, and Section 53 waterfall tables on the fly.
+          </p>
+        </div>
+        <span class="badge badge-warning"><i class="fa-solid fa-bolt"></i> Instant Workflow Injection</span>
+      </div>
+
+      <div class="code-box">
+<span style="color: #94a3b8;">// 1. Insert 1st CoC Meeting Agenda &amp; Compliance Notice:</span>
+<span style="color: #fb923c;">@@cirp/coc-meeting-agenda</span>
+&rarr; Injects: Complete 14-item statutory agenda covering IRP appointment confirmation, registered valuer fees, and interim operational funding.
+
+<span style="color: #94a3b8;">// 2. Insert Section 53 Priority Waterfall Table:</span>
+<span style="color: #fb923c;">@@liq/waterfall-sec53</span>
+&rarr; Injects:
+1. CIRP &amp; Liquidation Costs (Paid in Full)
+2. Workmen dues (24 mos) + Secured Creditors (relinquished security)
+3. Wages and unpaid dues owed to employees (12 mos)
+4. Financial debts owed to unsecured creditors
+5. Government dues (24 mos) + Secured debts balance
+6. Any remaining debts and dues
+7. Preference shareholders &amp; Equity shareholders
+
+<span style="color: #94a3b8;">// 3. Insert Section 59 Solvency Affidavit:</span>
+<span style="color: #fb923c;">@@vl/solvency-affidavit</span>
+&rarr; Injects: Statutory declaration by majority of directors verifying company has no debt or can discharge debts in full.
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Shared Site Footer Component -->
+  <div id="shared-footer"></div>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="js/header.js?v=20260911_v1"></script>
+  <script src="js/footer.js?v=20260911_v1"></script>
+  <script src="js/page-common.js?v=20260911_v1"></script>
+
+</body>
+</html>

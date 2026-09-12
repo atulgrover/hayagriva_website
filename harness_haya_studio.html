@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drafting Studio — Monaco Editor, Document Agents & Export | AI Harness | AgenticProfessionals.Net</title>
+  <meta name="description" content="Hayagriva Drafting Studio — Monaco legal editor with LSP, three specialized document agents with critique loops, and a deterministic Supreme Court layout compiler for DOCX and PDF export.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <style>
+    .page-hero { background:linear-gradient(180deg,#ffffff 0%,#faf5ff 100%); border-bottom:1px solid var(--border-color); padding:3rem 1.75rem 2.5rem; }
+    .page-hero-inner { max-width:var(--max-width); margin:0 auto; }
+    .breadcrumb-nav { display:flex; align-items:center; gap:.5rem; font-size:.85rem; color:var(--text-tertiary); margin-bottom:1.25rem; }
+    .breadcrumb-nav a { color:var(--text-tertiary); text-decoration:none; transition:color .15s; }
+    .breadcrumb-nav a:hover { color:var(--primary); }
+    .badge-pill { display:inline-flex; align-items:center; gap:.4rem; padding:.3rem .75rem; border-radius:9999px; font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+    .badge-purple { background:#faf5ff; color:#6b21a8; border:1px solid #ddd6fe; }
+    .hero-heading { font-size:2.25rem; font-weight:800; color:var(--text-primary); letter-spacing:-.025em; line-height:1.2; }
+    .hero-desc { font-size:1.05rem; color:var(--text-secondary); max-width:820px; line-height:1.6; margin-top:.5rem; }
+    .hero-title-row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; margin:.75rem 0 .5rem; }
+    .metrics-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; max-width:var(--max-width); margin:-1.75rem auto 2.5rem; padding:0 1.75rem; }
+    .metric-card { background:#fff; border:1px solid var(--border-color); border-radius:10px; padding:1.25rem 1.5rem; box-shadow:0 4px 6px -1px rgba(15,23,42,.04); display:flex; align-items:center; gap:1rem; transition:transform .2s,box-shadow .2s; }
+    .metric-card:hover { transform:translateY(-2px); box-shadow:0 10px 15px -3px rgba(15,23,42,.07); }
+    .metric-icon-box { width:46px; height:46px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0; }
+    .metric-icon-purple { background:#faf5ff; color:#7c3aed; }
+    .metric-icon-rose { background:#fff1f2; color:#e11d48; }
+    .metric-icon-teal { background:#f0fdfa; color:#0d9488; }
+    .metric-icon-amber { background:#fffbeb; color:#d97706; }
+    .metric-value { font-size:1.65rem; font-weight:800; color:var(--text-primary); line-height:1.1; font-feature-settings:"tnum"; }
+    .metric-label { font-size:.8rem; font-weight:500; color:var(--text-tertiary); margin-top:.2rem; text-transform:uppercase; letter-spacing:.04em; }
+    .section-anchor { scroll-margin-top:80px; }
+    .section-divider { border:none; border-top:2px dashed var(--border-color); margin:3rem 0; }
+    .agent-card { background:#fff; border:1px solid var(--border-color); border-radius:12px; padding:1.75rem; display:flex; gap:1.25rem; align-items:flex-start; }
+    .agent-icon { width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
+    .lsp-trigger { display:inline-block; background:#0f172a; color:#4ade80; font-family:var(--font-mono); font-size:.78rem; padding:.25rem .6rem; border-radius:5px; margin:.15rem; }
+    .export-spec { display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; border-bottom:1px solid var(--border-color); font-size:.88rem; }
+    .export-spec:last-child { border-bottom:none; }
+    .export-spec-label { color:var(--text-secondary); }
+    .export-spec-value { font-weight:600; color:#0f172a; font-family:var(--font-mono); font-size:.82rem; }
+  </style>
+</head>
+<body>
+  <div id="shared-header"></div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <a href="pipie_ide.html">Harness</a>
+        <span>/</span>
+        <span style="color:var(--text-primary);font-weight:600;">Drafting Studio</span>
+      </div>
+      <div class="badge-pill badge-purple">
+        <i class="fa-solid fa-pen-nib"></i> Drafting Management System (DMS) + Agent Management System (AMS)
+      </div>
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Drafting Studio</h1>
+          <p class="hero-desc">The middle panel of the Hayagriva IDE — a Monaco legal editor with live LSP and bi-directional SQLite sync, three specialized AI document agents, and a deterministic Supreme Court layout compiler for court-ready DOCX and PDF output.</p>
+        </div>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <a href="harness_haya_models.html" class="btn btn-primary" style="padding:.75rem 1.4rem;">
+            <i class="fa-solid fa-file-lines" style="margin-right:.4rem;"></i> Draft Templates
+          </a>
+          <a href="harness_haya_engine.html" class="btn btn-secondary" style="padding:.75rem 1.4rem;">
+            <i class="fa-solid fa-microchip" style="margin-right:.4rem;"></i> Execution Engine
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-purple"><i class="fa-solid fa-code"></i></div>
+      <div><div class="metric-value">Monaco</div><div class="metric-label">Legal LSP Editor</div></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-rose"><i class="fa-solid fa-robot"></i></div>
+      <div><div class="metric-value">3 Agents</div><div class="metric-label">Document / Forms / Advisor</div></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-teal"><i class="fa-solid fa-file-export"></i></div>
+      <div><div class="metric-value">SC Rules</div><div class="metric-label">Supreme Court Layout</div></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-amber"><i class="fa-solid fa-rotate"></i></div>
+      <div><div class="metric-value">Critique</div><div class="metric-label">Self-Correction Loops</div></div>
+    </div>
+  </div>
+
+  <main class="container" style="padding-bottom:4rem;">
+
+    <!-- MONACO EDITOR -->
+    <div id="monaco-editor" class="section-anchor">
+      <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+        <span class="badge badge-primary">Monaco Editor</span>
+        <h2 class="section-title" style="margin-top:.5rem;">Syntax-Aware Legal Document Editor</h2>
+        <p class="section-desc">A full Monaco editor instance with a custom LSP providing statutory autocomplete, diagnostic hover, and real-time bi-directional SQLite synchronization for structured case data files.</p>
+      </div>
+
+      <div class="catalog-grid" style="margin-bottom:2rem;">
+        <div class="catalog-card">
+          <div class="catalog-badge-row"><span class="badge badge-primary">LSP Autocomplete</span><span class="badge badge-success">Instant</span></div>
+          <h3 class="catalog-card-title">Statutory Prefix Completions</h3>
+          <p class="catalog-card-desc">Type a statutory prefix in the editor and the Monaco LSP completion provider returns verified text with exact citations from the local IBC vault. Zero hallucination — every insertion comes from the deterministic encrypted vault, not an LLM.</p>
+          <div style="margin:.75rem 0;display:flex;flex-wrap:wrap;gap:.3rem;">
+            <span class="lsp-trigger">ibc:sec:29a</span>
+            <span class="lsp-trigger">reg:cirp:39</span>
+            <span class="lsp-trigger">rule:val:8</span>
+            <span class="lsp-trigger">form:h:</span>
+          </div>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-bolt"></i> Instant trigger</span><span><i class="fa-solid fa-check"></i> Vault-verified text</span></div>
+        </div>
+        <div class="catalog-card">
+          <div class="catalog-badge-row"><span class="badge badge-primary">Bi-Directional Sync</span><span class="badge badge-success">SQLite</span></div>
+          <h3 class="catalog-card-title">Live SQLite Synchronization</h3>
+          <p class="catalog-card-desc">The Monaco LSP parser intercepts saves to claims_registry.md, avoidance_ledger.md, and case_facts.md. Markdown tables and key-value lists are parsed and written directly to SQLite records and case_kv_dictionary.json. Values edited by hand are marked verified_by_user = 1 and protected from agent overwrite.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-database"></i> Auto-syncs on save</span><span><i class="fa-solid fa-lock"></i> User-verified lock</span></div>
+        </div>
+        <div class="catalog-card">
+          <div class="catalog-badge-row"><span class="badge badge-primary">Hover Provider</span><span class="badge badge-success">On Demand</span></div>
+          <h3 class="catalog-card-title">Statutory Hover Definitions</h3>
+          <p class="catalog-card-desc">Hovering over any IBC section reference, NCLT rule citation, or IBBI regulation number in the editor shows the full statutory text in a hover popup sourced from the encrypted vault — no internet lookup required.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-eye"></i> Hover-to-read</span><span><i class="fa-solid fa-vault"></i> Vault-sourced</span></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- DOCUMENT AGENTS -->
+    <div id="document-agents" class="section-anchor">
+      <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+        <span class="badge badge-primary">Document Agents</span>
+        <h2 class="section-title" style="margin-top:.5rem;">Three Specialized AI Drafting Agents</h2>
+        <p class="section-desc">Node.js-native subagents registered in the Eclipse Theia AI ChatAgent registry. Each agent handles a distinct drafting task and participates in a self-correction critique loop before presenting output.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem;">
+        <div class="agent-card">
+          <div class="agent-icon" style="background:#faf5ff;color:#7c3aed;"><i class="fa-solid fa-file-pen"></i></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.4rem;">
+              <h3 style="font-size:1.05rem;font-weight:700;color:#0f172a;margin:0;">@Document Agent</h3>
+              <span class="badge badge-primary">Primary Drafter</span>
+            </div>
+            <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.6rem;">Assembles legal document drafts from DMS skeleton templates. Detects unresolved gaps and placeholders, queries the RAG pipeline for supporting facts from the case knowledge base, and populates the skeleton. When the LLM engine is offline, populates from case_kv_dictionary.json in Lite Mode and saves to drafts/.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem;font-size:.8rem;">
+              <span style="background:#f1f5f9;padding:.2rem .5rem;border-radius:4px;color:#334155;">CIRP Applications</span>
+              <span style="background:#f1f5f9;padding:.2rem .5rem;border-radius:4px;color:#334155;">NCLT Petitions</span>
+              <span style="background:#f1f5f9;padding:.2rem .5rem;border-radius:4px;color:#334155;">Form H Assembly</span>
+              <span style="background:#f1f5f9;padding:.2rem .5rem;border-radius:4px;color:#334155;">Resolution Plans</span>
+            </div>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-icon" style="background:#fff1f2;color:#e11d48;"><i class="fa-solid fa-clipboard-check"></i></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.4rem;">
+              <h3 style="font-size:1.05rem;font-weight:700;color:#0f172a;margin:0;">@Forms Agent</h3>
+              <span class="badge badge-success">Auditor</span>
+            </div>
+            <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.6rem;">Acts as the critique agent in the self-correction loop. @Document delegates each draft to @Forms for compliance audit — statutory gap detection, missing mandatory sections, and IBBI format verification. @Forms returns a structured critique list. @Document then refines the draft and sends only the final version to the user.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem;font-size:.8rem;">
+              <span style="background:#fff1f2;padding:.2rem .5rem;border-radius:4px;color:#be123c;">Gap Detection</span>
+              <span style="background:#fff1f2;padding:.2rem .5rem;border-radius:4px;color:#be123c;">IBBI Format Check</span>
+              <span style="background:#fff1f2;padding:.2rem .5rem;border-radius:4px;color:#be123c;">Mandatory Section Audit</span>
+            </div>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-icon" style="background:#fffbeb;color:#d97706;"><i class="fa-solid fa-lightbulb"></i></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.4rem;">
+              <h3 style="font-size:1.05rem;font-weight:700;color:#0f172a;margin:0;">@Advisor Agent</h3>
+              <span class="badge badge-subtle">Research &amp; Strategy</span>
+            </div>
+            <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.6rem;">Handles research queries against the precedent vault and wiki knowledge base. Surfaces relevant SC, NCLAT, and HC rulings, identifies Section 29A disqualification risks, and computes CoC voting share distributions — all locally without cloud dependency. Answers can be filed back to wiki/insights/ with one click.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem;font-size:.8rem;">
+              <span style="background:#fffbeb;padding:.2rem .5rem;border-radius:4px;color:#92400e;">Precedent Research</span>
+              <span style="background:#fffbeb;padding:.2rem .5rem;border-radius:4px;color:#92400e;">§29A Screening</span>
+              <span style="background:#fffbeb;padding:.2rem .5rem;border-radius:4px;color:#92400e;">CoC Voting Shares</span>
+              <span style="background:#fffbeb;padding:.2rem .5rem;border-radius:4px;color:#92400e;">PUFE Look-Back</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:1.75rem;box-shadow:0 2px 8px rgba(15,23,42,.04);">
+        <h3 style="font-size:1.05rem;font-weight:700;color:#0f172a;margin-bottom:.5rem;"><i class="fa-solid fa-rotate" style="color:#7c3aed;margin-right:.5rem;"></i> Critique Loop — How Self-Correction Works</h3>
+        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.7;">@Document generates draft → delegates to @Forms via <code>ChatAgentService.delegateToAgent()</code> → @Forms returns a structured critique list → @Document refines the draft → refined draft presented to user. The user never sees the intermediate critique exchange — only the post-critique final output.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- EXPORT & COMPILE -->
+    <div id="export-compile" class="section-anchor">
+      <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+        <span class="badge badge-primary">Export &amp; Compile</span>
+        <h2 class="section-title" style="margin-top:.5rem;">Supreme Court Layout Compiler</h2>
+        <p class="section-desc">A deterministic Markdown-to-DOCX compiler that enforces the Supreme Court of India's filing rules — available via context menu, editor command palette, and the <code>/export-sc</code> slash command.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;">
+        <div style="background:#fff;border:1px solid var(--border-color);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(15,23,42,.04);">
+          <div style="background:#0f172a;padding:1rem 1.25rem;display:flex;align-items:center;gap:.75rem;">
+            <div style="display:flex;gap:5px;"><div style="width:10px;height:10px;border-radius:50%;background:#ef4444;"></div><div style="width:10px;height:10px;border-radius:50%;background:#f59e0b;"></div><div style="width:10px;height:10px;border-radius:50%;background:#10b981;"></div></div>
+            <span style="font-family:var(--font-mono);font-size:.8rem;color:#94a3b8;">SC Layout Spec</span>
+          </div>
+          <div style="padding:0;">
+            <div class="export-spec"><span class="export-spec-label">Page Size</span><span class="export-spec-value">A4 (210 × 297 mm)</span></div>
+            <div class="export-spec"><span class="export-spec-label">Font Family</span><span class="export-spec-value">Times New Roman</span></div>
+            <div class="export-spec"><span class="export-spec-label">Body Size</span><span class="export-spec-value">14pt</span></div>
+            <div class="export-spec"><span class="export-spec-label">Line Spacing</span><span class="export-spec-value">1.5 lines</span></div>
+            <div class="export-spec"><span class="export-spec-label">Left / Right Margins</span><span class="export-spec-value">4 cm</span></div>
+            <div class="export-spec"><span class="export-spec-label">Top / Bottom Margins</span><span class="export-spec-value">2 cm</span></div>
+            <div class="export-spec"><span class="export-spec-label">Output Formats</span><span class="export-spec-value">DOCX · PDF</span></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:1.25rem;box-shadow:0 2px 8px rgba(15,23,42,.04);">
+            <h3 style="font-size:.95rem;font-weight:700;color:#0f172a;margin-bottom:.5rem;"><i class="fa-solid fa-computer-mouse" style="color:#7c3aed;margin-right:.4rem;"></i> Three Access Points</h3>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.85rem;color:var(--text-secondary);">
+              <div><i class="fa-solid fa-mouse-right-click" style="color:#7c3aed;margin-right:.4rem;"></i> Explorer right-click → Export as SC Document</div>
+              <div><i class="fa-solid fa-code" style="color:#7c3aed;margin-right:.4rem;"></i> Editor context menu → Compile for Supreme Court</div>
+              <div><i class="fa-solid fa-terminal" style="color:#7c3aed;margin-right:.4rem;"></i> Notion-style slash command: <code>/export-sc</code></div>
+            </div>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:1.25rem;box-shadow:0 2px 8px rgba(15,23,42,.04);">
+            <h3 style="font-size:.95rem;font-weight:700;color:#0f172a;margin-bottom:.5rem;"><i class="fa-solid fa-archive" style="color:#0d9488;margin-right:.4rem;"></i> Version History</h3>
+            <p style="font-size:.85rem;color:var(--text-secondary);line-height:1.5;">Every compiled DOCX is archived in drafts/history/ with a timestamp and version number. The DMS maintains a complete version history of all documents — no draft is ever permanently overwritten without an explicit user-confirmed action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="shared-footer"></div>
+  <script src="js/header.js?v=20260909_v5"></script>
+  <script src="js/footer.js?v=20260909_v5"></script>
+</body>
+</html>

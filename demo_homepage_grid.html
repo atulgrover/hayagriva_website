@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage Grid Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <style>
+    body { background: #f8fafc; font-family: 'Inter', sans-serif; }
+    .demo-wrap { max-width: 1100px; margin: 3rem auto; padding: 0 1.75rem 4rem; }
+    .demo-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #94a3b8; margin-bottom: 2rem; display: flex; align-items: center; gap: .5rem; }
+    .demo-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+
+    /* Section header */
+    .overview-header { text-align: center; margin-bottom: 2.5rem; }
+    .overview-tag { display: inline-flex; align-items: center; gap: .4rem; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: .3rem .85rem; border-radius: 9999px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 1rem; }
+    .overview-title { font-size: 1.75rem; font-weight: 800; color: #0f172a; letter-spacing: -.02em; line-height: 1.2; margin-bottom: .5rem; }
+    .overview-sub { font-size: .95rem; color: #64748b; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+
+    /* 2×2 grid */
+    .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 680px) { .platform-grid { grid-template-columns: 1fr; } }
+
+    .platform-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: .85rem; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+    .platform-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -6px rgba(15, 23, 42, .1); border-color: transparent; }
+
+    .card-pill { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .pill-emerald { background: #f0fdf4; color: #16a34a; }
+    .pill-blue   { background: #eff6ff; color: #2563eb; }
+    .pill-rose   { background: #fff1f2; color: #e11d48; }
+    .pill-amber  { background: #fffbeb; color: #d97706; }
+
+    .card-body { flex: 1; }
+    .card-name { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: .3rem; }
+    .card-sub  { font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .55rem; }
+    .sub-emerald { color: #16a34a; }
+    .sub-blue   { color: #2563eb; }
+    .sub-rose   { color: #e11d48; }
+    .sub-amber  { color: #d97706; }
+    .card-desc { font-size: .88rem; color: #475569; line-height: 1.65; }
+
+    .card-link { display: inline-flex; align-items: center; gap: .35rem; font-size: .85rem; font-weight: 600; color: #2563eb; text-decoration: none; transition: gap .15s; }
+    .card-link:hover { gap: .55rem; }
+    .card-link i { font-size: .75rem; transition: transform .15s; }
+    .card-link:hover i { transform: translateX(2px); }
+
+    /* Left-border accent on hover */
+    .platform-card.accent-emerald:hover { border-left: 3px solid #16a34a; }
+    .platform-card.accent-blue:hover   { border-left: 3px solid #2563eb; }
+    .platform-card.accent-rose:hover   { border-left: 3px solid #e11d48; }
+    .platform-card.accent-amber:hover  { border-left: 3px solid #d97706; }
+  </style>
+</head>
+<body>
+<div class="demo-wrap">
+  <div class="demo-label"><i class="fa-solid fa-eye"></i> Demo — Homepage Platform Overview Grid (replaces 3-tier ladder)</div>
+
+  <!-- Section header -->
+  <div class="overview-header">
+    <div class="overview-tag"><i class="fa-solid fa-laptop-code"></i> Platform Overview</div>
+    <h2 class="overview-title">Everything in One Sovereign Desktop</h2>
+    <p class="overview-sub">Four integrated modules. One air-gapped workbench. Zero cloud leakage.</p>
+  </div>
+
+  <!-- 2×2 Grid -->
+  <div class="platform-grid">
+
+    <!-- AI Harness -->
+    <div class="platform-card accent-emerald">
+      <div style="display:flex;align-items:center;gap:.85rem;">
+        <div class="card-pill pill-emerald"><i class="fa-solid fa-laptop-code"></i></div>
+        <div>
+          <div class="card-sub sub-emerald">AI Harness</div>
+          <div class="card-name">PIPIE-IDE Workbench</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Sovereign desktop IDE for CIRP case management. Ingest documents, build a compounding case wiki, control retrieval context, and draft court-ready pleadings with local AI agents — entirely on your laptop.</p>
+      </div>
+      <a href="harness_haya_workbench.html" class="card-link">Explore Harness <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- AI Assets -->
+    <div class="platform-card accent-blue">
+      <div style="display:flex;align-items:center;gap:.85rem;">
+        <div class="card-pill pill-blue"><i class="fa-solid fa-vault"></i></div>
+        <div>
+          <div class="card-sub sub-blue">AI Assets</div>
+          <div class="card-name">Vaults, Models & Embeddings</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Pre-compiled, AES-256 encrypted legal vaults (IBC, SC/NCLAT precedents, IBBI circulars) paired with domain-fine-tuned SLMs and legal embedding models — downloadable offline packs for the IDE.</p>
+      </div>
+      <a href="harness_haya_vaults.html" class="card-link">Explore Assets <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- AI Agents -->
+    <div class="platform-card accent-rose">
+      <div style="display:flex;align-items:center;gap:.85rem;">
+        <div class="card-pill pill-rose"><i class="fa-solid fa-robot"></i></div>
+        <div>
+          <div class="card-sub sub-rose">AI Agents</div>
+          <div class="card-name">CIRP & Forensic Agents</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Deterministic workflow agents for Section 29A screening, PUFE avoidance forensics, Form H assembly, Information Memorandum compilation, and CoC voting share reconciliation.</p>
+      </div>
+      <a href="agents_insolvency.html" class="card-link">Explore Agents <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- Community -->
+    <div class="platform-card accent-amber">
+      <div style="display:flex;align-items:center;gap:.85rem;">
+        <div class="card-pill pill-amber"><i class="fa-solid fa-users"></i></div>
+        <div>
+          <div class="card-sub sub-amber">Community</div>
+          <div class="card-name">Forums, Directory & Chat</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">A verified practitioner network — Zulip-powered discussion forums, an NCLT-city accredited directory of Insolvency Professionals and Registered Valuers, and LightRAG encrypted matter chat rooms.</p>
+      </div>
+      <a href="https://forums.agenticprofessionals.net" target="_blank" rel="noopener noreferrer" class="card-link">Explore Community <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

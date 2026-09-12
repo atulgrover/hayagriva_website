@@ -95,9 +95,13 @@ agentic_professionals_net/
 
 ### Option 1: Lightweight HTTP Server
 ```bash
-python3 -m http.server 8000
-# Open http://localhost:8000/ in your browser
+# Start server in background (runs serve.py on port 8000)
+./start.sh
+
+# Stop server
+./stop.sh
 ```
+Open [http://localhost:8000/](http://localhost:8000/) in your browser.
 
 ### Option 2: Full API Server with PostgreSQL Directory
 ```bash

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embeddings (Dense Vector Pipelines) - AgenticProfessionals.Net</title>
+  <meta name="description" content="Domain-specialized 768-dimensional ONNX dense vector embeddings for legal, financial, clinical, and enterprise semantic retrieval.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <link rel="stylesheet" href="css/inner-pages.css?v=20260911_v1">
+
+  <style>
+    .code-snippet-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      position: relative;
+      overflow-x: auto;
+      margin: 1rem 0;
+      border: 1px solid #334155;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    .spec-table th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .spec-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+    }
+    .spec-table tr:hover td {
+      background: #eff6ff;
+    }
+    .arch-flow-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03);
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .comparison-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Header Section -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <span>Models</span>
+        <span>/</span>
+        <span style="color: var(--text-primary); font-weight: 600;">Embeddings</span>
+      </div>
+
+      <div class="badge-pill badge-institutional">
+        <i class="fa-solid fa-diagram-project"></i> Dense Vector Representation Engines
+      </div>
+
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Dense Semantic Embeddings</h1>
+          <p class="hero-desc">
+            Domain-adapted 768-dimensional ONNX bi-encoder pipelines. Powering high-speed vector search across millions of statutory precedents, regulatory filings, financial statements, and technical documents with sub-millisecond latency.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="#local-embeddings" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-download" style="margin-right: 0.4rem;"></i> Local ONNX Models
+          </a>
+          <a href="#pro-embeddings" class="btn btn-secondary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-compass" style="margin-right: 0.4rem;"></i> Domain Ecosystem
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Metric Cards -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue">
+        <i class="fa-solid fa-vector-square"></i>
+      </div>
+      <div>
+        <div class="metric-value">768 Dims</div>
+        <div class="metric-label">Dense Embedding Space</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-emerald">
+        <i class="fa-solid fa-gauge-high"></i>
+      </div>
+      <div>
+        <div class="metric-value">&lt; 5 ms</div>
+        <div class="metric-label">ONNX CPU Inference Latency</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-purple">
+        <i class="fa-solid fa-file-shield"></i>
+      </div>
+      <div>
+        <div class="metric-value">Zero Drift</div>
+        <div class="metric-label">Statutory Domain Anchoring</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-teal">
+        <i class="fa-solid fa-cubes"></i>
+      </div>
+      <div>
+        <div class="metric-value">100% ONNX</div>
+        <div class="metric-label">Cross-Platform Runtime</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
+  <main class="container" style="padding-bottom: 4rem;">
+
+    <!-- Conceptual Foundation Section -->
+    <div class="arch-flow-box">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+        <span class="badge badge-primary">Architectural Primer</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Why Generic Embeddings Fail in Specialized Professional Domains</h2>
+        <p class="section-desc">
+          Standard embedding models (e.g. OpenAI text-embedding-3 or generic all-MiniLM) are trained on general internet web crawls. In specialized professions, they consistently suffer from semantic collapse.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-card" style="border-left: 4px solid #2563eb;">
+          <h4 style="margin: 0 0 0.5rem; color: #1d4ed8; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-spell-check"></i> The Legal Polysemy Problem
+          </h4>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">
+            Words have completely different meanings in law. For example, generic embeddings treat a <em>"Resolution Plan"</em> similarly to a software project plan or corporate goal. In corporate insolvency, it is a strictly regulated statutory instrument with mandatory §30(2) feasibility tests.
+          </p>
+        </div>
+
+        <div class="comparison-card" style="border-left: 4px solid #0d9488;">
+          <h4 style="margin: 0 0 0.5rem; color: #0f766e; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-coins"></i> Forensic Financial Precision
+          </h4>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">
+            Accounting and financial terms require exact vector clustering: distinguishing <em>avoidance transactions</em>, <em>preferential treatment (§43)</em>, and <em>extortionate credit (§50)</em> from ordinary commercial transactions.
+          </p>
+        </div>
+
+        <div class="comparison-card" style="border-left: 4px solid #7c3aed;">
+          <h4 style="margin: 0 0 0.5rem; color: #6b21a8; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-fingerprint"></i> Domain Tokenizer Alignment
+          </h4>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">
+            Generic tokenizers fragment statutory abbreviations (like <em>CIRP, CoC, NCLAT, PUFE, IBBI</em>) into arbitrary subwords, degrading vector representation. Domain models possess full vocabulary token entries for seamless semantic capture.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Local Embeddings in Our Stack -->
+    <div id="local-embeddings" class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+      <span class="badge badge-primary">Available Weights</span>
+      <h2 class="section-title" style="margin-top: 0.5rem;">Embedding Pipelines in Our Stack ()</h2>
+      <p class="section-desc">
+        Exported to native ONNX runtime format with full Hugging Face tokenizer token dictionaries and metadata.
+      </p>
+    </div>
+
+    <div class="catalog-grid" style="margin-bottom: 3rem;">
+
+      <!-- Embedding 1: InLegal-SBERT -->
+      <div class="catalog-card" style="border-top: 3px solid #7c3aed;">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary" style="background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe;">Legal Corpus</span>
+          <span class="badge badge-success">ONNX Bi-Encoder</span>
+        </div>
+        <h3 class="catalog-card-title">InLegal-SBERT (Legal Domain)</h3>
+        <p class="catalog-card-desc">
+          Sentence-BERT model fine-tuned on Indian Supreme Court judgments, High Court orders, and central legislation (IBC, Companies Act, Arbitration &amp; Conciliation). Projects legal headnotes and statutory sections into an aligned semantic vector space.
+        </p>
+        <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span class="model-spec-badge">Dims: 768</span>
+          <span class="model-spec-badge">Format: ONNX</span>
+          <span class="model-spec-badge">Size: 416 MB</span>
+          <span class="model-spec-badge">Vocab: 30k tokens</span>
+        </div>
+        <div class="code-snippet-box" style="font-size: 0.75rem;">
+# Path in our repository:
+weights/embeddings/legal/inlegal-sbert/onnx/model.onnx
+weights/embeddings/legal/inlegal-sbert/tokenizer.json
+weights/embeddings/legal/inlegal-sbert/vocab.txt
+        </div>
+        <div class="catalog-meta-row">
+          <span style="color: #7c3aed; font-weight: 600;">Latency: ~4.2 ms / query</span>
+          <span class="badge badge-subtle">Cosine Sim / Dot Product</span>
+        </div>
+      </div>
+
+      <!-- Embedding 2: Finance-Embeddings Investopedia -->
+      <div class="catalog-card" style="border-top: 3px solid #2563eb;">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe;">Finance &amp; Capital Markets</span>
+          <span class="badge badge-success">ONNX Bi-Encoder</span>
+        </div>
+        <h3 class="catalog-card-title">Finance-Embeddings (Investopedia)</h3>
+        <p class="catalog-card-desc">
+          Transformer bi-encoder trained on extensive financial lexicons, valuation methodologies, corporate annual reports, accounting adjustments, and audit notes. Ideal for indexing balance sheets and transaction registries.
+        </p>
+        <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span class="model-spec-badge">Dims: 768</span>
+          <span class="model-spec-badge">Format: ONNX</span>
+          <span class="model-spec-badge">Size: 416 MB</span>
+          <span class="model-spec-badge">Vocab: 30k tokens</span>
+        </div>
+        <div class="code-snippet-box" style="font-size: 0.75rem;">
+# Path in our repository:
+weights/embeddings/finance/finance-embeddings-investopedia/onnx/model.onnx
+weights/embeddings/finance/finance-embeddings-investopedia/tokenizer.json
+weights/embeddings/finance/finance-embeddings-investopedia/vocab.txt
+        </div>
+        <div class="catalog-meta-row">
+          <span style="color: #2563eb; font-weight: 600;">Latency: ~4.1 ms / query</span>
+          <span class="badge badge-subtle">Cosine Sim / Dot Product</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Domain Embedding Landscape for Other Professionals -->
+    <div id="pro-embeddings" class="arch-flow-box">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+        <span class="badge badge-primary">Ecosystem Index</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Domain Embeddings for Other Professional Disciplines</h2>
+        <p class="section-desc">
+          State-of-the-art open-source bi-encoders that can be dropped into our ONNX runtime pipeline to serve other professional fields:
+        </p>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Professional Domain</th>
+              <th>Recommended Model</th>
+              <th>Dimensions</th>
+              <th>Primary Training Data</th>
+              <th>Specialized Capability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Medicine &amp; Clinical</strong><br><span style="font-size: 0.75rem; color: #94a3b8;">Healthcare, Life Sciences</span></td>
+              <td><strong>PubMedBERT-Embeddings</strong> / <strong>BioLinkBERT</strong></td>
+              <td>768 dims</td>
+              <td>PubMed Central articles, clinical trial registries, MeSH ontologies.</td>
+              <td>Matches medical synonyms, ICD-10 diagnostic codes, pharmacology dosages, and contraindications.</td>
+            </tr>
+            <tr>
+              <td><strong>Software &amp; DevOps</strong><br><span style="font-size: 0.75rem; color: #94a3b8;">Developers, Code Reviewers</span></td>
+              <td><strong>CodeBERT-base</strong> / <strong>UnixCoder</strong></td>
+              <td>768 dims</td>
+              <td>Millions of GitHub open-source repositories and code documentation.</td>
+              <td>Bimodal embedding connecting natural language descriptions directly to AST code syntax across 6+ languages.</td>
+            </tr>
+            <tr>
+              <td><strong>Enterprise Multilingual</strong><br><span style="font-size: 0.75rem; color: #94a3b8;">Global Enterprises, Cross-Border</span></td>
+              <td><strong>BGE-M3 (BAAI)</strong></td>
+              <td>1024 dims</td>
+              <td>100+ languages, massive curated multi-lingual web &amp; legal pairs.</td>
+              <td>Supports multi-linguality, dense retrieval, multi-vector (ColBERT style), and sparse lexical retrieval simultaneously.</td>
+            </tr>
+            <tr>
+              <td><strong>General Scientific &amp; Patents</strong><br><span style="font-size: 0.75rem; color: #94a3b8;">Patent Attorneys, IP Analysts</span></td>
+              <td><strong>Specter-2</strong></td>
+              <td>768 dims</td>
+              <td>Scientific citation graphs, patent claims, and IEEE/arXiv papers.</td>
+              <td>Maps academic citations and patent claim hierarchies based on functional similarity rather than shallow lexical overlap.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Vector Database & ONNX Execution Pipeline -->
+    <div class="agent-pipeline-flow" style="margin-top: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem;">
+            How Embeddings Fit into the Agentic RAG Stack
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
+            The Bi-Encoder Stage: fast approximate nearest neighbor (ANN) retrieval over vector indexes.
+          </p>
+        </div>
+        <span class="badge badge-success"><i class="fa-solid fa-check"></i> Production Ready</span>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 01 &bull; Ingestion</div>
+          <div class="flow-step-title">Statute / Document Chunking</div>
+          <div class="flow-step-desc">Statutory provisions, judgments, and balance sheet ledgers are parsed into semantic chunks (256–512 tokens).</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 02 &bull; Vectorization</div>
+          <div class="flow-step-title">ONNX Bi-Encoder</div>
+          <div class="flow-step-desc">Input passes through <code>InLegal-SBERT</code> or <code>Finance-Embeddings</code> to yield dense 768-dimensional float32 vectors.</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 03 &bull; Indexing</div>
+          <div class="flow-step-title">Vector Database Index</div>
+          <div class="flow-step-desc">Vectors stored in local HNSW indexes (Qdrant, Milvus, SQLite-vec) with cosine distance metric.</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 04 &bull; Fast Recall</div>
+          <div class="flow-step-title">Top-50 Retrieval</div>
+          <div class="flow-step-desc">When an agent or user queries, the vector index returns the top-50 candidates in &lt;10ms to pass to the Reranker.</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Shared Site Footer Component -->
+  <div id="shared-footer"></div>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="js/header.js?v=20260911_v1"></script>
+  <script src="js/footer.js?v=20260911_v1"></script>
+  <script src="js/page-common.js?v=20260911_v1"></script>
+
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statutory &amp; Regulatory Law Vaults - AgenticProfessionals.Net</title>
+  <meta name="description" content="Official repository of air-gapped, AES-256 encrypted statutory law vaults: IBC 2016, Companies Act 2013, Arbitration, RERA, and SARFAESI for local execution in PIPIE-IDE.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <link rel="stylesheet" href="css/inner-pages.css?v=20260911_v1">
+
+  <style>
+    .statute-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .statute-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .statute-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+    }
+    .statute-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .statute-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    .statute-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 0.5rem;
+      line-height: 1.3;
+    }
+    .statute-desc {
+      font-size: 0.875rem;
+      color: #475569;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+    .statute-pills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .statute-pill {
+      font-size: 0.75rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 0.25rem 0.6rem;
+      border-radius: 5px;
+      color: #334155;
+      font-weight: 500;
+    }
+    .statute-footer {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+    .trigger-code {
+      font-family: var(--font-mono, monospace);
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.775rem;
+      font-weight: 600;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+    }
+    .spec-table th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+    .spec-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+      vertical-align: middle;
+    }
+    .spec-table tr:hover td {
+      background: #f8fafc;
+    }
+    .code-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 8px;
+      padding: 1.25rem;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.825rem;
+      line-height: 1.6;
+      border: 1px solid #334155;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Header Section -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <a href="pipie_assets.html#vaults">Vaults</a>
+        <span>/</span>
+        <span class="current-crumb">1. Statutory Law Vaults</span>
+      </div>
+
+      <div class="badge-pill badge-institutional">
+        <i class="fa-solid fa-scale-balanced"></i> Immutable Statutory Grounding
+      </div>
+
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Statutory &amp; Regulatory Law Vaults</h1>
+          <p class="hero-desc">
+            Deterministic, air-gapped vector packages of primary statutory enactments, IBBI regulations, MCA procedural rules, and sector notifications up to 2026. Pre-indexed for sub-millisecond local CPU/GPU lookup inside PIPIE-IDE with zero risk of hallucinations or cloud exfiltration.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="harness_haya_vaults.html" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-database" style="margin-right: 0.4rem;"></i> Master Vaults Registry
+          </a>
+          <a href="pipie_ide.html" class="btn btn-secondary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-terminal" style="margin-right: 0.4rem;"></i> Test in IDE
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Metrics Strip -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue">
+        <i class="fa-solid fa-book-bookmark"></i>
+      </div>
+      <div>
+        <div class="metric-value">38,500+</div>
+        <div class="metric-label">Sections &amp; Regulations</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-purple">
+        <i class="fa-solid fa-layer-group"></i>
+      </div>
+      <div>
+        <div class="metric-value">6 Vaults</div>
+        <div class="metric-label">Domain Modular Archives</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-emerald">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div>
+        <div class="metric-value">100% Offline</div>
+        <div class="metric-label">Local SBERT ONNX Vectorizer</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-amber">
+        <i class="fa-solid fa-hard-drive"></i>
+      </div>
+      <div>
+        <div class="metric-value">147.2 MB</div>
+        <div class="metric-label">Consolidated Binary Footprint</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
+  <main class="content-container">
+
+    <!-- Section 1: Domain-Specific Statutory Vaults Grid -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h2 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin: 0 0 0.25rem;">
+          Production Statutory Vault Packages
+        </h2>
+        <p style="color: #64748b; font-size: 0.9rem; margin: 0;">
+          Each vault compiles complete statutory hierarchies into searchable SQLite tables and quantized 768-dim dense embeddings.
+        </p>
+      </div>
+      <span class="badge badge-success"><i class="fa-solid fa-check-circle"></i> Release 2026-W37 Verified</span>
+    </div>
+
+    <div class="statute-grid">
+
+      <!-- Card 1: IBC Laws -->
+      <div class="statute-card">
+        <div>
+          <div class="statute-badge-row">
+            <div class="statute-icon" style="background: #eff6ff; color: #2563eb;">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <span class="badge badge-primary">Primary Domain</span>
+          </div>
+          <h3 class="statute-title">Insolvency &amp; Bankruptcy Code, 2016</h3>
+          <p class="statute-desc">
+            Complete Code (Parts I to V, Sections 1–255, Schedules) plus all 9 notified IBBI Regulations: CIRP 2016, Liquidation 2016, Voluntary Liquidation 2017, Pre-Pack 2021, and IP/IU rules updated with 2026 amendments.
+          </p>
+          <div class="statute-pills">
+            <span class="statute-pill"><i class="fa-solid fa-file-lines"></i> 10,771 Units</span>
+            <span class="statute-pill"><i class="fa-solid fa-file-zipper"></i> 94.4 MB ZIP</span>
+            <span class="statute-pill"><i class="fa-solid fa-certificate"></i> IBBI 2026 Compliant</span>
+          </div>
+        </div>
+        <div class="statute-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@ibc/sec14</span>
+        </div>
+      </div>
+
+      <!-- Card 2: MCA Laws -->
+      <div class="statute-card">
+        <div>
+          <div class="statute-badge-row">
+            <div class="statute-icon" style="background: #f0f9ff; color: #0284c7;">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <span class="badge badge-info">Corporate Law</span>
+          </div>
+          <h3 class="statute-title">Companies Act, 2013 &amp; MCA Rules</h3>
+          <p class="statute-desc">
+            Chapters I to XXIX, Sections 1–470, Schedules I–VII, alongside 48 MCA procedural Rulebooks including Compromises/Arrangements (Sec 230–232), Winding Up Rules, and NCLT/NCLAT Rules 2016.
+          </p>
+          <div class="statute-pills">
+            <span class="statute-pill"><i class="fa-solid fa-file-lines"></i> 1,574 Units</span>
+            <span class="statute-pill"><i class="fa-solid fa-file-zipper"></i> 13.1 MB ZIP</span>
+            <span class="statute-pill"><i class="fa-solid fa-gavel"></i> NCLT Rules Included</span>
+          </div>
+        </div>
+        <div class="statute-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@mca/sec230</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Arbitration Laws -->
+      <div class="statute-card">
+        <div>
+          <div class="statute-badge-row">
+            <div class="statute-icon" style="background: #ecfdf5; color: #059669;">
+              <i class="fa-solid fa-handshake-simple"></i>
+            </div>
+            <span class="badge badge-success">ADR Framework</span>
+          </div>
+          <h3 class="statute-title">Arbitration &amp; Conciliation Act, 1996</h3>
+          <p class="statute-desc">
+            Complete codified Act as amended up to 2026, featuring domestic arbitration standards, UNCITRAL Model Law alignment, fast-track arbitrations, Commercial Courts Act 2015, and Mediation Act 2023 interfaces.
+          </p>
+          <div class="statute-pills">
+            <span class="statute-pill"><i class="fa-solid fa-file-lines"></i> 160 Units</span>
+            <span class="statute-pill"><i class="fa-solid fa-file-zipper"></i> 1.4 MB ZIP</span>
+            <span class="statute-pill"><i class="fa-solid fa-globe"></i> UNCITRAL Aligned</span>
+          </div>
+        </div>
+        <div class="statute-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@arbitration/sec11</span>
+        </div>
+      </div>
+
+      <!-- Card 4: RERA Laws -->
+      <div class="statute-card">
+        <div>
+          <div class="statute-badge-row">
+            <div class="statute-icon" style="background: #f0fdfa; color: #0d9488;">
+              <i class="fa-solid fa-city"></i>
+            </div>
+            <span class="badge badge-info">Real Estate</span>
+          </div>
+          <h3 class="statute-title">Real Estate (RERA) Regulations</h3>
+          <p class="statute-desc">
+            Real Estate (Regulation and Development) Act, 2016 central bare text, model agreements for sale, and major state procedural regulations (MahaRERA, UP RERA, HRERA) supporting project-wise reverse CIRP workflows.
+          </p>
+          <div class="statute-pills">
+            <span class="statute-pill"><i class="fa-solid fa-file-lines"></i> 222 Units</span>
+            <span class="statute-pill"><i class="fa-solid fa-file-zipper"></i> 2.2 MB ZIP</span>
+            <span class="statute-pill"><i class="fa-solid fa-hotel"></i> Project-Wise CIRP</span>
+          </div>
+        </div>
+        <div class="statute-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@rera/sec18</span>
+        </div>
+      </div>
+
+      <!-- Card 5: Debt Recovery Laws -->
+      <div class="statute-card">
+        <div>
+          <div class="statute-badge-row">
+            <div class="statute-icon" style="background: #fffbeb; color: #d97706;">
+              <i class="fa-solid fa-money-bill-transfer"></i>
+            </div>
+            <span class="badge badge-warning">Securitisation</span>
+          </div>
+          <h3 class="statute-title">Debt Recovery &amp; SARFAESI Acts</h3>
+          <p class="statute-desc">
+            SARFAESI Act 2002 security enforcement provisions (Sections 13, 14, 17, 18), Security Interest Rules, and Recovery of Debts and Bankruptcy (RDDBFI / DRT) Act 1993 statutory rules governing secured creditor actions.
+          </p>
+          <div class="statute-pills">
+            <span class="statute-pill"><i class="fa-solid fa-file-lines"></i> 69 Units</span>
+            <span class="statute-pill"><i class="fa-solid fa-file-zipper"></i> 656 KB ZIP</span>
+            <span class="statute-pill"><i class="fa-solid fa-shield"></i> Sec 13 Enforcement</span>
+          </div>
+        </div>
+        <div class="statute-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@debt_recovery/sec13</span>
+        </div>
+      </div>
+
+      <!-- Card 6: Consolidated Master Statutes -->
+      <div class="statute-card">
+        <div>
+          <div class="statute-badge-row">
+            <div class="statute-icon" style="background: #faf5ff; color: #7c3aed;">
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+            <span class="badge badge-purple">Consolidated Multi-Code</span>
+          </div>
+          <h3 class="statute-title">Master Commercial Statutes Vault</h3>
+          <p class="statute-desc">
+            Unified multi-statute vector archive aggregating all statutory text across IBC, MCA, Arbitration, SARFAESI, and RERA into one unified index for high-speed cross-statutory conflict determination.
+          </p>
+          <div class="statute-pills">
+            <span class="statute-pill"><i class="fa-solid fa-file-lines"></i> 4,026 Sections</span>
+            <span class="statute-pill"><i class="fa-solid fa-file-zipper"></i> 35.2 MB ZIP</span>
+            <span class="statute-pill"><i class="fa-solid fa-bolt"></i> Global Cross-Search</span>
+          </div>
+        </div>
+        <div class="statute-footer">
+          <span style="color: #64748b;">Autocomplete Trigger:</span>
+          <span class="trigger-code">@@laws/moratorium</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 2: Statutory Registry Specifications Table -->
+    <div style="margin-top: 3rem;">
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
+        Cryptographic Manifest &amp; Binary Specifications
+      </h3>
+      <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 1.25rem;">
+        All vaults are cryptographically signed with Ed25519 keys matching portal release <code>2026-W37</code> and stored in <code>output/client_vaults/dist/</code>.
+      </p>
+
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; overflow-x: auto;">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Vault Key</th>
+              <th>Statutory Domain</th>
+              <th>Units / Sections</th>
+              <th>Archive Name</th>
+              <th>Compressed Size</th>
+              <th>Encryption &amp; Embedding</th>
+              <th>Monaco Trigger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ibc_laws</code></td>
+              <td><strong>Insolvency &amp; Bankruptcy</strong></td>
+              <td>10,771 Sections &amp; Regs</td>
+              <td><code>ibc_laws_vault_2026-W37.zip</code></td>
+              <td>94.4 MB</td>
+              <td>AES-256 + 768d ONNX</td>
+              <td><span class="trigger-code">@@ibc/</span></td>
+            </tr>
+            <tr>
+              <td><code>mca_laws</code></td>
+              <td><strong>Companies Act &amp; MCA Rules</strong></td>
+              <td>1,574 Sections &amp; Rules</td>
+              <td><code>mca_laws_vault_2026-W37.zip</code></td>
+              <td>13.1 MB</td>
+              <td>AES-256 + 768d ONNX</td>
+              <td><span class="trigger-code">@@mca/</span></td>
+            </tr>
+            <tr>
+              <td><code>arbitration_laws</code></td>
+              <td><strong>Arbitration &amp; Conciliation</strong></td>
+              <td>160 Statutory Articles</td>
+              <td><code>arbitration_laws_vault_2026-W37.zip</code></td>
+              <td>1.4 MB</td>
+              <td>AES-256 + 768d ONNX</td>
+              <td><span class="trigger-code">@@arbitration/</span></td>
+            </tr>
+            <tr>
+              <td><code>rera_laws</code></td>
+              <td><strong>Real Estate Regulation</strong></td>
+              <td>222 Sections &amp; Rules</td>
+              <td><code>rera_laws_vault_2026-W37.zip</code></td>
+              <td>2.2 MB</td>
+              <td>AES-256 + 768d ONNX</td>
+              <td><span class="trigger-code">@@rera/</span></td>
+            </tr>
+            <tr>
+              <td><code>debt_recovery_laws</code></td>
+              <td><strong>SARFAESI &amp; RDDBFI (DRT)</strong></td>
+              <td>69 Sections &amp; Schedules</td>
+              <td><code>debt_recovery_laws_vault_2026-W37.zip</code></td>
+              <td>656 KB</td>
+              <td>AES-256 + 768d ONNX</td>
+              <td><span class="trigger-code">@@debt_recovery/</span></td>
+            </tr>
+            <tr>
+              <td><code>laws</code></td>
+              <td><strong>Consolidated Multi-Code</strong></td>
+              <td>4,026 Statutory Sections</td>
+              <td><code>laws_vault_2026-W37.zip</code></td>
+              <td>35.2 MB</td>
+              <td>AES-256 + 768d ONNX</td>
+              <td><span class="trigger-code">@@laws/</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section 3: Monaco Autocomplete Live Demonstration -->
+    <div style="margin-top: 3.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem;">
+            Monaco Editor Contextual Autocomplete Triggers
+          </h3>
+          <p style="color: #64748b; font-size: 0.875rem; margin: 0;">
+            Typing triggers in the PIPIE-IDE drafting pane retrieves exact statutory language with live cross-references.
+          </p>
+        </div>
+        <span class="badge badge-institutional"><i class="fa-solid fa-bolt"></i> 1ms Local Cache</span>
+      </div>
+
+      <div class="code-box">
+<span style="color: #94a3b8;">// 1. Insert IBC Section 14 Moratorium into drafting window:</span>
+<span style="color: #38bdf8;">@@ibc/sec14</span>
+&rarr; Injects: "Section 14: Subject to provisions of sub-section (2), the Adjudicating Authority shall by order declare moratorium..."
+
+<span style="color: #94a3b8;">// 2. Insert Companies Act 2013 Compromises &amp; Arrangements:</span>
+<span style="color: #38bdf8;">@@mca/sec230</span>
+&rarr; Injects: "Section 230: Power to compromise or make arrangements with creditors and members..."
+
+<span style="color: #94a3b8;">// 3. Insert Arbitration Section 11 Appointment of Arbitrators:</span>
+<span style="color: #38bdf8;">@@arbitration/sec11</span>
+&rarr; Injects: "Section 11: Appointment of arbitrators by the Supreme Court or the High Court or designated institution..."
+
+<span style="color: #94a3b8;">// 4. Insert SARFAESI Section 13(2) Enforcement Demand Notice:</span>
+<span style="color: #38bdf8;">@@debt_recovery/sec13</span>
+&rarr; Injects: "Section 13: Enforcement of security interest without intervention of court or tribunal..."
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Shared Site Footer Component -->
+  <div id="shared-footer"></div>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="js/header.js?v=20260911_v1"></script>
+  <script src="js/footer.js?v=20260911_v1"></script>
+  <script src="js/page-common.js?v=20260911_v1"></script>
+
+</body>
+</html>

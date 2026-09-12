@@ -155,19 +155,16 @@
       <!-- Category Filter Chips -->
       <div class="assets-filter-wrap" id="asset-filters">
         <button type="button" class="filter-chip active" data-filter="all">
-          <i class="fa-solid fa-layer-group"></i> All Assets (12)
+          <i class="fa-solid fa-layer-group"></i> All Assets (13)
         </button>
         <button type="button" class="filter-chip" data-filter="models" id="filter-models-btn">
-          <i class="fa-solid fa-brain" style="color: #7c3aed;"></i> Reasoning Models (2)
+          <i class="fa-solid fa-brain" style="color: #7c3aed;"></i> Reasoning Models (3)
         </button>
         <button type="button" class="filter-chip" data-filter="vaults" id="filter-vaults-btn">
-          <i class="fa-solid fa-vault" style="color: #2563eb;"></i> Statutory Vaults (4)
+          <i class="fa-solid fa-vault" style="color: #2563eb;"></i> Knowledge Vaults (5)
         </button>
-        <button type="button" class="filter-chip" data-filter="process" id="filter-process-btn">
-          <i class="fa-solid fa-diagram-project" style="color: #059669;"></i> Process Agents (3)
-        </button>
-        <button type="button" class="filter-chip" data-filter="reporting" id="filter-reporting-btn">
-          <i class="fa-solid fa-file-contract" style="color: #d97706;"></i> Reporting Agents (3)
+        <button type="button" class="filter-chip" data-filter="agents" id="filter-agents-btn">
+          <i class="fa-solid fa-robot" style="color: #059669;"></i> Autonomous Agents (5)
         </button>
       </div>
     </div>
@@ -202,25 +199,25 @@
     <!-- Cards Grid -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem;" id="asset-cards-grid">
 
-      <!-- Process Agent 1: Section 29A -->
-      <div class="asset-card" data-category="process" id="agents">
+      <!-- Category 1: Insolvency Agents -->
+      <div class="asset-card" data-category="agents" id="agents">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
             <div class="asset-icon-box" style="background: #eff6ff; color: #2563eb; border: 1px solid #dbeafe;">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <span class="badge badge-process">Process Agent</span>
+            <span class="badge badge-process">Category 1 &bull; Insolvency</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Section 29A Eligibility Screener</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">1. Insolvency &amp; CIRP Agents</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Automates multi-jurisdiction background checks on Resolution Applicants, Connected Persons, and Promoters against willful defaulters, NPA thresholds, and criminal convictions.
+            Deterministic statutory workflow engines executing Section 29A eligibility screenings, confidential Information Memorandum (IM Reg 36) compilation, Form H compliance certificates, and Regulation 40A timeline synchronization.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-robot"></i> Multi-pass Agent
+              <i class="fa-solid fa-clock-rotate-left"></i> Reg 40A 330-Day
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-check"></i> IBBI Disqualification
+              <i class="fa-solid fa-file-contract"></i> Form H / Sec 29A
             </span>
           </div>
         </div>
@@ -228,194 +225,166 @@
           <a href="docs/FINAL_29A_COMPLIANCE_REPORT_APOGEE_ENTERPRISES.pdf" target="_blank" rel="noopener noreferrer" style="color: #dc2626; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
             <i class="fa-solid fa-file-pdf"></i> Sample Dossier ↗
           </a>
-          <a href="agents_process_agents.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Agent →</a>
+          <a href="agents_insolvency.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Insolvency Agents →</a>
         </div>
       </div>
 
-      <!-- Process Agent 2: Avoidance & PUFE -->
-      <div class="asset-card" data-category="process">
+      <!-- Category 2: Legal Agents -->
+      <div class="asset-card" data-category="agents">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="asset-icon-box" style="background: #f5f3ff; color: #7c3aed; border: 1px solid #ede9fe;">
-              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <div class="asset-icon-box" style="background: #ffe4e6; color: #be123c; border: 1px solid #fecdd3;">
+              <i class="fa-solid fa-scale-balanced"></i>
             </div>
-            <span class="badge badge-process">Process Agent</span>
+            <span class="badge badge-process" style="background-color: #ffe4e6; color: #be123c; border-color: #fecdd3;">Category 2 &bull; Legal</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Avoidance &amp; PUFE Auditor</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">2. Legal &amp; Courtroom Agents</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Cross-references ledger transactions during look-back period against Sections 43 (Preferential), 45 (Undervalued), 50 (Extortionate), and 66 (Fraudulent).
+            High-precision litigation drafting and precedent retrieval co-pilots: drafting NCLT Section 7/9 petitions, appellate filings, 17,558 SC/NCLAT precedent ratio extraction, argument strength probability scoring, and cross-examination matrices.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-code-branch"></i> Graph Pattern Traversal
+              <i class="fa-solid fa-gavel"></i> 17,558 Precedents
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-clock-rotate-left"></i> Look-back Period
+              <i class="fa-solid fa-file-signature"></i> Petitions &amp; IAs
             </span>
           </div>
         </div>
         <div class="asset-card-footer">
-          <span style="color: #64748b;">Forensic Engine</span>
-          <a href="agents_process_agents.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Agent →</a>
+          <span style="color: #64748b;">Litigation &amp; Court RAG</span>
+          <a href="agents_legal.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Legal Agents →</a>
         </div>
       </div>
 
-      <!-- Process Agent 3: CIRP Timeline Watcher -->
-      <div class="asset-card" data-category="process">
+      <!-- Category 3: Financial Agents -->
+      <div class="asset-card" data-category="agents">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="asset-icon-box" style="background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0;">
-              <i class="fa-solid fa-timeline"></i>
+            <div class="asset-icon-box" style="background: #fef3c7; color: #b45309; border: 1px solid #fde68a;">
+              <i class="fa-solid fa-coins"></i>
             </div>
-            <span class="badge badge-process">Process Agent</span>
+            <span class="badge badge-process" style="background-color: #fef3c7; color: #b45309; border-color: #fde68a;">Category 3 &bull; Financial</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">CIRP Timeline &amp; Statutory Watcher</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">3. Financial &amp; Forensic Agents</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Monitors statutory deadlines under Regulation 40A, alerting on Form G publication, provisional Information Memorandum dispatch, and 330-day outer limits.
+            Rigorous forensic accounting engines and statutory valuation auditors: scanning multi-year ledgers for PUFE avoidance transactions (§43, 45, 50, 66), bank statement cash flow triage, Registered Valuation range benchmarking, and GST liability audits.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-calendar-check"></i> Reg 40A Schedule
+              <i class="fa-solid fa-magnifying-glass-chart"></i> PUFE Look-Back
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-bell"></i> NCLT Compliance
+              <i class="fa-solid fa-scale-balanced"></i> Fair vs Liquidation
             </span>
           </div>
         </div>
         <div class="asset-card-footer">
-          <span style="color: #64748b;">Reg 40A Engine</span>
-          <a href="agents_process_agents.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Agent →</a>
+          <span style="color: #64748b;">Forensic &amp; Valuation</span>
+          <a href="agents_financial.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Financial Agents →</a>
         </div>
       </div>
 
-      <!-- Reporting Agent 1: Form H Assembler -->
-      <div class="asset-card" data-category="reporting">
+      <!-- Category 4: Claims Agents -->
+      <div class="asset-card" data-category="agents">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="asset-icon-box" style="background: #fffbeb; color: #d97706; border: 1px solid #fef3c7;">
-              <i class="fa-solid fa-file-contract"></i>
+            <div class="asset-icon-box" style="background: #dbeafe; color: #1d4ed8; border: 1px solid #bfdbfe;">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
             </div>
-            <span class="badge badge-reporting">Reporting Agent</span>
+            <span class="badge badge-process" style="background-color: #dbeafe; color: #1d4ed8; border-color: #bfdbfe;">Category 4 &bull; Claims</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Form H &amp; Resolution Assembler</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">4. Claims &amp; Creditor Agents</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Synthesizes compliance certificates under Regulation 39(4), verifying liquidation value allocation, priority payments, operational creditor minimums, and implementation schedules.
+            High-throughput statutory claim intake, evidentiary proof auditing, and voting governance: automated drafting of Forms B through F, Article 137 limitation checks, CERSAI charge verification, and Committee of Creditors voting share calculation.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-stamp"></i> Reg 39(4) Certified
+              <i class="fa-solid fa-file-lines"></i> Forms B–F Intake
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-scale-balanced"></i> NCLT Order Ready
+              <i class="fa-solid fa-square-poll-vertical"></i> CoC Voting Quorum
             </span>
           </div>
         </div>
         <div class="asset-card-footer">
-          <span style="color: #64748b;">NCLT Standard Dossier</span>
-          <a href="agents_reporting_agents.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Agent →</a>
+          <span style="color: #64748b;">Claims &amp; Voting Math</span>
+          <a href="agents_claims.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Claims Agents →</a>
         </div>
       </div>
 
-      <!-- Reporting Agent 2: IM Generator -->
-      <div class="asset-card" data-category="reporting">
+      <!-- Category 5: Governance Agents -->
+      <div class="asset-card" data-category="agents">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="asset-icon-box" style="background: #fffbeb; color: #d97706; border: 1px solid #fef3c7;">
-              <i class="fa-solid fa-book-open"></i>
+            <div class="asset-icon-box" style="background: #f3e8ff; color: #7e22ce; border: 1px solid #e9d5ff;">
+              <i class="fa-solid fa-network-wired"></i>
             </div>
-            <span class="badge badge-reporting">Reporting Agent</span>
+            <span class="badge badge-process" style="background-color: #f3e8ff; color: #7e22ce; border-color: #e9d5ff;">Category 5 &bull; Governance</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Information Memorandum (IM) Generator</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">5. Governance &amp; Compliance Agents</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Compiles audited financial statements, provisional balance sheets, litigation schedules, and creditor claims into confidential statutory IM dossiers under Regulation 36.
+            Corporate governance engines and secretarial co-pilots: mapping corporate group structures and beneficial ownership graphs, pre-filling MCA V3 e-forms (AOC-4, MGT-7), auditing board minutes against SS-1/SS-2, and screening director disqualifications.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-file-shield"></i> Reg 36 Confidential
+              <i class="fa-solid fa-diagram-project"></i> Entity Graph Traversal
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-chart-line"></i> Financial Aggregator
+              <i class="fa-solid fa-check-circle"></i> MCA-21 V3 / SS-1/2
             </span>
           </div>
         </div>
         <div class="asset-card-footer">
-          <span style="color: #64748b;">Auto-Compilation</span>
-          <a href="agents_reporting_agents.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Agent →</a>
+          <span style="color: #64748b;">Corporate Governance</span>
+          <a href="agents_governance.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Governance Agents →</a>
         </div>
       </div>
 
-      <!-- Reporting Agent 3: CoC Voting Reporter -->
-      <div class="asset-card" data-category="reporting">
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="asset-icon-box" style="background: #fffbeb; color: #d97706; border: 1px solid #fef3c7;">
-              <i class="fa-solid fa-square-poll-vertical"></i>
-            </div>
-            <span class="badge badge-reporting">Reporting Agent</span>
-          </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">CoC Progress &amp; Voting Reporter</h3>
-          <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Aggregates electronic voting tallies across Financial Creditors, calculating voting share thresholds and compiling comprehensive meeting minutes under Regulations 25 &amp; 26.
-          </p>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
-            <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-percent"></i> 66% Quorum Calculator
-            </span>
-            <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-users"></i> Minutes Generator
-            </span>
-          </div>
-        </div>
-        <div class="asset-card-footer">
-          <span style="color: #64748b;">Reg 25/26 Certified</span>
-          <a href="agents_reporting_agents.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Agent →</a>
-        </div>
-      </div>
-
-      <!-- Vault 1: IBC Statutory Vault -->
+            <!-- Vault 1: Law -->
       <div class="asset-card" data-category="vaults" id="vaults">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
             <div class="asset-icon-box" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;">
               <i class="fa-solid fa-scale-balanced"></i>
             </div>
-            <span class="badge badge-vault">Statutory Vault</span>
+            <span class="badge badge-vault">Statutory Law</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Insolvency &amp; Bankruptcy Code, 2016</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">1. Statutory &amp; Regulatory Law</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Complete statutory act, regulations, schedules, and notifications up to 2026. Zero hallucination vector embeddings and graph index for rapid retrieval.
+            Primary commercial acts: IBC 2016 (and 9 IBBI regulations), Companies Act 2013 (and 48 MCA rules), Arbitration, RERA, and SARFAESI.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-file-lines"></i> 255 Sections
+              <i class="fa-solid fa-file-lines"></i> 38,500+ Sections
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-database"></i> 1,480 Chunks
+              <i class="fa-solid fa-layer-group"></i> 6 Law Vaults
             </span>
           </div>
         </div>
         <div class="asset-card-footer">
           <span style="color: #64748b;">Statutory Grounding</span>
-          <a href="harness_haya_vaults.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Inspect Vault →</a>
+          <a href="vaults_law.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Inspect Law Vaults →</a>
         </div>
       </div>
 
-      <!-- Vault 2: Supreme Court Precedents -->
+      <!-- Vault 2: Precedence -->
       <div class="asset-card" data-category="vaults">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="asset-icon-box" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;">
+            <div class="asset-icon-box" style="background: #faf5ff; color: #7c3aed; border: 1px solid #e9d5ff;">
               <i class="fa-solid fa-gavel"></i>
             </div>
-            <span class="badge badge-vault">Jurisprudence</span>
+            <span class="badge badge-vault" style="background: #faf5ff; color: #7c3aed; border-color: #e9d5ff;">Jurisprudence</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Supreme Court Landmark Precedents</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">2. Judicial Precedents</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            3,681 Supreme Court judgments with extracted entity-relation graphs covering Swiss Ribbons, Essar Steel, Vidarbha Industries, and Rainbow Papers.
+            17,558 decided commercial judicial headnotes across Supreme Court, NCLAT, High Courts, and NCLT with complete ratio decidendi graphs.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-landmark"></i> 3,681 Judgments
+              <i class="fa-solid fa-landmark"></i> 3,681 Apex Judgments
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
               <i class="fa-solid fa-circle-nodes"></i> 57,843 Graph Nodes
@@ -423,120 +392,176 @@
           </div>
         </div>
         <div class="asset-card-footer">
-          <span style="color: #64748b;">Apex Precedents</span>
-          <a href="harness_haya_vaults.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Inspect Vault →</a>
+          <span style="color: #64748b;">Apex Jurisprudence</span>
+          <a href="vaults_precedence.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Inspect Precedents →</a>
         </div>
       </div>
 
-      <!-- Vault 3: NCLAT Appellate Vault -->
+      <!-- Vault 3: Formats -->
       <div class="asset-card" data-category="vaults">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="asset-icon-box" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;">
-              <i class="fa-solid fa-building-columns"></i>
+            <div class="asset-icon-box" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0;">
+              <i class="fa-solid fa-file-contract"></i>
             </div>
-            <span class="badge badge-vault">Appellate</span>
+            <span class="badge badge-vault" style="background: #f0fdf4; color: #16a34a; border-color: #bbf7d0;">Document Factory</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">NCLAT Principal &amp; Regional Orders</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">3. Forms &amp; Precedents</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Appellate decisions categorized by Section 7, 9, 10, Avoidance transactions under Sec 43/45/66, and Committee of Creditors commercial wisdom.
+            3,510 fillable Markdown drafting templates with dynamic mustache variables: IBBI Forms A–H, petitions, affidavits, and conveyancing deeds.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-scale-balanced"></i> 7,200+ Orders
+              <i class="fa-solid fa-file-lines"></i> 3,510 Templates
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-database"></i> 8,420 Chunks
+              <i class="fa-solid fa-database"></i> 1,997 PG Records
             </span>
           </div>
         </div>
         <div class="asset-card-footer">
-          <span style="color: #64748b;">NCLAT Repository</span>
-          <a href="harness_haya_vaults.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Inspect Vault →</a>
+          <span style="color: #64748b;">Drafting Precedents</span>
+          <a href="vaults_formats.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Inspect Formats →</a>
         </div>
       </div>
 
-      <!-- Vault 4: Valuation Standards -->
+      <!-- Vault 4: Suites -->
       <div class="asset-card" data-category="vaults">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <div class="asset-icon-box" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;">
-              <i class="fa-solid fa-chart-pie"></i>
+            <div class="asset-icon-box" style="background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa;">
+              <i class="fa-solid fa-boxes-packing"></i>
             </div>
-            <span class="badge badge-vault">Standards</span>
+            <span class="badge badge-vault" style="background: #fff7ed; color: #ea580c; border-color: #fed7aa;">Process Suites</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Registered Valuation Standards (ICA/ICAI)</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">4. Practice Process Suites</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Mandatory valuation methodology guidelines for Land &amp; Building, Plant &amp; Machinery, and Securities/Financial Assets (SFA) under Regulation 35.
+            5 modular role-based playbooks: CIRP Stages 01–05, Liquidation (63 instruments), Voluntary Liquidation, PPIRP, and Personal Guarantors.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-calculator"></i> 3 Asset Classes
+              <i class="fa-solid fa-diagram-project"></i> 5 Process Suites
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-database"></i> 410 Chunks
+              <i class="fa-solid fa-list-check"></i> 114 Instruments
             </span>
           </div>
         </div>
         <div class="asset-card-footer">
-          <span style="color: #64748b;">IBBI Reg 35 Standard</span>
-          <a href="harness_haya_vaults.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Inspect Vault →</a>
+          <span style="color: #64748b;">Procedural Playbooks</span>
+          <a href="vaults_suites.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Inspect Suites →</a>
         </div>
       </div>
 
-      <!-- Model 1: LegalParam 2.9B -->
+      <!-- Vault 5: Contracts -->
+      <div class="asset-card" data-category="vaults">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div class="asset-icon-box" style="background: #fef2f2; color: #dc2626; border: 1px solid #fecdd3;">
+              <i class="fa-solid fa-file-shield"></i>
+            </div>
+            <span class="badge badge-vault" style="background: #fef2f2; color: #dc2626; border-color: #fecdd3;">Contracts</span>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">5. Contract Intelligence</h3>
+          <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
+            Atticus Project benchmark intelligence: 126k+ rated standard clauses (ACORD), 510 commercial contracts across 41 risk categories (CUAD), and M&amp;A deal points (MAUD).
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+            <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
+              <i class="fa-solid fa-quote-left"></i> 126k Clauses
+            </span>
+            <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
+              <i class="fa-solid fa-triangle-exclamation"></i> 41 Risk Types
+            </span>
+          </div>
+        </div>
+        <div class="asset-card-footer">
+          <span style="color: #64748b;">Empirical Benchmarks</span>
+          <a href="vaults_contracts.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Inspect Contracts →</a>
+        </div>
+      </div>
+
+      <!-- Category 1: Domain-SLMs -->
       <div class="asset-card" data-category="models" id="models">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
             <div class="asset-icon-box" style="background: #f5f3ff; color: #7c3aed; border: 1px solid #ede9fe;">
-              <i class="fa-solid fa-scale-balanced"></i>
+              <i class="fa-solid fa-brain"></i>
             </div>
             <span class="badge badge-model">SLM Model</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">LegalParam 2.9B</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Domain-SLMs (0.5B – 8B)</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Domain-adapted Small Language Model fine-tuned on 45,000+ Indian corporate insolvency judgments, IBC statutory provisions, and NCLT/NCLAT precedence headnotes.
+            Domain-adapted Small Language Models (LegalParam 2.9B, FinanceParam 2.9B, SaulLM 7B) fine-tuned for deterministic statutory reasoning and complete air-gapped confidentiality.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-microchip"></i> 2.9 Billion Params
+              <i class="fa-solid fa-microchip"></i> 0.5B &ndash; 8B Params
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-shield"></i> 100% On-Prem / GGUF
+              <i class="fa-solid fa-shield"></i> 100% Offline / GGUF
             </span>
           </div>
         </div>
         <div class="asset-card-footer">
-          <span style="color: #7c3aed; font-weight: 600;">Sovereign AI Core</span>
-          <a href="pipie_ide.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Load in Pipie →</a>
+          <span style="color: #7c3aed; font-weight: 600;">Sovereign Core</span>
+          <a href="models_domain_slms.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Domain-SLMs →</a>
         </div>
       </div>
 
-      <!-- Model 2: FinanceParam 2.9B -->
+      <!-- Category 2: Embeddings -->
       <div class="asset-card" data-category="models">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
             <div class="asset-icon-box" style="background: #eff6ff; color: #2563eb; border: 1px solid #dbeafe;">
-              <i class="fa-solid fa-chart-pie"></i>
+              <i class="fa-solid fa-diagram-project"></i>
             </div>
-            <span class="badge badge-model">SLM Model</span>
+            <span class="badge badge-model">ONNX Vectors</span>
           </div>
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">FinanceParam 2.9B</h3>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Embeddings (Bi-Encoders)</h3>
           <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
-            Specialized financial reasoning SLM trained on balance sheet forensics, avoidance ledger analysis, DCF valuation modeling, and Section 30(2) feasibility scoring.
+            Specialized 768-dimensional ONNX dense vector pipelines (InLegal-SBERT, Finance-Embeddings Investopedia) for high-speed statutory semantic retrieval and balance sheet indexing.
           </p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-calculator"></i> Forensic Quant SLM
+              <i class="fa-solid fa-vector-square"></i> 768 Dimensions
             </span>
             <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
-              <i class="fa-solid fa-lock"></i> Air-Gapped Safe
+              <i class="fa-solid fa-gauge-high"></i> &lt;5ms Latency
             </span>
           </div>
         </div>
         <div class="asset-card-footer">
-          <span style="color: #2563eb; font-weight: 600;">Valuation Core</span>
-          <a href="pipie_ide.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Load in Pipie →</a>
+          <span style="color: #2563eb; font-weight: 600;">Vector Engine</span>
+          <a href="models_embeddings.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Embeddings →</a>
+        </div>
+      </div>
+
+      <!-- Category 3: Rerankers -->
+      <div class="asset-card" data-category="models">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div class="asset-icon-box" style="background: #fffbeb; color: #d97706; border: 1px solid #fde68a;">
+              <i class="fa-solid fa-arrow-down-wide-short"></i>
+            </div>
+            <span class="badge badge-model">Cross-Encoder</span>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem;">Rerankers (Precision Rankers)</h3>
+          <p style="font-size: 0.875rem; color: #475569; line-height: 1.55; margin-bottom: 1rem;">
+            Quantized cross-encoder scoring models (ms-marco-MiniLM-L-6-v2) for joint attention relevance verification, eliminating semantic drift and preventing hallucinated filings.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+            <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
+              <i class="fa-solid fa-crosshairs"></i> INT8 Quantized (22MB)
+            </span>
+            <span style="font-size: 0.75rem; background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; color: #475569;">
+              <i class="fa-solid fa-bolt"></i> &lt;3ms / Candidate
+            </span>
+          </div>
+        </div>
+        <div class="asset-card-footer">
+          <span style="color: #d97706; font-weight: 600;">Precision Gate</span>
+          <a href="models_rerankers.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">Explore Rerankers →</a>
         </div>
       </div>
 
@@ -568,7 +593,7 @@
         if (filter === 'all') {
           card.style.display = 'flex';
         } else if (filter === 'agents') {
-          card.style.display = (cat === 'process' || cat === 'reporting') ? 'flex' : 'none';
+          card.style.display = (cat === 'agents' || cat === 'process' || cat === 'reporting') ? 'flex' : 'none';
         } else if (cat === filter) {
           card.style.display = 'flex';
         } else {
@@ -590,10 +615,8 @@
         applyFilter('models');
       } else if (hash === 'vaults') {
         applyFilter('vaults');
-      } else if (hash === 'agents' || hash === 'process') {
-        applyFilter('process');
-      } else if (hash === 'reporting') {
-        applyFilter('reporting');
+      } else if (hash === 'agents' || hash === 'process' || hash === 'reporting') {
+        applyFilter('agents');
       }
     }
 

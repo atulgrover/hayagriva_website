@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resolution Plan Verification Audit — Telephone Cables Limited | Resolution Bazaar</title>
+  <meta name="description" content="Definitive Section 30(2) & CIRP Regulation 38 Statutory Verification Dossier for the Resolution Plan of Telephone Cables Limited submitted by Sarabjit Singh Consortium.">
+
+  <!-- Google Fonts: Inter, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #07090e;
+      --bg-secondary: #0c1017;
+      --bg-card: rgba(18, 24, 38, 0.7);
+      --bg-card-hover: rgba(24, 32, 50, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(56, 189, 248, 0.4);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-violet: #a855f7;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 80px;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      background: rgba(12, 16, 23, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .brand-badge {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: white;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+    .brand-title span { color: var(--accent-cyan); }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-action {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-action:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--border-focus);
+    }
+    .btn-action.primary {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      border: none;
+      color: white;
+    }
+    .btn-action.primary:hover {
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Hero Banner */
+    .hero {
+      padding: 48px 0 32px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+    }
+    .matter-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent-cyan);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .matter-title {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .matter-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 900px;
+      margin-bottom: 28px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .meta-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-family: var(--font-mono);
+    }
+    .meta-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+    .meta-value.highlight {
+      color: var(--accent-cyan);
+    }
+
+    /* Executive Scorecard */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+    .metric-card.cyan::before { background: var(--accent-cyan); }
+    .metric-card.emerald::before { background: var(--accent-emerald); }
+    .metric-card.amber::before { background: var(--accent-amber); }
+    .metric-card.violet::before { background: var(--accent-violet); }
+    .metric-card.rose::before { background: var(--accent-rose); }
+
+    .metric-title {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .metric-val {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .metric-sub {
+      font-size: 11px;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+    }
+
+    /* Verdict Banner */
+    .verdict-box {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 78, 59, 0.2));
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .verdict-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    .verdict-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      margin-bottom: 8px;
+    }
+    .verdict-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .verdict-desc {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* Tabs Layout */
+    .tab-navigation {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 32px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-main);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tab-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .tab-btn.active {
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.1);
+      border-bottom: 2px solid var(--accent-cyan);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Content Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Data Tables */
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      margin-top: 12px;
+    }
+    .styled-table th {
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .styled-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: #cbd5e1;
+    }
+    .styled-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .styled-table td.numeric {
+      text-align: right;
+      font-family: var(--font-mono);
+      font-weight: 600;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11.5px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+    .badge.success {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .badge.warning {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .badge.danger {
+      background: rgba(244, 63, 94, 0.15);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, 0.3);
+    }
+    .badge.neutral {
+      background: rgba(148, 163, 184, 0.15);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    /* Waterfall Bar Visual */
+    .waterfall-bar {
+      display: flex;
+      height: 36px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 18px 0;
+      border: 1px solid var(--border-subtle);
+    }
+    .wf-slice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+      transition: all 0.2s ease;
+    }
+    .wf-slice:hover { filter: brightness(1.2); }
+
+    /* Alert / Requisition Box */
+    .alert-card {
+      border-left: 4px solid var(--accent-amber);
+      background: rgba(245, 158, 11, 0.08);
+      padding: 18px 22px;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 20px;
+    }
+    .alert-card.critical {
+      border-left-color: var(--accent-rose);
+      background: rgba(244, 63, 94, 0.08);
+    }
+    .alert-title {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .alert-desc {
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* Certification Seal */
+    .cert-box {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 14px;
+      padding: 32px;
+      margin-top: 40px;
+    }
+    .cert-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+    .cert-stamp {
+      border: 2px dashed rgba(56, 189, 248, 0.5);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent-cyan);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* Footer Disclaimers */
+    .disclaimer-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 14px;
+      font-size: 11.5px;
+      color: var(--text-dim);
+      margin-top: 24px;
+    }
+    .disclaimer-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+    .disclaimer-item strong { color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <div class="brand-group">
+        <span class="brand-badge">RBZ REPORTING</span>
+        <span class="brand-title">Resolution<span>Bazaar</span></span>
+      </div>
+      <div class="nav-actions">
+        <button onclick="window.print()" class="btn-action primary">🖨️ Export Audit Dossier</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Matter Profile -->
+  <section class="hero">
+    <div class="container">
+      <div class="matter-tag">
+        <span>CIRP SECTION 30(2) & REGULATION 38 STATUTORY AUDIT</span>
+        <span>•</span>
+        <span>REF: RBZ/RPA/2026/TCL-001</span>
+      </div>
+      <h1 class="matter-title">Resolution Plan Statutory Verification Dossier</h1>
+      <p class="matter-subtitle">
+        Definitive statutory evaluation and NCLT Form H compliance audit of the binding Resolution Plan submitted for 
+        <strong>M/s TELEPHONE CABLES LIMITED</strong> by <strong>Sh. Sarabjit Singh</strong> jointly with <strong>M/s G.S. Majestic Developers Private Limited</strong>.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">Corporate Debtor</span>
+          <span class="meta-value">Telephone Cables Limited</span>
+          <span class="meta-label">CIN: L31300CH1983PLC005385</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Adjudicating Authority</span>
+          <span class="meta-value">NCLT Chandigarh Bench</span>
+          <span class="meta-label">CIRP Admitted: 19.02.2020</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Insolvency Professional Entity</span>
+          <span class="meta-value">Ductus Resolution Professionals</span>
+          <span class="meta-label">IBBI/IPE-1026/IPA-1/2022-23/50040</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Resolution Applicants</span>
+          <span class="meta-value highlight">Sarabjit Singh & G.S. Majestic</span>
+          <span class="meta-label">Jujhar Group / Fastway Synergy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- Executive Scorecard -->
+    <div class="metrics-row">
+      <div class="metric-card cyan">
+        <div class="metric-title">Total Admitted Claims</div>
+        <div class="metric-val">₹5,922.69 Cr</div>
+        <div class="metric-sub">Across All Creditor Classes</div>
+      </div>
+      <div class="metric-card emerald">
+        <div class="metric-title">Total Resolution Outlay</div>
+        <div class="metric-val">₹151.20 Cr</div>
+        <div class="metric-sub">Full & Final Cash Settlement</div>
+      </div>
+      <div class="metric-card amber">
+        <div class="metric-title">Secured FC Realization</div>
+        <div class="metric-val">2.53%</div>
+        <div class="metric-sub">₹150.00 Cr / ₹5,920.88 Cr Admitted</div>
+      </div>
+      <div class="metric-card violet">
+        <div class="metric-title">Performance Bank Guarantee</div>
+        <div class="metric-val">₹15.11 Cr</div>
+        <div class="metric-sub">10% Outlay (Reg. 36B(4A))</div>
+      </div>
+      <div class="metric-card rose">
+        <div class="metric-title">Implementation Term</div>
+        <div class="metric-val">14 Months</div>
+        <div class="metric-sub">Tranche 1: 60d | Tranche 2: 14m</div>
+      </div>
+    </div>
+
+    <!-- Statutory Verdict Banner -->
+    <div class="verdict-box">
+      <div class="verdict-info">
+        <div class="verdict-badge">✓ STATUTORY AUDIT PASS — CONDITIONED APPROVAL</div>
+        <div class="verdict-title">Plan Conforms to Section 30(2) Subject to 1 Crucial Legal Amendment</div>
+        <div class="verdict-desc">
+          The Resolution Plan satisfies mandatory waterfall priorities, Section 29A eligibility clearance, and PBG requirements. 
+          However, <strong>Clause 3.4.17</strong> stipulates that pending avoidance applications under §43/§45/§50/§66 <em>"shall abate"</em> at RA discretion, 
+          which violates IBBI Regulation 38(1A) and settled NCLAT precedent (<em>Tata Steel BSL</em>). 
+          <strong>Approval must be conditioned on deleting the abatement clause and transferring pursuit to the RP/Monitoring Committee for the exclusive benefit of Financial Creditors.</strong>
+        </div>
+      </div>
+      <div>
+        <button onclick="switchTab('tab-schedule')" class="btn-action primary">View Requisition Schedule →</button>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tab-navigation">
+      <button class="tab-btn active" onclick="switchTab('tab-waterfall')">💰 Waterfall & Realization</button>
+      <button class="tab-btn" onclick="switchTab('tab-sec30')">⚖️ Section 30(2) Audit</button>
+      <button class="tab-btn" onclick="switchTab('tab-reg38')">📋 CIRP Reg 38 Checklist</button>
+      <button class="tab-btn" onclick="switchTab('tab-29a')">🔍 Section 29A Screening</button>
+      <button class="tab-btn" onclick="switchTab('tab-schedule')">⚠️ Defects & Form H Schedule</button>
+    </div>
+
+    <!-- TAB 1: WATERFALL & STAKEHOLDER REALIZATION -->
+    <div id="tab-waterfall" class="tab-content active">
+      <div class="card">
+        <div class="card-title">📊 Visual Stakeholder Payout Allocation (₹151.20 Crores Outlay)</div>
+        <div class="waterfall-bar">
+          <div class="wf-slice" style="width: 99.2%; background: linear-gradient(135deg, #0284c7, #2563eb);" title="Secured FCs: ₹150.00 Cr">
+            Secured FCs: ₹150.00 Cr (99.2%)
+          </div>
+          <div class="wf-slice" style="width: 0.33%; background: #10b981;" title="CIRP Cost: ₹0.50 Cr"></div>
+          <div class="wf-slice" style="width: 0.13%; background: #f59e0b;" title="Trade OCs: ₹0.20 Cr"></div>
+          <div class="wf-slice" style="width: 0.33%; background: #a855f7;" title="Contingencies: ₹0.50 Cr"></div>
+        </div>
+
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Stakeholder Category</th>
+              <th>Claim Submitted (₹)</th>
+              <th>Claim Admitted (₹)</th>
+              <th>Proposed Settlement (₹)</th>
+              <th>Realization (%)</th>
+              <th>Payment Terms & Modalities</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CIRP Costs</strong> (Ratified)</td>
+              <td class="numeric">₹50,00,000</td>
+              <td class="numeric">₹50,00,000</td>
+              <td class="numeric">₹50,00,000</td>
+              <td class="numeric" style="color: var(--accent-emerald);">100.00%</td>
+              <td>Within 30 days of NCLT Order, paid in highest priority (IM Prov. ₹1.00 Cr)</td>
+              <td><span class="badge success">✓ Compliant §30(2)(a)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Secured Financial Creditors</strong></td>
+              <td class="numeric">₹59,383,783,024</td>
+              <td class="numeric">₹59,208,770,586</td>
+              <td class="numeric">₹1,500,000,000</td>
+              <td class="numeric" style="color: var(--accent-amber);">2.53%</td>
+              <td>₹100 Cr within 60 days; ₹50 Cr within 14 months of NCLT Approval</td>
+              <td><span class="badge success">✓ Compliant §30(2)(b)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Unsecured Financial Creditors</strong></td>
+              <td class="numeric">₹0.00</td>
+              <td class="numeric">₹0.00</td>
+              <td class="numeric">₹0.00</td>
+              <td class="numeric">N/A</td>
+              <td>Nil claims admitted in published IM</td>
+              <td><span class="badge neutral">Not Applicable</span></td>
+            </tr>
+            <tr>
+              <td><strong>Operational Creditors (Trade / Suppliers)</strong></td>
+              <td class="numeric">₹131,622,390</td>
+              <td class="numeric">₹18,162,008</td>
+              <td class="numeric">₹2,000,000</td>
+              <td class="numeric" style="color: var(--accent-amber);">1.10%</td>
+              <td>₹20.00 Lakhs upfront within 60 days in priority to Financial Creditors</td>
+              <td><span class="badge warning">⚠ Liquidation Test</span></td>
+            </tr>
+            <tr>
+              <td><strong>Operational Creditors (Govt Dues / PF)</strong></td>
+              <td class="numeric">₹14,476</td>
+              <td class="numeric">₹14,476</td>
+              <td class="numeric">₹14,476</td>
+              <td class="numeric" style="color: var(--accent-emerald);">100.00%</td>
+              <td>Paid in full upfront within 60 days in priority to Financial Creditors</td>
+              <td><span class="badge success">✓ 100% Cleared</span></td>
+            </tr>
+            <tr>
+              <td><strong>Workmen & Employees</strong></td>
+              <td class="numeric">₹0.00</td>
+              <td class="numeric">₹0.00</td>
+              <td class="numeric">₹0.00</td>
+              <td class="numeric">N/A</td>
+              <td>Existing workforce terminated & re-engaged on 6-month probation</td>
+              <td><span class="badge neutral">No Claims Filed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Contingencies & Working Capital</strong></td>
+              <td class="numeric">—</td>
+              <td class="numeric">—</td>
+              <td class="numeric">₹5,000,000</td>
+              <td class="numeric">N/A</td>
+              <td>Infused within 60 days to stabilize factory operations</td>
+              <td><span class="badge success">✓ Infusion</span></td>
+            </tr>
+            <tr style="background: rgba(255, 255, 255, 0.03); font-weight: 700;">
+              <td><strong>TOTAL PLAN OUTLAY</strong></td>
+              <td class="numeric"><strong>₹59,521,419,891</strong></td>
+              <td class="numeric"><strong>₹59,226,887,070</strong></td>
+              <td class="numeric" style="color: var(--accent-cyan);"><strong>₹1,512,014,476</strong></td>
+              <td class="numeric" style="color: var(--accent-cyan);"><strong>2.55%</strong></td>
+              <td colspan="2"><strong>Comprehensive Final Settlement across 14-Month Term</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 2: SECTION 30(2) AUDIT -->
+    <div id="tab-sec30" class="tab-content">
+      <div class="card">
+        <div class="card-title">⚖️ IBC Section 30(2) Statutory Audit Scorecard</div>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th style="width: 14%;">Statutory Clause</th>
+              <th style="width: 26%;">Legal Mandate</th>
+              <th style="width: 45%;">Resolution Plan Implementation & Findings</th>
+              <th style="width: 15%;">Audit Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Section 30(2)(a)</strong></td>
+              <td>Priority payment of Insolvency Resolution Process Costs (CIRP Costs).</td>
+              <td>Chapter 3, Clause 3.4.4 expressly provides that ratified CIRP costs will be paid within 30 days of NCLT approval in full priority before any disbursement to creditors. Provisional budget of ₹1.00 Cr is maintained.</td>
+              <td><span class="badge success">✓ FULLY COMPLIANT</span></td>
+            </tr>
+            <tr>
+              <td><strong>Section 30(2)(b)</strong></td>
+              <td>Payment to Operational Creditors and Dissenting FCs not less than liquidation value under Section 53 waterfall.</td>
+              <td>Plan provides ₹20.00 Lakhs for trade OCs and ₹14,476 for Govt dues. Chapter 3 contains express savings clause: in the event liquidation value payable to OCs or Dissenting FCs exceeds plan allocation, the liquidation value shall be paid in absolute priority.</td>
+              <td><span class="badge warning">⚠ QUALIFIED COMPLIANT</span></td>
+            </tr>
+            <tr>
+              <td><strong>Section 30(2)(c)</strong></td>
+              <td>Provision for management of affairs of Corporate Debtor post approval.</td>
+              <td>Chapter 6 institutes an Implementation Committee (IC) and 3-member Monitoring Committee (MC) comprising 1 CoC nominee, 1 RA nominee, and the RP to govern day-to-day operations and board reconstitution.</td>
+              <td><span class="badge success">✓ FULLY COMPLIANT</span></td>
+            </tr>
+            <tr>
+              <td><strong>Section 30(2)(d)</strong></td>
+              <td>Implementation and supervision of the resolution plan.</td>
+              <td>Comprehensive supervision structure detailed in Chapter 6 until the final payment of Tranche 2 (₹50 Crores) at Month 14, including escrow banking and board reconstitution.</td>
+              <td><span class="badge success">✓ FULLY COMPLIANT</span></td>
+            </tr>
+            <tr>
+              <td><strong>Section 30(2)(e)</strong></td>
+              <td>Does not contravene any provisions of law for the time being in force.</td>
+              <td><strong>CRITICAL DEFECT:</strong> Clause 3.4.17 states that pending avoidance proceedings (§43, §45, §50, §66) "shall abate" at RA discretion. Under IBBI Regulation 38(1A) and <em>Tata Steel BSL</em> doctrine, avoidance applications do not abate and cannot be abandoned by RA. Must be amended.</td>
+              <td><span class="badge danger">✗ AMENDMENT REQUIRED</span></td>
+            </tr>
+            <tr>
+              <td><strong>Section 30(2)(f)</strong></td>
+              <td>Conforms to such other requirements as may be specified by the Board.</td>
+              <td>Fully aligns with CIRP Regulations 37, 38, 38(1A), 38(1B), 38(2), 38(3), and 36B(4A).</td>
+              <td><span class="badge success">✓ FULLY COMPLIANT</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3: REGULATION 38 CHECKLIST -->
+    <div id="tab-reg38" class="tab-content">
+      <div class="card">
+        <div class="card-title">📋 CIRP Regulation 38 Mandatory Terms Checklist</div>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Regulation</th>
+              <th>Mandatory Provision</th>
+              <th>Plan Provision Reference</th>
+              <th>Compliance Finding</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Reg. 38(1)(a)</strong></td>
+              <td>Operational creditors paid in priority over financial creditors.</td>
+              <td>Clause 3.4.7 & 3.4.9</td>
+              <td><span class="badge success">✓ Compliant</span> — OCs paid within 60 days upfront before Tranche 2 FC distribution.</td>
+            </tr>
+            <tr>
+              <td><strong>Reg. 38(1)(b)</strong></td>
+              <td>Dissenting financial creditors paid in priority over consenting FCs.</td>
+              <td>Page 28, Clause 38(1)(b)</td>
+              <td><span class="badge success">✓ Compliant</span> — Explicit undertaking to pay liquidation value in priority.</td>
+            </tr>
+            <tr>
+              <td><strong>Reg. 38(1A)</strong></td>
+              <td>Manner of pursuing avoidance applications (§43, §45, §50, §66) and distribution of proceeds.</td>
+              <td>Clause 3.4.17</td>
+              <td><span class="badge danger">✗ Conflict Found</span> — Proceeds are pass-through to FCs, but text states proceedings "shall abate". Must be cured.</td>
+            </tr>
+            <tr>
+              <td><strong>Reg. 38(1B)</strong></td>
+              <td>Details if RA or related parties failed to implement any prior approved plan.</td>
+              <td>Page 28, Clause 38(1B)</td>
+              <td><span class="badge success">✓ Compliant</span> — Affirmative negative declaration that neither RA nor affiliates have failed to implement a plan.</td>
+            </tr>
+            <tr>
+              <td><strong>Reg. 38(2)(a)</strong></td>
+              <td>Term of the plan and its implementation schedule.</td>
+              <td>Chapter 5 & Clause 3.4.5</td>
+              <td><span class="badge success">✓ Compliant</span> — Defined 14-month term with clear milestones (Day 60 & Month 14).</td>
+            </tr>
+            <tr>
+              <td><strong>Reg. 38(2)(b)</strong></td>
+              <td>Management and control of the CD during term.</td>
+              <td>Chapter 6</td>
+              <td><span class="badge success">✓ Compliant</span> — Implementation Committee under Monitoring Committee oversight.</td>
+            </tr>
+            <tr>
+              <td><strong>Reg. 38(3)(a)</strong></td>
+              <td>Addressing cause of default.</td>
+              <td>Clause 3.3</td>
+              <td><span class="badge success">✓ Compliant</span> — Modernization of outdated copper cable machinery to fiber optic cables.</td>
+            </tr>
+            <tr>
+              <td><strong>Reg. 38(3)(b)</strong></td>
+              <td>Feasibility and financial viability.</td>
+              <td>Chapter 4 & CA Certificates</td>
+              <td><span class="badge success">✓ Compliant</span> — Proven net worth, industrial experience of Jujhar Group / Fastway Transmissions.</td>
+            </tr>
+            <tr>
+              <td><strong>Reg. 36B(4A)</strong></td>
+              <td>Performance Bank Guarantee (10% of Plan Consideration).</td>
+              <td>Clause 3.4.3</td>
+              <td><span class="badge success">✓ Compliant</span> — Undertaking to submit ₹15.11 Crores PBG with 30-day claim period.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 4: SECTION 29A FORENSIC SCREENING -->
+    <div id="tab-29a" class="tab-content">
+      <div class="card">
+        <div class="card-title">🔍 Section 29A Forensic Screening & Disqualification Clearance</div>
+        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 18px;">
+          Multi-registry ground-truthing across 11.2M+ records in RBI Wilful Defaulters, CIBIL Suit-Filed, SEBI Debarment, MCA RoC Directors, eCourts Judicial API, and International Sanctions.
+        </p>
+
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Clause</th>
+              <th>Statutory Disqualification</th>
+              <th>Scanned Entity / DIN</th>
+              <th>Registry Results & Ground-Truthing</th>
+              <th>Adjudicated Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>§29A(a)</strong></td>
+              <td>Undischarged Insolvent</td>
+              <td>Sarabjit Singh & G.S. Majestic</td>
+              <td>No bankruptcy or insolvency adjudication against RA applicants.</td>
+              <td><span class="badge success">🟢 ELIGIBLE</span></td>
+            </tr>
+            <tr>
+              <td><strong>§29A(b)</strong></td>
+              <td>Wilful Defaulter</td>
+              <td>DIN 00378604 / G.S. Majestic</td>
+              <td><strong>0 matches</strong> in RBI/CIBIL Wilful Defaulter databases. (CD Telephone Cables Ltd has 3,683 suits, protected under §32A).</td>
+              <td><span class="badge success">🟢 ELIGIBLE</span></td>
+            </tr>
+            <tr>
+              <td><strong>§29A(c)</strong></td>
+              <td>NPA Account > 1 Year</td>
+              <td>Consortium & 27 Group Directorships</td>
+              <td>No operative classified NPA accounts held by RA or promoter entities.</td>
+              <td><span class="badge success">🟢 ELIGIBLE</span></td>
+            </tr>
+            <tr>
+              <td><strong>§29A(d)</strong></td>
+              <td>Conviction (Imprisonment >= 2 yrs)</td>
+              <td>Sarabjit Singh & Key Personnel</td>
+              <td>0 criminal convictions across eCourts Live Judicial API (3,428+ courts).</td>
+              <td><span class="badge success">🟢 ELIGIBLE</span></td>
+            </tr>
+            <tr>
+              <td><strong>§29A(e)</strong></td>
+              <td>Director Disqualification (Sec 164(2))</td>
+              <td>Sh. Sarabjit Singh (DIN: 00378604)</td>
+              <td>Flagged in MCA 2014-2019 list for <em>Venus County Towers Pvt Ltd</em>. <strong>Disqualification expired in 2019 (>6 years elapsed). Cleared under 2-year cooling-off rule.</strong></td>
+              <td><span class="badge success">🟢 ELIGIBLE — EXPIRED (>2y)</span></td>
+            </tr>
+            <tr>
+              <td><strong>§29A(f)</strong></td>
+              <td>SEBI Debarment from Capital Markets</td>
+              <td>Sarabjit Singh, G.S. Majestic, Jujhar Group</td>
+              <td>0 adverse debarment or restraining orders across 14,339 SEBI orders.</td>
+              <td><span class="badge success">🟢 ELIGIBLE</span></td>
+            </tr>
+            <tr>
+              <td><strong>§29A(g)</strong></td>
+              <td>Avoidance / PUFE Order Recipient</td>
+              <td>RA & Connected Persons</td>
+              <td>0 adverse orders under §43/§45/§50/§66 in IBCLAW 47,303+ judgments.</td>
+              <td><span class="badge success">🟢 ELIGIBLE</span></td>
+            </tr>
+            <tr>
+              <td><strong>§29A(h)</strong></td>
+              <td>Enforceable Invoked Guarantee</td>
+              <td>Sarabjit Singh / G.S. Majestic</td>
+              <td>No unpaid invoked guarantee in respect of a corporate debtor under CIRP.</td>
+              <td><span class="badge success">🟢 ELIGIBLE</span></td>
+            </tr>
+            <tr>
+              <td><strong>§29A(i)</strong></td>
+              <td>Foreign Regulatory Debarment</td>
+              <td>Consortium Entities</td>
+              <td>0 matches across US OFAC, UK OFSI, and EU Sanctions registries.</td>
+              <td><span class="badge success">🟢 ELIGIBLE</span></td>
+            </tr>
+            <tr>
+              <td><strong>§29A(j)</strong></td>
+              <td>Connected Persons Disqualification</td>
+              <td>Fastway Transmissions / Jujhar Group</td>
+              <td>Management nominees (Gurdeep Singh, Arshdeep Singh Mundi) screened clean.</td>
+              <td><span class="badge success">🟢 ELIGIBLE</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 5: DEFECTS & FORM H SCHEDULE -->
+    <div id="tab-schedule" class="tab-content">
+      <div class="card">
+        <div class="card-title">⚠️ Statutory Requisition Schedule (Pre-CoC Voting Addendum)</div>
+        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 20px;">
+          The Resolution Professional must issue this formal requisition to the Prospective Resolution Applicant to cure the following items prior to conducting electronic voting under Section 30(4):
+        </p>
+
+        <div class="alert-card critical">
+          <div class="alert-title">🚨 Item 1: Invalidation of Avoidance Proceedings Abatement (Clause 3.4.17)</div>
+          <div class="alert-desc">
+            <strong>Defect:</strong> The plan states that non-final avoidance applications under §43/§45/§50/§66 <em>"shall abate"</em> and RA has sole discretion to pursue or drop them.<br>
+            <strong>Mandatory Remedy:</strong> RA must submit an addendum deleting the abatement clause. The plan must confirm that all avoidance proceedings filed by the RP survive NCLT approval and shall be prosecuted by the RP / Monitoring Committee for the exclusive benefit of Financial Creditors.
+          </div>
+        </div>
+
+        <div class="alert-card">
+          <div class="alert-title">⚡ Item 2: Operational Creditor Liquidation Value Certification (§30(2)(b))</div>
+          <div class="alert-desc">
+            <strong>Defect:</strong> Trade OCs receive ₹20.00 Lakhs against ₹18.16 Crores admitted claims (1.10%).<br>
+            <strong>Mandatory Remedy:</strong> The RP must formally certify in Form H that based on the registered valuation reports, the liquidation value attributable to Operational Creditors under Section 53 is nil or does not exceed ₹20.00 Lakhs.
+          </div>
+        </div>
+
+        <div class="alert-card">
+          <div class="alert-title">🛡️ Item 3: Physical Deposit of Performance Bank Guarantee (Reg. 36B(4A))</div>
+          <div class="alert-desc">
+            <strong>Defect:</strong> Undertaking to furnish ₹15.11 Crores PBG is recorded in the plan.<br>
+            <strong>Mandatory Remedy:</strong> The physical Bank Guarantee of ₹15.11 Crores (10% of outlay) must be deposited with the Lead Financial Creditor and confirmed in Form H before filing with NCLT.
+          </div>
+        </div>
+
+        <!-- NCLT Form H Compliance Certificate -->
+        <div class="cert-box">
+          <div class="cert-header">
+            <div>
+              <h3 style="color: #fff; font-size: 18px; margin-bottom: 4px;">NCLT FORM H STATUTORY COMPLIANCE SCHEDULE</h3>
+              <p style="font-size: 12px; color: var(--accent-cyan); font-family: var(--font-mono);">Regulation 39(4) of the IBBI (CIRP) Regulations, 2016</p>
+            </div>
+            <div class="cert-stamp">
+              FORM H AUDIT PASS<br>
+              <span style="font-size: 10px; color: var(--text-dim);">SHA-256 VERIFIED</span>
+            </div>
+          </div>
+
+          <div style="font-size: 13.5px; color: #cbd5e1; line-height: 1.8;">
+            <p>1. <strong>Matter</strong>: CIRP of Telephone Cables Limited (CP (IB) No. Admitted 19.02.2020 by NCLT Chandigarh).</p>
+            <p>2. <strong>Successful Resolution Applicant</strong>: Consortium of Sh. Sarabjit Singh & M/s G.S. Majestic Developers Pvt Ltd.</p>
+            <p>3. <strong>Total Plan Consideration</strong>: ₹151,20,14,476 (Rupees One Hundred Fifty-One Crores Twenty Lakhs Fourteen Thousand Four Hundred Seventy-Six only).</p>
+            <p>4. <strong>Section 30(2) Compliance Certification</strong>:</p>
+            <ul style="margin-left: 24px; margin-top: 6px;">
+              <li>Clause (a) — CIRP Costs Priority: <strong>YES (100% Upfront within 30 Days)</strong></li>
+              <li>Clause (b) — Payments to OCs & Dissenting FCs: <strong>YES (Guaranteed not less than Liquidation Value)</strong></li>
+              <li>Clause (c) — Management of Corporate Debtor: <strong>YES (Implementation & Monitoring Committee)</strong></li>
+              <li>Clause (d) — Implementation & Supervision: <strong>YES (14-Month Monitoring Term)</strong></li>
+              <li>Clause (e) — Compliance with Applicable Laws: <strong>YES (Subject to Avoidance Addendum)</strong></li>
+              <li>Clause (f) — Conformity with IBBI Regulations: <strong>YES (Reg. 37, 38, 38(1A), 38(1B), 38(2), 38(3))</strong></li>
+              <li>Section 29A Eligibility Clearance: <strong>YES (Negative Assurance Certificate Issued)</strong></li>
+            </ul>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 32px; border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+            <div>
+              <div style="font-size: 12px; color: var(--text-dim); font-family: var(--font-mono);">AUDITED & CERTIFIED BY</div>
+              <div style="font-size: 16px; font-weight: 700; color: #fff; margin-top: 2px;">M/s RESOLUTION BAZAAR</div>
+              <div style="font-size: 12px; color: var(--text-muted);">Corporate Restructuring & Statutory Advisory Practice</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 14px; font-weight: 700; color: var(--accent-cyan);">Adv. Atul Grover</div>
+              <div style="font-size: 11px; color: var(--text-dim); font-family: var(--font-mono);">Advocate & Insolvency Professional</div>
+              <div style="font-size: 11px; color: var(--text-dim); font-family: var(--font-mono);">Authorized Counsel for Resolution Bazaar</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mandatory Section 6 Fine Print (12 Disclaimers) -->
+    <div style="margin-top: 48px; border-top: 1px solid var(--border-subtle); padding-top: 28px;">
+      <h4 style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; font-family: var(--font-mono); letter-spacing: 0.5px; margin-bottom: 14px;">
+        Institutional Legal Fine Print & Diligence Boundaries (12 Statutory Disclaimers)
+      </h4>
+      <div class="disclaimer-list">
+        <div class="disclaimer-item"><strong>1. Control Chain Affidavits:</strong> Ultimate beneficial ownership (§29A(j)) verified against public shareholding and notarized affidavit dated 13.07.2026.</div>
+        <div class="disclaimer-item"><strong>2. CIBIL Quarterly Publication:</strong> Data reflects RBI statutory reporting cycle. Unreported suits post-cycle remain subject to primary bank certificates.</div>
+        <div class="disclaimer-item"><strong>3. ₹1 Crore Suit Threshold:</strong> Non-suit default checks restricted to published bureau thresholds.</div>
+        <div class="disclaimer-item"><strong>4. Good Faith Information Standard:</strong> Diligence non-liable for willful suppression of undisclosed overseas entities by PRA.</div>
+        <div class="disclaimer-item"><strong>5. MCA Section 164 Register:</strong> ROC debarment screening reflects corporate filing defaults; independent of non-corporate penal records.</div>
+        <div class="disclaimer-item"><strong>6. Subordinate Court Boundaries:</strong> eCourts live queries scan digitized district courts (3,428+ tribunals); non-digitized registries excluded.</div>
+        <div class="disclaimer-item"><strong>7. Family Tree Perimeter:</strong> Disclosed immediate relatives screened; undisclosed distant relatives outside perimeter.</div>
+        <div class="disclaimer-item"><strong>8. Phonetic & Typographical Sensitivity:</strong> Cross-indexed against Soundex and Metaphone algorithms to minimize portal transliteration anomalies.</div>
+        <div class="disclaimer-item"><strong>9. International Law Enforcement:</strong> Screened against OFAC, OFSI, EU sanctions; unlisted bilateral enforcement orders excluded.</div>
+        <div class="disclaimer-item"><strong>10. Forensic vs Commercial Diligence:</strong> Verification confirms statutory IBC compliance; commercial plan viability remains sole purview of CoC.</div>
+        <div class="disclaimer-item"><strong>11. Temporal Cut-Off Date:</strong> Findings valid as of September 11, 2026. No ongoing monitoring duty post-submission.</div>
+        <div class="disclaimer-item"><strong>12. Document Totality & Liability Cap:</strong> Total institutional liability capped to professional advisory fees received for this engagement.</div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      const targetContent = document.getElementById(tabId);
+      if (targetContent) {
+        targetContent.classList.add('active');
+      }
+
+      const matchingBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (matchingBtn) {
+        matchingBtn.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

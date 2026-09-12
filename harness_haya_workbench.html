@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Workbench — Case Manager, Context Control & Entity Graph | AI Harness | AgenticProfessionals.Net</title>
+  <meta name="description" content="The Hayagriva Case Workbench — sovereign case workspace management, active-context control matrix, and FTS5+vector concepts & entity graph for CIRP practitioners.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <style>
+    .page-hero { background:linear-gradient(180deg,#ffffff 0%,#f0fdf4 100%); border-bottom:1px solid var(--border-color); padding:3rem 1.75rem 2.5rem; }
+    .page-hero-inner { max-width:var(--max-width); margin:0 auto; }
+    .breadcrumb-nav { display:flex; align-items:center; gap:.5rem; font-size:.85rem; color:var(--text-tertiary); margin-bottom:1.25rem; }
+    .breadcrumb-nav a { color:var(--text-tertiary); text-decoration:none; transition:color .15s; }
+    .breadcrumb-nav a:hover { color:var(--primary); }
+    .badge-pill { display:inline-flex; align-items:center; gap:.4rem; padding:.3rem .75rem; border-radius:9999px; font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+    .badge-emerald { background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; }
+    .hero-heading { font-size:2.25rem; font-weight:800; color:var(--text-primary); letter-spacing:-.025em; line-height:1.2; }
+    .hero-desc { font-size:1.05rem; color:var(--text-secondary); max-width:820px; line-height:1.6; margin-top:.5rem; }
+    .hero-title-row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; margin:.75rem 0 .5rem; }
+    .metrics-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; max-width:var(--max-width); margin:-1.75rem auto 2.5rem; padding:0 1.75rem; }
+    .metric-card { background:#fff; border:1px solid var(--border-color); border-radius:10px; padding:1.25rem 1.5rem; box-shadow:0 4px 6px -1px rgba(15,23,42,.04); display:flex; align-items:center; gap:1rem; transition:transform .2s,box-shadow .2s; }
+    .metric-card:hover { transform:translateY(-2px); box-shadow:0 10px 15px -3px rgba(15,23,42,.07); }
+    .metric-icon-box { width:46px; height:46px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0; }
+    .metric-icon-emerald { background:#f0fdf4; color:#16a34a; }
+    .metric-icon-sky { background:#f0f9ff; color:#0284c7; }
+    .metric-icon-blue { background:#eff6ff; color:#2563eb; }
+    .metric-icon-teal { background:#f0fdfa; color:#0d9488; }
+    .metric-value { font-size:1.65rem; font-weight:800; color:var(--text-primary); line-height:1.1; font-feature-settings:"tnum"; }
+    .metric-label { font-size:.8rem; font-weight:500; color:var(--text-tertiary); margin-top:.2rem; text-transform:uppercase; letter-spacing:.04em; }
+    .section-anchor { scroll-margin-top:80px; }
+    .section-divider { border:none; border-top:2px dashed var(--border-color); margin:3rem 0; }
+    .context-state { display:flex; align-items:flex-start; gap:1rem; padding:1.25rem; background:#fff; border:1px solid var(--border-color); border-radius:10px; }
+    .context-state-badge { padding:.3rem .65rem; border-radius:6px; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; flex-shrink:0; margin-top:.1rem; }
+    .state-exclude { background:#fef2f2; color:#b91c1c; }
+    .state-insights { background:#fffbeb; color:#92400e; }
+    .state-full { background:#f0fdf4; color:#166534; }
+    .graph-legend-item { display:flex; align-items:center; gap:.6rem; font-size:.85rem; color:var(--text-secondary); }
+    .graph-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; }
+  </style>
+</head>
+<body>
+  <div id="shared-header"></div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <a href="pipie_ide.html">Harness</a>
+        <span>/</span>
+        <span style="color:var(--text-primary);font-weight:600;">Case Workbench</span>
+      </div>
+      <div class="badge-pill badge-emerald">
+        <i class="fa-solid fa-folder-open"></i> Workspace Management System (WMS) + Context Management System (CMS)
+      </div>
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Case Workbench</h1>
+          <p class="hero-desc">The left panel of the Hayagriva IDE — sovereign case directory management, granular active-context control, and a live FTS5 + ONNX entity graph that makes every case document instantly retrievable and explorable.</p>
+        </div>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <a href="harness_haya_ingest.html" class="btn btn-primary" style="padding:.75rem 1.4rem;">
+            <i class="fa-solid fa-file-arrow-up" style="margin-right:.4rem;"></i> Document Ingestion
+          </a>
+          <a href="harness_haya_wiki.html" class="btn btn-secondary" style="padding:.75rem 1.4rem;">
+            <i class="fa-solid fa-book-open" style="margin-right:.4rem;"></i> Case Wiki
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-emerald"><i class="fa-solid fa-briefcase"></i></div>
+      <div><div class="metric-value">Isolated</div><div class="metric-label">Per-Case Directories</div></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-sky"><i class="fa-solid fa-sliders"></i></div>
+      <div><div class="metric-value">3 States</div><div class="metric-label">Context Control Levels</div></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue"><i class="fa-solid fa-bolt"></i></div>
+      <div><div class="metric-value">Hybrid</div><div class="metric-label">FTS5 + ONNX Retrieval</div></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-teal"><i class="fa-solid fa-diagram-project"></i></div>
+      <div><div class="metric-value">D3.js</div><div class="metric-label">3D Entity Graph Viewer</div></div>
+    </div>
+  </div>
+
+  <main class="container" style="padding-bottom:4rem;">
+
+    <!-- CASE MANAGER -->
+    <div id="case-manager" class="section-anchor">
+      <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+        <span class="badge badge-primary">Case Manager</span>
+        <h2 class="section-title" style="margin-top:.5rem;">Sovereign Case Directory Management</h2>
+        <p class="section-desc">Each CIRP case lives in a fully isolated directory under <code>~/Documents/hayagriva-cases/</code>. No data bleeds between cases.</p>
+      </div>
+
+      <div class="catalog-grid" style="margin-bottom:1rem;">
+        <div class="catalog-card">
+          <div class="catalog-badge-row"><span class="badge badge-primary">Isolation</span><span class="badge badge-success">Air-Gapped</span></div>
+          <h3 class="catalog-card-title">Isolated Case Workspaces</h3>
+          <p class="catalog-card-desc">Each case gets its own directory, SQLite database (documents.db), vector index, case_kv_dictionary.json, and case_manifest.json. Opening a new case activates its workspace context in the sidebar — no data bleeds between concurrent cases.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-folder-closed"></i> Per-case DB</span><span><i class="fa-solid fa-shield-halved"></i> Zero cross-case leakage</span></div>
+        </div>
+        <div class="catalog-card">
+          <div class="catalog-badge-row"><span class="badge badge-primary">case_manifest.json</span><span class="badge badge-success">Config Hub</span></div>
+          <h3 class="catalog-card-title">Case Manifest Configuration</h3>
+          <p class="catalog-card-desc">Each case carries a case_manifest.json that stores: ingest_mode (interactive / batch), file domain classifications, scheduled CIRP milestone wake events, active RAG document selections, and the session state snapshot used for context compaction.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-file-code"></i> Single config source</span><span><i class="fa-solid fa-clock"></i> Milestone scheduler</span></div>
+        </div>
+        <div class="catalog-card">
+          <div class="catalog-badge-row"><span class="badge badge-primary">CIRP Timeline</span><span class="badge badge-success">Auto-Scheduled</span></div>
+          <h3 class="catalog-card-title">Milestone Self-Wake</h3>
+          <p class="catalog-card-desc">On case open, the background daemon reads timeline.md and registers each statutory deadline (T0 → T330) as a node-cron scheduled wake event. When a deadline passes, a structured notification card is dropped in the Case Action Inbox with the statutory reference and recommended action.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-calendar-check"></i> T0 → T330 tracked</span><span><i class="fa-solid fa-inbox"></i> Inbox alert</span></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- CONTEXT CONTROL -->
+    <div id="context-control" class="section-anchor">
+      <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+        <span class="badge badge-primary">Context Control</span>
+        <h2 class="section-title" style="margin-top:.5rem;">Active-Context Control Matrix</h2>
+        <p class="section-desc">A granular checkbox panel that maps every ingested document to one of three retrieval states. Controls how many tokens reach the local LLM's strict 2,048-token context window.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;">
+        <div class="context-state">
+          <span class="context-state-badge state-exclude">Exclude</span>
+          <div><div style="font-weight:600;font-size:.9rem;color:#0f172a;margin-bottom:.2rem;">Excluded from all retrieval</div><div style="font-size:.85rem;color:var(--text-secondary);">The document's chunks are filtered out before FTS5 and vector retrieval. Useful for superseded filings, duplicate documents, or irrelevant financial periods that would pollute the context budget.</div></div>
+        </div>
+        <div class="context-state">
+          <span class="context-state-badge state-insights">Insights Only</span>
+          <div><div style="font-weight:600;font-size:.9rem;color:#0f172a;margin-bottom:.2rem;">High-level summary retrieval only</div><div style="font-size:.85rem;color:var(--text-secondary);">Only the document's wiki/sources/&lt;stem&gt;.md summary page is eligible for retrieval — not individual raw chunks. Preserves context budget while retaining the gist of large background documents.</div></div>
+        </div>
+        <div class="context-state">
+          <span class="context-state-badge state-full">Full Context</span>
+          <div><div style="font-weight:600;font-size:.9rem;color:#0f172a;margin-bottom:.2rem;">Complete chunk-level retrieval</div><div style="font-size:.85rem;color:var(--text-secondary);">All chunks from the document are candidates in FTS5 and ONNX vector retrieval. Use for the most critical case documents — the Resolution Plan, Form H, and key NCLT orders that require granular citation.</div></div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:1.75rem;box-shadow:0 2px 8px rgba(15,23,42,.04);">
+        <h3 style="font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:.5rem;"><i class="fa-solid fa-floppy-disk" style="color:#0284c7;margin-right:.5rem;"></i> Persistence & Token Budget</h3>
+        <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.6;">Selections are persisted in <code>concepts/active_rag_docs.json</code> and survive session restarts. The Concepts sidebar shows a live dynamic token count calculation so the practitioner can see exactly how many tokens the current selection will consume from the 2,048-token local LLM budget before sending any query.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- CONCEPTS & ENTITIES -->
+    <div id="concepts-entities" class="section-anchor">
+      <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+        <span class="badge badge-primary">Concepts &amp; Entities</span>
+        <h2 class="section-title" style="margin-top:.5rem;">FTS5 + Vector Retrieval &amp; Case Entity Graph</h2>
+        <p class="section-desc">Hybrid retrieval pipeline combining sub-millisecond FTS5 keyword search with ONNX cosine similarity reranking — with a live D3.js 3D entity graph for visual case exploration.</p>
+      </div>
+
+      <div class="catalog-grid" style="margin-bottom:2rem;">
+        <div class="catalog-card">
+          <div class="catalog-badge-row"><span class="badge badge-primary">Hybrid RAG</span><span class="badge badge-success">RRF Fusion</span></div>
+          <h3 class="catalog-card-title">FTS5 + ONNX Hybrid Search</h3>
+          <p class="catalog-card-desc">FTS5 full-text index runs first to select candidate chunks via keyword match. ONNX cosine similarity is then computed on-the-fly over their float vector blobs to rerank. Results are merged via Reciprocal Rank Fusion (RRF) for optimal precision. No native C++ binary dependencies — 100% cross-platform.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-bolt"></i> &lt;1ms FTS5 pass</span><span><i class="fa-solid fa-arrow-down-wide-short"></i> Cosine rerank</span></div>
+        </div>
+        <div class="catalog-card">
+          <div class="catalog-badge-row"><span class="badge badge-primary">Drift-Free</span><span class="badge badge-success">Natural Keys</span></div>
+          <h3 class="catalog-card-title">Drift-Safe Chunk Matching</h3>
+          <p class="catalog-card-desc">FTS5 candidates are matched to document_vectors using composite natural keys (filename, section_title, chunk_index) — never raw SQLite rowids. This prevents retrieval failures when the database is rebuilt, compacted, or migrated between machines.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-key"></i> Natural key join</span><span><i class="fa-solid fa-check-double"></i> Zero drift failures</span></div>
+        </div>
+        <div class="catalog-card">
+          <div class="catalog-badge-row"><span class="badge badge-primary">D3.js</span><span class="badge badge-success">3D Viewer</span></div>
+          <h3 class="catalog-card-title">3D Case Entity Graph</h3>
+          <p class="catalog-card-desc">The VMS D3.js Case Graph Viewer renders typed directional edges between case entities (creditors, applicants, filings, transactions). Edge types: related_party (orange), contradicts (red), supersedes (grey), cites (blue). Contradiction edges surface discrepancies between filings visually.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-diagram-project"></i> Typed edges</span><span><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i> Contradiction flags</span></div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:1.75rem;box-shadow:0 2px 8px rgba(15,23,42,.04);">
+        <h3 style="font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:1rem;"><i class="fa-solid fa-circle-nodes" style="color:#2563eb;margin-right:.5rem;"></i> Entity Graph Edge Legend</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:1.25rem;">
+          <div class="graph-legend-item"><div class="graph-dot" style="background:#dc2626;"></div><strong>contradicts</strong> — mismatched amounts across two filings</div>
+          <div class="graph-legend-item"><div class="graph-dot" style="background:#ea580c;"></div><strong>related_party</strong> — creditor → resolution applicant link</div>
+          <div class="graph-legend-item"><div class="graph-dot" style="background:#2563eb;"></div><strong>cites</strong> — document referencing another filing</div>
+          <div class="graph-legend-item"><div class="graph-dot" style="background:#94a3b8;"></div><strong>supersedes</strong> — amended filing over original</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="shared-footer"></div>
+  <script src="js/header.js?v=20260909_v5"></script>
+  <script src="js/footer.js?v=20260909_v5"></script>
+</body>
+</html>

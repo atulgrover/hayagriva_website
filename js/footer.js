@@ -1,106 +1,129 @@
 /**
- * AgenticProfessionals.Net - Shared Footer Component
- * Automatically injects and controls the unified footer across all pages (index.html, vaults.html, etc.)
- *
- * Links included:
- *  - Forums - apnet.co.in (https://apnet.co.in)
- *  - MSME-Sahyog (https://hayagriva.app)
- *  - WhatsApp (https://wa.me/...)
+ * AgenticProfessionals.Net - Shared Footer Component (Hayagriva 3-Column Sacred Footer)
+ * Automatically injects and controls the unified footer across all pages (index.html, etc.)
  */
 
+// Global Volunteer Submission Handler
+function handleVolunteerSubmit(e) {
+  if (e) e.preventDefault();
+  const name  = document.getElementById('volName')?.value.trim();
+  const email = document.getElementById('volEmail')?.value.trim();
+  const phone = document.getElementById('volPhone')?.value.trim();
+  const msg   = document.getElementById('volunteer-msg');
+
+  if (name && email && phone) {
+    if (msg) {
+      msg.className = 'volunteer-status-msg success';
+      msg.innerText = '✨ Thank you for volunteering! Our team will contact you shortly.';
+      msg.style.display = 'block';
+    }
+    if (document.getElementById('volName')) document.getElementById('volName').value = '';
+    if (document.getElementById('volEmail')) document.getElementById('volEmail').value = '';
+    if (document.getElementById('volPhone')) document.getElementById('volPhone').value = '';
+  }
+}
+window.handleVolunteerSubmit = handleVolunteerSubmit;
+
 (function () {
-  const footerHTML = `
-  <footer class="site-footer" id="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <!-- Brand & Platform Identity -->
-        <div class="footer-brand-col">
-          <div class="footer-brand">
-            <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
-              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-              <polyline points="2 17 12 22 22 17"></polyline>
-              <polyline points="2 12 12 17 22 12"></polyline>
-            </svg>
-            <span style="font-weight: 700; color: #0f172a; font-size: 1rem;">AgenticProfessionals.Net</span>
+  // Ensure footer stylesheet is loaded
+  if (!document.querySelector('link[href*="footer.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'css/footer.css?v=20260911_v1';
+    document.head.appendChild(link);
+  }
+
+  const fallbackFooterHTML = `
+  <footer class="compact-footer" id="site-footer">
+    <div class="footer-single-row-grid">
+      
+      <!-- Section 1 (20%): Full HAYAGRIVA Logo -->
+      <div class="footer-col-logo">
+        <img src="branding/hayagriva_multi_arm_white.png" alt="Lord Hayagriva Sacred Multi-Armed Icon" class="footer-logo-img" />
+      </div>
+
+      <!-- Section 2 (52%): Sanskrit Shloka & English Meaning -->
+      <div class="footer-col-shloka">
+        <p class="shloka-devanagari-banner">ज्ञानानन्दमयं देवं निर्मलस्फटिकाकृतिम् ।<br>आधारं सर्वविद्यानां हयग्रीवमुपास्महे ॥</p>
+        <p class="shloka-meaning-banner">&ldquo;We meditate upon Lord Hayagriva, who is the very embodiment of knowledge and pure bliss, who possesses a radiant form as clear as a blemishless crystal, and who is the ultimate foundation of all learning and sciences.&rdquo;</p>
+      </div>
+
+      <!-- Section 3 (28%): Compact 3-Field Volunteer Form -->
+      <div class="footer-col-volunteer">
+        <h3 class="footer-volunteer-title">Volunteer With Us</h3>
+        <form class="footer-volunteer-form" onsubmit="handleVolunteerSubmit(event)">
+          <div class="volunteer-field-group">
+            <input type="text" id="volName" class="volunteer-input" placeholder="Full Name *" required />
           </div>
-          <p class="footer-tagline">Institutional Insolvency & Restructuring Operating System</p>
-        </div>
-
-        <!-- Shared Footer Links -->
-        <ul class="footer-links">
-          <!-- Link 1: Forums -->
-          <li>
-            <a href="https://forums.agenticprofessionals.net" target="_blank" rel="noopener noreferrer" class="footer-link">
-              <i class="fa-solid fa-comments" style="color: #2563eb; font-size: 1rem;"></i>
-              <span style="font-weight: 600;">Forums - Zulip Community</span>
-              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.65rem; color: #94a3b8; margin-left: 2px;"></i>
-            </a>
-          </li>
-
-          <!-- Link 2: MSME-Sahyog -->
-          <li>
-            <a href="https://hayagriva.app" target="_blank" rel="noopener noreferrer" class="footer-link footer-link-msme">
-              <i class="fa-solid fa-handshake-angle" style="color: #0d9488; font-size: 1.05rem;"></i>
-              <span style="font-weight: 600;">MSME-Sahyog</span>
-              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.65rem; color: #94a3b8; margin-left: 2px;"></i>
-            </a>
-          </li>
-
-          <!-- Link 3: WhatsApp -->
-          <li>
-            <a href="https://wa.me/?text=Inquiry%20regarding%20AgenticProfessionals.Net" target="_blank" rel="noopener noreferrer" class="footer-link footer-link-whatsapp">
-              <i class="fa-brands fa-whatsapp" style="color: #22c55e; font-size: 1.15rem;"></i>
-              <span style="font-weight: 600;">WhatsApp</span>
-              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.65rem; color: #94a3b8; margin-left: 2px;"></i>
-            </a>
-          </li>
-        </ul>
+          <div class="volunteer-field-group">
+            <input type="email" id="volEmail" class="volunteer-input" placeholder="Email Address *" required />
+          </div>
+          <div class="volunteer-field-group">
+            <input type="tel" id="volPhone" class="volunteer-input" placeholder="Phone Number *" required />
+          </div>
+          <button type="submit" class="volunteer-submit-btn">Join as Volunteer</button>
+        </form>
+        <div id="volunteer-msg" class="volunteer-status-msg"></div>
       </div>
 
-      <!-- Bottom Attribution Row -->
-      <div class="footer-bottom-row">
-        <div class="footer-copyright">
-          &copy; 2026 AgenticProfessionals.Net. All rights reserved. Sovereign Air-Gapped Infrastructure.
-        </div>
-        <div class="footer-badges">
-          <span class="badge badge-subtle"><i class="fa-solid fa-shield-halved" style="color: #16a34a;"></i> AES-256 Air-Gapped</span>
-          <span class="badge badge-subtle"><i class="fa-solid fa-building-columns" style="color: #2563eb;"></i> IBBI Compliant</span>
-        </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <span>© 2026 Agentic Professionals Network &amp; Hayagriva. All rights reserved.</span>
+        <span class="footer-bottom-divider">•</span>
+        <a href="https://forums.agenticprofessionals.net" target="_blank" rel="noopener noreferrer" class="footer-legal-link">APNET Forums</a>
+        <span class="footer-bottom-divider">•</span>
+        <a href="https://hayagriva.app" target="_blank" rel="noopener noreferrer" class="footer-legal-link">MSME-Sahyog</a>
       </div>
+      <div class="footer-bottom-right">Zero Cloud Data Transmission • Air-Gapped Local AI Compliance</div>
     </div>
   </footer>
   `;
 
-  function initFooter() {
-    // 1. If explicit mount point exists
+  function applyFooter(htmlContent) {
     const container = document.getElementById('shared-footer') ||
                       document.getElementById('site-footer-container') ||
-                      document.querySelector('site-footer');
+                      document.getElementById('site-footer') ||
+                      document.querySelector('site-footer') ||
+                      document.querySelector('footer.site-footer') ||
+                      document.querySelector('footer.compact-footer');
 
     if (container) {
-      container.outerHTML = footerHTML;
-      return;
-    }
-
-    // 2. If existing static footer exists, replace it to ensure links are in sync
-    const existingFooter = document.querySelector('footer.site-footer');
-    if (existingFooter) {
-      existingFooter.outerHTML = footerHTML;
-      return;
-    }
-
-    // 3. Otherwise append before closing script or body
-    const mainEl = document.getElementById('app-main') || document.querySelector('main');
-    if (mainEl && mainEl.parentNode) {
-      mainEl.insertAdjacentHTML('afterend', footerHTML);
+      container.outerHTML = htmlContent;
     } else {
-      document.body.insertAdjacentHTML('beforeend', footerHTML);
+      const mainEl = document.getElementById('app-main') || document.querySelector('main');
+      if (mainEl && mainEl.parentNode) {
+        mainEl.insertAdjacentHTML('afterend', htmlContent);
+      } else {
+        document.body.insertAdjacentHTML('beforeend', htmlContent);
+      }
+    }
+  }
+
+  function init() {
+    // Immediate fallback
+    applyFooter(fallbackFooterHTML);
+
+    // Live sync via fetch on HTTP
+    if (window.location.protocol.startsWith('http')) {
+      fetch('footer.html?v=' + Date.now())
+        .then(res => {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.text();
+        })
+        .then(html => {
+          if (html && html.trim().length > 50) {
+            applyFooter(html);
+          }
+        })
+        .catch(() => {});
     }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFooter);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    initFooter();
+    init();
   }
 })();

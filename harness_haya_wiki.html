@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Wiki — Compounding Knowledge Base | AI Harness | AgenticProfessionals.Net</title>
+  <meta name="description" content="LLM-maintained, compounding case wiki — answers compound into wiki/insights, documents auto-summarised into wiki/sources, and a periodic Lint operation audits contradictions, orphan chunks and statutory gaps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <style>
+    .page-hero { background:linear-gradient(180deg,#ffffff 0%,#fffbeb 100%); border-bottom:1px solid var(--border-color); padding:3rem 1.75rem 2.5rem; }
+    .page-hero-inner { max-width:var(--max-width); margin:0 auto; }
+    .breadcrumb-nav { display:flex; align-items:center; gap:.5rem; font-size:.85rem; color:var(--text-tertiary); margin-bottom:1.25rem; }
+    .breadcrumb-nav a { color:var(--text-tertiary); text-decoration:none; transition:color .15s; }
+    .breadcrumb-nav a:hover { color:var(--primary); }
+    .badge-pill { display:inline-flex; align-items:center; gap:.4rem; padding:.3rem .75rem; border-radius:9999px; font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+    .badge-amber { background:#fffbeb; color:#92400e; border:1px solid #fde68a; }
+    .hero-heading { font-size:2.25rem; font-weight:800; color:var(--text-primary); letter-spacing:-.025em; line-height:1.2; }
+    .hero-desc { font-size:1.05rem; color:var(--text-secondary); max-width:820px; line-height:1.6; margin-top:.5rem; }
+    .hero-title-row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; margin:.75rem 0 .5rem; }
+    .metrics-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; max-width:var(--max-width); margin:-1.75rem auto 2.5rem; padding:0 1.75rem; }
+    .metric-card { background:#fff; border:1px solid var(--border-color); border-radius:10px; padding:1.25rem 1.5rem; box-shadow:0 4px 6px -1px rgba(15,23,42,.04); display:flex; align-items:center; gap:1rem; transition:transform .2s,box-shadow .2s; }
+    .metric-card:hover { transform:translateY(-2px); box-shadow:0 10px 15px -3px rgba(15,23,42,.07); }
+    .metric-icon-box { width:46px; height:46px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0; }
+    .metric-icon-amber { background:#fffbeb; color:#d97706; }
+    .metric-icon-teal { background:#f0fdfa; color:#0d9488; }
+    .metric-icon-blue { background:#eff6ff; color:#2563eb; }
+    .metric-icon-rose { background:#fff1f2; color:#e11d48; }
+    .metric-value { font-size:1.65rem; font-weight:800; color:var(--text-primary); line-height:1.1; font-feature-settings:"tnum"; }
+    .metric-label { font-size:.8rem; font-weight:500; color:var(--text-tertiary); margin-top:.2rem; text-transform:uppercase; letter-spacing:.04em; }
+    .layer-card { background:#fff; border:1px solid var(--border-color); border-radius:12px; padding:1.75rem; position:relative; overflow:hidden; }
+    .layer-card::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%; }
+    .layer-raw::before { background:#16a34a; }
+    .layer-wiki::before { background:#d97706; }
+    .layer-schema::before { background:#7c3aed; }
+    .lint-check { display:flex; gap:1rem; align-items:flex-start; padding:1rem; background:#fff; border:1px solid var(--border-color); border-radius:10px; }
+    .lint-icon { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:.95rem; }
+    .section-anchor { scroll-margin-top:80px; }
+    .wiki-dir-tree { background:#0f172a; color:#e2e8f0; border-radius:12px; padding:1.5rem; font-family:var(--font-mono); font-size:.82rem; line-height:1.8; }
+    .tree-dir { color:#38bdf8; }
+    .tree-file { color:#94a3b8; }
+    .tree-comment { color:#4ade80; }
+  </style>
+</head>
+<body>
+  <div id="shared-header"></div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <a href="pipie_ide.html">Harness</a>
+        <span>/</span>
+        <span style="color:var(--text-primary);font-weight:600;">Case Wiki</span>
+      </div>
+      <div class="badge-pill badge-amber">
+        <i class="fa-solid fa-book-open"></i> Context Management System — Wiki Layer
+      </div>
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Case Wiki — Compounding Knowledge Base</h1>
+          <p class="hero-desc">Instead of re-deriving knowledge on every RAG query, Hayagriva incrementally builds and maintains a persistent wiki per case. Every synthesised answer, ingested document and agent insight compounds into a structured knowledge base that gets richer with every session.</p>
+        </div>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <a href="harness_haya_ingest.html" class="btn btn-primary" style="padding:.75rem 1.4rem;">
+            <i class="fa-solid fa-file-arrow-up" style="margin-right:.4rem;"></i> Document Ingestion
+          </a>
+          <a href="harness_haya_workbench.html#concepts-entities" class="btn btn-secondary" style="padding:.75rem 1.4rem;">
+            <i class="fa-solid fa-diagram-project" style="margin-right:.4rem;"></i> Concepts &amp; Entities
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-amber"><i class="fa-solid fa-book-open"></i></div>
+      <div><div class="metric-value">3 Layers</div><div class="metric-label">Raw / Wiki / Schema</div></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-teal"><i class="fa-solid fa-bolt"></i></div>
+      <div><div class="metric-value">INDEX.md</div><div class="metric-label">Checked Before RAG</div></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+      <div><div class="metric-value">8 Checks</div><div class="metric-label">Lint Audit Operations</div></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-rose"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <div><div class="metric-value">0 Resets</div><div class="metric-label">Compounding Across Sessions</div></div>
+    </div>
+  </div>
+
+  <main class="container" style="padding-bottom:4rem;">
+
+    <!-- 3 Layer Architecture -->
+    <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+      <span class="badge badge-primary">Architecture</span>
+      <h2 class="section-title" style="margin-top:.5rem;">Three-Layer Knowledge Architecture</h2>
+      <p class="section-desc">Inspired by Andrej Karpathy's LLM-Wiki pattern — raw sources remain immutable; the wiki is entirely LLM-maintained.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-bottom:2.5rem;">
+      <div class="layer-card layer-raw">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#f0fdf4;color:#16a34a;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><i class="fa-solid fa-folder-closed"></i></div>
+          <div><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#16a34a;">Layer 1</div><div style="font-size:1rem;font-weight:700;color:#0f172a;">Raw Sources</div></div>
+        </div>
+        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem;">PDFs, DOCX, XLSX and standalone markdown files in the case folder. Immutable — the IMS pipeline reads from them but never modifies them. This is the ground truth of the case.</p>
+        <code style="font-size:.78rem;background:#f1f5f9;padding:.25rem .5rem;border-radius:4px;">raw/ • documents/ • <span style="color:#16a34a;">You write, IMS reads</span></code>
+      </div>
+      <div class="layer-card layer-wiki">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#fffbeb;color:#d97706;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><i class="fa-solid fa-book-open"></i></div>
+          <div><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#d97706;">Layer 2</div><div style="font-size:1rem;font-weight:700;color:#0f172a;">The Wiki</div></div>
+        </div>
+        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem;">LLM-generated and maintained markdown pages. Sources summaries, entity pages, concept pages, synthesised Q&amp;A insights, and the machine-written INDEX.md catalog. The LLM writes it; you read it.</p>
+        <code style="font-size:.78rem;background:#f1f5f9;padding:.25rem .5rem;border-radius:4px;">wiki/ • sources/ • insights/ • <span style="color:#d97706;">LLM writes, you read</span></code>
+      </div>
+      <div class="layer-card layer-schema">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:#faf5ff;color:#7c3aed;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><i class="fa-solid fa-sliders"></i></div>
+          <div><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7c3aed;">Layer 3</div><div style="font-size:1rem;font-weight:700;color:#0f172a;">Schema & Config</div></div>
+        </div>
+        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem;">case_manifest.json and AGENTS.md conventions that tell the LLM how to structure wiki pages, what ingest mode to use, which statutory milestones to track, and how the entity graph is scoped.</p>
+        <code style="font-size:.78rem;background:#f1f5f9;padding:.25rem .5rem;border-radius:4px;">case_manifest.json • <span style="color:#7c3aed;">Co-evolved by you &amp; LLM</span></code>
+      </div>
+    </div>
+
+    <!-- Directory Tree -->
+    <div style="margin-bottom:2.5rem;">
+      <h3 style="font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:1rem;"><i class="fa-solid fa-sitemap" style="color:#d97706;margin-right:.5rem;"></i> Wiki Directory Structure</h3>
+      <div class="wiki-dir-tree">
+<span class="tree-dir">wiki/</span>
+├── <span class="tree-file">INDEX.md</span>          <span class="tree-comment"># Machine-written catalog: one line per page (link + summary)</span>
+├── <span class="tree-file">log.md</span>            <span class="tree-comment"># Append-only operation log: ## [YYYY-MM-DD] ingest|query|lint | topic</span>
+├── <span class="tree-dir">sources/</span>           <span class="tree-comment"># Auto-generated per-document summary pages</span>
+│   ├── <span class="tree-file">Resolution_Plan_ABC.md</span>
+│   └── <span class="tree-file">Form_H_Submission.md</span>
+├── <span class="tree-dir">insights/</span>          <span class="tree-comment"># Filed RAG answers (≥4 docs cited, ≥300 words)</span>
+│   ├── <span class="tree-file">section_29a_eligibility_analysis.md</span>
+│   └── <span class="tree-file">coc_voting_shares_recalculation.md</span>
+├── <span class="tree-dir">qna/</span>               <span class="tree-comment"># Case Q&amp;A accordion entries</span>
+└── <span class="tree-file">CASE_AUDIT.md</span>     <span class="tree-comment"># Lint operation output: contradiction cards, orphan flags</span>
+      </div>
+    </div>
+
+    <!-- Wiki Operations -->
+    <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
+      <span class="badge badge-primary">Operations</span>
+      <h2 class="section-title" style="margin-top:.5rem;">Three Core Wiki Operations</h2>
+    </div>
+
+    <div class="catalog-grid" style="margin-bottom:2.5rem;">
+      <div class="catalog-card">
+        <div class="catalog-badge-row"><span class="badge badge-primary">Ingest</span><span class="badge badge-success">Auto-Brief</span></div>
+        <h3 class="catalog-card-title">Source Ingest → Wiki Page</h3>
+        <p class="catalog-card-desc">After a document is indexed, the LLM generates a wiki/sources/&lt;stem&gt;.md summary page (300–500 words) covering key entities, document type, financial figures, and any warning flags. This is immediately added to INDEX.md.</p>
+        <div class="catalog-meta-row"><span><i class="fa-solid fa-file-circle-plus"></i> Auto-creates source page</span><span><i class="fa-solid fa-list"></i> Updates INDEX.md</span></div>
+      </div>
+      <div class="catalog-card">
+        <div class="catalog-badge-row"><span class="badge badge-primary">Query</span><span class="badge badge-success">Answer Filing</span></div>
+        <h3 class="catalog-card-title">RAG Answer → Wiki Insight</h3>
+        <p class="catalog-card-desc">Every agent chat response includes a "Save to Case Wiki" button. When an answer cites ≥ 4 distinct documents and exceeds 300 words, a subtle chip auto-suggests filing. Filed insights carry frontmatter: source_query, date, documents_used, agent.</p>
+        <div class="catalog-meta-row"><span><i class="fa-solid fa-bookmark"></i> One-click filing</span><span><i class="fa-solid fa-magnifying-glass"></i> FTS5-indexed instantly</span></div>
+      </div>
+      <div class="catalog-card">
+        <div class="catalog-badge-row"><span class="badge badge-primary">Lint</span><span class="badge badge-success">Killer Differentiator</span></div>
+        <h3 class="catalog-card-title">Case Wiki Lint Audit</h3>
+        <p class="catalog-card-desc">A periodic LLM health-check pass across all wiki pages and case_kv_dictionary.json. Outputs structured cards in the Case Action Inbox. No other legal PKM tool has this capability — the wiki actively defends itself against stale and contradictory knowledge.</p>
+        <div class="catalog-meta-row"><span><i class="fa-solid fa-triangle-exclamation"></i> Contradiction flags</span><span><i class="fa-solid fa-inbox"></i> Inbox cards</span></div>
+      </div>
+    </div>
+
+    <!-- Lint Checks -->
+    <div id="lint" class="section-anchor" style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:2rem;box-shadow:0 2px 8px rgba(15,23,42,.04);">
+      <h3 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:1.25rem;">
+        <i class="fa-solid fa-stethoscope" style="color:#d97706;margin-right:.5rem;"></i> Lint Operation — 8 Audit Checks
+      </h3>
+      <div style="display:flex;flex-direction:column;gap:.75rem;">
+        <div class="lint-check"><div class="lint-icon" style="background:#fff1f2;color:#e11d48;"><i class="fa-solid fa-not-equal"></i></div><div><div style="font-weight:600;font-size:.9rem;color:#0f172a;">Contradictions</div><div style="font-size:.83rem;color:var(--text-secondary);">Mismatched amounts between claims_registry.md and avoidance_ledger.md entries across different filings.</div></div></div>
+        <div class="lint-check"><div class="lint-icon" style="background:#fffbeb;color:#d97706;"><i class="fa-solid fa-hourglass-half"></i></div><div><div style="font-weight:600;font-size:.9rem;color:#0f172a;">Stale Claims</div><div style="font-size:.83rem;color:var(--text-secondary);">case_facts.md fields that are blank [UNKNOWN] but may be derivable from already-ingested documents via RAG.</div></div></div>
+        <div class="lint-check"><div class="lint-icon" style="background:#f0fdf4;color:#16a34a;"><i class="fa-solid fa-link-slash"></i></div><div><div style="font-weight:600;font-size:.9rem;color:#0f172a;">Orphan Wiki Pages</div><div style="font-size:.83rem;color:var(--text-secondary);">Wiki pages with no inbound references from other pages or from the INDEX.md catalog — unlinked knowledge islands.</div></div></div>
+        <div class="lint-check"><div class="lint-icon" style="background:#eff6ff;color:#2563eb;"><i class="fa-solid fa-circle-question"></i></div><div><div style="font-weight:600;font-size:.9rem;color:#0f172a;">Missing Concept Pages</div><div style="font-size:.83rem;color:var(--text-secondary);">Important concepts mentioned in source summaries but lacking their own dedicated wiki page.</div></div></div>
+        <div class="lint-check"><div class="lint-icon" style="background:#faf5ff;color:#7c3aed;"><i class="fa-solid fa-database"></i></div><div><div style="font-weight:600;font-size:.9rem;color:#0f172a;">Orphan Chunks</div><div style="font-size:.83rem;color:var(--text-secondary);">Document vectors with zero retrieval count — knowledge that has never been surfaced in any RAG query and may be improperly tagged.</div></div></div>
+        <div class="lint-check"><div class="lint-icon" style="background:#f0fdfa;color:#0d9488;"><i class="fa-solid fa-calendar-xmark"></i></div><div><div style="font-weight:600;font-size:.9rem;color:#0f172a;">Statutory Milestone Gaps</div><div style="font-size:.83rem;color:var(--text-secondary);">CIRP T0→T330 milestones in timeline.md that lack a corresponding ingested filing (e.g., Day 30 CoC notice has no meeting notice document).</div></div></div>
+        <div class="lint-check"><div class="lint-icon" style="background:#fff7ed;color:#ea580c;"><i class="fa-solid fa-magnifying-glass-plus"></i></div><div><div style="font-weight:600;font-size:.9rem;color:#0f172a;">Missing Cross-References</div><div style="font-size:.83rem;color:var(--text-secondary);">References from one wiki page pointing to another that has no corresponding page — broken internal links in the knowledge graph.</div></div></div>
+        <div class="lint-check"><div class="lint-icon" style="background:#f0fdf4;color:#059669;"><i class="fa-solid fa-lightbulb"></i></div><div><div style="font-weight:600;font-size:.9rem;color:#0f172a;">Suggested Investigations</div><div style="font-size:.83rem;color:var(--text-secondary);">Data gaps that could be filled with additional document ingestion — new sources suggested by the LLM based on patterns in existing wiki pages.</div></div></div>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="shared-footer"></div>
+  <script src="js/header.js?v=20260909_v5"></script>
+  <script src="js/footer.js?v=20260909_v5"></script>
+</body>
+</html>

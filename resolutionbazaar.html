@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolution Bazaar · Sovereign AI Configurator · AgenticProfessionals.Net</title>
+    <meta name="description" content="Configure your air-gapped legal and financial AI stack. Tailor your sovereign harness, domain models, legal vaults, and autonomous agents with live RAM and pricing calculations.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Pro / Free -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Shared Site Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <style>
+        /* Apple-inspired Configurator CSS */
+        :root {
+            --apple-bg: #090b10;
+            --apple-card-bg: #111520;
+            --apple-card-border: #1e2638;
+            --apple-card-hover: #26334d;
+            --apple-accent: #0071e3;
+            --apple-accent-hover: #0077ed;
+            --apple-accent-subtle: rgba(0, 113, 227, 0.12);
+            --apple-accent-glow: rgba(0, 113, 227, 0.35);
+            --apple-text-primary: #f5f5f7;
+            --apple-text-secondary: #86868b;
+            --apple-text-tertiary: #6e6e73;
+            --apple-success: #30d158;
+            --apple-warning: #ffd60a;
+            --apple-danger: #ff453a;
+        }
+
+        body {
+            background-color: var(--apple-bg);
+            color: var(--apple-text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Icons", "Inter", "Helvetica Neue", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Masthead Sub-brand Banner */
+        .rb-masthead {
+            background: linear-gradient(180deg, rgba(20, 26, 40, 0.95) 0%, rgba(12, 16, 25, 0.95) 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 14px 28px;
+            position: sticky;
+            top: 58px;
+            z-index: 90;
+        }
+        .rb-masthead-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .rb-brand-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: #fff;
+        }
+        .rb-brand-badge {
+            background: linear-gradient(135deg, #0071e3 0%, #4393e6 100%);
+            color: #fff;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .rb-security-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--apple-text-secondary);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 5px 14px;
+            border-radius: 20px;
+        }
+        .rb-security-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--apple-success);
+            box-shadow: 0 0 8px var(--apple-success);
+        }
+
+        /* Configurator Two-Column Layout */
+        .configurator-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 24px 140px 24px;
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        @media (max-width: 1080px) {
+            .configurator-wrap {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        /* Left Column: Sticky Node Visualizer & Specs */
+        .preview-column {
+            position: sticky;
+            top: 118px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .preview-card {
+            background: radial-gradient(120% 120% at 50% 0%, #151a27 0%, #0d111a 100%);
+            border: 1px solid var(--apple-card-border);
+            border-radius: 24px;
+            padding: 32px 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .preview-heading-small {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--apple-accent);
+            font-weight: 700;
+        }
+        .preview-node-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.76rem;
+            color: #4ade80;
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            padding: 3px 9px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Node Topology SVG Visualizer */
+        .node-topology-viewport {
+            height: 220px;
+            background: rgba(8, 10, 16, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .node-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .node-center-core {
+            width: 86px;
+            height: 86px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #1c273c 0%, #0d1524 100%);
+            border: 2px solid var(--apple-accent);
+            box-shadow: 0 0 35px var(--apple-accent-glow), inset 0 0 15px rgba(0, 113, 227, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .node-center-core i {
+            font-size: 2rem;
+            color: #60a5fa;
+            margin-bottom: 4px;
+        }
+        .node-center-core span {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            letter-spacing: 0.05em;
+        }
+
+        /* Orbiting Satellite Dots */
+        .orbit-container {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .orbit-pill {
+            position: absolute;
+            background: rgba(18, 24, 38, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            white-space: nowrap;
+        }
+        .orbit-pill i {
+            font-size: 0.72rem;
+        }
+        .orbit-pill.pos-model { top: 22px; left: 24px; }
+        .orbit-pill.pos-vault { bottom: 22px; left: 24px; }
+        .orbit-pill.pos-agent { top: 22px; right: 24px; }
+        .orbit-pill.pos-ram { bottom: 22px; right: 24px; }
+
+        /* Live Spec Breakdown */
+        .specs-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.88rem;
+        }
+        .spec-label {
+            color: var(--apple-text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .spec-value {
+            font-weight: 600;
+            color: #fff;
+            text-align: right;
+            font-feature-settings: "tnum";
+        }
+
+        /* RAM Footprint Gauge */
+        .ram-gauge-section {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 16px;
+        }
+        .ram-gauge-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+        .ram-status-text {
+            font-weight: 700;
+            color: var(--apple-text-primary);
+        }
+        .ram-progress-bar-bg {
+            height: 8px;
+            background: #1a2233;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .ram-progress-fill {
+            height: 100%;
+            width: 25%;
+            background: linear-gradient(90deg, #30d158 0%, #0071e3 70%, #ff9f0a 100%);
+            border-radius: 4px;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+        }
+        .ram-note {
+            font-size: 0.72rem;
+            color: var(--apple-text-tertiary);
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+
+        /* Security Badges Grid */
+        .security-badges-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        .security-chip {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .security-chip i {
+            color: #38bdf8;
+            font-size: 1rem;
+            margin-top: 2px;
+        }
+        .security-chip-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+        .security-chip-desc {
+            font-size: 0.7rem;
+            color: var(--apple-text-secondary);
+            line-height: 1.3;
+        }
+
+        /* Right Column: Apple Step Flow */
+        .selection-column {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+        }
+
+        /* Apple Two-Tone Heading */
+        .section-header-block {
+            margin-bottom: 22px;
+        }
+        .section-title {
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin: 0 0 6px 0;
+            line-height: 1.2;
+        }
+        .section-title-white {
+            color: #f5f5f7;
+        }
+        .section-title-gray {
+            color: #86868b;
+        }
+        .section-subtitle {
+            font-size: 0.98rem;
+            color: var(--apple-text-secondary);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Cadence Switcher Component */
+        .cadence-switcher {
+            background: #131824;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 32px;
+            align-self: flex-start;
+        }
+        .cadence-btn {
+            background: transparent;
+            border: none;
+            color: var(--apple-text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cadence-btn:hover {
+            color: #fff;
+        }
+        .cadence-btn.active {
+            background: var(--apple-accent);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 113, 227, 0.4);
+        }
+        .save-pill {
+            background: rgba(48, 209, 88, 0.2);
+            color: #4ade80;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Configurator Card Grid */
+        .cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .config-card {
+            background: var(--apple-card-bg);
+            border: 1px solid var(--apple-card-border);
+            border-radius: 18px;
+            padding: 22px 24px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+            user-select: none;
+        }
+        .config-card:hover {
+            border-color: var(--apple-card-hover);
+            background: #141926;
+            transform: translateY(-1px);
+        }
+        .config-card.selected {
+            background: radial-gradient(100% 100% at 0% 0%, #162238 0%, #101726 100%);
+            border: 2px solid var(--apple-accent);
+            box-shadow: 0 0 20px rgba(0, 113, 227, 0.25), inset 0 0 10px rgba(0, 113, 227, 0.1);
+        }
+
+        /* Selection Indicator: Radio or Checkbox Icon */
+        .selection-indicator {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            color: transparent;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+        .config-card.checkbox-style .selection-indicator {
+            border-radius: 6px;
+        }
+        .config-card.selected .selection-indicator {
+            background-color: var(--apple-accent);
+            border-color: var(--apple-accent);
+            color: #fff;
+        }
+
+        /* Card Content */
+        .card-main-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .card-title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+        .card-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #94a3b8;
+        }
+        .card-badge.popular {
+            background: rgba(0, 113, 227, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(0, 113, 227, 0.4);
+        }
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--apple-text-secondary);
+            margin: 0;
+            line-height: 1.4;
+        }
+        .card-specs-line {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .card-specs-line span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Card Pricing Column */
+        .card-price-col {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            flex-shrink: 0;
+        }
+        .card-price-main {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            font-feature-settings: "tnum";
+        }
+        .card-price-sub {
+            font-size: 0.72rem;
+            color: var(--apple-text-tertiary);
+        }
+
+        /* Sticky Bottom Buy Bar (Apple Style) */
+        .bottom-buy-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(12, 16, 25, 0.94);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 16px 28px;
+            z-index: 100;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.7);
+        }
+        .buy-bar-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .buy-bar-summary {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+        .summary-node-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .summary-node-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .summary-node-subtitle {
+            font-size: 0.8rem;
+            color: var(--apple-text-secondary);
+        }
+        .summary-hardware-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        .buy-bar-action {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .price-figure-wrap {
+            text-align: right;
+        }
+        .price-figure-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--apple-text-secondary);
+            font-weight: 600;
+        }
+        .price-figure-val {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.02em;
+            font-feature-settings: "tnum";
+        }
+        .price-cadence-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--apple-text-secondary);
+        }
+        .deploy-button {
+            background: var(--apple-accent);
+            color: #fff;
+            border: none;
+            border-radius: 980px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 12px 28px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 14px rgba(0, 113, 227, 0.4);
+        }
+        .deploy-button:hover {
+            background: var(--apple-accent-hover);
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 113, 227, 0.5);
+        }
+
+        /* Modal Manifest Dialog */
+        .manifest-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .manifest-modal.active {
+            display: flex;
+        }
+        .manifest-box {
+            background: #111624;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            max-width: 680px;
+            width: 100%;
+            padding: 32px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .manifest-box-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .manifest-box-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
+        .close-modal-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .manifest-code-block {
+            background: #090c14;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 16px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.82rem;
+            color: #38bdf8;
+            overflow-x: auto;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .modal-action-row {
+            display: flex;
+            justify-content: flex-end;
+            gap: 14px;
+        }
+        .btn-modal-copy {
+            background: #1e2638;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-modal-checkout {
+            background: var(--apple-accent);
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Shared Header Navigation -->
+    <div id="shared-header"></div>
+
+    <!-- Resolution Bazaar Masthead Sub-brand Banner -->
+    <section class="rb-masthead">
+        <div class="rb-masthead-inner">
+            <div class="rb-brand-title">
+                <span class="rb-brand-badge"><i class="fa-solid fa-cubes"></i> Sovereign Stack</span>
+                <span>Resolution Bazaar · Hardware-Aware Configurator</span>
+            </div>
+            <div class="rb-security-pill">
+                <span class="rb-security-dot"></span>
+                <span>100% Air-Gapped & Local Inference Guarantee</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Configurator Layout -->
+    <main class="configurator-wrap">
+        
+        <!-- Left Column: Sticky Node Visualizer & Specs -->
+        <aside class="preview-column">
+            <div class="preview-card">
+                <div class="preview-header">
+                    <span class="preview-heading-small">Configured Sovereign Node</span>
+                    <span class="preview-node-status" id="node-status-badge">
+                        <i class="fa-solid fa-circle-check"></i> System Feasible
+                    </span>
+                </div>
+
+                <!-- SVG Visualizer Viewport -->
+                <div class="node-topology-viewport">
+                    <div class="node-grid-bg"></div>
+                    <div class="node-center-core" id="visual-core-box">
+                        <i class="fa-solid fa-microchip"></i>
+                        <span id="visual-harness-code">PRO NODE</span>
+                    </div>
+
+                    <!-- Dynamic Orbiting Badges -->
+                    <div class="orbit-container">
+                        <div class="orbit-pill pos-model" id="visual-badge-models">
+                            <i class="fa-solid fa-brain" style="color: #60a5fa;"></i>
+                            <span id="visual-models-count">2 Models</span>
+                        </div>
+                        <div class="orbit-pill pos-vault" id="visual-badge-vaults">
+                            <i class="fa-solid fa-database" style="color: #34d399;"></i>
+                            <span id="visual-vaults-count">1 Vault</span>
+                        </div>
+                        <div class="orbit-pill pos-agent" id="visual-badge-agents">
+                            <i class="fa-solid fa-robot" style="color: #fbbf24;"></i>
+                            <span id="visual-agents-count">2 Agents</span>
+                        </div>
+                        <div class="orbit-pill pos-ram" id="visual-badge-ram">
+                            <i class="fa-solid fa-memory" style="color: #a78bfa;"></i>
+                            <span id="visual-ram-text">7.8 GB RAM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specifications Breakdown -->
+                <div class="specs-breakdown">
+                    <div class="spec-item">
+                        <span class="spec-label"><i class="fa-solid fa-server"></i> Base Harness</span>
+                        <span class="spec-value" id="spec-harness-val">Professional Node</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label"><i class="fa-solid fa-brain"></i> Active Models</span>
+                        <span class="spec-value" id="spec-models-val">LegalParam + FinanceParam</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label"><i class="fa-solid fa-vault"></i> Intelligence Vaults</span>
+                        <span class="spec-value" id="spec-vaults-val">IBC Precedent Vault</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label"><i class="fa-solid fa-user-astronaut"></i> Autonomous Agents</span>
+                        <span class="spec-value" id="spec-agents-val">CIRP Automator + Plan Evaluator</span>
+                    </div>
+                </div>
+
+                <!-- RAM Gauge Section -->
+                <div class="ram-gauge-section">
+                    <div class="ram-gauge-header">
+                        <span style="color: var(--apple-text-secondary);">Peak Unified Memory Footprint</span>
+                        <span class="ram-status-text" id="ram-indicator-text">7.8 GB / 16 GB</span>
+                    </div>
+                    <div class="ram-progress-bar-bg">
+                        <div class="ram-progress-fill" id="ram-progress-bar" style="width: 48.7%;"></div>
+                    </div>
+                    <div class="ram-note" id="ram-feasibility-note">
+                        ✓ Optimal for 16 GB Apple Silicon (M1/M2/M3/M4) or 16 GB NVIDIA RTX 4060/4070.
+                    </div>
+                </div>
+
+                <!-- Security Attributes -->
+                <div class="security-badges-row">
+                    <div class="security-chip">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <div class="security-chip-title">Zero Egress</div>
+                            <div class="security-chip-desc">All weights executed locally in RAM. No telemetry.</div>
+                        </div>
+                    </div>
+                    <div class="security-chip">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div>
+                            <div class="security-chip-title">Sub-Millisecond</div>
+                            <div class="security-chip-desc">SQLite FTS5 + in-process ONNX embeddings.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Column: Step-by-Step Apple Selection Flow -->
+        <section class="selection-column">
+
+            <!-- Cadence Selector Segment -->
+            <div class="cadence-switcher" id="cadence-selector">
+                <button class="cadence-btn active" data-cadence="monthly" onclick="setCadence('monthly')">
+                    Monthly Billing
+                </button>
+                <button class="cadence-btn" data-cadence="annual" onclick="setCadence('annual')">
+                    Annual Billing <span class="save-pill">Save 15%</span>
+                </button>
+                <button class="cadence-btn" data-cadence="perpetual" onclick="setCadence('perpetual')">
+                    Perpetual Sovereign Key
+                </button>
+            </div>
+
+            <!-- 1. HARNESS SELECTION (Single Select Radio) -->
+            <div class="flow-step-block" id="step-harness">
+                <div class="section-header-block">
+                    <h2 class="section-title">
+                        <span class="section-title-white">Harness.</span>
+                        <span class="section-title-gray">Choose your foundation.</span>
+                    </h2>
+                    <p class="section-subtitle">The native Eclipse Theia IDE runtime hosting Monaco LSP, Vector indices, and multi-agent coordination pipelines.</p>
+                </div>
+
+                <div class="cards-stack">
+                    <!-- Community Harness -->
+                    <div class="config-card radio-style" data-category="harness" data-id="harness-community" data-price-m="0" data-price-a="0" data-price-p="0" data-ram="1.2" onclick="selectHarness(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">Community Node</h3>
+                                <span class="card-badge">Single Seat</span>
+                            </div>
+                            <p class="card-desc">Standard local IDE harness with single-case indexing, basic Monaco legal formatting, and Markdown compiler.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-memory"></i> 1.2 GB Base RAM</span>
+                                <span><i class="fa-solid fa-folder"></i> Single Case Workspace</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main">Free</span>
+                            <span class="card-price-sub">Open Source</span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Harness (Default) -->
+                    <div class="config-card radio-style selected" data-category="harness" data-id="harness-pro" data-price-m="4999" data-price-a="4249" data-price-p="49990" data-ram="2.0" onclick="selectHarness(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">Professional Node</h3>
+                                <span class="card-badge popular">Most Popular</span>
+                            </div>
+                            <p class="card-desc">Multi-case workspace isolation, Bi-directional Monaco-SQLite live sync, Supreme Court DOCX export, and ONNX idle RAM eviction.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-memory"></i> 2.0 GB Base RAM</span>
+                                <span><i class="fa-solid fa-layer-group"></i> Unlimited Local Cases</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="₹4,999" data-a="₹4,249" data-p="₹49,990">₹4,999</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise Harness -->
+                    <div class="config-card radio-style" data-category="harness" data-id="harness-enterprise" data-price-m="14999" data-price-a="12749" data-price-p="149990" data-ram="3.5" onclick="selectHarness(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">Enterprise Sovereign Cluster</h3>
+                                <span class="card-badge">Team Vault Sync</span>
+                            </div>
+                            <p class="card-desc">Hardware-accelerated metal execution, encrypted team vault sync over P2P local network, and Case Action Inbox non-blocking orchestration.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-memory"></i> 3.5 GB Base RAM</span>
+                                <span><i class="fa-solid fa-shield-virus"></i> Hardware Key Dongle Support</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="₹14,999" data-a="₹12,749" data-p="₹1,49,990">₹14,999</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. MODELS SELECTION (Multi-Select Checkbox) -->
+            <div class="flow-step-block" id="step-models">
+                <div class="section-header-block">
+                    <h2 class="section-title">
+                        <span class="section-title-white">Models.</span>
+                        <span class="section-title-gray">Select local cognitive cores.</span>
+                    </h2>
+                    <p class="section-subtitle">Fine-tuned GGUF quantization weights executing strictly in unified RAM via llama-server with dual InLegal-SBERT embeddings.</p>
+                </div>
+
+                <div class="cards-stack">
+                    <!-- LegalParam 2.9B (Selected) -->
+                    <div class="config-card checkbox-style selected" data-category="model" data-id="model-legalparam" data-price-m="2499" data-price-a="2124" data-price-p="24990" data-ram="2.4" onclick="toggleMulti(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">LegalParam-2.9B Instruct</h3>
+                                <span class="card-badge">Q4_K_M Quantized</span>
+                            </div>
+                            <p class="card-desc">Specialized in Indian statutory acts (IBC 2016, Companies Act 2013, NCLAT case law) with zero hallucination strict grounding.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-microchip"></i> 2,048 Token Window</span>
+                                <span><i class="fa-solid fa-memory"></i> 2.4 GB VRAM / Unified RAM</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="+ ₹2,499" data-a="+ ₹2,124" data-p="+ ₹24,990">+ ₹2,499</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+
+                    <!-- FinanceParam 2.9B (Selected) -->
+                    <div class="config-card checkbox-style selected" data-category="model" data-id="model-financeparam" data-price-m="2499" data-price-a="2124" data-price-p="24990" data-ram="2.4" onclick="toggleMulti(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">FinanceParam-2.9B Instruct</h3>
+                                <span class="card-badge">Q4_K_M Quantized</span>
+                            </div>
+                            <p class="card-desc">Trained on financial sheets, avoidance transaction forensic auditing (PUFE), and Section 53 waterfall liquidation calculations.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-microchip"></i> 2,048 Token Window</span>
+                                <span><i class="fa-solid fa-memory"></i> 2.4 GB VRAM / Unified RAM</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="+ ₹2,499" data-a="+ ₹2,124" data-p="+ ₹24,990">+ ₹2,499</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+
+                    <!-- Multimodal Vision OCR Engine -->
+                    <div class="config-card checkbox-style" data-category="model" data-id="model-vision" data-price-m="3499" data-price-a="2974" data-price-p="34990" data-ram="3.8" onclick="toggleMulti(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">Multimodal Legal Vision-OCR Core</h3>
+                                <span class="card-badge">Scanned Docs & Stamps</span>
+                            </div>
+                            <p class="card-desc">Headless PDF page renderer transcribing complex tabular filings, stamp paper seals, and handwritten court margin notes.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-eye"></i> Visual Tabular Parser</span>
+                                <span><i class="fa-solid fa-memory"></i> 3.8 GB VRAM / Unified RAM</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="+ ₹3,499" data-a="+ ₹2,974" data-p="+ ₹34,990">+ ₹3,499</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. VAULTS SELECTION (Multi-Select Checkbox) -->
+            <div class="flow-step-block" id="step-vaults">
+                <div class="section-header-block">
+                    <h2 class="section-title">
+                        <span class="section-title-white">Vaults.</span>
+                        <span class="section-title-gray">Precedent intelligence archives.</span>
+                    </h2>
+                    <p class="section-subtitle">Local encrypted SQLite FTS5 vector stores containing curated case jurisprudence, statutory circulars, and dispute templates.</p>
+                </div>
+
+                <div class="cards-stack">
+                    <!-- IBC Precedent Vault (Selected) -->
+                    <div class="config-card checkbox-style selected" data-category="vault" data-id="vault-ibc" data-price-m="1999" data-price-a="1699" data-price-p="19990" data-ram="0.5" onclick="toggleMulti(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">IBC 2016 Full Jurisprudence Vault</h3>
+                                <span class="card-badge popular">28,000+ Orders</span>
+                            </div>
+                            <p class="card-desc">Supreme Court, NCLAT, and NCLT landmark rulings indexed with InLegal-SBERT semantic vectors for instant case citation preview.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-database"></i> 4.2 GB Local Disk</span>
+                                <span><i class="fa-solid fa-bolt"></i> &lt;1ms Hybrid Search</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="+ ₹1,999" data-a="+ ₹1,699" data-p="+ ₹19,990">+ ₹1,999</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+
+                    <!-- Tax & GST Jurisprudence -->
+                    <div class="config-card checkbox-style" data-category="vault" data-id="vault-tax" data-price-m="1999" data-price-a="1699" data-price-p="19990" data-ram="0.5" onclick="toggleMulti(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">Corporate Tax & GST Precedents</h3>
+                                <span class="card-badge">ITAT & High Courts</span>
+                            </div>
+                            <p class="card-desc">Comprehensive indexing of ITAT, High Court, and CBIC circulars covering Section 148 notices, transfer pricing, and ITC reversals.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-database"></i> 3.8 GB Local Disk</span>
+                                <span><i class="fa-solid fa-bolt"></i> FTS5 Indexed</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="+ ₹1,999" data-a="+ ₹1,699" data-p="+ ₹19,990">+ ₹1,999</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+
+                    <!-- RBI & SEBI Regulatory Vault -->
+                    <div class="config-card checkbox-style" data-category="vault" data-id="vault-rbi" data-price-m="1999" data-price-a="1699" data-price-p="19990" data-ram="0.4" onclick="toggleMulti(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">RBI Master Directions & SEBI Regulations</h3>
+                                <span class="card-badge">Compliance</span>
+                            </div>
+                            <p class="card-desc">Updated circulars, prudential frameworks for resolution of stressed assets, and SEBI (LODR) disclosures for listed debtors.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-database"></i> 2.1 GB Local Disk</span>
+                                <span><i class="fa-solid fa-bolt"></i> Strict Verbatim Citations</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="+ ₹1,999" data-a="+ ₹1,699" data-p="+ ₹19,990">+ ₹1,999</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. AGENTS SELECTION (Multi-Select Checkbox) -->
+            <div class="flow-step-block" id="step-agents">
+                <div class="section-header-block">
+                    <h2 class="section-title">
+                        <span class="section-title-white">Agents.</span>
+                        <span class="section-title-gray">Autonomous legal co-counsels.</span>
+                    </h2>
+                    <p class="section-subtitle">Node.js-native autonomous subagents integrated directly into Eclipse Theia via ChatAgent registry delegation.</p>
+                </div>
+
+                <div class="cards-stack">
+                    <!-- CIRP Forms Automator (Selected) -->
+                    <div class="config-card checkbox-style selected" data-category="agent" data-id="agent-forms" data-price-m="1499" data-price-a="1274" data-price-p="14990" data-ram="0.3" onclick="toggleMulti(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">CIRP Statutory Form Automator (@Forms)</h3>
+                                <span class="card-badge popular">Statutory Audit</span>
+                            </div>
+                            <p class="card-desc">Auto-extracts claim forms, populates claims registry tables, and validates CIRP Form H & Form 2 compliances deterministically.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-robot"></i> Theia Native Delegator</span>
+                                <span><i class="fa-solid fa-memory"></i> ~300 MB Footprint</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="+ ₹1,499" data-a="+ ₹1,274" data-p="+ ₹14,990">+ ₹1,499</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+
+                    <!-- Resolution Plan Evaluator (Selected) -->
+                    <div class="config-card checkbox-style selected" data-category="agent" data-id="agent-plan" data-price-m="1999" data-price-a="1699" data-price-p="19990" data-ram="0.4" onclick="toggleMulti(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">Resolution Plan Evaluator (@Document)</h3>
+                                <span class="card-badge">Section 30(2) Check</span>
+                            </div>
+                            <p class="card-desc">Critiques resolution plans against Section 29A disqualifications and computes waterfall allocations for dissenting financial creditors.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-scale-balanced"></i> Waterfall Compliance</span>
+                                <span><i class="fa-solid fa-memory"></i> ~400 MB Footprint</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="+ ₹1,999" data-a="+ ₹1,699" data-p="+ ₹19,990">+ ₹1,999</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+
+                    <!-- Forensic Avoidance Tracker -->
+                    <div class="config-card checkbox-style" data-category="agent" data-id="agent-avoidance" data-price-m="1999" data-price-a="1699" data-price-p="19990" data-ram="0.4" onclick="toggleMulti(this)">
+                        <div class="selection-indicator"><i class="fa-solid fa-check"></i></div>
+                        <div class="card-main-info">
+                            <div class="card-title-row">
+                                <h3 class="card-title">Forensic Avoidance Ledger (@Advisor)</h3>
+                                <span class="card-badge">PUFE Transactions</span>
+                            </div>
+                            <p class="card-desc">Cross-examines general ledgers against Section 43 (Preferential), 45 (Undervalued), and 66 (Fraudulent) look-back periods.</p>
+                            <div class="card-specs-line">
+                                <span><i class="fa-solid fa-magnifying-glass-chart"></i> PUFE Ledger Sync</span>
+                                <span><i class="fa-solid fa-memory"></i> ~400 MB Footprint</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <span class="card-price-main dynamic-price" data-m="+ ₹1,999" data-a="+ ₹1,699" data-p="+ ₹19,990">+ ₹1,999</span>
+                            <span class="card-price-sub dynamic-cadence-label">/ month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Sticky Bottom Buy Bar (Apple Style) -->
+    <div class="bottom-buy-bar">
+        <div class="buy-bar-inner">
+            <div class="buy-bar-summary">
+                <div class="summary-node-meta">
+                    <div class="summary-node-title" id="bar-node-summary">Professional Sovereign Node</div>
+                    <div class="summary-node-subtitle" id="bar-items-count">5 Modules Selected · 100% Local Execution</div>
+                </div>
+                <div class="summary-hardware-status" id="bar-hardware-badge">
+                    <i class="fa-solid fa-laptop-code" style="color: #60a5fa;"></i>
+                    <span id="bar-hardware-text">7.8 GB Unified RAM Required</span>
+                </div>
+            </div>
+
+            <div class="buy-bar-action">
+                <div class="price-figure-wrap">
+                    <div class="price-figure-label" id="bar-cadence-label">MONTHLY SUBSCRIPTION</div>
+                    <div class="price-figure-val" id="bar-price-total">₹13,495</div>
+                </div>
+                <button class="deploy-button" onclick="openManifestModal()">
+                    <span>Deploy Stack</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deployment Manifest Modal -->
+    <div class="manifest-modal" id="manifestModal" onclick="closeModalOnBackdrop(event)">
+        <div class="manifest-box">
+            <div class="manifest-box-header">
+                <h3 class="manifest-box-title">
+                    <i class="fa-solid fa-cubes" style="color: var(--apple-accent); margin-right: 8px;"></i>
+                    Sovereign Stack Deployment Manifest
+                </h3>
+                <button class="close-modal-btn" onclick="closeManifestModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <p style="color: var(--apple-text-secondary); font-size: 0.9rem; margin-bottom: 16px;">
+                Your custom sovereign node configuration is ready for immediate deployment. Copy the manifest or proceed to license provisioning.
+            </p>
+            <pre class="manifest-code-block" id="manifestJsonContent">{
+  "node_id": "hayagriva-sovereign-01",
+  "air_gapped": true,
+  "harness": "Professional Node",
+  "models": ["LegalParam-2.9B", "FinanceParam-2.9B"],
+  "vaults": ["IBC 2016 Full Jurisprudence"],
+  "agents": ["CIRP Statutory Form Automator", "Resolution Plan Evaluator"],
+  "estimated_ram_gb": 7.8,
+  "billing_cadence": "monthly",
+  "total_price_inr": 13495
+}</pre>
+            <div class="modal-action-row">
+                <button class="btn-modal-copy" onclick="copyManifest()"><i class="fa-regular fa-copy"></i> Copy JSON Manifest</button>
+                <button class="btn-modal-checkout" onclick="alert('Proceeding to Sovereign Key Provisioning...')">Confirm & Initialize Node →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+
+    <script>
+        // Reactive Configurator State
+        let currentCadence = 'monthly'; // 'monthly', 'annual', 'perpetual'
+        let selectedHarness = null;
+        let selectedModules = [];
+
+        function initConfigurator() {
+            // Read initial DOM state
+            selectedHarness = document.querySelector('.config-card[data-category="harness"].selected');
+            selectedModules = Array.from(document.querySelectorAll('.config-card.checkbox-style.selected'));
+            recalculate();
+        }
+
+        function setCadence(cadence) {
+            currentCadence = cadence;
+            document.querySelectorAll('.cadence-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.cadence === cadence);
+            });
+
+            // Update card pricing displays
+            document.querySelectorAll('.config-card').forEach(card => {
+                const priceEl = card.querySelector('.dynamic-price');
+                const subEl = card.querySelector('.dynamic-cadence-label');
+                if (priceEl && subEl) {
+                    if (cadence === 'monthly') {
+                        priceEl.textContent = priceEl.dataset.m;
+                        subEl.textContent = '/ month';
+                    } else if (cadence === 'annual') {
+                        priceEl.textContent = priceEl.dataset.a;
+                        subEl.textContent = '/ mo (billed yearly)';
+                    } else {
+                        priceEl.textContent = priceEl.dataset.p;
+                        subEl.textContent = 'one-time license';
+                    }
+                }
+            });
+
+            recalculate();
+        }
+
+        function selectHarness(cardEl) {
+            document.querySelectorAll('.config-card[data-category="harness"]').forEach(c => {
+                c.classList.remove('selected');
+            });
+            cardEl.classList.add('selected');
+            selectedHarness = cardEl;
+            recalculate();
+        }
+
+        function toggleMulti(cardEl) {
+            cardEl.classList.toggle('selected');
+            selectedModules = Array.from(document.querySelectorAll('.config-card.checkbox-style.selected'));
+            recalculate();
+        }
+
+        function recalculate() {
+            // 1. Calculate Pricing
+            let totalPrice = 0;
+            const priceKey = currentCadence === 'monthly' ? 'priceM' : (currentCadence === 'annual' ? 'priceA' : 'priceP');
+            
+            if (selectedHarness) {
+                totalPrice += parseInt(selectedHarness.dataset[priceKey] || 0, 10);
+            }
+            selectedModules.forEach(mod => {
+                totalPrice += parseInt(mod.dataset[priceKey] || 0, 10);
+            });
+
+            // 2. Calculate RAM
+            let totalRam = 0;
+            if (selectedHarness) {
+                totalRam += parseFloat(selectedHarness.dataset.ram || 0);
+            }
+            selectedModules.forEach(mod => {
+                totalRam += parseFloat(mod.dataset.ram || 0);
+            });
+            totalRam = Math.round(totalRam * 10) / 10;
+
+            // 3. Update Left Column Preview
+            const harnessTitle = selectedHarness ? selectedHarness.querySelector('.card-title').textContent : 'Node';
+            document.getElementById('spec-harness-val').textContent = harnessTitle;
+            
+            let harnessCode = 'PRO NODE';
+            if (selectedHarness.dataset.id === 'harness-community') harnessCode = 'COMMUNITY';
+            if (selectedHarness.dataset.id === 'harness-enterprise') harnessCode = 'ENTERPRISE';
+            document.getElementById('visual-harness-code').textContent = harnessCode;
+
+            // Model / Vault / Agent counts
+            const models = selectedModules.filter(m => m.dataset.category === 'model');
+            const vaults = selectedModules.filter(m => m.dataset.category === 'vault');
+            const agents = selectedModules.filter(m => m.dataset.category === 'agent');
+
+            document.getElementById('visual-models-count').textContent = `${models.length} Model${models.length === 1 ? '' : 's'}`;
+            document.getElementById('visual-vaults-count').textContent = `${vaults.length} Vault${vaults.length === 1 ? '' : 's'}`;
+            document.getElementById('visual-agents-count').textContent = `${agents.length} Agent${agents.length === 1 ? '' : 's'}`;
+            document.getElementById('visual-ram-text').textContent = `${totalRam} GB RAM`;
+
+            document.getElementById('spec-models-val').textContent = models.length > 0 ? models.map(m => m.querySelector('.card-title').textContent.split(' ')[0]).join(' + ') : 'None Selected';
+            document.getElementById('spec-vaults-val').textContent = vaults.length > 0 ? vaults.map(v => v.querySelector('.card-title').textContent.replace(' Vault', '').replace(' Jurisprudence', '')).join(', ') : 'None Selected';
+            document.getElementById('spec-agents-val').textContent = agents.length > 0 ? agents.map(a => a.querySelector('.card-title').textContent.split('(')[0].trim()).join(', ') : 'None Selected';
+
+            // RAM Gauge
+            const ramPct = Math.min(100, Math.round((totalRam / 16.0) * 100));
+            document.getElementById('ram-indicator-text').textContent = `${totalRam} GB / 16 GB`;
+            document.getElementById('ram-progress-bar').style.width = `${ramPct}%`;
+
+            const noteEl = document.getElementById('ram-feasibility-note');
+            const statusBadge = document.getElementById('node-status-badge');
+            if (totalRam <= 8.0) {
+                noteEl.innerHTML = '✓ <strong>Ultra-lightweight:</strong> Seamless on 8 GB MacBook Air or standard business laptops.';
+                statusBadge.innerHTML = '<i class="fa-solid fa-circle-check"></i> System Optimal';
+                statusBadge.style.color = '#4ade80';
+            } else if (totalRam <= 16.0) {
+                noteEl.innerHTML = '✓ <strong>Optimal:</strong> Runs fluidly on 16 GB Apple Silicon (M1/M2/M3/M4) or RTX 4060/4070 PC.';
+                statusBadge.innerHTML = '<i class="fa-solid fa-circle-check"></i> System Feasible';
+                statusBadge.style.color = '#4ade80';
+            } else {
+                noteEl.innerHTML = '⚠️ <strong>High RAM requirement:</strong> 24 GB+ unified memory recommended (e.g. M3 Pro / Max or RTX 3090/4090).';
+                statusBadge.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> High Memory Node';
+                statusBadge.style.color = '#fbbf24';
+            }
+
+            // 4. Update Bottom Buy Bar
+            document.getElementById('bar-node-summary').textContent = `${harnessTitle} Sovereign Node`;
+            document.getElementById('bar-items-count').textContent = `${1 + selectedModules.length} Modules Active · 100% Local & Air-Gapped`;
+            document.getElementById('bar-hardware-text').textContent = `${totalRam} GB Unified RAM Required`;
+            
+            const cadenceLabelMap = {
+                'monthly': 'MONTHLY SUBSCRIPTION',
+                'annual': 'ANNUAL BILLING (BILLED YEARLY)',
+                'perpetual': 'ONE-TIME PERPETUAL SOVEREIGN LICENSE'
+            };
+            document.getElementById('bar-cadence-label').textContent = cadenceLabelMap[currentCadence];
+            document.getElementById('bar-price-total').textContent = '₹' + totalPrice.toLocaleString('en-IN');
+
+            // 5. Update Manifest JSON
+            const manifestObj = {
+                "node_id": "hayagriva-sovereign-" + Math.floor(Math.random() * 899 + 100),
+                "air_gapped": true,
+                "harness": harnessTitle,
+                "models": models.map(m => m.querySelector('.card-title').textContent),
+                "vaults": vaults.map(v => v.querySelector('.card-title').textContent),
+                "agents": agents.map(a => a.querySelector('.card-title').textContent),
+                "estimated_ram_gb": totalRam,
+                "billing_cadence": currentCadence,
+                "total_price_inr": totalPrice,
+                "timestamp": new Date().toISOString()
+            };
+            document.getElementById('manifestJsonContent').textContent = JSON.stringify(manifestObj, null, 2);
+        }
+
+        // Modal Functions
+        function openManifestModal() {
+            document.getElementById('manifestModal').classList.add('active');
+        }
+        function closeManifestModal() {
+            document.getElementById('manifestModal').classList.remove('active');
+        }
+        function closeModalOnBackdrop(e) {
+            if (e.target.id === 'manifestModal') closeManifestModal();
+        }
+        function copyManifest() {
+            const text = document.getElementById('manifestJsonContent').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Manifest JSON copied to clipboard!');
+            });
+        }
+
+        // Run on load
+        window.addEventListener('DOMContentLoaded', initConfigurator);
+    </script>
+</body>
+</html>

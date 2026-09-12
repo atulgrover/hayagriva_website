@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain-SLMs (Small Language Models) - AgenticProfessionals.Net</title>
+  <meta name="description" content="Domain-specialized Small Language Models (0.5B to 8B params) for private, air-gapped reasoning in legal, financial, healthcare, and regulated professional workflows.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <link rel="stylesheet" href="css/inner-pages.css?v=20260911_v1">
+
+  <style>
+    .code-snippet-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      position: relative;
+      overflow-x: auto;
+      margin: 1rem 0;
+      border: 1px solid #334155;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    .spec-table th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .spec-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+    }
+    .spec-table tr:hover td {
+      background: #faf5ff;
+    }
+    .arch-flow-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03);
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .comparison-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Header Section -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>/</span>
+        <span>Models</span>
+        <span>/</span>
+        <span style="color: var(--text-primary); font-weight: 600;">Domain-SLMs</span>
+      </div>
+
+      <div class="badge-pill badge-institutional">
+        <i class="fa-solid fa-brain"></i> Domain-Adapted Small Language Models
+      </div>
+
+      <div class="hero-title-row">
+        <div>
+          <h1 class="hero-heading">Domain-Specific SLMs (0.5B – 8B)</h1>
+          <p class="hero-desc">
+            High-precision, air-gapped Small Language Models purpose-built for regulated industries. Delivering deterministic reasoning, specialized vocabularies, and total client confidentiality on local workstation hardware.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="#local-models" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-download" style="margin-right: 0.4rem;"></i> Local Stack Weights
+          </a>
+          <a href="#pro-ecosystem" class="btn btn-secondary" style="padding: 0.75rem 1.4rem;">
+            <i class="fa-solid fa-compass" style="margin-right: 0.4rem;"></i> Professional Ecosystem
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Metric Cards -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-purple">
+        <i class="fa-solid fa-microchip"></i>
+      </div>
+      <div>
+        <div class="metric-value">0.5B &ndash; 8B</div>
+        <div class="metric-label">Optimal SLM Parameter Size</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-emerald">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div>
+        <div class="metric-value">100% Offline</div>
+        <div class="metric-label">Zero Cloud Data Leakage</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-blue">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+      <div>
+        <div class="metric-value">&lt; 2.5 GB</div>
+        <div class="metric-label">Q4_K_M RAM Footprint</div>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon-box metric-icon-amber">
+        <i class="fa-solid fa-balance-scale"></i>
+      </div>
+      <div>
+        <div class="metric-value">Zero NDA Breach</div>
+        <div class="metric-label">Privileged Confidentiality</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
+  <main class="container" style="padding-bottom: 4rem;">
+
+    <!-- Conceptual Foundation Section -->
+    <div class="arch-flow-box">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.25rem;">
+        <span class="badge badge-primary">Architectural Primer</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Why Domain-SLMs Surpass Frontier LLMs for Regulated Work</h2>
+        <p class="section-desc">
+          Large General-Purpose LLMs (70B–405B) excel at broad conversational banter, but introduce unacceptable failure modes in mission-critical legal, financial, and institutional workflows.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-card" style="border-left: 4px solid #7c3aed;">
+          <h4 style="margin: 0 0 0.5rem; color: #6b21a8; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-lock"></i> Complete Air-Gapped Sovereignty
+          </h4>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">
+            Law firms, insolvency professionals, banks, and healthcare providers operate under statutory confidentiality duties (e.g. Attorney-Client Privilege, IBBI Regulations, HIPAA, GDPR). Domain SLMs run completely on local device memory via GGUF / llamafile with zero telemetry.
+          </p>
+        </div>
+
+        <div class="comparison-card" style="border-left: 4px solid #2563eb;">
+          <h4 style="margin: 0 0 0.5rem; color: #1d4ed8; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-code-branch"></i> Deep Statutory Determinism
+          </h4>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">
+            Domain SLMs are pre-trained and fine-tuned on actual judicial rulings, statutory codes, balance sheet formats, and regulatory circulars. Their attention mechanisms are anchored to rigorous statutory rules rather than generalized internet prose.
+          </p>
+        </div>
+
+        <div class="comparison-card" style="border-left: 4px solid #059669;">
+          <h4 style="margin: 0 0 0.5rem; color: #047857; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-laptop-code"></i> Commodity Hardware Economics
+          </h4>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">
+            Running 4-bit quantized (Q4_K_M) 2.9B or 7B SLMs requires only 2GB to 5GB of unified memory. Practitioners can execute instant local inference directly on standard MacBooks, laptops, or secure air-gapped desktops with sub-second token generation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Local Models in Our Stack -->
+    <div id="local-models" class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+      <span class="badge badge-primary">Available Weights</span>
+      <h2 class="section-title" style="margin-top: 0.5rem;">Models in Our Foundry Stack ()</h2>
+      <p class="section-desc">
+        Pre-converted, vocabulary-patched, and ready for instant offline execution via <code>llamafile-runner</code>.
+      </p>
+    </div>
+
+    <div class="catalog-grid" style="margin-bottom: 3rem;">
+
+      <!-- Model 1: LegalParam 2.9B -->
+      <div class="catalog-card" style="border-top: 3px solid #7c3aed;">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary" style="background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe;">Legal Core</span>
+          <span class="badge badge-success">GGUF Q4_K_M</span>
+        </div>
+        <h3 class="catalog-card-title">LegalParam 2.9B Instruct</h3>
+        <p class="catalog-card-desc">
+          Fine-tuned on 45,000+ Indian corporate insolvency judgments, IBC statutory provisions, and NCLT/NCLAT precedent headnotes. Designed for statutory interpretation, §29A compliance, and resolution plan audits.
+        </p>
+        <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span class="model-spec-badge">Params: 2.9B</span>
+          <span class="model-spec-badge">Ctx: 2048</span>
+          <span class="model-spec-badge">Size: 1.7 GB</span>
+          <span class="model-spec-badge">Base: Param-1-2.9B</span>
+        </div>
+        <div class="code-snippet-box" style="font-size: 0.75rem;">
+# Run via local runner binary:
+./weights/llm/llamafile/llamafile-runner   -m weights/llm/llamafile/legalparam/legalparam-2.9b.gguf   --port 8090 --threads 6 --nobrowser
+        </div>
+        <div class="catalog-meta-row">
+          <span style="color: #7c3aed; font-weight: 600;">Prompt: &lt;|user|&gt;...&lt;/|/user|&gt;&lt;|assistant|&gt;</span>
+          <a href="pipie_ide.html" class="badge badge-subtle" style="color: #2563eb; font-weight: 600; text-decoration: none;">
+            Open in Pipie IDE →
+          </a>
+        </div>
+      </div>
+
+      <!-- Model 2: FinanceParam 2.9B -->
+      <div class="catalog-card" style="border-top: 3px solid #2563eb;">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary" style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe;">Finance Core</span>
+          <span class="badge badge-success">GGUF Q4_K_M</span>
+        </div>
+        <h3 class="catalog-card-title">FinanceParam 2.9B Instruct</h3>
+        <p class="catalog-card-desc">
+          Specialized forensic financial reasoning SLM trained on balance sheet ledgers, avoidance look-back matrices (§43, 45, 50, 66), DCF valuation models, and liquidation waterfall calculations under IBC §53.
+        </p>
+        <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span class="model-spec-badge">Params: 2.9B</span>
+          <span class="model-spec-badge">Ctx: 2048</span>
+          <span class="model-spec-badge">Size: 1.7 GB</span>
+          <span class="model-spec-badge">Base: Param-1-2.9B</span>
+        </div>
+        <div class="code-snippet-box" style="font-size: 0.75rem;">
+# Run via local runner binary:
+./weights/llm/llamafile/llamafile-runner   -m weights/llm/llamafile/financeparam/financeparam-2.9b.gguf   --port 8090 --threads 6 --nobrowser
+        </div>
+        <div class="catalog-meta-row">
+          <span style="color: #2563eb; font-weight: 600;">Prompt: &lt;|user|&gt;...&lt;/|/user|&gt;&lt;|assistant|&gt;</span>
+          <a href="pipie_ide.html" class="badge badge-subtle" style="color: #2563eb; font-weight: 600; text-decoration: none;">
+            Open in Pipie IDE →
+          </a>
+        </div>
+      </div>
+
+      <!-- Model 3: SaulLM 7B -->
+      <div class="catalog-card" style="border-top: 3px solid #0d9488;">
+        <div class="catalog-badge-row">
+          <span class="badge badge-primary" style="background: #f0fdfa; color: #0d9488; border: 1px solid #99f6e4;">Legal Master</span>
+          <span class="badge badge-success">GGUF Q4_K_M</span>
+        </div>
+        <h3 class="catalog-card-title">SaulLM 7B Instruct</h3>
+        <p class="catalog-card-desc">
+          State-of-the-art 7-billion parameter legal domain SLM developed by Equall.ai. Built on Mistral-7B architecture and fine-tuned across millions of legal contracts, statutory corpora, and litigation briefs.
+        </p>
+        <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span class="model-spec-badge">Params: 7.2B</span>
+          <span class="model-spec-badge">Ctx: 4096</span>
+          <span class="model-spec-badge">Size: 4.1 GB</span>
+          <span class="model-spec-badge">Arch: Mistral-7B</span>
+        </div>
+        <div class="code-snippet-box" style="font-size: 0.75rem;">
+# Run via local runner binary:
+./weights/llm/llamafile/llamafile-runner   -m weights/llm/saul/Saul-Instruct-v1.Q4_K_M.gguf   --port 8090 --threads 6 --nobrowser
+        </div>
+        <div class="catalog-meta-row">
+          <span style="color: #0d9488; font-weight: 600;">Full Legal Reasoning</span>
+          <a href="pipie_ide.html" class="badge badge-subtle" style="color: #2563eb; font-weight: 600; text-decoration: none;">
+            Open in Pipie IDE →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Open Source Domain SLM Ecosystem for Other Professionals -->
+    <div id="pro-ecosystem" class="arch-flow-box">
+      <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
+        <span class="badge badge-primary">Industry Landscape</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Open-Source Domain SLMs for Other Professionals</h2>
+        <p class="section-desc">
+          Our <code>foundry/</code> conversion pipeline supports converting any Hugging Face domain SLM into quantized GGUF / llamafiles. Here are the premier open-source SLMs available across key industries:
+        </p>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Professional Domain</th>
+              <th>Leading SLMs (≤8B)</th>
+              <th>Base Architecture</th>
+              <th>Core Professional Use Cases</th>
+              <th>Privacy & Compliance Drivers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Healthcare & Clinical</strong><br><span style="font-size: 0.75rem; color: #94a3b8;">Doctors, Clinicians, Researchers</span></td>
+              <td>
+                <span class="badge badge-subtle">OpenBioLLM-8B</span><br>
+                <span class="badge badge-subtle">BioMistral-7B</span><br>
+                <span class="badge badge-subtle">Med42-v2 (8B)</span>
+              </td>
+              <td>Llama 3 / Mistral-7B</td>
+              <td>Clinical note summarization, medical Q&amp;A, diagnostic triage, USMLE benchmark reasoning, and EHR charting.</td>
+              <td><strong>HIPAA & Patient Privacy</strong>: Strict prohibition on cloud transmission of protected health information (PHI).</td>
+            </tr>
+            <tr>
+              <td><strong>Cybersecurity & SOC</strong><br><span style="font-size: 0.75rem; color: #94a3b8;">SOC Analysts, Pen-testers, DevSecOps</span></td>
+              <td>
+                <span class="badge badge-subtle">WhiteRabbitNeo-7B</span><br>
+                <span class="badge badge-subtle">Llama-3-8B-SecOps</span><br>
+                <span class="badge badge-subtle">PhishLlama-3B</span>
+              </td>
+              <td>Llama 3 / Phi</td>
+              <td>Automated CVE triage, SIEM syslog parsing, incident response playbooks, YARA rule generation, and email phishing detection.</td>
+              <td><strong>Air-Gapped SOC</strong>: Proprietary vulnerability disclosures and zero-day logs must remain strictly local.</td>
+            </tr>
+            <tr>
+              <td><strong>Software Engineering</strong><br><span style="font-size: 0.75rem; color: #94a3b8;">Developers, QA, Cloud Architects</span></td>
+              <td>
+                <span class="badge badge-subtle">Qwen2.5-Coder (1.5B/3B/7B)</span><br>
+                <span class="badge badge-subtle">Granite-Code-3B/8B</span><br>
+                <span class="badge badge-subtle">StarCoder2-3B/7B</span>
+              </td>
+              <td>Qwen 2.5 / Granite</td>
+              <td>In-IDE low-latency code completion, repo-level refactoring, automated unit test generation, and pull request reviews.</td>
+              <td><strong>IP Protection</strong>: Enterprise proprietary source code cannot be retained for frontier model re-training.</td>
+            </tr>
+            <tr>
+              <td><strong>Quantitative & Math</strong><br><span style="font-size: 0.75rem; color: #94a3b8;">Quants, Actuaries, Data Scientists</span></td>
+              <td>
+                <span class="badge badge-subtle">Qwen2.5-Math (1.5B/7B)</span><br>
+                <span class="badge badge-subtle">NuminaMath-7B</span><br>
+                <span class="badge badge-subtle">Llemma-7B</span>
+              </td>
+              <td>Qwen 2.5 / DeepSeek-Math</td>
+              <td>Olympiad math reasoning, formal proof verification (Lean/Isabelle), algorithmic financial modeling, and actuarial math.</td>
+              <td><strong>Deterministic Precision</strong>: Zero numerical hallucinations in formal statutory formulas or risk curves.</td>
+            </tr>
+            <tr>
+              <td><strong>Agronomy & Agriculture</strong><br><span style="font-size: 0.75rem; color: #94a3b8;">Agronomists, Farm Managers</span></td>
+              <td>
+                <span class="badge badge-subtle">AgriParam / Dhenu-1 (2.9B)</span><br>
+                <span class="badge badge-subtle">AgriLLM (7B)</span>
+              </td>
+              <td>Param-1 / Llama</td>
+              <td>Crop disease diagnosis, soil nutrient recommendations, agro-chemical dosages, and regional language advisory.</td>
+              <td><strong>Edge Deployment</strong>: Operates offline in rural areas with intermittent or zero internet connectivity.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Foundry Conversion Workflow -->
+    <div class="agent-pipeline-flow" style="margin-top: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 0.25rem;">
+            Our HuggingFace &rarr; GGUF Foundry Pipeline
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
+            How any professional domain SLM is packaged into offline execution weights inside <code>foundry/</code>.
+          </p>
+        </div>
+        <span class="badge badge-success"><i class="fa-solid fa-check"></i> Foundry Automated</span>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 01 &bull; Ingest</div>
+          <div class="flow-step-title">HF Safetensors</div>
+          <div class="flow-step-desc">Download domain model weights, tokenizer configs, and vocabularies from Hugging Face Hub.</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 02 &bull; Convert</div>
+          <div class="flow-step-title">Remap to GGUF</div>
+          <div class="flow-step-desc">Execute <code>convert_hf_to_gguf.py</code> to produce uncompressed FP16 GGUF tensor format.</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 03 &bull; Patch Vocab</div>
+          <div class="flow-step-title">BPE Byte Sanitizer</div>
+          <div class="flow-step-desc">Run <code>patch_gguf_vocab.py</code> to correct Indian language or domain byte tokens (&lt;0xNN&gt;).</div>
+        </div>
+        <div class="flow-step-item">
+          <div class="flow-step-num">Step 04 &bull; Quantize</div>
+          <div class="flow-step-title">Q4_K_M Packaging</div>
+          <div class="flow-step-desc">Apply medium k-quantization to compress the model to ~1.7GB for ultra-fast local CPU/GPU execution.</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Shared Site Footer Component -->
+  <div id="shared-footer"></div>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="js/header.js?v=20260911_v1"></script>
+  <script src="js/footer.js?v=20260911_v1"></script>
+  <script src="js/page-common.js?v=20260911_v1"></script>
+
+</body>
+</html>
