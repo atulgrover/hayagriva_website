@@ -16,7 +16,7 @@ agentic_professionals_net/
 │                                # (Home, ChatIBC, Harness, Agents, Directories, Login)
 │
 ├── vaults.html                  # Master Legal Vaults Catalog
-│                                # (15 production vaults, 38,500+ statutory sections)
+│                                # (Modular production vaults, comprehensive statutory sections)
 │
 ├── css/                         # Clean Corporate Light Theme (No Dark Mode)
 │   ├── main.css                 # Core CSS variables, typography, layout containers
@@ -83,7 +83,7 @@ agentic_professionals_net/
    - Direct integration into Hayagriva Desktop IDE with contextual prefix triggers:
      - `@@ibc/sec14` ➔ Inserts IBC Moratorium provision
      - `@@mca/sec230` ➔ Inserts Scheme of Arrangement statutory rules
-     - `@@case/moratorium` ➔ Filters 17,558 judicial headnotes
+     - `@@case/moratorium` ➔ Filters landmark judicial headnotes
      - `@@form/cirp-form-a` ➔ Inserts Public Announcement drafting template
 
 3. **Multi-Bureau Section 29A Audit**:

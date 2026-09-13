@@ -569,7 +569,7 @@
         <i class="fa-solid fa-scale-balanced"></i>
       </div>
       <div>
-        <div class="metric-value">38,500+</div>
+        <div class="metric-value">Full Corpus</div>
         <div class="metric-label">Indexed Sections & Nodes</div>
       </div>
     </div>
@@ -579,7 +579,7 @@
         <i class="fa-solid fa-gavel"></i>
       </div>
       <div>
-        <div class="metric-value">17,558</div>
+        <div class="metric-value">Landmark</div>
         <div class="metric-label">Judicial Headnotes</div>
       </div>
     </div>
@@ -589,7 +589,7 @@
         <i class="fa-solid fa-file-contract"></i>
       </div>
       <div>
-        <div class="metric-value">3,510</div>
+        <div class="metric-value">Master</div>
         <div class="metric-label">Document Factory Templates</div>
       </div>
     </div>
@@ -599,7 +599,7 @@
         <i class="fa-solid fa-database"></i>
       </div>
       <div>
-        <div class="metric-value">1,997</div>
+        <div class="metric-value">Verified</div>
         <div class="metric-label">Database Registry Records</div>
       </div>
     </div>
@@ -609,7 +609,7 @@
         <i class="fa-solid fa-cube"></i>
       </div>
       <div>
-        <div class="metric-value">15</div>
+        <div class="metric-value">Modular</div>
         <div class="metric-label">Modular Production Vaults</div>
       </div>
     </div>
@@ -650,7 +650,7 @@
           <i class="fa-solid fa-boxes-packing"></i> Specialized Process Suites <span class="filter-pill-badge" id="count-suites">5</span>
         </button>
         <button class="filter-pill-btn" data-filter="contract">
-          <i class="fa-solid fa-file-shield"></i> Contract Intelligence (Atticus) <span class="filter-pill-badge" id="count-contract">2</span>
+          <i class="fa-solid fa-file-shield"></i> Contract Intelligence <span class="filter-pill-badge" id="count-contract">2</span>
         </button>
       </div>
     </div>
@@ -704,7 +704,7 @@
         <div class="spec-code-block">
 @@ibc/sec14       → Inserts IBC Moratorium provision<br>
 @@mca/sec230      → Inserts Scheme of Arrangement rules<br>
-@@case/moratorium → Filters 17,558 judicial headnotes<br>
+@@case/moratorium → Filters landmark judicial headnotes<br>
 @@form/cirp-form-a → Inserts Public Announcement template<br>
 @@prec/inst-1      → Inserts Liquidation Commencement aid
         </div>
@@ -772,9 +772,9 @@ harness-vault sync --verify --integrity-enforce
         category: "statutory",
         categoryLabel: "Statutes & Laws",
         version: "2026-W37",
-        units: 10771,
+        units: "Consolidated",
         unitsLabel: "Sections & Regulations",
-        sizeMb: 90.0,
+        sizeMb: "Standard Package",
         trigger: "@@ibc/",
         encryption: "AES-256 + LexVector™",
         icon: "fa-scale-balanced",
@@ -789,15 +789,15 @@ harness-vault sync --verify --integrity-enforce
         category: "cases",
         categoryLabel: "Case Law Precedents",
         version: "2026-W37",
-        units: 17558,
-        unitsLabel: "Judicial Headnotes",
-        sizeMb: 132.8,
+        units: "Landmark",
+        unitsLabel: "Decided Headnotes",
+        sizeMb: "Standard Package",
         trigger: "@@case/",
         encryption: "AES-256 + LexVector™",
         icon: "fa-gavel",
         iconColor: "#7c3aed",
         iconBg: "#faf5ff",
-        description: "Extensive institutional jurisprudence database containing 17,558 decided case headnotes, judicial rulings, and holdings from the Supreme Court of India, High Courts, and NCLT/NCLAT benches. Full case bodies are stripped to protect confidential subscriber and case privacy."
+        description: "Extensive institutional jurisprudence database containing decided case headnotes, judicial rulings, and holdings from the Supreme Court of India, High Courts, and NCLT/NCLAT benches. Full case bodies are stripped to protect confidential subscriber and case privacy."
       },
       {
         id: "documents",
@@ -806,15 +806,15 @@ harness-vault sync --verify --integrity-enforce
         category: "templates",
         categoryLabel: "Legal Documents Factory",
         version: "2026-W37",
-        units: 3510,
+        units: "Master",
         unitsLabel: "Precedents & Templates",
-        sizeMb: 28.7,
+        sizeMb: "Standard Package",
         trigger: "@@form/ @@prec/",
         encryption: "AES-256 + LexVector™",
         icon: "fa-file-contract",
         iconColor: "#16a34a",
         iconBg: "#f0fdf4",
-        description: "The complete unified drafting repository containing 3,510 ready-to-use, fillable Markdown templates with dynamic mustache placeholders: 63 phase-wise liquidation instruments, resolution plan evaluation checklists, PRA undertakings 49A–49S, civil/criminal pleadings, corporate agreements, and conveyancing deeds."
+        description: "The complete unified drafting repository containing ready-to-use, fillable Markdown templates with dynamic mustache placeholders: phase-wise liquidation instruments, resolution plan evaluation checklists, PRA undertakings 49A–49S, civil/criminal pleadings, corporate agreements, and conveyancing deeds."
       },
       {
         id: "laws",
@@ -823,9 +823,9 @@ harness-vault sync --verify --integrity-enforce
         category: "statutory",
         categoryLabel: "Statutes & Laws",
         version: "2026-W37",
-        units: 4026,
+        units: "Multi-Code",
         unitsLabel: "Statutory Sections",
-        sizeMb: 33.6,
+        sizeMb: "Standard Package",
         trigger: "@@laws/",
         encryption: "AES-256 + LexVector™",
         icon: "fa-landmark",
@@ -840,9 +840,9 @@ harness-vault sync --verify --integrity-enforce
         category: "statutory",
         categoryLabel: "Statutes & Laws",
         version: "2026-W37",
-        units: 1574,
+        units: "Bare Act",
         unitsLabel: "Sections & Rules",
-        sizeMb: 12.5,
+        sizeMb: "Standard Package",
         trigger: "@@mca/",
         encryption: "AES-256 + LexVector™",
         icon: "fa-building-columns",
@@ -857,9 +857,9 @@ harness-vault sync --verify --integrity-enforce
         category: "statutory",
         categoryLabel: "Statutes & Laws",
         version: "2026-W37",
-        units: 222,
+        units: "State Rules",
         unitsLabel: "Sections & State Rules",
-        sizeMb: 2.1,
+        sizeMb: "Standard Package",
         trigger: "@@rera/",
         encryption: "AES-256 + LexVector™",
         icon: "fa-city",
@@ -874,9 +874,9 @@ harness-vault sync --verify --integrity-enforce
         category: "statutory",
         categoryLabel: "Statutes & Laws",
         version: "2026-W37",
-        units: 160,
+        units: "Complete",
         unitsLabel: "Statutory Provisions",
-        sizeMb: 1.4,
+        sizeMb: "Standard Package",
         trigger: "@@arbitration/",
         encryption: "AES-256 + LexVector™",
         icon: "fa-handshake",
@@ -891,9 +891,9 @@ harness-vault sync --verify --integrity-enforce
         category: "statutory",
         categoryLabel: "Statutes & Laws",
         version: "2026-W37",
-        units: 69,
+        units: "Enforcement",
         unitsLabel: "Sections & Schedules",
-        sizeMb: 0.6,
+        sizeMb: "Standard Package",
         trigger: "@@debt_recovery/",
         encryption: "AES-256 + LexVector™",
         icon: "fa-money-bill-transfer",
@@ -908,15 +908,15 @@ harness-vault sync --verify --integrity-enforce
         category: "contract",
         categoryLabel: "Contract Intelligence",
         version: "2026-W37",
-        units: 13829,
-        unitsLabel: "Clauses Classified",
-        sizeMb: 103.2,
+        units: "Institutional",
+        unitsLabel: "Risk Classifications",
+        sizeMb: "Standard Package",
         trigger: "@@contract/",
         encryption: "AES-256 Sovereign Vector",
         icon: "fa-shield-halved",
         iconColor: "#dc2626",
         iconBg: "#fef2f2",
-        description: "Institutional legal risk benchmark suite containing 510 commercial contracts analyzed across 41 legal risk categories including uncapped indemnification, non-compete covenants, change-of-control, and exclusivity restrictions."
+        description: "Institutional legal risk benchmark suite containing commercial contracts analyzed across legal risk categories including uncapped indemnification, non-compete covenants, change-of-control, and exclusivity restrictions."
       },
       {
         id: "standard_clauses",
@@ -925,9 +925,9 @@ harness-vault sync --verify --integrity-enforce
         category: "contract",
         categoryLabel: "Contract Intelligence",
         version: "2026-W37",
-        units: 4200,
+        units: "Standard",
         unitsLabel: "Standard Clauses",
-        sizeMb: 32.6,
+        sizeMb: "Standard Package",
         trigger: "@@clause/",
         encryption: "AES-256 Sovereign Vector",
         icon: "fa-file-shield",
@@ -942,9 +942,9 @@ harness-vault sync --verify --integrity-enforce
         category: "suites",
         categoryLabel: "Specialized Process Suites",
         version: "2026-W36",
-        units: 14,
+        units: "Stages 01–05",
         unitsLabel: "Forms & Prompts",
-        sizeMb: 0.25,
+        sizeMb: "Standard Package",
         trigger: "@@cirp/",
         encryption: "AES-256 Vault Bundle",
         icon: "fa-diagram-project",
@@ -959,15 +959,15 @@ harness-vault sync --verify --integrity-enforce
         category: "suites",
         categoryLabel: "Specialized Process Suites",
         version: "2026-W36",
-        units: 63,
+        units: "Stage 07",
         unitsLabel: "Practice Instruments",
-        sizeMb: 1.45,
+        sizeMb: "Standard Package",
         trigger: "@@liq/",
         encryption: "AES-256 Vault Bundle",
         icon: "fa-boxes-stacked",
         iconColor: "#c2410c",
         iconBg: "#fff7ed",
-        description: "63 phase-by-phase liquidation instruments: LCD commencement checklists, Stakeholders Consultation Committee (SCC) minutes, asset memoranda, e-auction sale notices, and Section 53 waterfall calculation workbooks."
+        description: "Phase-by-phase liquidation instruments: LCD commencement checklists, Stakeholders Consultation Committee (SCC) minutes, asset memoranda, e-auction sale notices, and Section 53 waterfall calculation workbooks."
       },
       {
         id: "suite_voluntary_liquidation",
@@ -976,9 +976,9 @@ harness-vault sync --verify --integrity-enforce
         category: "suites",
         categoryLabel: "Specialized Process Suites",
         version: "2026-W36",
-        units: 11,
+        units: "Complete",
         unitsLabel: "Cards & Filings",
-        sizeMb: 1.53,
+        sizeMb: "Standard Package",
         trigger: "@@vl/",
         encryption: "AES-256 Vault Bundle",
         icon: "fa-certificate",
@@ -993,9 +993,9 @@ harness-vault sync --verify --integrity-enforce
         category: "suites",
         categoryLabel: "Specialized Process Suites",
         version: "2026-W36",
-        units: 14,
+        units: "Complete",
         unitsLabel: "Forms P1–P14",
-        sizeMb: 0.28,
+        sizeMb: "Standard Package",
         trigger: "@@ppirp/",
         encryption: "AES-256 Vault Bundle",
         icon: "fa-box-archive",
@@ -1010,9 +1010,9 @@ harness-vault sync --verify --integrity-enforce
         category: "suites",
         categoryLabel: "Specialized Process Suites",
         version: "2026-W36",
-        units: 12,
+        units: "Part III",
         unitsLabel: "Part III Precedents",
-        sizeMb: 0.17,
+        sizeMb: "Standard Package",
         trigger: "@@pg/",
         encryption: "AES-256 Vault Bundle",
         icon: "fa-user-shield",
@@ -1076,8 +1076,8 @@ harness-vault sync --verify --integrity-enforce
           </td>
           <td><span class="tag-badge ${tagClass}">${item.categoryLabel}</span></td>
           <td style="white-space: nowrap;"><span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); white-space: nowrap; font-variant-numeric: tabular-nums;">${item.version}</span></td>
-          <td style="white-space: nowrap;"><strong style="color: #0f172a;">${item.units.toLocaleString()}</strong> <span style="font-size: 0.75rem; color: var(--text-tertiary);">${item.unitsLabel}</span></td>
-          <td style="white-space: nowrap;"><span style="font-family: var(--font-mono); font-weight: 600; color: #0f172a;">${item.sizeMb.toFixed(1)} MB</span></td>
+          <td style="white-space: nowrap;"><strong style="color: #0f172a;">${typeof item.units === 'number' ? item.units.toLocaleString() : item.units}</strong> <span style="font-size: 0.75rem; color: var(--text-tertiary);">${item.unitsLabel}</span></td>
+          <td style="white-space: nowrap;"><span style="font-family: var(--font-mono); font-weight: 600; color: #0f172a;">${typeof item.sizeMb === 'number' ? item.sizeMb.toFixed(1) + ' MB' : item.sizeMb}</span></td>
           <td style="white-space: nowrap;"><span class="code-trigger-badge">${item.trigger}</span></td>
           <td style="text-align: right; padding-right: 1.5rem; white-space: nowrap;">
             <button class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.8rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.4rem;" onclick="openVaultModal('${item.id}')">
@@ -1123,8 +1123,8 @@ harness-vault sync --verify --integrity-enforce
         
         <div style="background: var(--bg-muted); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.85rem;">
-            <div><span style="color: var(--text-tertiary);">Indexed Units:</span> <strong>${item.units.toLocaleString()} ${item.unitsLabel}</strong></div>
-            <div><span style="color: var(--text-tertiary);">Archive Size:</span> <strong>${item.sizeMb.toFixed(1)} MB</strong></div>
+            <div><span style="color: var(--text-tertiary);">Indexed Units:</span> <strong>${typeof item.units === 'number' ? item.units.toLocaleString() : item.units} ${item.unitsLabel}</strong></div>
+            <div><span style="color: var(--text-tertiary);">Archive Size:</span> <strong>${typeof item.sizeMb === 'number' ? item.sizeMb.toFixed(1) + ' MB' : item.sizeMb}</strong></div>
             <div><span style="color: var(--text-tertiary);">Release Tag:</span> <strong>${item.version}</strong></div>
             <div><span style="color: var(--text-tertiary);">IDE Prefix:</span> <code style="color: var(--primary); font-weight: 600;">${item.trigger}</code></div>
             <div style="grid-column: span 2; margin-top: 0.25rem; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
@@ -1135,7 +1135,7 @@ harness-vault sync --verify --integrity-enforce
 
         <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem;">Deployment & Integration</h4>
         <p style="font-size: 0.825rem; line-height: 1.5; color: var(--text-secondary);">
-          Pre-packaged into your local Hayagriva Desktop IDE installation under <code>output/client_vaults/dist/</code>. Air-gapped vectors are automatically loaded by the local ONNX embedding inference engine with zero internet connection required.
+          Pre-packaged into your local Hayagriva Desktop IDE installation under <code>output/client_vaults/dist/</code>. Air-gapped vectors are automatically loaded by the local sovereign vector inference engine with zero internet connection required.
         </p>
       `;
 

@@ -25,7 +25,7 @@
 CORE APPLICATION              MASTER CATALOG                BENCHMARK DOSSIERS
 /index.html                   /vaults.html                  /docs/
 - Home                        - 15 AES-256 Vaults           - Section 29A Dossiers
-- ChatIBC (LightRAG)          - 38,500+ Provisions          - Multi-Bureau PDFs
+- ChatIBC (LightRAG)          - Statutory Provisions Corpus - Multi-Bureau PDFs
 - Haya Engine / Models        - Monaco IDE Triggers         - Apogee Compliance
 - CIRP Agents (Process/Rep)   - JSON Metadata Export
 - Accredited Directories
