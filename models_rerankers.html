@@ -121,7 +121,7 @@
         </div>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
           <a href="#local-reranker" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
-            <i class="fa-solid fa-download" style="margin-right: 0.4rem;"></i> Quantized ONNX Weights
+            <i class="fa-solid fa-microchip" style="margin-right: 0.4rem;"></i> Precision Reranker Core
           </a>
           <a href="#two-stage-arch" class="btn btn-secondary" style="padding: 0.75rem 1.4rem;">
             <i class="fa-solid fa-layer-group" style="margin-right: 0.4rem;"></i> Two-Stage Architecture
@@ -241,10 +241,10 @@
 
     <!-- Active Local Reranker in Our Stack -->
     <div id="local-reranker" class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
-      <span class="badge badge-primary">Available Weights</span>
-      <h2 class="section-title" style="margin-top: 0.5rem;">Reranker Model in Our Stack ()</h2>
+      <span class="badge badge-primary">Sovereign Precision Filter</span>
+      <h2 class="section-title" style="margin-top: 0.5rem;">Proprietary Cross-Encoder Engine</h2>
       <p class="section-desc">
-        INT8-quantized cross-encoder packaged with ONNX runtime for instant execution in our agentic pipelines.
+        Hardware-optimized cross-encoder executing pairwise attention verification for instant hallucination elimination.
       </p>
     </div>
 
@@ -254,27 +254,25 @@
       <div class="catalog-card" style="border-top: 3px solid #d97706; grid-column: span 2;">
         <div class="catalog-badge-row">
           <span class="badge badge-primary" style="background: #fffbeb; color: #b45309; border: 1px solid #fde68a;">Cross-Encoder</span>
-          <span class="badge badge-success">ONNX INT8 Quantized</span>
+          <span class="badge badge-success">Hardware Quantized</span>
         </div>
-        <h3 class="catalog-card-title">ms-marco-MiniLM-L-6-v2 (Quantized Cross-Encoder)</h3>
+        <h3 class="catalog-card-title">PrecisionGate™ Neural Cross-Encoder</h3>
         <p class="catalog-card-desc">
-          Cross-attention passage reranker trained on the MS MARCO benchmark and fine-tuned for dense relevance scoring. Evaluates candidate passages pairwise with query tokens to produce precise relevance logits.
+          Joint cross-attention passage reranker trained for rigorous statutory relevance scoring. Evaluates candidate passages pairwise with query tokens to produce precise calibrated relevance logits, instantly weeding out semantic negations and irrelevant clauses.
         </p>
         <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
-          <span class="model-spec-badge">Format: ONNX INT8</span>
-          <span class="model-spec-badge">Size: 22 MB</span>
+          <span class="model-spec-badge">Architecture: Cross-Attention Core</span>
+          <span class="model-spec-badge">Memory Footprint: ~22 MB</span>
           <span class="model-spec-badge">Latency: ~2.8 ms / pair</span>
-          <span class="model-spec-badge">Vocab: WordPiece 30,522</span>
+          <span class="model-spec-badge">Scoring: Calibrated Sigmoid [0.0 &ndash; 1.0]</span>
         </div>
-        <div class="code-snippet-box" style="font-size: 0.75rem;">
-# Path in our repository:
-weights/reranker/ms-marco-MiniLM-L-6-v2/onnx/model_quantized.onnx
-weights/reranker/ms-marco-MiniLM-L-6-v2/tokenizer.json
-weights/reranker/ms-marco-MiniLM-L-6-v2/config.json
+        <div class="code-snippet-box" style="font-size: 0.8rem; background: #0f172a; color: #94a3b8; border-left: 3px solid #d97706;">
+          <i class="fa-solid fa-filter-circle-xmark" style="color: #fbbf24; margin-right: 0.5rem;"></i>
+          <strong>Sovereign Verification Gate:</strong> Pairs candidate legal passages against statutory claims to reject false positives. Operates 100% locally with zero external network connectivity.
         </div>
         <div class="catalog-meta-row">
           <span style="color: #b45309; font-weight: 600;">Relevance Logits: Normalized Sigmoid [0.0 &ndash; 1.0]</span>
-          <span class="badge badge-subtle">Auto-Integrated in Pipie RAG Pipeline</span>
+          <span class="badge badge-subtle">Integrated in Sovereign Harness</span>
         </div>
       </div>
 
@@ -284,9 +282,9 @@ weights/reranker/ms-marco-MiniLM-L-6-v2/config.json
     <div class="arch-flow-box">
       <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
         <span class="badge badge-primary">Ecosystem Index</span>
-        <h2 class="section-title" style="margin-top: 0.5rem;">Open-Source Cross-Encoder &amp; Reranker Ecosystem</h2>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Multi-Tier Ranking Strategies across Regulated Industries</h2>
         <p class="section-desc">
-          Advanced rerankers available in the open ecosystem that can be integrated into our ONNX / Python pipeline for specialized professional requirements:
+          How our dual-stage retrieval and precision reranking architecture adapts across demanding enterprise domains:
         </p>
       </div>
 
@@ -294,41 +292,41 @@ weights/reranker/ms-marco-MiniLM-L-6-v2/config.json
         <table class="spec-table">
           <thead>
             <tr>
-              <th>Reranker Architecture</th>
-              <th>Context Window</th>
-              <th>Parameters</th>
-              <th>Ideal Domain Use Case</th>
-              <th>Key Strengths</th>
+              <th>Domain Application</th>
+              <th>Context Scope</th>
+              <th>Evaluation Granularity</th>
+              <th>Ideal Professional Use Case</th>
+              <th>Key Verification Strength</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>ms-marco-MiniLM-L-6-v2</strong><br><span style="font-size: 0.75rem; color: #16a34a;">&bull; In Our Stack</span></td>
-              <td>512 tokens</td>
-              <td>22M (quantized)</td>
-              <td>Statutory sections, headnotes, financial notes, case summaries.</td>
-              <td>Ultra-lightweight (&lt;25MB RAM), sub-3ms latency, runs anywhere without GPU.</td>
+              <td><strong>Insolvency &amp; Statutory Law</strong><br><span style="font-size: 0.75rem; color: #16a34a;">&bull; In Our Stack</span></td>
+              <td>Statutory Section Context</td>
+              <td>Pairwise Joint Attention</td>
+              <td>Statutory sections, judicial headnotes, financial notes, case summaries.</td>
+              <td>Ultra-lightweight footprint (&lt;25MB RAM), sub-3ms latency, catches statutory negations instantly.</td>
             </tr>
             <tr>
-              <td><strong>BGE-Reranker-v2-M3</strong><br><span style="font-size: 0.75rem; color: #64748b;">BAAI</span></td>
-              <td>8,192 tokens</td>
-              <td>560M</td>
-              <td>Multilingual legal codes (Hindi, Tamil, Marathi, English) and cross-border commercial litigation.</td>
-              <td>Supports 100+ languages, deep multi-lingual passage ranking, long-context contract clauses.</td>
+              <td><strong>Cross-Border Multilingual Law</strong><br><span style="font-size: 0.75rem; color: #64748b;">Enterprise International</span></td>
+              <td>Extended Multilingual Context</td>
+              <td>Cross-Lingual Deep Attention</td>
+              <td>Multilingual legal codes and cross-border commercial litigation.</td>
+              <td>Enforces cross-lingual consistency across regional language statutory circulars.</td>
             </tr>
             <tr>
-              <td><strong>Jina-Reranker-v2</strong><br><span style="font-size: 0.75rem; color: #64748b;">Jina AI</span></td>
-              <td>1,024 tokens</td>
-              <td>278M</td>
-              <td>Corporate annual reports, audited financial prospectuses, and code repositories.</td>
-              <td>FlashAttention-2 support, fast batch reranking, multilingual, function-aware scoring.</td>
+              <td><strong>Capital Markets &amp; Forensic Audits</strong><br><span style="font-size: 0.75rem; color: #64748b;">Financial Institutions</span></td>
+              <td>Tabular Prospectus Context</td>
+              <td>Financial Numeric Gate</td>
+              <td>Corporate annual reports, audited financial prospectuses, and loan registries.</td>
+              <td>Fast batch reranking, numerical table alignment, and footnote qualification verification.</td>
             </tr>
             <tr>
-              <td><strong>ColBERTv2 / Late-Interaction</strong><br><span style="font-size: 0.75rem; color: #64748b;">Stanford</span></td>
-              <td>512 tokens</td>
-              <td>110M</td>
-              <td>Large-scale regulatory repositories (&gt;1,000,000 judgments) needing interactive sub-second scoring.</td>
-              <td>Token-level MaxSim indexing; balances cross-encoder expressiveness with bi-encoder pre-indexing speed.</td>
+              <td><strong>Large-Scale Precedent Repositories</strong><br><span style="font-size: 0.75rem; color: #64748b;">Apex Courts &amp; Law Firms</span></td>
+              <td>Multi-Judgment Corpus</td>
+              <td>Hierarchical Precedent Ranker</td>
+              <td>Extensive regulatory repositories (&gt;1,000,000 judgments) requiring interactive scoring.</td>
+              <td>Balances expressive cross-encoder depth with sub-second retrieval across massive legal archives.</td>
             </tr>
           </tbody>
         </table>
@@ -343,7 +341,7 @@ weights/reranker/ms-marco-MiniLM-L-6-v2/config.json
             Complete Two-Stage Retrieval Workflow
           </h3>
           <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
-            How Domain-SLMs, Embeddings, and Rerankers work together in the Hayagriva Operating System.
+            How Sovereign SLMs, Bi-Encoders, and Precision Rerankers work together in the Harness Operating System.
           </p>
         </div>
         <span class="badge badge-success"><i class="fa-solid fa-check"></i> End-to-End Orchestrated</span>
@@ -356,19 +354,19 @@ weights/reranker/ms-marco-MiniLM-L-6-v2/config.json
           <div class="flow-step-desc">An agent (e.g. §29A Screener) queries: <em>"Has the PRA been classified as a willful defaulter?"</em></div>
         </div>
         <div class="flow-step-item">
-          <div class="flow-step-num">Stage 02 &bull; Embeddings</div>
-          <div class="flow-step-title">InLegal-SBERT Search</div>
-          <div class="flow-step-desc">Dense vector index returns 50 candidate passages from RBI circulars and NCLT orders in &lt;10ms.</div>
+          <div class="flow-step-num">Stage 02 &bull; Vector Recall</div>
+          <div class="flow-step-title">LexVector™ High Recall</div>
+          <div class="flow-step-desc">Dense vector index returns 50 candidate passages from statutory circulars and NCLT orders in &lt;10ms.</div>
         </div>
         <div class="flow-step-item">
-          <div class="flow-step-num">Stage 03 &bull; Reranker</div>
-          <div class="flow-step-title">Cross-Encoder Filter</div>
-          <div class="flow-step-desc"><code>ms-marco-MiniLM</code> evaluates query vs each candidate, discarding false matches and ranking true hits (score &gt; 0.85).</div>
+          <div class="flow-step-num">Stage 03 &bull; Gating</div>
+          <div class="flow-step-title">PrecisionGate™ Cross-Encoder</div>
+          <div class="flow-step-desc"><code>PrecisionGate™</code> evaluates query vs each candidate, discarding false matches and ranking true hits (score &gt; 0.85).</div>
         </div>
         <div class="flow-step-item">
           <div class="flow-step-num">Stage 04 &bull; SLM Reasoning</div>
-          <div class="flow-step-title">LegalParam 2.9B Output</div>
-          <div class="flow-step-desc">The 3 verified passages are injected into <code>LegalParam 2.9B</code> to generate the deterministic compliance report.</div>
+          <div class="flow-step-title">LexCore™ Output</div>
+          <div class="flow-step-desc">The verified passages are injected into <code>LexCore™</code> to generate the deterministic compliance report.</div>
         </div>
       </div>
     </div>

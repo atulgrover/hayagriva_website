@@ -174,7 +174,7 @@
         </div>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
           <a href="#local-stack" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
-            <i class="fa-solid fa-download" style="margin-right: 0.4rem;"></i> Model Weights (GGUF)
+            <i class="fa-solid fa-download" style="margin-right: 0.4rem;"></i> Sovereign Weights
           </a>
           <a href="harness_haya_engine.html" class="btn btn-secondary" style="padding: 0.75rem 1.4rem;">
             <i class="fa-solid fa-microchip" style="margin-right: 0.4rem;"></i> Engine Setup
@@ -233,8 +233,8 @@
     <!-- Models Grid -->
     <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
       <span class="badge badge-primary">Model Catalog</span>
-      <h2 class="section-title" style="margin-top: 0.5rem;">Pre-Trained & Fine-Tuned Weights</h2>
-      <p class="section-desc">Optimized for high-speed local inference via Ollama, llama.cpp, and vLLM runtimes.</p>
+      <h2 class="section-title" style="margin-top: 0.5rem;">Sovereign Reasoning Engines</h2>
+      <p class="section-desc">Optimized for high-speed offline inference in sovereign practitioner enclaves.</p>
     </div>
 
     <div class="catalog-grid">
@@ -244,16 +244,16 @@
           <span class="badge badge-primary">Legal SLM</span>
           <span class="badge badge-success">Air-Gapped Ready</span>
         </div>
-        <h3 class="catalog-card-title">Haya-Legal-7B (Specialized SLM)</h3>
-        <p class="catalog-card-desc">Fine-tuned on 15,000+ Supreme Court & NCLAT judgments under IBC 2016. Excels at statutory interpretation, Section 29A qualification checks, and CIRP resolution plan verification.</p>
+        <h3 class="catalog-card-title">LexCore™ Sovereign Legal Engine</h3>
+        <p class="catalog-card-desc">Specialized domain model fine-tuned on 15,000+ Supreme Court &amp; NCLAT judgments under IBC 2016. Excels at statutory interpretation, Section 29A qualification checks, and CIRP resolution plan verification.</p>
         <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
-          <span class="model-spec-badge">Params: 7.2B</span>
-          <span class="model-spec-badge">Context: 32,768</span>
-          <span class="model-spec-badge">Size: 4.3 GB</span>
+          <span class="model-spec-badge">Architecture: Domain-SLM</span>
+          <span class="model-spec-badge">Context: Extended Window</span>
+          <span class="model-spec-badge">Latency: Sub-Second</span>
         </div>
         <div class="catalog-meta-row">
-          <span><code>ollama run haya-legal:7b</code></span>
-          <span class="badge badge-subtle"><i class="fa-solid fa-microchip"></i> Apple Silicon / CUDA</span>
+          <span><i class="fa-solid fa-microchip"></i> Hardware Enclave Bound</span>
+          <span class="badge badge-subtle"><i class="fa-solid fa-bolt"></i> Apple Silicon / NPU Native</span>
         </div>
       </div>
 
@@ -263,53 +263,53 @@
           <span class="badge badge-primary">Reasoning Core</span>
           <span class="badge badge-success">Chain of Thought</span>
         </div>
-        <h3 class="catalog-card-title">DeepSeek-R1-Distill Legal (14B)</h3>
-        <p class="catalog-card-desc">Distilled legal reasoning model specialized in multi-party avoidance transaction tracking (Sections 43, 45, 50, 66) and complex corporate ownership look-back forensic deduction.</p>
+        <h3 class="catalog-card-title">DeepAudit™ Forensic Avoidance Reasoner</h3>
+        <p class="catalog-card-desc">Specialized legal reasoning core engineered for multi-party avoidance transaction tracking (Sections 43, 45, 50, 66) and complex corporate ownership look-back forensic deduction.</p>
         <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
-          <span class="model-spec-badge">Params: 14.7B</span>
-          <span class="model-spec-badge">Context: 65,536</span>
-          <span class="model-spec-badge">Size: 8.8 GB</span>
+          <span class="model-spec-badge">Reasoning: Chain-of-Thought</span>
+          <span class="model-spec-badge">Audit: Multi-Year Lookback</span>
+          <span class="model-spec-badge">Math: Deterministic Verification</span>
         </div>
         <div class="catalog-meta-row">
-          <span><code>ollama run haya-deepseek:14b</code></span>
-          <span class="badge badge-subtle"><i class="fa-solid fa-brain"></i> CoT Step Verification</span>
+          <span><i class="fa-solid fa-brain"></i> CoT Step Verification</span>
+          <span class="badge badge-subtle"><i class="fa-solid fa-shield-halved"></i> PUFE Analysis</span>
         </div>
       </div>
 
       <!-- Model 3 -->
       <div class="catalog-card">
         <div class="catalog-badge-row">
-          <span class="badge badge-primary">Large Context</span>
+          <span class="badge badge-primary">High Capacity</span>
           <span class="badge badge-success">Dossier Drafter</span>
         </div>
-        <h3 class="catalog-card-title">Llama-3.3-Legal-70B (High Capacity)</h3>
-        <p class="catalog-card-desc">Heavyweight institutional model capable of ingesting entire 500-page Information Memorandums and audited balances in a single prompt for comprehensive statutory synthesis and Form H assembly.</p>
+        <h3 class="catalog-card-title">Enterprise Dossier Synthesizer</h3>
+        <p class="catalog-card-desc">Institutional-grade model capable of ingesting entire 500-page Information Memorandums and audited balances in a single pass for comprehensive statutory synthesis and Form H assembly.</p>
         <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
-          <span class="model-spec-badge">Params: 70.6B</span>
-          <span class="model-spec-badge">Context: 128,000</span>
-          <span class="model-spec-badge">Size: 41.2 GB</span>
+          <span class="model-spec-badge">Scope: Institutional Corpus</span>
+          <span class="model-spec-badge">Capacity: Multi-Document Dossier</span>
+          <span class="model-spec-badge">Execution: On-Premises Native</span>
         </div>
         <div class="catalog-meta-row">
-          <span><code>vllm serve haya/llama-3.3-70b</code></span>
-          <span class="badge badge-subtle"><i class="fa-solid fa-server"></i> Dedicated Server</span>
+          <span><i class="fa-solid fa-server"></i> Dedicated Enterprise Cluster</span>
+          <span class="badge badge-subtle"><i class="fa-solid fa-file-contract"></i> Form H Synthesis</span>
         </div>
       </div>
 
       <!-- Model 4 -->
       <div class="catalog-card">
         <div class="catalog-badge-row">
-          <span class="badge badge-primary">Embedding</span>
+          <span class="badge badge-primary">Embedding Core</span>
           <span class="badge badge-success">Dense Vector</span>
         </div>
-        <h3 class="catalog-card-title">Haya-Embed-Legal-v2</h3>
-        <p class="catalog-card-desc">State-of-the-art legal sentence embedding model with 1024 embedding dimensions. Pre-trained on judicial headnotes and IBBI circulars with sub-8ms retrieval latency on practitioner silicon.</p>
+        <h3 class="catalog-card-title">LexVector™ Precision Embedding Core</h3>
+        <p class="catalog-card-desc">High-precision legal sentence embedding model with dense vector dimensions. Pre-trained on judicial headnotes and statutory circulars with sub-8ms retrieval latency on practitioner silicon.</p>
         <div style="margin: 0.75rem 0; display: flex; gap: 0.4rem; flex-wrap: wrap;">
-          <span class="model-spec-badge">Dim: 1024</span>
+          <span class="model-spec-badge">Architecture: Bi-Encoder</span>
           <span class="model-spec-badge">Latency: &lt;8ms</span>
-          <span class="model-spec-badge">Size: 1.3 GB</span>
+          <span class="model-spec-badge">Footprint: Compact Memory</span>
         </div>
         <div class="catalog-meta-row">
-          <span><code>ONNX / CoreML Native</code></span>
+          <span><i class="fa-solid fa-diagram-project"></i> Sovereign Neural Index</span>
           <span class="badge badge-subtle"><i class="fa-solid fa-bolt"></i> Local Vector Core</span>
         </div>
       </div>
@@ -318,30 +318,23 @@
     <!-- Local Serving Setup Section -->
     <div id="local-stack" style="margin-top: 3rem; background: #ffffff; border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
       <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">
-        <i class="fa-solid fa-terminal" style="color: #2563eb; margin-right: 0.5rem;"></i> Local Serving Configuration
+        <i class="fa-solid fa-shield-halved" style="color: #2563eb; margin-right: 0.5rem;"></i> Sovereign Security &amp; Airgap Policy Manifest
       </h3>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem;">
-        To execute these models locally without sending proprietary corporate insolvency data over the public internet, place the configuration below in your Hayagriva Desktop runtime:
+        The Harness runtime enforces complete air-gapped isolation, preventing proprietary debtor records or privileged litigation drafts from ever leaving the local hardware:
       </p>
       <div style="background: #0f172a; color: #f8fafc; padding: 1.25rem; border-radius: 8px; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.6; overflow-x: auto;">
-# ~/.hayagriva/models.yaml - Sovereign Model Pipeline
-models:
-  primary_reasoner:
-    endpoint: "http://localhost:11434/v1"
-    model: "haya-legal:7b"
-    max_tokens: 4096
-    temperature: 0.1
-  forensic_avoidance:
-    endpoint: "http://localhost:11434/v1"
-    model: "haya-deepseek:14b"
-    max_tokens: 8192
-    temperature: 0.0
-  embedding_engine:
-    local_onnx_path: "./models/haya-embed-legal-v2.onnx"
-    dimension: 1024
-telemetry:
+# Sovereign Harness - Airgap Security &amp; Isolation Policy
+security_policy:
+  enforce_strict_airgap: true
   allow_external_sockets: false
-  enforce_airgap: true
+  cloud_telemetry: disabled
+  memory_protection:
+    enclave_encryption: AES-256-GCM
+    zeroize_keys_on_exit: true
+  statutory_grounding:
+    enforce_vault_verification: true
+    prevent_unanchored_generation: true
       </div>
     </div>
 

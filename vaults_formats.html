@@ -376,11 +376,11 @@
           </div>
           <h3 class="format-title">Master Legal Documents &amp; Precedents Vault</h3>
           <p class="format-desc">
-            The master consolidated distribution package aggregating all 3,510 templates across corporate, insolvency, pleadings, and conveyancing domains. Fully registered in PostgreSQL (<code>ibclaw_db.public.ibc_templates</code>) for disaster recovery.
+            The master consolidated distribution package aggregating all 3,510 templates across corporate, insolvency, pleadings, and conveyancing domains. Fully registered in immutable relational vaults for disaster recovery.
           </p>
           <div class="format-pills">
             <span class="format-pill"><i class="fa-solid fa-layer-group"></i> 3,510 Templates</span>
-            <span class="format-pill"><i class="fa-solid fa-database"></i> PostgreSQL Mirrored</span>
+            <span class="format-pill"><i class="fa-solid fa-database"></i> Relational Mirrored</span>
             <span class="format-pill"><i class="fa-solid fa-file-zipper"></i> 30.1 MB ZIP</span>
           </div>
         </div>
@@ -411,7 +411,7 @@
               <th>Archive Filename</th>
               <th>Compressed Size</th>
               <th>Format Structure</th>
-              <th>Monaco Trigger</th>
+              <th>Autocomplete Trigger</th>
             </tr>
           </thead>
           <tbody>
@@ -428,28 +428,10 @@
               <td><code>forms</code></td>
               <td><strong>Statutory Prescribed Forms</strong></td>
               <td>Prescribed Forms</td>
-              <td><code>forms_vault_2026-W31.zip</code></td>
-              <td>1.5 MB</td>
-              <td>Fillable Markdown Skeletons</td>
+              <td><code>forms_vault_2026-W37.zip</code></td>
+              <td>3.8 MB</td>
+              <td>IBBI Statutory Tables</td>
               <td><span class="trigger-code">@@form/</span></td>
-            </tr>
-            <tr>
-              <td><code>documents_ibc</code></td>
-              <td><strong>IBC Precedents &amp; Notes</strong></td>
-              <td>1,240 Practice Notes</td>
-              <td><code>documents_ibc_vault_2026-W31.zip</code></td>
-              <td>2.6 MB</td>
-              <td>Standardized Markdown</td>
-              <td><span class="trigger-code">@@prec/ibc</span></td>
-            </tr>
-            <tr>
-              <td><code>documents_corporate</code></td>
-              <td><strong>Corporate Contracts &amp; Notes</strong></td>
-              <td>840 Contracts &amp; Advisories</td>
-              <td><code>documents_corporate_vault_2026-W31.zip</code></td>
-              <td>6.1 MB</td>
-              <td>Standardized Markdown</td>
-              <td><span class="trigger-code">@@prec/corp</span></td>
             </tr>
             <tr>
               <td><code>documents_pleadings</code></td>
@@ -474,7 +456,7 @@
       </div>
     </div>
 
-    <!-- Section 3: Monaco Autocomplete Live Demonstration -->
+    <!-- Section 3: Harness Autocomplete Live Demonstration -->
     <div style="margin-top: 3.5rem;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div>
@@ -482,7 +464,7 @@
             Dynamic Mustache Placeholder Injection
           </h3>
           <p style="color: #64748b; font-size: 0.875rem; margin: 0;">
-            PIPIE-IDE automatically binds project state variables to fillable mustache placeholders.
+            Sovereign Harness automatically binds project state variables to fillable mustache placeholders.
           </p>
         </div>
         <span class="badge badge-emerald"><i class="fa-solid fa-code"></i> Dynamic Templating</span>

@@ -334,7 +334,7 @@
                   </div>
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">APNET Forums</span>
-                    <span class="mega-item-wireframe-desc">Zulip practitioner network</span>
+                    <span class="mega-item-wireframe-desc">Verified practitioner network</span>
                   </div>
                   <i class="fa-solid fa-arrow-up-right-from-square mega-item-arrow"
                     style="font-size: 0.72rem; color: #94a3b8;"></i>

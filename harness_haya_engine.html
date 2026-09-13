@@ -269,24 +269,24 @@
           <div class="terminal-dot dot-amber"></div>
           <div class="terminal-dot dot-green"></div>
         </div>
-        <div>hayagriva-engine-daemon — /var/run/hayagriva/engine.sock</div>
+        <div>sovereign-harness-daemon — air-gapped hardware enclave</div>
         <div><span class="badge badge-success" style="background:#166534; color:#bbf7d0; border:none;">ACTIVE</span></div>
       </div>
       <div class="terminal-body">
-        <div><span class="terminal-prompt">$</span> <span class="terminal-cmd">haya-engine --air-gapped --enclave-mode --vaults-dir ./vaults</span></div>
-        <div class="terminal-out">[2026-09-09 09:30:14] Initializing Hayagriva Deterministic Runtime v4.2.1-prod...</div>
-        <div class="terminal-out">[2026-09-09 09:30:14] Hardware: Apple Silicon M3 Max (16-Core Neural Engine active)</div>
-        <div class="terminal-out">[2026-09-09 09:30:15] Loading AES-256 Vault: IBC_STATUTES_MASTER_2026.enc [Verified SHA-256]</div>
-        <div class="terminal-out">[2026-09-09 09:30:15] Loading AES-256 Vault: SC_NCLAT_PRECEDENTS_2016_2026.enc [Verified SHA-256]</div>
+        <div><span class="terminal-prompt">$</span> <span class="terminal-cmd">harness-engine --air-gapped --enclave-mode --sovereign-vaults</span></div>
+        <div class="terminal-out">[2026-09-09 09:30:14] Initializing Sovereign Deterministic Runtime v4.2.1-prod...</div>
+        <div class="terminal-out">[2026-09-09 09:30:14] Hardware: Apple Silicon Neural Engine active (Secure Enclave bound)</div>
+        <div class="terminal-out">[2026-09-09 09:30:15] Loading AES-256 Vault: Statutory Master Archive [Verified SHA-256]</div>
+        <div class="terminal-out">[2026-09-09 09:30:15] Loading AES-256 Vault: Precedents &amp; Jurisprudence Archive [Verified SHA-256]</div>
         <div class="terminal-out">[2026-09-09 09:30:16] Inverted vector index mounted in volatile RAM: 142,500 statutory fragments.</div>
-        <div class="terminal-success">[2026-09-09 09:30:16] Hayagriva Local Engine READY. Zero outbound network sockets opened.</div>
+        <div class="terminal-success">[2026-09-09 09:30:16] Sovereign Harness Engine READY. Zero outbound network sockets opened.</div>
       </div>
     </div>
 
     <!-- Core Engine Subsystems Grid -->
     <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
       <span class="badge badge-primary">Core Subsystems</span>
-      <h2 class="section-title" style="margin-top: 0.5rem;">Sovereign Architecture & Execution Specs</h2>
+      <h2 class="section-title" style="margin-top: 0.5rem;">Sovereign Architecture &amp; Execution Specs</h2>
       <p class="section-desc">Hardware-accelerated modules designed for strict attorney-client privilege and zero statutory hallucination.</p>
     </div>
 
@@ -297,7 +297,7 @@
           <span class="badge badge-primary">Vector Core</span>
           <span class="badge badge-success">Quantized</span>
         </div>
-        <h3 class="catalog-card-title">Local ONNX Embedding Engine</h3>
+        <h3 class="catalog-card-title">Sovereign Neural Vector Engine</h3>
         <p class="catalog-card-desc">High-density embedding generation executed on practitioner GPU/NPU cores. Provides sub-12ms semantic search over tens of thousands of NCLT orders without sending text to any external cloud.</p>
         <div class="catalog-meta-row">
           <span><i class="fa-solid fa-gauge-high"></i> 1,200 tokens/sec</span>
@@ -323,9 +323,9 @@
       <div class="catalog-card">
         <div class="catalog-badge-row">
           <span class="badge badge-primary">IDE Integration</span>
-          <span class="badge badge-success">Monaco AST</span>
+          <span class="badge badge-success">Statutory AST</span>
         </div>
-        <h3 class="catalog-card-title">Monaco Editor Semantic Autocomplete</h3>
+        <h3 class="catalog-card-title">Contextual Drafting Autocomplete</h3>
         <p class="catalog-card-desc">Hooks directly into the practitioner drafting workspace with instant prefix completions (<code>ibc:sec:29a</code>, <code>reg:cirp:39</code>, <code>rule:val:8</code>), auto-injecting verified statutory text with exact citations.</p>
         <div class="catalog-meta-row">
           <span><i class="fa-solid fa-code"></i> Real-time AST</span>

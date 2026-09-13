@@ -103,7 +103,7 @@
     <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
       <span class="badge badge-primary">Architecture</span>
       <h2 class="section-title" style="margin-top:.5rem;">Three-Layer Knowledge Architecture</h2>
-      <p class="section-desc">Inspired by Andrej Karpathy's LLM-Wiki pattern — raw sources remain immutable; the wiki is entirely LLM-maintained.</p>
+      <p class="section-desc">Autonomous Living Dossier — raw sources remain immutable ground truth; the institutional knowledge base is synthesized, linked, and audited continuously by sovereign AI.</p>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-bottom:2.5rem;">
@@ -112,68 +112,68 @@
           <div style="width:40px;height:40px;border-radius:8px;background:#f0fdf4;color:#16a34a;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><i class="fa-solid fa-folder-closed"></i></div>
           <div><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#16a34a;">Layer 1</div><div style="font-size:1rem;font-weight:700;color:#0f172a;">Raw Sources</div></div>
         </div>
-        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem;">PDFs, DOCX, XLSX and standalone markdown files in the case folder. Immutable — the IMS pipeline reads from them but never modifies them. This is the ground truth of the case.</p>
-        <code style="font-size:.78rem;background:#f1f5f9;padding:.25rem .5rem;border-radius:4px;">raw/ • documents/ • <span style="color:#16a34a;">You write, IMS reads</span></code>
+        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem;">PDFs, DOCX, XLSX and statutory records in the case vault. Immutable — the sovereign pipeline extracts evidence but never modifies underlying records. This constitutes the verifiable ground truth.</p>
+        <code style="font-size:.78rem;background:#f1f5f9;padding:.25rem .5rem;border-radius:4px;">Vault Ground Truth • <span style="color:#16a34a;">Read-Only Verified Evidence</span></code>
       </div>
       <div class="layer-card layer-wiki">
         <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
           <div style="width:40px;height:40px;border-radius:8px;background:#fffbeb;color:#d97706;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><i class="fa-solid fa-book-open"></i></div>
-          <div><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#d97706;">Layer 2</div><div style="font-size:1rem;font-weight:700;color:#0f172a;">The Wiki</div></div>
+          <div><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#d97706;">Layer 2</div><div style="font-size:1rem;font-weight:700;color:#0f172a;">Autonomous Dossier</div></div>
         </div>
-        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem;">LLM-generated and maintained markdown pages. Sources summaries, entity pages, concept pages, synthesised Q&amp;A insights, and the machine-written INDEX.md catalog. The LLM writes it; you read it.</p>
-        <code style="font-size:.78rem;background:#f1f5f9;padding:.25rem .5rem;border-radius:4px;">wiki/ • sources/ • insights/ • <span style="color:#d97706;">LLM writes, you read</span></code>
+        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem;">Agentic-maintained knowledge records. Source abstracts, entity cross-references, statutory concept indexes, synthesised Q&amp;A insights, and live catalog indices. Automatically refreshed upon ingestion.</p>
+        <code style="font-size:.78rem;background:#f1f5f9;padding:.25rem .5rem;border-radius:4px;">dossier/ • entities/ • insights/ • <span style="color:#d97706;">Agent Maintained</span></code>
       </div>
       <div class="layer-card layer-schema">
         <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
           <div style="width:40px;height:40px;border-radius:8px;background:#faf5ff;color:#7c3aed;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><i class="fa-solid fa-sliders"></i></div>
-          <div><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7c3aed;">Layer 3</div><div style="font-size:1rem;font-weight:700;color:#0f172a;">Schema & Config</div></div>
+          <div><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7c3aed;">Layer 3</div><div style="font-size:1rem;font-weight:700;color:#0f172a;">Schema &amp; Governance</div></div>
         </div>
-        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem;">case_manifest.json and AGENTS.md conventions that tell the LLM how to structure wiki pages, what ingest mode to use, which statutory milestones to track, and how the entity graph is scoped.</p>
-        <code style="font-size:.78rem;background:#f1f5f9;padding:.25rem .5rem;border-radius:4px;">case_manifest.json • <span style="color:#7c3aed;">Co-evolved by you &amp; LLM</span></code>
+        <p style="font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin-bottom:.75rem;">Institutional schema protocols and agent operational directives governing document taxonomy, milestone verification, statutory timeline tracking, and dynamic entity graph boundaries.</p>
+        <code style="font-size:.78rem;background:#f1f5f9;padding:.25rem .5rem;border-radius:4px;">Governance Protocols • <span style="color:#7c3aed;">Rule-Bound Compliance</span></code>
       </div>
     </div>
 
     <!-- Directory Tree -->
     <div style="margin-bottom:2.5rem;">
-      <h3 style="font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:1rem;"><i class="fa-solid fa-sitemap" style="color:#d97706;margin-right:.5rem;"></i> Wiki Directory Structure</h3>
+      <h3 style="font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:1rem;"><i class="fa-solid fa-sitemap" style="color:#d97706;margin-right:.5rem;"></i> Living Dossier Knowledge Hierarchy</h3>
       <div class="wiki-dir-tree">
-<span class="tree-dir">wiki/</span>
-├── <span class="tree-file">INDEX.md</span>          <span class="tree-comment"># Machine-written catalog: one line per page (link + summary)</span>
-├── <span class="tree-file">log.md</span>            <span class="tree-comment"># Append-only operation log: ## [YYYY-MM-DD] ingest|query|lint | topic</span>
-├── <span class="tree-dir">sources/</span>           <span class="tree-comment"># Auto-generated per-document summary pages</span>
-│   ├── <span class="tree-file">Resolution_Plan_ABC.md</span>
-│   └── <span class="tree-file">Form_H_Submission.md</span>
-├── <span class="tree-dir">insights/</span>          <span class="tree-comment"># Filed RAG answers (≥4 docs cited, ≥300 words)</span>
-│   ├── <span class="tree-file">section_29a_eligibility_analysis.md</span>
-│   └── <span class="tree-file">coc_voting_shares_recalculation.md</span>
-├── <span class="tree-dir">qna/</span>               <span class="tree-comment"># Case Q&amp;A accordion entries</span>
-└── <span class="tree-file">CASE_AUDIT.md</span>     <span class="tree-comment"># Lint operation output: contradiction cards, orphan flags</span>
+<span class="tree-dir">dossier/</span>
+├── <span class="tree-file">INDEX.md</span>          <span class="tree-comment"># Autonomous master catalog: structured cross-references and verified status</span>
+├── <span class="tree-file">audit_log.md</span>      <span class="tree-comment"># Append-only cryptographic ledger: ingestion timestamps and reasoning audits</span>
+├── <span class="tree-dir">abstracts/</span>        <span class="tree-comment"># Auto-extracted multi-page evidential briefing records</span>
+│   ├── <span class="tree-file">Resolution_Plan_Summary.md</span>
+│   └── <span class="tree-file">Statutory_Filing_Brief.md</span>
+├── <span class="tree-dir">insights/</span>         <span class="tree-comment"># Curated legal-forensic synthesis (cross-referenced across evidential exhibits)</span>
+│   ├── <span class="tree-file">statutory_eligibility_analysis.md</span>
+│   └── <span class="tree-file">voting_rights_recalculation.md</span>
+├── <span class="tree-dir">precedents/</span>       <span class="tree-comment"># Case jurisprudence and ratio decidendi alignment entries</span>
+└── <span class="tree-file">HEALTH_REPORT.md</span>  <span class="tree-comment"># Neural audit report: contradiction alerts, evidential gap flags</span>
       </div>
     </div>
 
     <!-- Wiki Operations -->
     <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
       <span class="badge badge-primary">Operations</span>
-      <h2 class="section-title" style="margin-top:.5rem;">Three Core Wiki Operations</h2>
+      <h2 class="section-title" style="margin-top:.5rem;">Three Core Dossier Operations</h2>
     </div>
 
     <div class="catalog-grid" style="margin-bottom:2.5rem;">
       <div class="catalog-card">
         <div class="catalog-badge-row"><span class="badge badge-primary">Ingest</span><span class="badge badge-success">Auto-Brief</span></div>
-        <h3 class="catalog-card-title">Source Ingest → Wiki Page</h3>
-        <p class="catalog-card-desc">After a document is indexed, the LLM generates a wiki/sources/&lt;stem&gt;.md summary page (300–500 words) covering key entities, document type, financial figures, and any warning flags. This is immediately added to INDEX.md.</p>
-        <div class="catalog-meta-row"><span><i class="fa-solid fa-file-circle-plus"></i> Auto-creates source page</span><span><i class="fa-solid fa-list"></i> Updates INDEX.md</span></div>
+        <h3 class="catalog-card-title">Source Ingest → Evidential Brief</h3>
+        <p class="catalog-card-desc">After an exhibit is indexed, the neural pipeline generates a comprehensive structured brief covering verified entities, legal instruments, financial quantum, and risk exceptions. This is immediately mapped into the master index.</p>
+        <div class="catalog-meta-row"><span><i class="fa-solid fa-file-circle-plus"></i> Auto-creates dossier record</span><span><i class="fa-solid fa-list"></i> Updates master index</span></div>
       </div>
       <div class="catalog-card">
-        <div class="catalog-badge-row"><span class="badge badge-primary">Query</span><span class="badge badge-success">Answer Filing</span></div>
-        <h3 class="catalog-card-title">RAG Answer → Wiki Insight</h3>
-        <p class="catalog-card-desc">Every agent chat response includes a "Save to Case Wiki" button. When an answer cites ≥ 4 distinct documents and exceeds 300 words, a subtle chip auto-suggests filing. Filed insights carry frontmatter: source_query, date, documents_used, agent.</p>
-        <div class="catalog-meta-row"><span><i class="fa-solid fa-bookmark"></i> One-click filing</span><span><i class="fa-solid fa-magnifying-glass"></i> FTS5-indexed instantly</span></div>
+        <div class="catalog-badge-row"><span class="badge badge-primary">Query</span><span class="badge badge-success">Synthesis Filing</span></div>
+        <h3 class="catalog-card-title">Neural Answer → Evidential Insight</h3>
+        <p class="catalog-card-desc">Every agent deliberation output supports instant archival to the Living Dossier. When an analysis cites multiple primary filings, the system flags it for inclusion in the case record with full evidential provenance and audit metadata.</p>
+        <div class="catalog-meta-row"><span><i class="fa-solid fa-bookmark"></i> Instant archival</span><span><i class="fa-solid fa-magnifying-glass"></i> Dual-indexed in real time</span></div>
       </div>
       <div class="catalog-card">
-        <div class="catalog-badge-row"><span class="badge badge-primary">Lint</span><span class="badge badge-success">Killer Differentiator</span></div>
-        <h3 class="catalog-card-title">Case Wiki Lint Audit</h3>
-        <p class="catalog-card-desc">A periodic LLM health-check pass across all wiki pages and case_kv_dictionary.json. Outputs structured cards in the Case Action Inbox. No other legal PKM tool has this capability — the wiki actively defends itself against stale and contradictory knowledge.</p>
+        <div class="catalog-badge-row"><span class="badge badge-primary">Audit</span><span class="badge badge-success">Continuous Verification</span></div>
+        <h3 class="catalog-card-title">Case Dossier Health Audit</h3>
+        <p class="catalog-card-desc">A periodic background neural verification pass across all dossier records and entity registries. Detects conflicts and surfaces structured cards in the Action Inbox — ensuring the dossier actively self-audits against inconsistencies.</p>
         <div class="catalog-meta-row"><span><i class="fa-solid fa-triangle-exclamation"></i> Contradiction flags</span><span><i class="fa-solid fa-inbox"></i> Inbox cards</span></div>
       </div>
     </div>

@@ -553,7 +553,7 @@
         <div>
           <h1 class="hero-heading">Institutional Legal Vaults & Precedents</h1>
           <p class="hero-desc">
-            Cryptographically signed, AES-256 encrypted vector packages pre-compiled for private local execution in the Hayagriva Agentic Operating System. Enables instant full-text search, statutory cross-referencing, and Monaco editor autocomplete with zero cloud dependency.
+            Cryptographically signed, AES-256 encrypted vector packages pre-compiled for private local execution in the Hayagriva Sovereign Harness. Enables instant full-text search, statutory cross-referencing, and contextual drafting autocomplete with zero cloud dependency.
           </p>
         </div>
       </div>
@@ -665,7 +665,7 @@
             <th style="min-width: 95px;">Release</th>
             <th style="min-width: 140px;">Indexed Units</th>
             <th style="min-width: 90px;">Binary Size</th>
-            <th style="min-width: 110px;">Monaco Trigger</th>
+            <th style="min-width: 110px;">Autocomplete Trigger</th>
             <th style="text-align: right; min-width: 100px; padding-right: 1.5rem;">Action</th>
           </tr>
         </thead>
@@ -685,21 +685,21 @@
           <h3>Air-Gapped Sovereign Security</h3>
         </div>
         <ul class="spec-list">
-          <li><i class="fa-solid fa-check"></i> <strong>100% Client-Side Vector Search</strong>: Runs on local CPU/GPU using <code>InLegal-SBERT</code> ONNX quantized model.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>100% Sovereign Vector Search</strong>: Runs on local CPU/GPU using <code>LexVector™</code> hardware-accelerated quantization.</li>
           <li><i class="fa-solid fa-check"></i> <strong>Zero Data Exfiltration</strong>: Queries, drafts, and client case facts never touch external cloud endpoints.</li>
           <li><i class="fa-solid fa-check"></i> <strong>Cryptographic Verification</strong>: Every vault binary is signed with Ed25519 keys matching portal distribution manifests.</li>
           <li><i class="fa-solid fa-check"></i> <strong>AES-256 GCM Encryption</strong>: Vault data tables are encrypted at rest with hardware-accelerated decryption streams.</li>
         </ul>
       </div>
 
-      <!-- Card 2: Monaco Autocomplete -->
+      <!-- Card 2: Contextual Autocomplete -->
       <div class="spec-card">
         <div class="spec-card-header">
           <i class="fa-solid fa-code" style="color: var(--secondary); font-size: 1.25rem;"></i>
-          <h3>Monaco Editor Autocomplete Triggers</h3>
+          <h3>Harness Contextual Autocomplete Triggers</h3>
         </div>
         <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.75rem;">
-          Typing contextual trigger prefixes in the Hayagriva IDE drafting workbench instantly brings statutory provisions and verified precedents directly to your cursor:
+          Typing contextual trigger prefixes in the Sovereign Harness drafting workbench instantly brings statutory provisions and verified precedents directly to your cursor:
         </p>
         <div class="spec-code-block">
 @@ibc/sec14       → Inserts IBC Moratorium provision<br>
@@ -714,15 +714,15 @@
       <div class="spec-card">
         <div class="spec-card-header">
           <i class="fa-solid fa-database" style="color: #16a34a; font-size: 1.25rem;"></i>
-          <h3>PostgreSQL Immutable Persistence</h3>
+          <h3>High-Integrity Enterprise Persistence</h3>
         </div>
         <ul class="spec-list">
-          <li><i class="fa-solid fa-check"></i> <strong>Central Analytical Store</strong>: All 1,997 templates are mirrored inside <code>ibclaw_db.public.ibc_templates</code>.</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Central Analytical Store</strong>: All verified statutory templates are mirrored inside immutable relational knowledge stores.</li>
           <li><i class="fa-solid fa-check"></i> <strong>SHA-256 Drift Detection</strong>: Template updates track SHA-256 hashes to prevent unauthorized modifications.</li>
-          <li><i class="fa-solid fa-check"></i> <strong>Instant Recovery Command</strong>: If local files are ever accidentally moved or deleted:</li>
+          <li><i class="fa-solid fa-check"></i> <strong>Cryptographic Integrity Command</strong>: One-step verification and automatic restoration for local deployment nodes:</li>
         </ul>
         <div class="spec-code-block">
-python3 scripts/sync_templates_to_db.py --restore
+harness-vault sync --verify --integrity-enforce
         </div>
       </div>
 
@@ -776,7 +776,7 @@ python3 scripts/sync_templates_to_db.py --restore
         unitsLabel: "Sections & Regulations",
         sizeMb: 90.0,
         trigger: "@@ibc/",
-        encryption: "AES-256 + 768d SBERT",
+        encryption: "AES-256 + LexVector™",
         icon: "fa-scale-balanced",
         iconColor: "#2563eb",
         iconBg: "#eff6ff",
@@ -793,7 +793,7 @@ python3 scripts/sync_templates_to_db.py --restore
         unitsLabel: "Judicial Headnotes",
         sizeMb: 132.8,
         trigger: "@@case/",
-        encryption: "AES-256 + 768d SBERT",
+        encryption: "AES-256 + LexVector™",
         icon: "fa-gavel",
         iconColor: "#7c3aed",
         iconBg: "#faf5ff",
@@ -810,7 +810,7 @@ python3 scripts/sync_templates_to_db.py --restore
         unitsLabel: "Precedents & Templates",
         sizeMb: 28.7,
         trigger: "@@form/ @@prec/",
-        encryption: "AES-256 + 768d SBERT",
+        encryption: "AES-256 + LexVector™",
         icon: "fa-file-contract",
         iconColor: "#16a34a",
         iconBg: "#f0fdf4",
@@ -827,7 +827,7 @@ python3 scripts/sync_templates_to_db.py --restore
         unitsLabel: "Statutory Sections",
         sizeMb: 33.6,
         trigger: "@@laws/",
-        encryption: "AES-256 + 768d SBERT",
+        encryption: "AES-256 + LexVector™",
         icon: "fa-landmark",
         iconColor: "#1e40af",
         iconBg: "#eff6ff",
@@ -844,7 +844,7 @@ python3 scripts/sync_templates_to_db.py --restore
         unitsLabel: "Sections & Rules",
         sizeMb: 12.5,
         trigger: "@@mca/",
-        encryption: "AES-256 + 768d SBERT",
+        encryption: "AES-256 + LexVector™",
         icon: "fa-building-columns",
         iconColor: "#0284c7",
         iconBg: "#f0f9ff",
@@ -861,7 +861,7 @@ python3 scripts/sync_templates_to_db.py --restore
         unitsLabel: "Sections & State Rules",
         sizeMb: 2.1,
         trigger: "@@rera/",
-        encryption: "AES-256 + 768d SBERT",
+        encryption: "AES-256 + LexVector™",
         icon: "fa-city",
         iconColor: "#0d9488",
         iconBg: "#f0fdfa",
@@ -878,7 +878,7 @@ python3 scripts/sync_templates_to_db.py --restore
         unitsLabel: "Statutory Provisions",
         sizeMb: 1.4,
         trigger: "@@arbitration/",
-        encryption: "AES-256 + 768d SBERT",
+        encryption: "AES-256 + LexVector™",
         icon: "fa-handshake",
         iconColor: "#059669",
         iconBg: "#ecfdf5",
@@ -895,41 +895,41 @@ python3 scripts/sync_templates_to_db.py --restore
         unitsLabel: "Sections & Schedules",
         sizeMb: 0.6,
         trigger: "@@debt_recovery/",
-        encryption: "AES-256 + 768d SBERT",
+        encryption: "AES-256 + LexVector™",
         icon: "fa-money-bill-transfer",
         iconColor: "#d97706",
         iconBg: "#fffbeb",
         description: "SARFAESI Act 2002 security enforcement provisions and Recovery of Debts and Bankruptcy (RDDBFI) Act 1993 statutory rules."
       },
       {
-        id: "cuad_benchmark",
-        title: "CUAD Commercial Contract Risk Intelligence",
-        archive: "cuad_benchmark_vault_2026-W37.zip",
+        id: "contract_risk_benchmark",
+        title: "Commercial Contract Risk Intelligence",
+        archive: "contract_risk_vault_2026-W37.zip",
         category: "contract",
         categoryLabel: "Contract Intelligence",
         version: "2026-W37",
         units: 13829,
         unitsLabel: "Clauses Classified",
         sizeMb: 103.2,
-        trigger: "@@cuad/",
-        encryption: "AES-256 Local ONNX",
+        trigger: "@@contract/",
+        encryption: "AES-256 Sovereign Vector",
         icon: "fa-shield-halved",
         iconColor: "#dc2626",
         iconBg: "#fef2f2",
-        description: "Atticus Project benchmark suite containing 510 commercial contracts analyzed across 41 legal risk categories including uncapped indemnification, non-compete covenants, change-of-control, and exclusivity restrictions."
+        description: "Institutional legal risk benchmark suite containing 510 commercial contracts analyzed across 41 legal risk categories including uncapped indemnification, non-compete covenants, change-of-control, and exclusivity restrictions."
       },
       {
-        id: "acord_clauses",
-        title: "ACORD Transactional Clause Benchmark",
-        archive: "acord_clauses_vault_2026-W37.zip",
+        id: "standard_clauses",
+        title: "Transactional Standard Clause Benchmark",
+        archive: "standard_clauses_vault_2026-W37.zip",
         category: "contract",
         categoryLabel: "Contract Intelligence",
         version: "2026-W37",
         units: 4200,
         unitsLabel: "Standard Clauses",
         sizeMb: 32.6,
-        trigger: "@@acord/",
-        encryption: "AES-256 Local ONNX",
+        trigger: "@@clause/",
+        encryption: "AES-256 Sovereign Vector",
         icon: "fa-file-shield",
         iconColor: "#4f46e5",
         iconBg: "#eef2ff",

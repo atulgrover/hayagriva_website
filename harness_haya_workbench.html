@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case Workbench — Case Manager, Context Control & Entity Graph | AI Harness | AgenticProfessionals.Net</title>
-  <meta name="description" content="The Hayagriva Case Workbench — sovereign case workspace management, active-context control matrix, and FTS5+vector concepts & entity graph for CIRP practitioners.">
+  <meta name="description" content="The Hayagriva Case Workbench — sovereign case workspace management, active-context control matrix, and dual lexical+vector concepts &amp; entity graph for CIRP practitioners.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -61,7 +61,7 @@
       <div class="hero-title-row">
         <div>
           <h1 class="hero-heading">Case Workbench</h1>
-          <p class="hero-desc">The left panel of the Hayagriva IDE — sovereign case directory management, granular active-context control, and a live FTS5 + ONNX entity graph that makes every case document instantly retrievable and explorable.</p>
+          <p class="hero-desc">The sovereign workspace console — case directory isolation, granular active-context control, and a live multi-dimensional entity graph that makes every case document instantly retrievable and explorable.</p>
         </div>
         <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
           <a href="harness_haya_ingest.html" class="btn btn-primary" style="padding:.75rem 1.4rem;">
@@ -86,11 +86,11 @@
     </div>
     <div class="metric-card">
       <div class="metric-icon-box metric-icon-blue"><i class="fa-solid fa-bolt"></i></div>
-      <div><div class="metric-value">Hybrid</div><div class="metric-label">FTS5 + ONNX Retrieval</div></div>
+      <div><div class="metric-value">Hybrid</div><div class="metric-label">Lexical + Neural Retrieval</div></div>
     </div>
     <div class="metric-card">
       <div class="metric-icon-box metric-icon-teal"><i class="fa-solid fa-diagram-project"></i></div>
-      <div><div class="metric-value">D3.js</div><div class="metric-label">3D Entity Graph Viewer</div></div>
+      <div><div class="metric-value">3D Graph</div><div class="metric-label">Case Entity Viewer</div></div>
     </div>
   </div>
 
@@ -101,26 +101,26 @@
       <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
         <span class="badge badge-primary">Case Manager</span>
         <h2 class="section-title" style="margin-top:.5rem;">Sovereign Case Directory Management</h2>
-        <p class="section-desc">Each CIRP case lives in a fully isolated directory under <code>~/Documents/hayagriva-cases/</code>. No data bleeds between cases.</p>
+        <p class="section-desc">Each CIRP case lives in a fully isolated local directory structure. No data bleeds between cases.</p>
       </div>
 
       <div class="catalog-grid" style="margin-bottom:1rem;">
         <div class="catalog-card">
           <div class="catalog-badge-row"><span class="badge badge-primary">Isolation</span><span class="badge badge-success">Air-Gapped</span></div>
           <h3 class="catalog-card-title">Isolated Case Workspaces</h3>
-          <p class="catalog-card-desc">Each case gets its own directory, SQLite database (documents.db), vector index, case_kv_dictionary.json, and case_manifest.json. Opening a new case activates its workspace context in the sidebar — no data bleeds between concurrent cases.</p>
-          <div class="catalog-meta-row"><span><i class="fa-solid fa-folder-closed"></i> Per-case DB</span><span><i class="fa-solid fa-shield-halved"></i> Zero cross-case leakage</span></div>
+          <p class="catalog-card-desc">Each case gets its own isolated directory, encrypted local data store, vector index, and structured case configuration. Opening a new case activates its workspace context in the sidebar — no data bleeds between concurrent cases.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-folder-closed"></i> Per-case Store</span><span><i class="fa-solid fa-shield-halved"></i> Zero cross-case leakage</span></div>
         </div>
         <div class="catalog-card">
-          <div class="catalog-badge-row"><span class="badge badge-primary">case_manifest.json</span><span class="badge badge-success">Config Hub</span></div>
-          <h3 class="catalog-card-title">Case Manifest Configuration</h3>
-          <p class="catalog-card-desc">Each case carries a case_manifest.json that stores: ingest_mode (interactive / batch), file domain classifications, scheduled CIRP milestone wake events, active RAG document selections, and the session state snapshot used for context compaction.</p>
-          <div class="catalog-meta-row"><span><i class="fa-solid fa-file-code"></i> Single config source</span><span><i class="fa-solid fa-clock"></i> Milestone scheduler</span></div>
+          <div class="catalog-badge-row"><span class="badge badge-primary">Policy Control</span><span class="badge badge-success">Config Hub</span></div>
+          <h3 class="catalog-card-title">Workspace Policy Configuration</h3>
+          <p class="catalog-card-desc">Each case carries a structured workspace policy that stores: ingestion modes (interactive / supervised), statutory milestone schedules, active context document selections, and session state snapshots used for context compaction.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-file-code"></i> Unified Policy</span><span><i class="fa-solid fa-clock"></i> Milestone scheduler</span></div>
         </div>
         <div class="catalog-card">
           <div class="catalog-badge-row"><span class="badge badge-primary">CIRP Timeline</span><span class="badge badge-success">Auto-Scheduled</span></div>
           <h3 class="catalog-card-title">Milestone Self-Wake</h3>
-          <p class="catalog-card-desc">On case open, the background daemon reads timeline.md and registers each statutory deadline (T0 → T330) as a node-cron scheduled wake event. When a deadline passes, a structured notification card is dropped in the Case Action Inbox with the statutory reference and recommended action.</p>
+          <p class="catalog-card-desc">On case initialization, the background daemon registers each statutory deadline (T0 → T330) as an automated wake event. When a statutory milestone passes, a structured notification card is dropped in the Case Action Inbox with the statutory reference and recommended action.</p>
           <div class="catalog-meta-row"><span><i class="fa-solid fa-calendar-check"></i> T0 → T330 tracked</span><span><i class="fa-solid fa-inbox"></i> Inbox alert</span></div>
         </div>
       </div>
@@ -133,27 +133,27 @@
       <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
         <span class="badge badge-primary">Context Control</span>
         <h2 class="section-title" style="margin-top:.5rem;">Active-Context Control Matrix</h2>
-        <p class="section-desc">A granular checkbox panel that maps every ingested document to one of three retrieval states. Controls how many tokens reach the local LLM's strict 2,048-token context window.</p>
+        <p class="section-desc">A granular control panel that maps every ingested document to one of three retrieval states, optimizing how information reaches the local model's memory budget.</p>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;">
         <div class="context-state">
           <span class="context-state-badge state-exclude">Exclude</span>
-          <div><div style="font-weight:600;font-size:.9rem;color:#0f172a;margin-bottom:.2rem;">Excluded from all retrieval</div><div style="font-size:.85rem;color:var(--text-secondary);">The document's chunks are filtered out before FTS5 and vector retrieval. Useful for superseded filings, duplicate documents, or irrelevant financial periods that would pollute the context budget.</div></div>
+          <div><div style="font-weight:600;font-size:.9rem;color:#0f172a;margin-bottom:.2rem;">Excluded from all retrieval</div><div style="font-size:.85rem;color:var(--text-secondary);">The document's chunks are filtered out before lexical and vector retrieval. Useful for superseded filings, duplicate documents, or irrelevant financial periods that would pollute the context budget.</div></div>
         </div>
         <div class="context-state">
           <span class="context-state-badge state-insights">Insights Only</span>
-          <div><div style="font-weight:600;font-size:.9rem;color:#0f172a;margin-bottom:.2rem;">High-level summary retrieval only</div><div style="font-size:.85rem;color:var(--text-secondary);">Only the document's wiki/sources/&lt;stem&gt;.md summary page is eligible for retrieval — not individual raw chunks. Preserves context budget while retaining the gist of large background documents.</div></div>
+          <div><div style="font-weight:600;font-size:.9rem;color:#0f172a;margin-bottom:.2rem;">High-level summary retrieval only</div><div style="font-size:.85rem;color:var(--text-secondary);">Only the document's synthesized summary page is eligible for retrieval — not individual raw chunks. Preserves context budget while retaining the core facts of large background documents.</div></div>
         </div>
         <div class="context-state">
           <span class="context-state-badge state-full">Full Context</span>
-          <div><div style="font-weight:600;font-size:.9rem;color:#0f172a;margin-bottom:.2rem;">Complete chunk-level retrieval</div><div style="font-size:.85rem;color:var(--text-secondary);">All chunks from the document are candidates in FTS5 and ONNX vector retrieval. Use for the most critical case documents — the Resolution Plan, Form H, and key NCLT orders that require granular citation.</div></div>
+          <div><div style="font-weight:600;font-size:.9rem;color:#0f172a;margin-bottom:.2rem;">Complete chunk-level retrieval</div><div style="font-size:.85rem;color:var(--text-secondary);">All chunks from the document are candidates in lexical and sovereign vector retrieval. Use for the most critical case documents — the Resolution Plan, Form H, and key NCLT orders that require granular citation.</div></div>
         </div>
       </div>
 
       <div style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:1.75rem;box-shadow:0 2px 8px rgba(15,23,42,.04);">
-        <h3 style="font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:.5rem;"><i class="fa-solid fa-floppy-disk" style="color:#0284c7;margin-right:.5rem;"></i> Persistence & Token Budget</h3>
-        <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.6;">Selections are persisted in <code>concepts/active_rag_docs.json</code> and survive session restarts. The Concepts sidebar shows a live dynamic token count calculation so the practitioner can see exactly how many tokens the current selection will consume from the 2,048-token local LLM budget before sending any query.</p>
+        <h3 style="font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:.5rem;"><i class="fa-solid fa-floppy-disk" style="color:#0284c7;margin-right:.5rem;"></i> Persistence &amp; Token Budget</h3>
+        <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.6;">Selections are persisted across sessions in the workspace policy. The Concepts panel shows a live dynamic token count calculation so the practitioner can see exactly how many tokens the current selection will consume from the local model budget before sending any query.</p>
       </div>
     </div>
 
@@ -163,27 +163,27 @@
     <div id="concepts-entities" class="section-anchor">
       <div class="section-header" style="text-align:left;margin-bottom:1.5rem;">
         <span class="badge badge-primary">Concepts &amp; Entities</span>
-        <h2 class="section-title" style="margin-top:.5rem;">FTS5 + Vector Retrieval &amp; Case Entity Graph</h2>
-        <p class="section-desc">Hybrid retrieval pipeline combining sub-millisecond FTS5 keyword search with ONNX cosine similarity reranking — with a live D3.js 3D entity graph for visual case exploration.</p>
+        <h2 class="section-title" style="margin-top:.5rem;">Hybrid Lexical &amp; Vector Retrieval &amp; Case Entity Graph</h2>
+        <p class="section-desc">Hybrid retrieval pipeline combining sub-millisecond lexical keyword search with sovereign semantic reranking — paired with an interactive 3D entity graph for visual case exploration.</p>
       </div>
 
       <div class="catalog-grid" style="margin-bottom:2rem;">
         <div class="catalog-card">
           <div class="catalog-badge-row"><span class="badge badge-primary">Hybrid RAG</span><span class="badge badge-success">RRF Fusion</span></div>
-          <h3 class="catalog-card-title">FTS5 + ONNX Hybrid Search</h3>
-          <p class="catalog-card-desc">FTS5 full-text index runs first to select candidate chunks via keyword match. ONNX cosine similarity is then computed on-the-fly over their float vector blobs to rerank. Results are merged via Reciprocal Rank Fusion (RRF) for optimal precision. No native C++ binary dependencies — 100% cross-platform.</p>
-          <div class="catalog-meta-row"><span><i class="fa-solid fa-bolt"></i> &lt;1ms FTS5 pass</span><span><i class="fa-solid fa-arrow-down-wide-short"></i> Cosine rerank</span></div>
+          <h3 class="catalog-card-title">Dual-Stage Lexical &amp; Vector Search</h3>
+          <p class="catalog-card-desc">High-speed lexical search runs first to select candidate chunks via exact keyword match. Sovereign vector similarity is then computed on-the-fly over dense vector projections to rerank. Results are merged via Reciprocal Rank Fusion (RRF) for optimal precision.</p>
+          <div class="catalog-meta-row"><span><i class="fa-solid fa-bolt"></i> &lt;1ms lexical pass</span><span><i class="fa-solid fa-arrow-down-wide-short"></i> Dense rerank</span></div>
         </div>
         <div class="catalog-card">
           <div class="catalog-badge-row"><span class="badge badge-primary">Drift-Free</span><span class="badge badge-success">Natural Keys</span></div>
           <h3 class="catalog-card-title">Drift-Safe Chunk Matching</h3>
-          <p class="catalog-card-desc">FTS5 candidates are matched to document_vectors using composite natural keys (filename, section_title, chunk_index) — never raw SQLite rowids. This prevents retrieval failures when the database is rebuilt, compacted, or migrated between machines.</p>
+          <p class="catalog-card-desc">Candidates are matched across retrieval stages using composite natural keys (document identifier, section header, chunk sequence). This guarantees drift-free retrieval when case repositories are synchronized or backed up.</p>
           <div class="catalog-meta-row"><span><i class="fa-solid fa-key"></i> Natural key join</span><span><i class="fa-solid fa-check-double"></i> Zero drift failures</span></div>
         </div>
         <div class="catalog-card">
-          <div class="catalog-badge-row"><span class="badge badge-primary">D3.js</span><span class="badge badge-success">3D Viewer</span></div>
+          <div class="catalog-badge-row"><span class="badge badge-primary">Graph Viewer</span><span class="badge badge-success">3D Interactive</span></div>
           <h3 class="catalog-card-title">3D Case Entity Graph</h3>
-          <p class="catalog-card-desc">The VMS D3.js Case Graph Viewer renders typed directional edges between case entities (creditors, applicants, filings, transactions). Edge types: related_party (orange), contradicts (red), supersedes (grey), cites (blue). Contradiction edges surface discrepancies between filings visually.</p>
+          <p class="catalog-card-desc">The Case Graph Viewer renders typed directional edges between case entities (creditors, applicants, filings, transactions). Edge types: related_party, contradicts, supersedes, cites. Contradiction edges surface discrepancies between filings visually.</p>
           <div class="catalog-meta-row"><span><i class="fa-solid fa-diagram-project"></i> Typed edges</span><span><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i> Contradiction flags</span></div>
         </div>
       </div>
