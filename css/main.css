@@ -78,6 +78,8 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   height: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -88,6 +90,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -105,17 +110,20 @@ a:hover {
 /* Layout Containers */
 .container {
   width: 100%;
-  max-width: var(--max-width);
+  max-width: min(var(--max-width, 1360px), 100%);
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
+  box-sizing: border-box;
 }
 
 .container-fluid {
   width: 100%;
+  max-width: 100%;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  box-sizing: border-box;
 }
 
 #app-main {

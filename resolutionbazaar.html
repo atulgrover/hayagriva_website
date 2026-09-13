@@ -738,6 +738,61 @@
             font-weight: 700;
             cursor: pointer;
         }
+
+        @media (max-width: 768px) {
+            .bottom-buy-bar {
+                padding: 12px 18px;
+            }
+            .buy-bar-inner {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+            .buy-bar-summary {
+                justify-content: space-between;
+                width: 100%;
+                gap: 12px;
+            }
+            .buy-bar-action {
+                justify-content: space-between;
+                width: 100%;
+            }
+            .btn-checkout {
+                flex: 1;
+                max-width: 200px;
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .configurator-wrap {
+                padding: 20px 14px 200px 14px;
+            }
+            .security-badges-row {
+                grid-template-columns: 1fr;
+            }
+            .config-card {
+                grid-template-columns: auto 1fr;
+                gap: 12px;
+                padding: 16px 14px;
+            }
+            .card-price-col {
+                grid-column: 2 / -1;
+                text-align: left;
+                margin-top: 4px;
+                flex-direction: row;
+                align-items: baseline;
+                gap: 8px;
+            }
+            .summary-hardware-status {
+                display: none;
+            }
+            .modal-content {
+                width: 95vw;
+                padding: 20px 16px;
+            }
+        }
     </style>
 </head>
 <body>
