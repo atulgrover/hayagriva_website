@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resolution Bazaar · Sovereign AI Configurator · AgenticProfessionals.Net</title>
-    <meta name="description" content="Configure your air-gapped legal and financial AI stack. Tailor your sovereign harness, domain models, legal vaults, and autonomous agents with live RAM and pricing calculations.">
+    <title>Resolution Bazaar · Insolvency Diligence Hub (Free Related Parties till 31 Dec 2026)</title>
+    <meta name="description" content="Resolution Bazaar: India's largest statutory legal diligence gateway (11.2M records) and sovereign chamber configurator. FastMCP Section 29A screening, CIBIL wilful defaulters, eCourts litigation, and Razorpay instant billing.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,6 +106,131 @@
             border-radius: 50%;
             background-color: var(--apple-success);
             box-shadow: 0 0 8px var(--apple-success);
+        }
+
+        
+        /* Bazaar Dual-Tab Switcher */
+        .bazaar-nav-bar {
+            background: rgba(12, 16, 25, 0.98);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            position: sticky;
+            top: 110px;
+            z-index: 85;
+            backdrop-filter: blur(15px);
+        }
+        .bazaar-tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: #94a3b8;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 22px;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .bazaar-tab-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .bazaar-tab-btn.active {
+            background: #0071e3;
+            color: #fff;
+            border-color: #0071e3;
+            box-shadow: 0 0 20px rgba(0, 113, 227, 0.4);
+        }
+
+        /* Diligence Section Styles */
+        .diligence-view-wrap {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 30px 24px 100px;
+        }
+        .diligence-hero-card {
+            background: radial-gradient(120% 120% at 50% 0%, #172033 0%, #0d121c 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 36px 32px;
+            margin-bottom: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .diligence-stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .stat-box-num {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #60a5fa;
+            font-feature-settings: "tnum";
+            line-height: 1.1;
+        }
+        .stat-box-lbl {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 4px;
+        }
+
+        .rb-rate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .rb-rate-card {
+            background: #111520;
+            border: 1px solid #1e2638;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s ease;
+        }
+        .rb-rate-card:hover {
+            border-color: #0071e3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 113, 227, 0.15);
+        }
+        .rb-card-price-pill {
+            background: rgba(0, 113, 227, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(0, 113, 227, 0.3);
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-feature-settings: "tnum";
+        }
+        .rb-feature-bullet {
+            font-size: 0.84rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 900px) {
+            .diligence-stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .rb-rate-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Configurator Two-Column Layout */
@@ -804,18 +929,243 @@
     <section class="rb-masthead">
         <div class="rb-masthead-inner">
             <div class="rb-brand-title">
-                <span class="rb-brand-badge"><i class="fa-solid fa-cubes"></i> Chamber Hardware</span>
-                <span>Equip Your Chamber · Air-Gapped Legal Hardware Configurator</span>
+                <span class="rb-brand-badge"><i class="fa-solid fa-database"></i> Diligence &amp; Hardware</span>
+                <span>Resolution Bazaar · 11.2M Statutory Diligence Gateway &amp; Chamber Configurator</span>
             </div>
             <div class="rb-security-pill">
                 <span class="rb-security-dot"></span>
-                <span>100% Offline · Complete Attorney-Client Privilege</span>
+                <span>FastMCP Tool Server · The Hard Floor Guarantee</span>
             </div>
         </div>
     </section>
 
+    <!-- Dual Mode Tab Switcher -->
+    <div class="bazaar-nav-bar" id="bazaar-nav-bar">
+        <button id="tab-btn-diligence" class="bazaar-tab-btn active" onclick="switchBazaarTab('diligence')">
+            <i class="fa-solid fa-bolt"></i> 11.2M FastMCP Diligence Marketplace
+        </button>
+        <button id="tab-btn-hardware" class="bazaar-tab-btn" onclick="switchBazaarTab('hardware')">
+            <i class="fa-solid fa-microchip"></i> Sovereign Hardware &amp; SLM Configurator
+        </button>
+    </div>
+
+    <!-- ======================================================================
+         TAB 1: 11.2M FastMCP Diligence Marketplace View
+         ====================================================================== -->
+    <section id="view-diligence-marketplace" class="diligence-view-wrap">
+        
+        <!-- Hero Card -->
+        <div class="diligence-hero-card">
+            <div style="display:inline-flex; align-items:center; gap:8px; font-size:0.75rem; font-weight:800; color:#38bdf8; background:rgba(56, 189, 248, 0.12); border:1px solid rgba(56, 189, 248, 0.3); padding:4px 12px; border-radius:20px; margin-bottom:14px;">
+                <i class="fa-solid fa-shield-halved"></i> THE OFFICIAL DILIGENCE DATASET FOR INDIAN INSOLVENCY &amp; LITIGATION
+            </div>
+            <h1 style="font-size:2.4rem; font-weight:800; color:#fff; margin:0 0 12px; letter-spacing:-0.02em;">
+                11.2 Million Official Indian Statutory Records.
+            </h1>
+            <p style="font-size:1.05rem; color:#94a3b8; max-width:850px; line-height:1.6; margin:0;">
+                No web scraping. No unverified hallucinations. Query authoritative MCA Director registries, CIBIL Wilful Defaulters, and 3,200+ court dockets directly from your Hayagriva IDE via FastMCP — with transparent itemized pricing and the absolute <strong>Hard Floor Spend Guarantee</strong>.
+            </p>
+
+            <div class="diligence-stats-bar">
+                <div>
+                    <div class="stat-box-num">11.2M+</div>
+                    <div class="stat-box-lbl">Total Indexed Records</div>
+                </div>
+                <div>
+                    <div class="stat-box-num">2.4M</div>
+                    <div class="stat-box-lbl">MCA Directors Screened</div>
+                </div>
+                <div>
+                    <div class="stat-box-num">3,200+</div>
+                    <div class="stat-box-lbl">Courts &amp; Tribunals</div>
+                </div>
+                <div>
+                    <div class="stat-box-num" style="color:#4ade80;">₹0 Surprise</div>
+                    <div class="stat-box-lbl">Hard Floor Protected</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Hard Floor Guarantee Notice -->
+        <div style="background:rgba(22, 163, 74, 0.1); border:1px solid rgba(22, 163, 74, 0.3); border-radius:14px; padding:20px 24px; margin-bottom:32px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+            <div style="display:flex; align-items:center; gap:16px;">
+                <div style="width:44px; height:44px; border-radius:10px; background:#16a34a; color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div>
+                    <div style="font-size:1rem; font-weight:700; color:#fff;">The Hard Floor Guarantee Active</div>
+                    <div style="font-size:0.85rem; color:#cbd5e1;">Your Hayagriva IDE agents cannot spend a single rupee without you clicking "Authorize" in your chamber workspace.</div>
+                </div>
+            </div>
+            <a href="#" onclick="openIdeDownloadModal(); return false;" style="background:#16a34a; color:#fff; padding:8px 18px; border-radius:8px; font-size:0.82rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+                View Architecture <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- Itemized Statutory Rate Cards Grid -->
+        <div style="margin-bottom:20px; display:flex; justify-content:space-between; align-items:flex-end;">
+            <div>
+                <h2 style="font-size:1.6rem; font-weight:800; color:#fff; margin:0 0 6px;">Statutory Rate Card</h2>
+                <p style="font-size:0.9rem; color:#86868b; margin:0;">Related Parties Report is 100% FREE until 31st Dec 2026. Other statutory checks feature open market settlement and dynamic registry pricing.</p>
+            </div>
+            <div style="font-size:0.8rem; color:#38bdf8;">
+                <i class="fa-solid fa-bolt"></i> FastMCP SSE Protocol Ready
+            </div>
+        </div>
+
+        <div class="rb-rate-grid">
+
+            <!-- Card 0: FLAGSHIP FREE PROMOTION - Related Parties Report -->
+            <div class="rb-rate-card" style="border: 2px solid #10b981; background: radial-gradient(100% 100% at 50% 0%, #064e3b 0%, #111520 100%);">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                    <div>
+                        <div style="font-size:0.75rem; color:#34d399; font-weight:800; text-transform:uppercase; letter-spacing:0.06em;">FLAGSHIP ADOPTION PROMOTION</div>
+                        <h3 style="font-size:1.25rem; font-weight:800; color:#fff; margin:4px 0 0;">AS-18 Related Parties &amp; Connected Audit</h3>
+                    </div>
+                    <div class="rb-card-price-pill" style="background:#10b981; color:#fff; border-color:#10b981;">
+                        100% FREE <span style="font-size:0.7rem; font-weight:400; color:#d1fae5;">till 31 Dec 2026</span>
+                    </div>
+                </div>
+                <p style="font-size:0.86rem; color:#d1fae5; line-height:1.5; margin:0 0 16px;">
+                    Mandatory Section 5(24) and Section 29A connected-party audit across MCA corporate registries. Trace holding, subsidiary, associate, and common-director links for ₹0 during the 2026 promotional window.
+                </p>
+                <div style="margin-bottom:20px; flex:1;">
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#34d399;"></i> Full AS-18 Connected Corporate Registry Mapping</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#34d399;"></i> Common Director &amp; Cross-Holding Inquest</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#34d399;"></i> 100% Free for Empanelled Insolvency Professionals</div>
+                </div>
+                <button class="bazaar-tab-btn" style="width:100%; justify-content:center; background:#10b981; color:#fff; font-weight:700;" onclick="openTopUpModal('AS-18 Related Parties Audit (FREE PROMO)', 0)">
+                    <i class="fa-solid fa-gift"></i> Generate Free Report in IDE
+                </button>
+            </div>
+
+            <!-- Card 1: MCA Director Sec 29A -->
+            <div class="rb-rate-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                    <div>
+                        <div style="font-size:0.75rem; color:#38bdf8; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">MCA REGISTRY OF DIRECTORS</div>
+                        <h3 style="font-size:1.2rem; font-weight:700; color:#fff; margin:4px 0 0;">Director Section 29A Audit</h3>
+                    </div>
+                    <div class="rb-card-price-pill" style="color:#38bdf8; border-color:rgba(56, 189, 248, 0.3); background:rgba(56, 189, 248, 0.15);">
+                        OFFICIAL REGISTRY <span style="font-size:0.7rem; font-weight:400; color:#86868b;">/ Market Settled</span>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem; color:#94a3b8; line-height:1.5; margin:0 0 16px;">
+                    Comprehensive screening across 2.4 million directors. Identifies disqualifications under Section 164(2), strike-off directorships, and historical corporate insolvencies.
+                </p>
+                <div style="margin-bottom:20px; flex:1;">
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#4ade80;"></i> DIN Disqualification Check (§164(2))</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#4ade80;"></i> Strike-off Company Directorships</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#4ade80;"></i> Cryptographic SHA-256 Hash Chained</div>
+                </div>
+                <button class="bazaar-tab-btn" style="width:100%; justify-content:center; background:#1e2638; color:#fff;" onclick="openTopUpModal('Director Section 29A Audit', 'Market Discovery')">
+                    <i class="fa-solid fa-bolt"></i> Connect FastMCP Tool
+                </button>
+            </div>
+
+            <!-- Card 2: CIBIL & RBI Wilful Defaulters -->
+            <div class="rb-rate-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                    <div>
+                        <div style="font-size:0.75rem; color:#fbbf24; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">CREDIT BUREAU &amp; RBI GAZETTE</div>
+                        <h3 style="font-size:1.2rem; font-weight:700; color:#fff; margin:4px 0 0;">CIBIL &amp; RBI Wilful Defaulters</h3>
+                    </div>
+                    <div class="rb-card-price-pill" style="color:#fbbf24; border-color:rgba(251, 191, 36, 0.3); background:rgba(251, 191, 36, 0.15);">
+                        OFFICIAL REGISTRY <span style="font-size:0.7rem; font-weight:400; color:#86868b;">/ Market Settled</span>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem; color:#94a3b8; line-height:1.5; margin:0 0 16px;">
+                    Cross-references corporate entities, promoters, and guarantors against multi-bank suit-filed accounts of ₹1 Crore+ and RBI wilful defaulter lists.
+                </p>
+                <div style="margin-bottom:20px; flex:1;">
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#fbbf24;"></i> Suit-Filed ₹1Cr+ Multi-Bank Ledger</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#fbbf24;"></i> RBI Willful Defaulters Circular Compliance</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#fbbf24;"></i> Mandatory Section 29A(b) Grounding</div>
+                </div>
+                <button class="bazaar-tab-btn" style="width:100%; justify-content:center; background:#1e2638; color:#fff;" onclick="openTopUpModal('CIBIL & RBI Wilful Defaulters', 'Market Discovery')">
+                    <i class="fa-solid fa-bolt"></i> Connect FastMCP Tool
+                </button>
+            </div>
+
+            <!-- Card 3: eCourts Multi-Forum Litigation Scan -->
+            <div class="rb-rate-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                    <div>
+                        <div style="font-size:0.75rem; color:#4ade80; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">ALL-INDIA JUDICIAL DOCKETS</div>
+                        <h3 style="font-size:1.2rem; font-weight:700; color:#fff; margin:4px 0 0;">eCourts Multi-Forum Scan</h3>
+                    </div>
+                    <div class="rb-card-price-pill" style="color:#4ade80; border-color:rgba(74, 222, 128, 0.3); background:rgba(74, 222, 128, 0.15);">
+                        OFFICIAL REGISTRY <span style="font-size:0.7rem; font-weight:400; color:#86868b;">/ Market Settled</span>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem; color:#94a3b8; line-height:1.5; margin:0 0 16px;">
+                    Instant unified litigation discovery across 3,200+ District Courts, High Courts, NCLT Benches, NCLAT, and the Supreme Court of India.
+                </p>
+                <div style="margin-bottom:20px; flex:1;">
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#4ade80;"></i> District Courts &amp; Commercial Benches</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#4ade80;"></i> NCLT &amp; NCLAT IBC Matter History</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-check" style="color:#4ade80;"></i> Active Warrants &amp; Attachment Orders</div>
+                </div>
+                <button class="bazaar-tab-btn" style="width:100%; justify-content:center; background:#1e2638; color:#fff;" onclick="openTopUpModal('eCourts Multi-Forum Scan', 'Market Discovery')">
+                    <i class="fa-solid fa-bolt"></i> Connect FastMCP Tool
+                </button>
+            </div>
+
+            <!-- Card 4: Comprehensive CIRP Sec 29A Dossier -->
+            <div class="rb-rate-card" style="border: 2px solid #3b82f6; background: radial-gradient(100% 100% at 50% 0%, #172440 0%, #111520 100%);">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                    <div>
+                        <div style="font-size:0.75rem; color:#60a5fa; font-weight:800; text-transform:uppercase; letter-spacing:0.06em;">FULL MULTI-BUREAU SYNTHESIS</div>
+                        <h3 style="font-size:1.2rem; font-weight:700; color:#fff; margin:4px 0 0;">CIRP Section 29A Full Dossier</h3>
+                    </div>
+                    <div class="rb-card-price-pill" style="background:#0071e3; color:#fff; border-color:#0071e3;">
+                        FLAGSHIP PILOT <span style="font-size:0.7rem; font-weight:400; color:#cbd5e1;">/ CoC Package</span>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.5; margin:0 0 16px;">
+                    The gold standard for Resolution Professionals. Synthesizes MCA Director screening, CIBIL Wilful Defaulters, eCourts litigation, and ROC charges into a court-ready affidavit.
+                </p>
+                <div style="margin-bottom:20px; flex:1;">
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-star" style="color:#fbbf24;"></i> Multi-bureau connected party synthesis</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-star" style="color:#fbbf24;"></i> Pre-formatted Form H Section 29A Certificate</div>
+                    <div class="rb-feature-bullet"><i class="fa-solid fa-star" style="color:#fbbf24;"></i> Cryptographic Section 65B BSA Evidence Token</div>
+                </div>
+                <button class="bazaar-tab-btn" style="width:100%; justify-content:center; background:#0071e3; color:#fff;" onclick="openTopUpModal('CIRP Section 29A Full Dossier', 'CoC Pilot')">
+                    <i class="fa-solid fa-bolt"></i> Request Pilot Dossier
+                </button>
+            </div>
+
+        </div>
+
+        <!-- SHA-256 Ledger Verification Tool -->
+        <div style="background:#111520; border:1px solid #1e2638; border-radius:16px; padding:28px 32px; margin-top:20px;">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+                <i class="fa-solid fa-receipt" style="color:#38bdf8; font-size:1.3rem;"></i>
+                <h3 style="font-size:1.2rem; font-weight:700; color:#fff; margin:0;">Court-Admissible SHA-256 Certificate Verifier</h3>
+            </div>
+            <p style="font-size:0.88rem; color:#94a3b8; line-height:1.5; margin:0 0 18px;">
+                Verify any diligence transaction hash generated by your Hayagriva IDE against Resolution Bazaar's authoritative atomic timestamp ledger.
+            </p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <input type="text" id="hash-verify-input" placeholder="Enter SHA-256 Hash (e.g. e81c9a34b67f102...)" style="flex:1; min-width:300px; background:#090d16; border:1px solid #26334d; border-radius:8px; padding:12px 16px; color:#fff; font-family:var(--font-mono); font-size:0.85rem;" />
+                <button class="bazaar-tab-btn" style="background:#0071e3; color:#fff;" onclick="simulateVerifyHash()">
+                    <i class="fa-solid fa-magnifying-glass"></i> Verify Certificate
+                </button>
+            </div>
+            <div id="verify-result-box" style="display:none; margin-top:16px; padding:14px 18px; border-radius:8px; background:rgba(34, 197, 94, 0.1); border:1px solid rgba(34, 197, 94, 0.3); font-family:var(--font-mono); font-size:0.82rem; color:#4ade80;">
+                <i class="fa-solid fa-circle-check"></i> VALID CERTIFICATE: Timestamp verified at 2026-09-14T10:14:02Z | Statutory Dataset: MCA_SEC29A_DIRECTOR | Hard Floor Block #1042
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ======================================================================
+         TAB 2: Sovereign Hardware & SLM Configurator (Wrapped Existing Layout)
+         ====================================================================== -->
+
+
     <!-- Main Configurator Layout -->
-    <main class="configurator-wrap">
+    <main class="configurator-wrap" id="view-hardware-configurator" style="display:none;">
         
         <!-- Left Column: Sticky Node Visualizer & Specs -->
         <aside class="preview-column">

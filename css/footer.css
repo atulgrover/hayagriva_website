@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;700&display=swap');
 
 /* ==========================================================================
-   HAYAGRIVA Shared Dark Footer Stylesheet (3-Column Layout: 20% | 52% | 28%)
+   HAYAGRIVA Shared 40% : 20% : 40% Dark Footer Stylesheet
    ========================================================================== */
 
 .compact-footer {
   background-color: #0F172A;
-  border-top: 4px solid #1E6C93;
-  padding: 32px 36px 20px;
+  border-top: 3px solid #1E6C93;
+  padding: 22px 32px 14px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
@@ -16,8 +16,8 @@
 
 .footer-single-row-grid {
   display: grid;
-  grid-template-columns: 220px 1fr 340px;
-  gap: 24px;
+  grid-template-columns: 2fr 1fr 2fr; /* 40% : 20% : 40% */
+  gap: 18px;
   align-items: stretch;
   max-width: 1800px;
   margin: 0 auto;
@@ -25,220 +25,389 @@
   box-sizing: border-box;
 }
 
-/* Section 1: Logo & Brand */
-.footer-col-logo {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+/* ==========================================================================
+   Section 1 (40%): Sacred Hayagriva Card
+   ========================================================================== */
+.footer-col-sacred {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 14px 16px;
+  padding: 16px 20px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  height: 100%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.sacred-emblem-wrap {
+  flex-shrink: 0;
+  width: 135px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  height: 100%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  box-sizing: border-box;
 }
 
 .footer-logo-img {
   width: 100%;
-  max-width: 175px;
-  max-height: 190px;
+  max-width: 135px;
+  max-height: 145px;
   object-fit: contain;
   display: block;
+  opacity: 0.65;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+  transition: opacity 0.3s ease;
 }
 
-.footer-brand-title {
-  font-family: var(--font-heading, sans-serif);
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #FFFFFF;
+.footer-logo-img:hover {
+  opacity: 0.88;
 }
 
-/* Section 2: Sanskrit Shloka */
-.footer-col-shloka {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 18px 24px;
+.sacred-shloka-wrap {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
-  height: 100%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .shloka-devanagari-banner {
   font-family: 'Noto Serif Devanagari', serif;
-  font-size: 19px;
-  font-weight: 400;
+  font-size: 0.98rem;
+  font-weight: 500;
   color: #FFFFFF;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .shloka-meaning-banner {
-  font-size: 13.5px;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Inter", sans-serif);
+  font-size: 0.76rem;
+  font-weight: 400;
   color: #CBD5E1;
-  line-height: 1.5;
-  text-align: center;
-  margin-top: 10px;
+  line-height: 1.45;
+  font-style: italic;
+  margin: 0;
 }
 
-/* Section 3: Compact 3-Field Volunteer Form */
-.footer-col-volunteer {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+/* ==========================================================================
+   Section 2 (20%): Contact Us / Chambers Enquiry Form
+   ========================================================================== */
+.footer-col-contact-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 18px 22px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 14px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
 }
 
-.footer-volunteer-title {
+.footer-form-title {
   font-family: var(--font-heading, sans-serif);
-  font-size: 16px;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #FFFFFF;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.4px;
+  display: flex;
+  align-items: center;
 }
 
-.footer-volunteer-form {
+.footer-contact-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-
-.volunteer-field-group {
+  gap: 6px;
   width: 100%;
 }
 
-.volunteer-input {
+.contact-field-group {
   width: 100%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-input {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 6px;
   padding: 6px 10px;
   color: #FFFFFF;
-  font-size: 12px;
-  font-family: var(--font-body, sans-serif);
+  font-size: 0.76rem;
   outline: none;
-  transition: border-color 0.2s, background 0.2s;
   box-sizing: border-box;
+  transition: all 0.2s ease;
+  font-family: inherit;
 }
 
-.volunteer-input:focus {
-  border-color: #93C5FD;
-  background: rgba(255, 255, 255, 0.14);
+.contact-textarea {
+  resize: none;
+  height: 48px;
 }
 
-.volunteer-input::placeholder {
-  color: rgba(255, 255, 255, 0.45);
+.contact-input:focus {
+  border-color: #38bdf8;
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
 }
 
-.volunteer-submit-btn {
-  width: 100%;
-  background: #1E6C93;
+.contact-input::placeholder {
+  color: #94A3B8;
+  font-size: 0.74rem;
+}
+
+.contact-submit-btn {
+  background: #0284c7;
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
   border-radius: 6px;
-  padding: 7px 12px;
-  font-size: 12.5px;
+  padding: 7px 10px;
   font-weight: 700;
+  font-size: 0.78rem;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: all 0.2s ease;
+  width: 100%;
   margin-top: 2px;
 }
 
-.volunteer-submit-btn:hover {
-  background: #165272;
+.contact-submit-btn:hover {
+  background: #0369a1;
   transform: translateY(-1px);
 }
 
-.volunteer-status-msg {
-  margin-top: 6px;
-  font-size: 11.5px;
-  font-weight: 600;
-  text-align: center;
+.contact-status-msg {
   display: none;
+  font-size: 0.72rem;
+  margin-top: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  text-align: center;
 }
 
-.volunteer-status-msg.success {
-  color: #86EFAC;
+.contact-status-msg.success {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ADE80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
+/* ==========================================================================
+   Section 3 (40%): Comprehensive Site Navigation & Action Hub
+   ========================================================================== */
+.footer-col-nav-hub {
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.45) 0%, rgba(15, 23, 42, 0.75) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.footer-nav-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav-heading {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #38bdf8;
+  margin: 0 0 8px 0;
+}
+
+.footer-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-nav-links li a {
+  color: #94a3b8;
+  font-size: 0.74rem;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.footer-nav-links li a:hover {
+  color: #ffffff;
+}
+
+
+
+.footer-chamber-signature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.68rem;
+  color: #cbd5e1;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sig-name {
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.sig-dot {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.sig-addr {
+  color: #94a3b8;
+}
+
+.sig-phone {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.sig-phone:hover {
+  color: #38bdf8;
+}
+
+/* ==========================================================================
+   Footer Bottom Strip
+   ========================================================================== */
 .footer-bottom {
-  max-width: 1800px;
-  margin: 24px auto 0;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 12.5px;
-  color: rgba(255, 255, 255, 0.75);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 14px;
+  padding-top: 10px;
+  font-size: 0.72rem;
+  color: #94A3B8;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-bottom-left {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .footer-bottom-divider {
-  color: rgba(255, 255, 255, 0.35);
-  font-size: 10px;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .footer-legal-link {
-  color: #93C5FD;
+  color: #94A3B8;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.15s ease, text-decoration 0.15s ease;
+  transition: color 0.2s ease;
 }
 
 .footer-legal-link:hover {
-  color: #FFFFFF;
-  text-decoration: underline;
+  color: #38BDF8;
 }
 
 .footer-bottom-right {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 12px;
+  color: #64748B;
+  font-size: 0.68rem;
+  letter-spacing: 0.5px;
 }
 
-@media (max-width: 900px) {
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .shloka-devanagari-banner {
+    white-space: normal;
+  }
+  .footer-single-row-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-col-sacred {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .compact-footer {
+    padding: 16px 14px 10px;
+  }
   .footer-single-row-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 14px;
   }
-  .footer-col-logo,
-  .footer-col-shloka {
+  .footer-col-sacred {
+    flex-direction: column;
     text-align: center;
-    padding: 20px;
+    gap: 12px;
+    padding: 14px;
+  }
+  .sacred-emblem-wrap {
+    width: 100px;
+  }
+  .footer-nav-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-chamber-signature {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    white-space: normal;
+  }
+  .sig-dot {
+    display: none;
   }
   .footer-bottom {
     flex-direction: column;
+    gap: 6px;
     text-align: center;
-    gap: 8px;
-  }
-  .footer-bottom-left {
-    justify-content: center;
   }
 }
 
+.promo-mini-badge {
+  background: #16a34a;
+  color: #ffffff;
+  font-size: 0.58rem;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 4px;
+  margin-right: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
+.footer-nav-links li a {
+  color: #94a3b8;
+  font-size: 0.74rem;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: normal;
+}

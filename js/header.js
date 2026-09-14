@@ -5,7 +5,33 @@
  */
 
 (function () {
-  const fallbackHTML = `
+  const fallbackHTML = `<!-- ======================================================================
+     AgenticProfessionals.Net - Shared Site Header Component
+     Brand: Agentic Professionals Network
+            www.agenticprofessionals.net | www.apnet.co.in
+     Tabs:
+       0. Home
+       1. Workbench (pipie) - Sovereign AI Workbench (Download Modal & Web Harnesses)
+       2. AI Assets (lexai) - Models & Vaults (2-col mega menu)
+       3. Agents - Global & Local Workers (2-col mega menu)
+       4. Directories - Agentic Professionals (directory_listing.html)
+       V. More - APNET Forums & MSME Sahyog
+     ====================================================================== -->
+<!-- ======================================================================
+     Global Announcement Bar: Clean Single Line with IDE Download & Free Promo
+     ====================================================================== -->
+<div class="site-announcement-bar" id="site-announcement-bar">
+  <div class="announcement-single-row">
+    <span class="announcement-badge" style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);"><i
+        class="fa-solid fa-gift"></i> FREE PROMOTION</span>
+    <span class="announcement-msg" style="color:#e2e8f0; font-size:0.82rem;">
+      <strong>Related Parties Report is 100% FREE</strong> until 31st December 2026 for Insolvency Professionals
+    </span>
+    <!-- <a href="#" onclick="openIdeDownloadModal(); return false;" class="announcement-cta" style="background:rgba(255,255,255,0.2); color:#fff; border:1px solid rgba(255,255,255,0.3); padding:3px 12px; border-radius:6px; font-weight:700; font-size:0.75rem; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+      Download IDE (Beta) <i class="fa-solid fa-arrow-right"></i>
+    </a>-->
+  </div>
+</div>
 <header class="site-header" id="site-header">
   <div class="nav-container">
 
@@ -13,7 +39,7 @@
     <div class="brand-block-wireframe" id="header-brand-logo">
       <a href="index.html#home" class="brand-main-title">AGENTIC PROFESSIONALS NETWORK</a>
       <div class="brand-sub-url">
-        Sovereign Air-Gapped Infrastructure for Agentic Professionals
+        Sovereign Operating System for Insolvency Professionals
       </div>
     </div>
 
@@ -27,37 +53,128 @@
         </a>
       </li>
 
-      <!-- 1. Workbench (pipie) -->
-      <li class="nav-item">
-        <a href="pipie_ide.html" class="nav-link nav-link-wireframe" id="nav-workspace">
+      <!-- 1. Chamber Workbench - 2-Column Mega Menu (3+3) -->
+      <li class="nav-item nav-item-dropdown" id="dropdown-harness-wrapper">
+        <button class="nav-link nav-link-wireframe" id="nav-workspace" type="button" aria-haspopup="true"
+          aria-expanded="false">
           <span class="nav-title-row">
-            <span>AI Harness</span>
+            <span>Harness</span>
+            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">PIPIE Interface</span>
-        </a>
+          <span class="nav-subtitle-row">PIPIE Workbench</span>
+        </button>
+        <div class="dropdown-menu mega-menu-2col" id="harness-dropdown-menu">
+          <div class="mega-grid-2col">
+
+            <!-- Column 1: CASE WORKSPACE — knowledge in -->
+            <div class="mega-col-wireframe">
+              <div class="mega-col-wireframe-header">
+                <div class="mega-col-header-left">
+                  <span class="mega-col-icon-pill pill-emerald"><i class="fa-solid fa-folder-open"></i></span>
+                  <span class="mega-col-wireframe-title">CASE WORKSPACE</span>
+                </div>
+              </div>
+              <div class="mega-col-wireframe-links">
+                <a href="harness_haya_ingest.html" class="mega-item-wireframe" id="nav-item-harness-ingest">
+                  <div class="mega-item-icon-box icon-teal">
+                    <i class="fa-solid fa-file-arrow-up"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Trial Record Ingestion</span>
+                    <span class="mega-item-wireframe-desc">PDF, Word &amp; Excel &#8594; parsed &amp; indexed
+                      offline</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="harness_haya_workbench.html" class="mega-item-wireframe" id="nav-item-harness-workbench">
+                  <div class="mega-item-icon-box icon-emerald">
+                    <i class="fa-solid fa-briefcase"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Case Workbench</span>
+                    <span class="mega-item-wireframe-desc">Evidence manager, fact timeline &amp; exhibits</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="harness_haya_wiki.html" class="mega-item-wireframe" id="nav-item-harness-wiki">
+                  <div class="mega-item-icon-box icon-amber">
+                    <i class="fa-solid fa-book-open"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Case Fact Wiki</span>
+                    <span class="mega-item-wireframe-desc">Automated compounding matter knowledge base</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Column 2: DRAFTING STUDIO — documents out -->
+            <div class="mega-col-wireframe">
+              <div class="mega-col-wireframe-header">
+                <div class="mega-col-header-left">
+                  <span class="mega-col-icon-pill pill-purple"><i class="fa-solid fa-pen-nib"></i></span>
+                  <span class="mega-col-wireframe-title">DRAFTING STUDIO</span>
+                </div>
+              </div>
+              <div class="mega-col-wireframe-links">
+                <a href="harness_haya_studio.html" class="mega-item-wireframe" id="nav-item-harness-studio">
+                  <div class="mega-item-icon-box icon-purple">
+                    <i class="fa-solid fa-code"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Drafting Studio</span>
+                    <span class="mega-item-wireframe-desc">Court-ready pleadings, citation checks &amp; export</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="harness_haya_models.html" class="mega-item-wireframe" id="nav-item-harness-templates">
+                  <div class="mega-item-icon-box icon-rose">
+                    <i class="fa-solid fa-file-lines"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Court Draft Templates</span>
+                    <span class="mega-item-wireframe-desc">SC &amp; NCLT-compliant skeletons &amp; petitions</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="harness_haya_engine.html" class="mega-item-wireframe" id="nav-item-harness-engine">
+                  <div class="mega-item-icon-box icon-teal">
+                    <i class="fa-solid fa-microchip"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Execution Engine</span>
+                    <span class="mega-item-wireframe-desc">Private offline legal &amp; forensic cores</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </li>
 
-      <!-- 2. AI Assets (lexai) - 2-Column Mega Menu -->
+      <!-- 2. Legal Intelligence - 2-Column Mega Menu -->
       <li class="nav-item nav-item-dropdown" id="dropdown-lexai-wrapper">
         <button class="nav-link nav-link-wireframe" id="nav-lexai" type="button" aria-haspopup="true"
           aria-expanded="false">
           <span class="nav-title-row">
-            <span>AI Assets</span>
+            <span>Intelligence</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">Second Brains</span>
+          <span class="nav-subtitle-row">Precedents &amp; Law</span>
         </button>
         <div class="dropdown-menu mega-menu-2col" id="lexai-dropdown-menu">
           <div class="mega-grid-2col">
 
-            <!-- Column 1: VAULTS -->
+            <!-- Column 1: LIBRARIES -->
             <div class="mega-col-wireframe">
               <div class="mega-col-wireframe-header">
                 <div class="mega-col-header-left">
                   <span class="mega-col-icon-pill pill-blue"><i class="fa-solid fa-vault"></i></span>
-                  <span class="mega-col-wireframe-title">IBC-VAULTS</span>
+                  <span class="mega-col-wireframe-title">LEGAL LIBRARIES</span>
                 </div>
-                <!--<span class="mega-col-badge">Deterministic</span>-->
               </div>
               <div class="mega-col-wireframe-links">
                 <a href="vaults_law.html" class="mega-item-wireframe" id="nav-item-vault-law">
@@ -65,8 +182,8 @@
                     <i class="fa-solid fa-scale-balanced"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Law</span>
-                    <span class="mega-item-wireframe-desc">IBC, Companies Act &amp; RERA</span>
+                    <span class="mega-item-wireframe-name">Statutory Law</span>
+                    <span class="mega-item-wireframe-desc">IBC, Companies Act, RERA &amp; Rules</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -75,8 +192,8 @@
                     <i class="fa-solid fa-gavel"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Precedence</span>
-                    <span class="mega-item-wireframe-desc">Landmark SC, NCLAT &amp; HC rulings</span>
+                    <span class="mega-item-wireframe-name">Judicial Precedents</span>
+                    <span class="mega-item-wireframe-desc">Landmark SC, NCLAT &amp; High Court rulings</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -85,8 +202,8 @@
                     <i class="fa-solid fa-file-invoice"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Formats</span>
-                    <span class="mega-item-wireframe-desc">Forms, pleadings &amp; conveyancing</span>
+                    <span class="mega-item-wireframe-name">Verified Formats</span>
+                    <span class="mega-item-wireframe-desc">Court forms, pleadings &amp; conveyancing</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -95,8 +212,8 @@
                     <i class="fa-solid fa-boxes-packing"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Suites</span>
-                    <span class="mega-item-wireframe-desc">CIRP, Liquidation &amp; PG playbooks</span>
+                    <span class="mega-item-wireframe-name">Practice Playbooks</span>
+                    <span class="mega-item-wireframe-desc">CIRP, Liquidation &amp; PG workflows</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -105,22 +222,21 @@
                     <i class="fa-solid fa-file-shield"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Contracts</span>
-                    <span class="mega-item-wireframe-desc">Commercial Clause Risk &amp; Benchmarks</span>
+                    <span class="mega-item-wireframe-name">Commercial Contracts</span>
+                    <span class="mega-item-wireframe-desc">Clause risk analysis &amp; market benchmarks</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
               </div>
             </div>
 
-            <!-- Column 2: MODELS -->
+            <!-- Column 2: LEGAL BRAINS -->
             <div class="mega-col-wireframe">
               <div class="mega-col-wireframe-header">
                 <div class="mega-col-header-left">
                   <span class="mega-col-icon-pill pill-purple"><i class="fa-solid fa-brain"></i></span>
-                  <span class="mega-col-wireframe-title">IBC-MODELS</span>
+                  <span class="mega-col-wireframe-title">LEGAL BRAINS</span>
                 </div>
-                <!--<span class="mega-col-badge">SLM 2.9B</span>-->
               </div>
               <div class="mega-col-wireframe-links">
                 <a href="models_domain_slms.html" class="mega-item-wireframe" id="nav-item-model-slms">
@@ -128,8 +244,8 @@
                     <i class="fa-solid fa-brain"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Domain Models</span>
-                    <span class="mega-item-wireframe-desc">Legal, finance &amp; professional SLMs</span>
+                    <span class="mega-item-wireframe-name">Domain Legal Models</span>
+                    <span class="mega-item-wireframe-desc">Private legal &amp; financial offline brains</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -138,8 +254,8 @@
                     <i class="fa-solid fa-diagram-project"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Embedding Models</span>
-                    <span class="mega-item-wireframe-desc">Sovereign dense neural vectors</span>
+                    <span class="mega-item-wireframe-name">Legal Search Models</span>
+                    <span class="mega-item-wireframe-desc">Instant semantic statutory retrieval</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -148,8 +264,8 @@
                     <i class="fa-solid fa-arrow-down-wide-short"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Reranker Models</span>
-                    <span class="mega-item-wireframe-desc">Cross-encoder precision rankers</span>
+                    <span class="mega-item-wireframe-name">Citation Rankers</span>
+                    <span class="mega-item-wireframe-desc">Pinpoint critical precedent paragraphs</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -160,25 +276,25 @@
       </li>
 
 
-      <!-- 3. Agents - 2-Column Mega Menu -->
+      <!-- 3. Autonomous Co-Counsel - 2-Column Mega Menu -->
       <li class="nav-item nav-item-dropdown" id="dropdown-agents-wrapper">
         <button class="nav-link nav-link-wireframe" id="nav-agents" type="button" aria-haspopup="true"
           aria-expanded="false">
           <span class="nav-title-row">
-            <span>AI Agents</span>
+            <span>Co-Counsel</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">Agentic CoWorkers</span>
+          <span class="nav-subtitle-row">Autonomous Agents</span>
         </button>
         <div class="dropdown-menu mega-menu-2col" id="agents-dropdown-menu">
           <div class="mega-grid-2col">
 
-            <!-- Column 1: PROCESS AGENTS -->
+            <!-- Column 1: WORKFLOW CO-COUNSEL -->
             <div class="mega-col-wireframe">
               <div class="mega-col-wireframe-header">
                 <div class="mega-col-header-left">
                   <span class="mega-col-icon-pill pill-emerald"><i class="fa-solid fa-robot"></i></span>
-                  <span class="mega-col-wireframe-title">PROCESS AGENTS</span>
+                  <span class="mega-col-wireframe-title">WORKFLOW CO-COUNSEL</span>
                 </div>
               </div>
               <div class="mega-col-wireframe-links">
@@ -187,8 +303,8 @@
                     <i class="fa-solid fa-shield-halved"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Insolvency Agents</span>
-                    <span class="mega-item-wireframe-desc">CIRP timeline, §29A &amp; Form H assembler</span>
+                    <span class="mega-item-wireframe-name">Insolvency Co-Counsel</span>
+                    <span class="mega-item-wireframe-desc">CIRP timeline, §29A &amp; Form H assembly</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -197,8 +313,8 @@
                     <i class="fa-solid fa-scale-balanced"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Legal Agents</span>
-                    <span class="mega-item-wireframe-desc">NCLT petitions, precedents &amp; case strength</span>
+                    <span class="mega-item-wireframe-name">Litigation Co-Counsel</span>
+                    <span class="mega-item-wireframe-desc">Court petitions, precedent checks &amp; strategy</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -207,8 +323,8 @@
                     <i class="fa-solid fa-coins"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Financial Agents</span>
-                    <span class="mega-item-wireframe-desc">PUFE look-back, bank triage &amp; valuations</span>
+                    <span class="mega-item-wireframe-name">Financial Co-Counsel</span>
+                    <span class="mega-item-wireframe-desc">Suspicious transaction review &amp; valuations</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -217,8 +333,8 @@
                     <i class="fa-solid fa-file-invoice-dollar"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Claims Agents</span>
-                    <span class="mega-item-wireframe-desc">Form B–F intake, audit &amp; CoC voting</span>
+                    <span class="mega-item-wireframe-name">Claims Co-Counsel</span>
+                    <span class="mega-item-wireframe-desc">Creditor claims audit &amp; voting shares</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -227,20 +343,20 @@
                     <i class="fa-solid fa-network-wired"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Governance Agents</span>
-                    <span class="mega-item-wireframe-desc">MCA filings, entity graphs &amp; compliance</span>
+                    <span class="mega-item-wireframe-name">Governance Co-Counsel</span>
+                    <span class="mega-item-wireframe-desc">MCA filings, corporate entity trees &amp; compliance</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
               </div>
             </div>
 
-            <!-- Column 2: FORENSIC AGENTS -->
+            <!-- Column 2: FORENSIC INVESTIGATORS -->
             <div class="mega-col-wireframe">
               <div class="mega-col-wireframe-header">
                 <div class="mega-col-header-left">
                   <span class="mega-col-icon-pill pill-blue"><i class="fa-solid fa-file-shield"></i></span>
-                  <span class="mega-col-wireframe-title">FORENSIC AGENTS</span>
+                  <span class="mega-col-wireframe-title">FORENSIC INVESTIGATORS</span>
                 </div>
               </div>
               <div class="mega-col-wireframe-links">
@@ -251,7 +367,7 @@
                   </div>
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">Assignment Forensics</span>
-                    <span class="mega-item-wireframe-desc">Pre-admission triage, §65 inquest &amp; fee defense</span>
+                    <span class="mega-item-wireframe-desc">Pre-admission audit, §65 inquest &amp; fee defense</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -262,7 +378,7 @@
                   </div>
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">Resolution Compliance</span>
-                    <span class="mega-item-wireframe-desc">Sec 29A master screening, anti-cartel &amp; dual-hat</span>
+                    <span class="mega-item-wireframe-desc">Sec 29A master screening &amp; cartel detection</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -281,18 +397,6 @@
             </div>
 
           </div>
-
-          <!-- Bottom Footer Shelf
-          <div class="mega-menu-footer">
-            <div class="mega-footer-left">
-              <span class="mega-footer-status-dot"></span>
-              <span class="mega-footer-text">Deterministic Legal Forensics • 100% Air-Gapped</span>
-            </div>
-            <a href="index.html#chats" class="mega-footer-link">
-              <span>Open Pipie-IDE</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div> -->
         </div>
       </li>
 
@@ -301,21 +405,15 @@
         <button class="nav-link nav-link-wireframe" id="nav-directories" type="button" aria-haspopup="true"
           aria-expanded="false">
           <span class="nav-title-row">
-            <span>APNet Members</span>
+            <span>Community</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">Community Ecosystem</span>
+          <span class="nav-subtitle-row">IBC Ecosystem</span>
         </button>
         <div class="dropdown-menu mega-menu-1col dropdown-menu-end" id="members-dropdown-menu"
           style="right: 0; left: auto; min-width: 320px;">
           <div class="mega-grid-1col">
             <div class="mega-col-wireframe">
-              <div class="mega-col-wireframe-header">
-                <div class="mega-col-header-left">
-                  <span class="mega-col-icon-pill pill-purple"><i class="fa-solid fa-network-wired"></i></span>
-                  <span class="mega-col-wireframe-title">COMMUNITY &amp; ECOSYSTEM</span>
-                </div>
-              </div>
               <div class="mega-col-wireframe-links">
                 <a href="directory_listing.html" class="mega-item-wireframe" id="nav-item-dir-listing">
                   <div class="mega-item-icon-box icon-purple">
@@ -323,7 +421,7 @@
                   </div>
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">Directory Listing</span>
-                    <span class="mega-item-wireframe-desc">Verified IP &amp; Valuer Leaflet Map</span>
+                    <span class="mega-item-wireframe-desc">Agentic Professionals</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -333,8 +431,8 @@
                     <i class="fa-solid fa-comments"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">APNET Forums</span>
-                    <span class="mega-item-wireframe-desc">Verified practitioner network</span>
+                    <span class="mega-item-wireframe-name">Discussion Forums</span>
+                    <span class="mega-item-wireframe-desc">Practical Insights</span>
                   </div>
                   <i class="fa-solid fa-arrow-up-right-from-square mega-item-arrow"
                     style="font-size: 0.72rem; color: #94a3b8;"></i>
@@ -345,8 +443,8 @@
                     <i class="fa-solid fa-handshake-angle"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">MSME Sahyog</span>
-                    <span class="mega-item-wireframe-desc">Restructuring &amp; dispute support</span>
+                    <span class="mega-item-wireframe-name">Enterprise Skills</span>
+                    <span class="mega-item-wireframe-desc">MSME Sahyog</span>
                   </div>
                   <i class="fa-solid fa-arrow-up-right-from-square mega-item-arrow"
                     style="font-size: 0.72rem; color: #94a3b8;"></i>
@@ -357,18 +455,195 @@
         </div>
       </li>
 
-      <!-- 5. Resolution Bazaar - Agentic Marketplace (Cubes Icon) -->
-      <li class="nav-item" id="nav-item-bazaar">
-        <a href="resolutionbazaar.html" class="nav-icon-wireframe" id="nav-bazaar"
-          aria-label="Resolution Bazaar — Agentic Marketplace" title="Resolution Bazaar">
-          <i class="fa-solid fa-cubes nav-home-icon"></i>
+
+
+      <!-- Dedicated Navbar Download CTA -->
+      <li class="nav-item nav-item-cta" style="margin-left: 0.5rem;">
+        <a href="#" onclick="openIdeDownloadModal(); return false;" class="nav-btn-download-ide"
+          id="nav-btn-download-ide">
+          <i class="fa-solid fa-download"></i> Harness <span class="nav-btn-badge">Beta</span>
         </a>
       </li>
-
     </ul>
   </div>
 </header>
-  `;
+<!-- ======================================================================
+     Universal Hayagriva IDE Download Modal (Mac · Windows · Linux)
+     ====================================================================== -->
+<div class="hayagriva-modal-backdrop" id="hayagriva-ide-modal" style="display: none;">
+  <div class="hayagriva-modal-dialog">
+
+    <!-- Modal Header -->
+    <div class="hayagriva-modal-header">
+      <div class="hayagriva-modal-title-group">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="modal-badge-promo"><i class="fa-solid fa-gift"></i> FREE PROMOTION</span>
+          <span class="modal-badge-beta">BETA V1.75</span>
+        </div>
+        <h3 class="hayagriva-modal-title">Download Hayagriva IDE (Beta)</h3>
+        <p class="hayagriva-modal-subtitle">
+          Sovereign Chamber OS for Insolvency Professionals · 100% Air-Gapped &amp; Local First
+        </p>
+      </div>
+      <button type="button" class="hayagriva-modal-close" onclick="closeIdeDownloadModal();" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Step 1: Lightweight Registration Form -->
+    <div id="ide-step-register" class="hayagriva-modal-body">
+      <div class="modal-promo-callout">
+        <div style="font-weight: 700; color: #065f46; font-size: 0.85rem; margin-bottom: 2px;">
+          <i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> AS-18 Related Parties Report Included Free
+        </div>
+        <div style="font-size: 0.78rem; color: #047857;">
+          Register once to unlock sovereign installer binaries and your complimentary Section 5(24) connected-party
+          voucher valid through 31st December 2026.
+        </div>
+      </div>
+
+      <form id="ide-registration-form" onsubmit="handleIdeRegistration(event);">
+        <div class="modal-form-row">
+          <label class="modal-label" for="reg-practitioner-name">Practitioner / Firm Name <span
+              style="color:#ef4444;">*</span></label>
+          <input type="text" id="reg-practitioner-name" class="modal-input"
+            placeholder="e.g. Adv. Rajesh Sharma / CA Priya Verma" required />
+        </div>
+
+        <div class="modal-form-grid">
+          <div class="modal-form-row">
+            <label class="modal-label" for="reg-practitioner-role">Professional Category <span
+                style="color:#ef4444;">*</span></label>
+            <select id="reg-practitioner-role" class="modal-input" required>
+              <option value="" disabled selected>Select Your Role...</option>
+              <option value="ip">Insolvency Professional (IP / IRP / Liquidator)</option>
+              <option value="rv">Registered Valuer (RV)</option>
+              <option value="advocate">Corporate Insolvency Advocate / Litigator</option>
+              <option value="auditor">Forensic Auditor / Financial Advisor</option>
+            </select>
+          </div>
+
+          <div class="modal-form-row">
+            <label class="modal-label" for="reg-practitioner-email">Professional Email Address <span
+                style="color:#ef4444;">*</span></label>
+            <input type="email" id="reg-practitioner-email" class="modal-input" placeholder="name@firm-or-chambers.com"
+              required />
+          </div>
+        </div>
+
+        <div class="modal-trust-notice">
+          <i class="fa-solid fa-lock" style="color:#16a34a; font-size: 0.9rem; margin-top: 2px;"></i>
+          <span><strong>Zero Cloud Leaks:</strong> Hayagriva IDE runs strictly on your own hardware. Your case documents
+            and claims data are never transmitted to any external server.</span>
+        </div>
+
+        <div class="modal-form-actions">
+          <button type="button" class="btn-modal-secondary" onclick="closeIdeDownloadModal();">Cancel</button>
+          <button type="submit" class="btn-modal-primary">
+            <i class="fa-solid fa-unlock-keyhole"></i> Register &amp; Unlock Downloads ➔
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 2: Unlocked OS Download Cards (Revealed on Register) -->
+    <div id="ide-step-downloads" class="hayagriva-modal-body" style="display: none;">
+      <div class="unlocked-welcome-box">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <div>
+            <span
+              style="font-size:0.75rem; font-weight:700; color:#15803d; text-transform:uppercase; letter-spacing:0.06em;">
+              <i class="fa-solid fa-circle-check"></i> Registration Verified
+            </span>
+            <div style="font-weight:700; color:#0f172a; font-size:0.95rem;">
+              Welcome, <span id="display-user-name">Practitioner</span>!
+            </div>
+            <div style="font-size:0.75rem; color:#64748b;">
+              Complimentary AS-18 Promo Code: <code style="color:#16a34a; font-weight:700;">PROMO-AS18-FREE-2026</code>
+            </div>
+          </div>
+          <button type="button" onclick="editPractitionerDetails();" class="btn-edit-details">
+            <i class="fa-solid fa-pen"></i> Edit Details
+          </button>
+        </div>
+      </div>
+
+      <div class="os-download-grid">
+        <!-- macOS Apple Silicon -->
+        <div class="os-card" id="card-mac-arm">
+          <div class="os-card-header">
+            <div class="os-icon os-apple"><i class="fa-brands fa-apple"></i></div>
+            <div class="os-info">
+              <div class="os-name">macOS (Apple Silicon)</div>
+              <div class="os-meta">M1 · M2 · M3 · M4 · M5 (ARM64)</div>
+            </div>
+          </div>
+          <div class="os-specs">~84 MB · .dmg · SHA-256 Verified</div>
+          <a href="#" onclick="simulateDownload('mac-arm'); return false;" class="btn-os-download">
+            <i class="fa-solid fa-download"></i> Download .dmg
+          </a>
+        </div>
+
+        <!-- macOS Intel -->
+        <div class="os-card" id="card-mac-intel">
+          <div class="os-card-header">
+            <div class="os-icon os-apple"><i class="fa-brands fa-apple"></i></div>
+            <div class="os-info">
+              <div class="os-name">macOS (Intel)</div>
+              <div class="os-meta">Intel Core i5/i7/i9 (x86_64)</div>
+            </div>
+          </div>
+          <div class="os-specs">~89 MB · .dmg · SHA-256 Verified</div>
+          <a href="#" onclick="simulateDownload('mac-intel'); return false;" class="btn-os-download">
+            <i class="fa-solid fa-download"></i> Download .dmg
+          </a>
+        </div>
+
+        <!-- Windows -->
+        <div class="os-card" id="card-windows">
+          <div class="os-card-header">
+            <div class="os-icon os-windows"><i class="fa-brands fa-windows"></i></div>
+            <div class="os-info">
+              <div class="os-name">Windows 10 / 11</div>
+              <div class="os-meta">64-bit Architecture (x64)</div>
+            </div>
+          </div>
+          <div class="os-specs">~92 MB · .exe Installer · Signed</div>
+          <a href="#" onclick="simulateDownload('windows'); return false;" class="btn-os-download">
+            <i class="fa-solid fa-download"></i> Download .exe
+          </a>
+        </div>
+
+        <!-- Linux -->
+        <div class="os-card" id="card-linux">
+          <div class="os-card-header">
+            <div class="os-icon os-linux"><i class="fa-brands fa-linux"></i></div>
+            <div class="os-info">
+              <div class="os-name">Linux</div>
+              <div class="os-meta">Ubuntu · Debian · Fedora</div>
+            </div>
+          </div>
+          <div class="os-specs">~88 MB · .AppImage / .deb</div>
+          <a href="#" onclick="simulateDownload('linux'); return false;" class="btn-os-download">
+            <i class="fa-solid fa-download"></i> Download .AppImage
+          </a>
+        </div>
+      </div>
+
+      <div class="modal-requirements-footnote">
+        <span><i class="fa-solid fa-circle-info" style="color:#2563eb;"></i> <strong>Hardware Requirement:</strong> 8 GB
+          RAM minimum (16 GB recommended for local SLMs). 100% Offline Air-Gapped.</span>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+        <button type="button" class="btn-modal-secondary" onclick="closeIdeDownloadModal();">
+          Close Window
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>`;
 
   function applyHeader(htmlContent) {
     const mountContainer = document.getElementById('shared-header') ||
@@ -379,9 +654,9 @@
     if (mountContainer) {
       const temp = document.createElement('div');
       temp.innerHTML = htmlContent.trim();
-      const parsedHeader = temp.querySelector('header.site-header') || temp.firstElementChild;
-      if (parsedHeader) {
-        mountContainer.replaceWith(parsedHeader);
+      mountContainer.innerHTML = '';
+      while (temp.firstChild) {
+        mountContainer.appendChild(temp.firstChild);
       }
     } else {
       document.body.insertAdjacentHTML('afterbegin', htmlContent);
@@ -498,7 +773,7 @@
       } else if (hash.startsWith('#agents') || hash.startsWith('#bazaar') || hash.startsWith('#reports') || hash.startsWith('#process') || hash.startsWith('#engine')) {
         setActive('nav-agents');
       }
-    } else if (path === 'pipie_ide.html') {
+    } else if (path === 'index.html#download') {
       setActive('nav-workspace');
     } else if (path === 'pipie_assets.html') {
       setActive('nav-lexai');
@@ -603,4 +878,132 @@
   } else {
     document.addEventListener('DOMContentLoaded', init);
   }
+
+  // =========================================================================
+  // Universal Hayagriva IDE Download Modal Controller
+  // =========================================================================
+  function detectClientOS() {
+    const ua = navigator.userAgent || '';
+    if (/Macintosh|Mac OS X/.test(ua)) {
+      return (navigator.userAgentData?.architecture === 'arm' || /ARM/.test(ua) || (navigator.maxTouchPoints > 0 && !window.MSStream)) ? 'mac-arm' : 'mac-intel';
+    }
+    if (/Windows/.test(ua)) return 'windows';
+    if (/Linux/.test(ua)) return 'linux';
+    return 'mac-arm';
+  }
+
+  window.openIdeDownloadModal = function() {
+    const modal = document.getElementById('hayagriva-ide-modal');
+    if (!modal) return;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    // Highlight detected OS card
+    const detected = detectClientOS();
+    ['mac-arm', 'mac-intel', 'windows', 'linux'].forEach(function(os) {
+      const card = document.getElementById('card-' + os);
+      if (card) {
+        if (os === detected) {
+          card.classList.add('detected-os');
+        } else {
+          card.classList.remove('detected-os');
+        }
+      }
+    });
+
+    // Check if user is already registered in this browser
+    const storedUser = localStorage.getItem('hayagriva_registered_user');
+    if (storedUser) {
+      try {
+        const user = JSON.parse(storedUser);
+        const nameEl = document.getElementById('display-user-name');
+        if (nameEl) nameEl.textContent = user.name || 'Practitioner';
+        showDownloadsStep();
+      } catch (e) {
+        showRegisterStep();
+      }
+    } else {
+      showRegisterStep();
+    }
+  };
+
+  window.closeIdeDownloadModal = function() {
+    const modal = document.getElementById('hayagriva-ide-modal');
+    if (!modal) return;
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  };
+
+  function showRegisterStep() {
+    const regStep = document.getElementById('ide-step-register');
+    const dlStep = document.getElementById('ide-step-downloads');
+    if (regStep) regStep.style.display = 'block';
+    if (dlStep) dlStep.style.display = 'none';
+  }
+
+  function showDownloadsStep() {
+    const regStep = document.getElementById('ide-step-register');
+    const dlStep = document.getElementById('ide-step-downloads');
+    if (regStep) regStep.style.display = 'none';
+    if (dlStep) dlStep.style.display = 'block';
+  }
+
+  window.handleIdeRegistration = function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const name = document.getElementById('reg-practitioner-name')?.value?.trim();
+    const role = document.getElementById('reg-practitioner-role')?.value;
+    const email = document.getElementById('reg-practitioner-email')?.value?.trim();
+
+    if (!name || !role || !email) {
+      alert('Please provide your Name, Professional Category, and Email to unlock downloads.');
+      return;
+    }
+
+    // Persist registration in local storage
+    const userData = { name: name, role: role, email: email, registeredAt: new Date().toISOString() };
+    localStorage.setItem('hayagriva_registered_user', JSON.stringify(userData));
+
+    const nameEl = document.getElementById('display-user-name');
+    if (nameEl) nameEl.textContent = name;
+
+    showDownloadsStep();
+  };
+
+  window.editPractitionerDetails = function() {
+    showRegisterStep();
+  };
+
+  window.simulateDownload = function(os) {
+    const filenames = {
+      'mac-arm': 'Hayagriva-IDE-1.75.0-arm64.dmg',
+      'mac-intel': 'Hayagriva-IDE-1.75.0-x64.dmg',
+      'windows': 'Hayagriva-IDE-Setup-1.75.0.exe',
+      'linux': 'Hayagriva-IDE-1.75.0.AppImage'
+    };
+    const fn = filenames[os] || 'Hayagriva-IDE-1.75.0.dmg';
+    alert('Thank you! Starting download for ' + fn + ' (Beta v1.75).\n\nYour complimentary AS-18 Promo Code is PROMO-AS18-FREE-2026.');
+  };
+
+  // Close modal on click outside dialog
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('hayagriva-ide-modal');
+    if (modal && modal.style.display === 'flex' && e.target === modal) {
+      window.closeIdeDownloadModal();
+    }
+  });
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      window.closeIdeDownloadModal();
+    }
+  });
+
+  // Auto-open modal if URL hash is #download
+  if (window.location.hash === '#download' || window.location.search.includes('download=1')) {
+    setTimeout(function() {
+      window.openIdeDownloadModal();
+    }, 300);
+  }
+
 })();

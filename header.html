@@ -4,12 +4,27 @@
             www.agenticprofessionals.net | www.apnet.co.in
      Tabs:
        0. Home
-       1. Workbench (pipie) - Sovereign AI Workbench (pipie_ide.html)
+       1. Workbench (pipie) - Sovereign AI Workbench (Download Modal & Web Harnesses)
        2. AI Assets (lexai) - Models & Vaults (2-col mega menu)
        3. Agents - Global & Local Workers (2-col mega menu)
        4. Directories - Agentic Professionals (directory_listing.html)
        V. More - APNET Forums & MSME Sahyog
      ====================================================================== -->
+<!-- ======================================================================
+     Global Announcement Bar: Clean Single Line with IDE Download & Free Promo
+     ====================================================================== -->
+<div class="site-announcement-bar" id="site-announcement-bar">
+  <div class="announcement-single-row">
+    <span class="announcement-badge" style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);"><i
+        class="fa-solid fa-gift"></i> FREE REPORT</span>
+    <span class="announcement-msg" style="color:#e2e8f0; font-size:0.82rem;">
+      <strong>Related Parties Report is 100% FREE</strong> until 31st December 2026 for Insolvency Professionals
+    </span>
+    <!-- <a href="#" onclick="openIdeDownloadModal(); return false;" class="announcement-cta" style="background:rgba(255,255,255,0.2); color:#fff; border:1px solid rgba(255,255,255,0.3); padding:3px 12px; border-radius:6px; font-weight:700; font-size:0.75rem; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+      Download IDE (Beta) <i class="fa-solid fa-arrow-right"></i>
+    </a>-->
+  </div>
+</div>
 <header class="site-header" id="site-header">
   <div class="nav-container">
 
@@ -17,7 +32,7 @@
     <div class="brand-block-wireframe" id="header-brand-logo">
       <a href="index.html#home" class="brand-main-title">AGENTIC PROFESSIONALS NETWORK</a>
       <div class="brand-sub-url">
-        Institutional Legal Intelligence · 100% Air-Gapped Chamber Systems
+        Sovereign AI Workbench for Professionals
       </div>
     </div>
 
@@ -39,7 +54,7 @@
             <span>Workbench</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">Chamber Workspace</span>
+          <span class="nav-subtitle-row">PIPIE Harness</span>
         </button>
         <div class="dropdown-menu mega-menu-2col" id="harness-dropdown-menu">
           <div class="mega-grid-2col">
@@ -59,7 +74,8 @@
                   </div>
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">Trial Record Ingestion</span>
-                    <span class="mega-item-wireframe-desc">PDF, Word &amp; Excel &#8594; parsed &amp; indexed offline</span>
+                    <span class="mega-item-wireframe-desc">PDF, Word &amp; Excel &#8594; parsed &amp; indexed
+                      offline</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -385,7 +401,7 @@
             <span>Community</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">Verified Practitioners</span>
+          <span class="nav-subtitle-row">IBC Ecosystem</span>
         </button>
         <div class="dropdown-menu mega-menu-1col dropdown-menu-end" id="members-dropdown-menu"
           style="right: 0; left: auto; min-width: 320px;">
@@ -397,8 +413,8 @@
                     <i class="fa-solid fa-address-book"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Practitioner Directory</span>
-                    <span class="mega-item-wireframe-desc">Accredited Insolvency &amp; Valuation Professionals</span>
+                    <span class="mega-item-wireframe-name">Directory Listing</span>
+                    <span class="mega-item-wireframe-desc">Agentic Professionals</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -408,8 +424,8 @@
                     <i class="fa-solid fa-comments"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Confidential Forums</span>
-                    <span class="mega-item-wireframe-desc">Case Law Q&amp;A &amp; Practice Insights</span>
+                    <span class="mega-item-wireframe-name">Discussion Forums</span>
+                    <span class="mega-item-wireframe-desc">Practical Insights</span>
                   </div>
                   <i class="fa-solid fa-arrow-up-right-from-square mega-item-arrow"
                     style="font-size: 0.72rem; color: #94a3b8;"></i>
@@ -420,8 +436,8 @@
                     <i class="fa-solid fa-handshake-angle"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Practice Development</span>
-                    <span class="mega-item-wireframe-desc">Skills, Certification &amp; Chamber Training</span>
+                    <span class="mega-item-wireframe-name">Enterprise Skills</span>
+                    <span class="mega-item-wireframe-desc">MSME Sahyog</span>
                   </div>
                   <i class="fa-solid fa-arrow-up-right-from-square mega-item-arrow"
                     style="font-size: 0.72rem; color: #94a3b8;"></i>
@@ -432,14 +448,192 @@
         </div>
       </li>
 
-      <!-- 5. System Configurator - Hardware (Cubes Icon) -->
-      <li class="nav-item" id="nav-item-bazaar">
-        <a href="resolutionbazaar.html" class="nav-icon-wireframe" id="nav-bazaar"
-          aria-label="Chamber Hardware &amp; System Configurator" title="Chamber Hardware Configurator">
-          <i class="fa-solid fa-cubes nav-home-icon"></i>
+
+
+      <!-- Dedicated Navbar Download CTA -->
+      <li class="nav-item nav-item-cta" style="margin-left: 0.5rem;">
+        <a href="#" onclick="openIdeDownloadModal(); return false;" class="nav-btn-download-ide"
+          id="nav-btn-download-ide">
+          <i class="fa-solid fa-download"></i> Harness <span class="nav-btn-badge">Beta</span>
         </a>
       </li>
-
     </ul>
   </div>
 </header>
+<!-- ======================================================================
+     Universal Hayagriva IDE Download Modal (Mac · Windows · Linux)
+     ====================================================================== -->
+<div class="hayagriva-modal-backdrop" id="hayagriva-ide-modal" style="display: none;">
+  <div class="hayagriva-modal-dialog">
+
+    <!-- Modal Header -->
+    <div class="hayagriva-modal-header">
+      <div class="hayagriva-modal-title-group">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="modal-badge-promo"><i class="fa-solid fa-gift"></i> FREE PROMOTION</span>
+          <span class="modal-badge-beta">BETA V1.75</span>
+        </div>
+        <h3 class="hayagriva-modal-title">Download Hayagriva IDE (Beta)</h3>
+        <p class="hayagriva-modal-subtitle">
+          Sovereign Chamber OS for Insolvency Professionals · 100% Air-Gapped &amp; Local First
+        </p>
+      </div>
+      <button type="button" class="hayagriva-modal-close" onclick="closeIdeDownloadModal();" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Step 1: Lightweight Registration Form -->
+    <div id="ide-step-register" class="hayagriva-modal-body">
+      <div class="modal-promo-callout">
+        <div style="font-weight: 700; color: #065f46; font-size: 0.85rem; margin-bottom: 2px;">
+          <i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> AS-18 Related Parties Report Included Free
+        </div>
+        <div style="font-size: 0.78rem; color: #047857;">
+          Register once to unlock sovereign installer binaries and your complimentary Section 5(24) connected-party
+          voucher valid through 31st December 2026.
+        </div>
+      </div>
+
+      <form id="ide-registration-form" onsubmit="handleIdeRegistration(event);">
+        <div class="modal-form-row">
+          <label class="modal-label" for="reg-practitioner-name">Practitioner / Firm Name <span
+              style="color:#ef4444;">*</span></label>
+          <input type="text" id="reg-practitioner-name" class="modal-input"
+            placeholder="e.g. Adv. Rajesh Sharma / CA Priya Verma" required />
+        </div>
+
+        <div class="modal-form-grid">
+          <div class="modal-form-row">
+            <label class="modal-label" for="reg-practitioner-role">Professional Category <span
+                style="color:#ef4444;">*</span></label>
+            <select id="reg-practitioner-role" class="modal-input" required>
+              <option value="" disabled selected>Select Your Role...</option>
+              <option value="ip">Insolvency Professional (IP / IRP / Liquidator)</option>
+              <option value="rv">Registered Valuer (RV)</option>
+              <option value="advocate">Corporate Insolvency Advocate / Litigator</option>
+              <option value="auditor">Forensic Auditor / Financial Advisor</option>
+            </select>
+          </div>
+
+          <div class="modal-form-row">
+            <label class="modal-label" for="reg-practitioner-email">Professional Email Address <span
+                style="color:#ef4444;">*</span></label>
+            <input type="email" id="reg-practitioner-email" class="modal-input" placeholder="name@firm-or-chambers.com"
+              required />
+          </div>
+        </div>
+
+        <div class="modal-trust-notice">
+          <i class="fa-solid fa-lock" style="color:#16a34a; font-size: 0.9rem; margin-top: 2px;"></i>
+          <span><strong>Zero Cloud Leaks:</strong> Hayagriva IDE runs strictly on your own hardware. Your case documents
+            and claims data are never transmitted to any external server.</span>
+        </div>
+
+        <div class="modal-form-actions">
+          <button type="button" class="btn-modal-secondary" onclick="closeIdeDownloadModal();">Cancel</button>
+          <button type="submit" class="btn-modal-primary">
+            <i class="fa-solid fa-unlock-keyhole"></i> Register &amp; Unlock Downloads ➔
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 2: Unlocked OS Download Cards (Revealed on Register) -->
+    <div id="ide-step-downloads" class="hayagriva-modal-body" style="display: none;">
+      <div class="unlocked-welcome-box">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <div>
+            <span
+              style="font-size:0.75rem; font-weight:700; color:#15803d; text-transform:uppercase; letter-spacing:0.06em;">
+              <i class="fa-solid fa-circle-check"></i> Registration Verified
+            </span>
+            <div style="font-weight:700; color:#0f172a; font-size:0.95rem;">
+              Welcome, <span id="display-user-name">Practitioner</span>!
+            </div>
+            <div style="font-size:0.75rem; color:#64748b;">
+              Complimentary AS-18 Promo Code: <code style="color:#16a34a; font-weight:700;">PROMO-AS18-FREE-2026</code>
+            </div>
+          </div>
+          <button type="button" onclick="editPractitionerDetails();" class="btn-edit-details">
+            <i class="fa-solid fa-pen"></i> Edit Details
+          </button>
+        </div>
+      </div>
+
+      <div class="os-download-grid">
+        <!-- macOS Apple Silicon -->
+        <div class="os-card" id="card-mac-arm">
+          <div class="os-card-header">
+            <div class="os-icon os-apple"><i class="fa-brands fa-apple"></i></div>
+            <div class="os-info">
+              <div class="os-name">macOS (Apple Silicon)</div>
+              <div class="os-meta">M1 · M2 · M3 · M4 · M5 (ARM64)</div>
+            </div>
+          </div>
+          <div class="os-specs">~84 MB · .dmg · SHA-256 Verified</div>
+          <a href="#" onclick="simulateDownload('mac-arm'); return false;" class="btn-os-download">
+            <i class="fa-solid fa-download"></i> Download .dmg
+          </a>
+        </div>
+
+        <!-- macOS Intel -->
+        <div class="os-card" id="card-mac-intel">
+          <div class="os-card-header">
+            <div class="os-icon os-apple"><i class="fa-brands fa-apple"></i></div>
+            <div class="os-info">
+              <div class="os-name">macOS (Intel)</div>
+              <div class="os-meta">Intel Core i5/i7/i9 (x86_64)</div>
+            </div>
+          </div>
+          <div class="os-specs">~89 MB · .dmg · SHA-256 Verified</div>
+          <a href="#" onclick="simulateDownload('mac-intel'); return false;" class="btn-os-download">
+            <i class="fa-solid fa-download"></i> Download .dmg
+          </a>
+        </div>
+
+        <!-- Windows -->
+        <div class="os-card" id="card-windows">
+          <div class="os-card-header">
+            <div class="os-icon os-windows"><i class="fa-brands fa-windows"></i></div>
+            <div class="os-info">
+              <div class="os-name">Windows 10 / 11</div>
+              <div class="os-meta">64-bit Architecture (x64)</div>
+            </div>
+          </div>
+          <div class="os-specs">~92 MB · .exe Installer · Signed</div>
+          <a href="#" onclick="simulateDownload('windows'); return false;" class="btn-os-download">
+            <i class="fa-solid fa-download"></i> Download .exe
+          </a>
+        </div>
+
+        <!-- Linux -->
+        <div class="os-card" id="card-linux">
+          <div class="os-card-header">
+            <div class="os-icon os-linux"><i class="fa-brands fa-linux"></i></div>
+            <div class="os-info">
+              <div class="os-name">Linux</div>
+              <div class="os-meta">Ubuntu · Debian · Fedora</div>
+            </div>
+          </div>
+          <div class="os-specs">~88 MB · .AppImage / .deb</div>
+          <a href="#" onclick="simulateDownload('linux'); return false;" class="btn-os-download">
+            <i class="fa-solid fa-download"></i> Download .AppImage
+          </a>
+        </div>
+      </div>
+
+      <div class="modal-requirements-footnote">
+        <span><i class="fa-solid fa-circle-info" style="color:#2563eb;"></i> <strong>Hardware Requirement:</strong> 8 GB
+          RAM minimum (16 GB recommended for local SLMs). 100% Offline Air-Gapped.</span>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+        <button type="button" class="btn-modal-secondary" onclick="closeIdeDownloadModal();">
+          Close Window
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
