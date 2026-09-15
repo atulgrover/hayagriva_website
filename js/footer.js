@@ -137,6 +137,8 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
     <div class="footer-bottom-left">
       <span>© 2026 Agentic Professionals Network &amp; Hayagriva. All rights reserved.</span>
       <span class="footer-bottom-divider">•</span>
+      <a href="pricing.html" class="footer-legal-link" style="color:#38bdf8; font-weight:600;"><i class="fa-solid fa-cubes" style="margin-right:4px;"></i> Plans &amp; Pricing</a>
+      <span class="footer-bottom-divider">•</span>
       <a href="https://forums.agenticprofessionals.net" target="_blank" rel="noopener noreferrer" class="footer-legal-link">APNET Forums</a>
       <span class="footer-bottom-divider">•</span>
       <a href="https://hayagriva.app" target="_blank" rel="noopener noreferrer" class="footer-legal-link">MSME-Sahyog</a>

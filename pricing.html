@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plans &amp; Pricing · 3-Tier Sovereign Architecture - AgenticProfessionals.Net</title>
+  <meta name="description" content="Transparent pricing for legal, insolvency, and valuation professionals. Free local air-gapped IDE, subscription-based fortnightly vaults and agent settling, and prepaid credit packs for Resolution Bazaar statutory diligence.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css?v=20260909_v5">
+  <link rel="stylesheet" href="css/inner-pages.css?v=20260911_v1">
+  <link rel="stylesheet" href="css/footer.css?v=20260915_v3">
+
+  <style>
+    :root {
+      --pricing-bg: #0b0f19;
+      --pricing-card-bg: #111827;
+      --pricing-card-border: #1f2937;
+      --pricing-accent-blue: #0284c7;
+      --pricing-accent-emerald: #10b981;
+      --pricing-accent-purple: #8b5cf6;
+      --pricing-accent-amber: #f59e0b;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .pricing-hero {
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      padding: 4.5rem 1.75rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.18) 0%, rgba(15, 23, 42, 0) 70%);
+      pointer-events: none;
+    }
+
+    .pricing-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(2, 132, 199, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+    }
+
+    .pricing-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .pricing-subtitle {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* Billing Toggle */
+    .billing-toggle-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 4px;
+      border-radius: 9999px;
+      gap: 4px;
+    }
+
+    .billing-toggle-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .billing-toggle-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+    }
+
+    .discount-tag {
+      background: #10b981;
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 6px;
+      margin-left: 6px;
+    }
+
+    /* Main Container */
+    .pricing-container {
+      max-width: 1240px;
+      margin: -2.5rem auto 5rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* 3-Tier Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: stretch;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 980px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .price-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.12);
+    }
+
+    .price-card.featured {
+      background: #ffffff;
+      border: 2px solid #0284c7;
+      box-shadow: 0 12px 30px -4px rgba(2, 132, 199, 0.18);
+    }
+
+    .featured-ribbon {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+    }
+
+    .card-header-block {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+    }
+
+    .tier-badge-free { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    .tier-badge-sub { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
+    .tier-badge-wallet { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+
+    .tier-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.35rem;
+    }
+
+    .tier-target {
+      font-size: 0.85rem;
+      color: #64748b;
+      min-height: 40px;
+      line-height: 1.45;
+    }
+
+    .price-value-row {
+      margin: 1.25rem 0 0.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .price-currency {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .price-amount {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .price-period {
+      font-size: 0.88rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .price-meta {
+      font-size: 0.8rem;
+      color: #059669;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Features List */
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      flex: 1;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    .feature-icon-check {
+      color: #16a34a;
+      font-size: 0.85rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .feature-item strong {
+      color: #0f172a;
+    }
+
+    .btn-action-tier {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-tier-free {
+      background: #f1f5f9;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+    }
+    .btn-tier-free:hover {
+      background: #e2e8f0;
+      color: #0284c7;
+    }
+
+    .btn-tier-sub {
+      background: #0284c7;
+      color: #ffffff;
+      border: 1px solid #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    }
+    .btn-tier-sub:hover {
+      background: #0369a1;
+      color: #ffffff;
+    }
+
+    .btn-tier-wallet {
+      background: #0f172a;
+      color: #ffffff;
+      border: 1px solid #0f172a;
+    }
+    .btn-tier-wallet:hover {
+      background: #1e293b;
+      color: #f8fafc;
+    }
+
+    /* Calculator Section */
+    .calc-section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 4rem;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+
+    .calc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .calc-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.35rem;
+    }
+
+    .calc-desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 860px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .slider-group {
+      margin-bottom: 1.75rem;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .slider-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .slider-val-badge {
+      background: #f1f5f9;
+      color: #0284c7;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .calc-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0284c7;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.4);
+    }
+
+    .calc-summary-card {
+      background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .summary-credit-count {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #38bdf8;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .summary-credit-label {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      padding: 0.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .summary-breakdown-row.total-row {
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 0.5rem;
+      padding-top: 0.75rem;
+    }
+
+    /* Comparison Table */
+    .compare-section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 4rem;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      overflow-x: auto;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    .compare-table th {
+      padding: 1rem 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .compare-table td {
+      padding: 1.1rem 1.25rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+    }
+
+    .compare-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    .feature-name-col {
+      font-weight: 600;
+      color: #0f172a;
+      width: 34%;
+    }
+
+    .status-check {
+      color: #16a34a;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-cross {
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      margin-bottom: 5rem;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .faq-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    }
+
+    .faq-q {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .faq-q i {
+      color: #0284c7;
+      margin-top: 4px;
+      font-size: 0.9rem;
+    }
+
+    .faq-a {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Site Header Component Injection Target -->
+  <div id="shared-header"></div>
+
+  <!-- Hero Section -->
+  <header class="pricing-hero">
+    <div class="pricing-badge-pill">
+      <i class="fa-solid fa-cubes"></i> Three-Tier Sovereign Architecture
+    </div>
+    <h1 class="pricing-title">Predictable Pricing for Sovereign Chambers</h1>
+    <p class="pricing-subtitle">
+      Zero cloud lock-in for your confidential client files. Free local AI workspace, fortnightly living knowledge vaults, and on-demand statutory intelligence when you need it.
+    </p>
+
+    <!-- Monthly / Annual Toggle for Tier 2 -->
+    <div class="billing-toggle-wrap">
+      <button class="billing-toggle-btn active" id="btn-monthly" onclick="setBillingCycle('monthly')">Monthly Billing</button>
+      <button class="billing-toggle-btn" id="btn-annual" onclick="setBillingCycle('annual')">
+        Annual Billing <span class="discount-tag">Save 17%</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Pricing Content -->
+  <main class="pricing-container">
+
+    <!-- 3-Tier Grid -->
+    <section class="pricing-grid">
+
+      <!-- TIER 1: Sovereign Core (Free) -->
+      <div class="price-card">
+        <div class="card-header-block">
+          <span class="tier-badge tier-badge-free"><i class="fa-solid fa-shield-halved"></i> Tier 1 · Sovereign Core</span>
+          <h2 class="tier-name">Free Desktop IDE</h2>
+          <p class="tier-target">For independent practitioners, individual IPs, advocates, and valuers wanting 100% private AI on confidential files.</p>
+          <div class="price-value-row">
+            <span class="price-currency">₹</span>
+            <span class="price-amount">0</span>
+            <span class="price-period">/ forever</span>
+          </div>
+          <div class="price-meta">Zero Cloud Leakage • No Credit Card Required</div>
+        </div>
+
+        <ul class="features-list">
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Hayagriva Desktop IDE</strong>: Multi-tab document workspace, timeline &amp; evidence manager</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Local Document Parsing</strong>: Index PDFs, Word, scans, and Excel balance sheets</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Local Model Runtime</strong>: Seamless Ollama &amp; ONNX embedding/LLM/reranker execution</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Local Sovereign RAG Agent</strong>: Queries your local case folders strictly on-device</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>100% Air-Gapped Operation</strong>: Works offline during flights, courtrooms, and chambers</span>
+          </li>
+        </ul>
+
+        <a href="#" onclick="openIdeDownloadModal(); return false;" class="btn-action-tier btn-tier-free">
+          <i class="fa-solid fa-download"></i> Download Free IDE
+        </a>
+      </div>
+
+      <!-- TIER 2: Living Vaults & Settling Agents (Subscription) -->
+      <div class="price-card featured">
+        <div class="featured-ribbon"><i class="fa-solid fa-star"></i> Most Popular for Firms</div>
+        <div class="card-header-block">
+          <span class="tier-badge tier-badge-sub"><i class="fa-solid fa-arrows-rotate"></i> Tier 2 · Living Intelligence</span>
+          <h2 class="tier-name">Vaults &amp; Settled Agents</h2>
+          <p class="tier-target">For active resolution teams, insolvency practitioners &amp; corporate law firms requiring current statutory law and custom agents.</p>
+          <div class="price-value-row">
+            <span class="price-currency">₹</span>
+            <span class="price-amount" id="tier2-price">2,999</span>
+            <span class="price-period" id="tier2-period">/ month / seat</span>
+          </div>
+          <div class="price-meta" id="tier2-billing-text">Billed monthly • Cancel anytime</div>
+        </div>
+
+        <ul class="features-list">
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Includes Everything in Tier 1</strong> + Desktop IDE Pro Features</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>1-Click Fortnightly Vault Sync</strong>: Bi-weekly delta packs with latest NCLT, NCLAT, SC rulings &amp; IBBI circulars</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>In-IDE Semi-Automated Prompt Tuner</strong>: Critique agent outputs and locally adapt prompts/rules to your firm's drafting style</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Curated Knowledge Graphs</strong>: LightRAG legal entity &amp; relation graphs (64,000+ legal concepts)</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Statutory Practice Playbooks</strong>: Auto-updating CIRP checklists, liquidation waterfall, and AS-18 matrices</span>
+          </li>
+        </ul>
+
+        <a href="#subscribe" onclick="alert('Subscription gateway will open via Razorpay. Your license key unlocks one-click fortnightly sync inside Hayagriva IDE.'); return false;" class="btn-action-tier btn-tier-sub">
+          <i class="fa-solid fa-bolt"></i> Subscribe to Living Vaults
+        </a>
+      </div>
+
+      <!-- TIER 3: Resolution Bazaar (RBZ) Prepaid Diligence Credits -->
+      <div class="price-card">
+        <div class="card-header-block">
+          <span class="tier-badge tier-badge-wallet"><i class="fa-solid fa-wallet"></i> Tier 3 · On-Demand Diligence</span>
+          <h2 class="tier-name">Resolution Bazaar (RBZ)</h2>
+          <p class="tier-target">For statutory due diligence audits querying 11.2M records (Sec 29A screening, CIBIL sweeps, MCA-21 trees, eCourts).</p>
+          <div class="price-value-row">
+            <span class="price-currency">₹</span>
+            <span class="price-amount">25,000</span>
+            <span class="price-period">/ pack</span>
+          </div>
+          <div class="price-meta">Prepaid Credit Pack • 1,000 Diligence Credits (₹25/cr)</div>
+        </div>
+
+        <ul class="features-list">
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>11.2M Corporate &amp; Judicial Graph</strong>: Live cloud gateway powered by FastMCP</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Section 29A Multi-Hop Traversal</strong>: Connected persons, disqualified directors &amp; defaulters (50 cr)</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>CIBIL &amp; RBI Wilful Defaulter Sweeps</strong>: High-risk caution list cross-referencing (20 cr)</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Court-Admissible Dossiers</strong>: Cryptographically timestamped audit certificates for CoC &amp; NCLT</span>
+          </li>
+          <li class="feature-item">
+            <i class="fa-solid fa-check feature-icon-check"></i>
+            <span><strong>Credits Never Expire</strong>: Carry forward balances across multiple CIRP assignments</span>
+          </li>
+        </ul>
+
+        <a href="resolutionbazaar.html#wallet" class="btn-action-tier btn-tier-wallet">
+          <i class="fa-solid fa-cart-shopping"></i> Purchase Diligence Pack
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Interactive Credit Burn Calculator -->
+    <section class="calc-section">
+      <div class="calc-header">
+        <div>
+          <span class="tier-badge tier-badge-wallet"><i class="fa-solid fa-calculator"></i> Interactive Estimator</span>
+          <h3 class="calc-title">Resolution Bazaar (RBZ) Credit Calculator</h3>
+          <p class="calc-desc">
+            Estimate how many diligence credits your insolvency chamber will consume based on active CIRP matters, prospective bidders, and litigation sweeps.
+          </p>
+        </div>
+        <div style="font-size:0.85rem; color:#64748b; background:#f8fafc; padding:8px 14px; border-radius:8px; border:1px solid #e2e8f0;">
+          <i class="fa-solid fa-circle-info" style="color:#0284c7;"></i> Base Rate: <strong>1 Credit = ₹25</strong>
+        </div>
+      </div>
+
+      <div class="calc-grid">
+        <!-- Sliders -->
+        <div class="calc-controls">
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-label"><i class="fa-solid fa-briefcase" style="color:#0284c7; margin-right:6px;"></i> Active CIRP Matters / Month</span>
+              <span class="slider-val-badge" id="val-cirp">3 Matters</span>
+            </div>
+            <input type="range" class="calc-slider" id="slider-cirp" min="1" max="15" value="3" oninput="updateCalculator()">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-label"><i class="fa-solid fa-users-viewfinder" style="color:#10b981; margin-right:6px;"></i> Resolution Applicants (PRAs) to Screen (§29A)</span>
+              <span class="slider-val-badge" id="val-pra">8 PRAs</span>
+            </div>
+            <input type="range" class="calc-slider" id="slider-pra" min="1" max="30" value="8" oninput="updateCalculator()">
+            <div style="font-size:0.75rem; color:#64748b; margin-top:4px;">50 Credits per complete Section 29A multi-hop audit</div>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-label"><i class="fa-solid fa-building-columns" style="color:#f59e0b; margin-right:6px;"></i> CIBIL &amp; RBI Defaulter Searches</span>
+              <span class="slider-val-badge" id="val-cibil">10 Searches</span>
+            </div>
+            <input type="range" class="calc-slider" id="slider-cibil" min="0" max="40" value="10" oninput="updateCalculator()">
+            <div style="font-size:0.75rem; color:#64748b; margin-top:4px;">20 Credits per wilful defaulter registry verification</div>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span class="slider-label"><i class="fa-solid fa-gavel" style="color:#8b5cf6; margin-right:6px;"></i> eCourts &amp; NCLT Litigation Sweeps</span>
+              <span class="slider-val-badge" id="val-court">6 Sweeps</span>
+            </div>
+            <input type="range" class="calc-slider" id="slider-court" min="0" max="30" value="6" oninput="updateCalculator()">
+            <div style="font-size:0.75rem; color:#64748b; margin-top:4px;">15 Credits per pan-India court case audit</div>
+          </div>
+        </div>
+
+        <!-- Summary Display -->
+        <div class="calc-summary-card">
+          <div>
+            <div class="summary-title">Estimated Monthly Consumption</div>
+            <div class="summary-credit-count" id="calc-total-credits">690</div>
+            <div class="summary-credit-label">Diligence Credits Consumed</div>
+
+            <div class="summary-breakdown-row">
+              <span>Section 29A Audits:</span>
+              <span id="breakdown-29a">400 Credits (₹10,000)</span>
+            </div>
+            <div class="summary-breakdown-row">
+              <span>CIBIL &amp; Defaulters:</span>
+              <span id="breakdown-cibil">200 Credits (₹5,000)</span>
+            </div>
+            <div class="summary-breakdown-row">
+              <span>Litigation Sweeps:</span>
+              <span id="breakdown-court">90 Credits (₹2,250)</span>
+            </div>
+            <div class="summary-breakdown-row total-row">
+              <span>Total Estimated Cost:</span>
+              <span id="calc-total-rupees">₹17,250</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="font-size:0.8rem; color:#94a3b8; margin-bottom:8px;">
+              <i class="fa-solid fa-wallet" style="color:#38bdf8;"></i> Recommended: <strong>₹25,000 Pack (1,000 Credits)</strong>
+            </div>
+            <div style="font-size:0.76rem; color:#cbd5e1; margin-bottom:12px;">
+              Remaining balance (<span id="calc-leftover-credits">310</span> credits) automatically carries forward with <strong>no expiry</strong>.
+            </div>
+            <a href="resolutionbazaar.html#wallet" class="btn-action-tier btn-tier-sub" style="padding: 10px; font-size: 0.88rem;">
+              Unlock ₹25,000 Institutional Pack ➔
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side-by-Side Comparison Matrix -->
+    <section class="compare-section">
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin-bottom: 0.25rem;">
+          Feature &amp; Compliance Comparison
+        </h3>
+        <p style="font-size: 0.88rem; color: #64748b; margin: 0;">
+          Understand the separation of local sovereignty, subscription-backed knowledge, and cloud diligence.
+        </p>
+      </div>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="feature-name-col">Capability / Dimension</th>
+            <th style="width: 22%;">Tier 1: Free Sovereign Core</th>
+            <th style="width: 22%; background: #eff6ff; color: #0284c7;">Tier 2: Living Vaults &amp; Agents</th>
+            <th style="width: 22%;">Tier 3: RBZ Cloud Gateway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-name-col">Payment Model</td>
+            <td><strong>₹0 Free Forever</strong></td>
+            <td style="background: #f0f9ff; font-weight:700; color:#0284c7;">₹2,999/mo or ₹29,999/yr</td>
+            <td>Prepaid Pack (₹25,000)</td>
+          </tr>
+          <tr>
+            <td class="feature-name-col">Primary Purpose</td>
+            <td>Local doc management &amp; private file RAG</td>
+            <td style="background: #f0f9ff;">Fortnightly precedents &amp; settled agents</td>
+            <td>11.2M Record statutory due diligence</td>
+          </tr>
+          <tr>
+            <td class="feature-name-col">Execution Location</td>
+            <td>100% On-Device (Local Hardware)</td>
+            <td style="background: #f0f9ff;">100% On-Device (Cloud Delta Sync)</td>
+            <td>High-Compute Cloud Gateway</td>
+          </tr>
+          <tr>
+            <td class="feature-name-col">Air-Gap &amp; Confidentiality</td>
+            <td><span class="status-check"><i class="fa-solid fa-lock"></i> Strict Zero-Cloud Airgap</span></td>
+            <td style="background: #f0f9ff;"><span class="status-check"><i class="fa-solid fa-lock"></i> Local files stay local</span></td>
+            <td>Live search queries only (No local files sent)</td>
+          </tr>
+          <tr>
+            <td class="feature-name-col">Knowledge Base Updates</td>
+            <td>Static (User's own documents)</td>
+            <td style="background: #f0f9ff;"><strong>Fortnightly (Every 14 Days)</strong></td>
+            <td>Continuous live public data streams</td>
+          </tr>
+          <tr>
+            <td class="feature-name-col">1-Click Update Engine</td>
+            <td><span class="status-cross">—</span></td>
+            <td style="background: #f0f9ff;"><span class="status-check"><i class="fa-solid fa-check"></i> In-IDE "Sync Vaults"</span></td>
+            <td>Instant real-time API</td>
+          </tr>
+          <tr>
+            <td class="feature-name-col">Agent Settling &amp; Prompt Tuning</td>
+            <td>Manual local prompting</td>
+            <td style="background: #f0f9ff;"><span class="status-check"><i class="fa-solid fa-check"></i> Semi-Automated In-IDE Tuner</span></td>
+            <td>Pre-certified statutory protocols</td>
+          </tr>
+          <tr>
+            <td class="feature-name-col">Section 29A Screening</td>
+            <td><span class="status-cross">—</span></td>
+            <td style="background: #f0f9ff;">Local statutory checklists</td>
+            <td><span class="status-check"><i class="fa-solid fa-check"></i> Live 11.2M Multi-Hop Graph</span></td>
+          </tr>
+          <tr>
+            <td class="feature-name-col">CIBIL Wilful Defaulters Check</td>
+            <td><span class="status-cross">—</span></td>
+            <td style="background: #f0f9ff;"><span class="status-cross">—</span></td>
+            <td><span class="status-check"><i class="fa-solid fa-check"></i> Real-time registry cross-check</span></td>
+          </tr>
+          <tr>
+            <td class="feature-name-col">Audit Dossier Admissibility</td>
+            <td>Internal draft only</td>
+            <td style="background: #f0f9ff;">Practice compliant draft</td>
+            <td><span class="status-check"><i class="fa-solid fa-certificate"></i> Signed SHA-256 Court Certificate</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Practitioner FAQ -->
+    <section class="faq-section">
+      <div class="faq-header">
+        <h3 class="faq-title">Frequently Asked Questions</h3>
+        <p style="color: #64748b; font-size: 0.95rem; margin: 0;">
+          Common questions on the three-tier model, fortnightly sync, and credit accounting.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-card">
+          <div class="faq-q"><i class="fa-solid fa-circle-question"></i> Is the Hayagriva Desktop IDE really 100% free?</div>
+          <div class="faq-a">
+            Yes. You can download the IDE, parse your own PDF/Word/Excel case records, configure local LLMs (like Ollama or Mistral), and run sovereign RAG searches without ever paying a fee. Your confidential case files never leave your machine.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-q"><i class="fa-solid fa-circle-question"></i> Why do Knowledge Vaults require a fortnightly subscription?</div>
+          <div class="faq-a">
+            Commercial law, IBC jurisprudence, and NCLT/NCLAT rulings evolve every two weeks. Our legal curation team continuously analyzes and indexes newly gazetted rulings into LightRAG knowledge graphs. The subscription covers continuous curation and delivers signed delta packs directly to your IDE every 14 days.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-q"><i class="fa-solid fa-circle-question"></i> What is "Agent Settling" and how does the prompt tuner work?</div>
+          <div class="faq-a">
+            Every legal chamber has a distinct drafting style. When an agent produces an output that doesn't meet your firm's standards, you click "Refine Agent". The local prompt tuner analyzes your critique, generates prompt diffs, updates few-shot examples, and hot-reloads the agent until it is fully calibrated ("settled") to your preferences.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-q"><i class="fa-solid fa-circle-question"></i> Do Resolution Bazaar (RBZ) credits expire?</div>
+          <div class="faq-a">
+            No. Diligence credits in your ₹25,000 prepaid pack remain in your account until consumed. You can use them across multiple CIRP assignments throughout the calendar year with zero expiration pressure.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-q"><i class="fa-solid fa-circle-question"></i> How are Section 29A reports authenticated for NCLT?</div>
+          <div class="faq-a">
+            Each Resolution Bazaar screening report includes a cryptographic SHA-256 hash, timestamped registry cross-match evidence, and director network trees, creating a court-admissible audit certificate ready for submission to the Committee of Creditors (CoC).
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-q"><i class="fa-solid fa-circle-question"></i> Can I top up credits whenever my wallet balance runs low?</div>
+          <div class="faq-a">
+            Yes. You can instantly top up via Razorpay inside Resolution Bazaar or directly from the IDE's FastMCP settings panel. New credits are credited instantly to your chamber token.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Site Footer Component Injection Target -->
+  <div id="shared-footer"></div>
+
+  <!-- JavaScript Core Scripts -->
+  <script src="js/header.js?v=20260915_v5"></script>
+  <script src="js/footer.js?v=20260915_v5"></script>
+  <script src="js/page-common.js?v=20260915_v5"></script>
+
+  <script>
+    let currentBilling = 'monthly';
+
+    function setBillingCycle(cycle) {
+      currentBilling = cycle;
+      const btnMonthly = document.getElementById('btn-monthly');
+      const btnAnnual = document.getElementById('btn-annual');
+      const priceEl = document.getElementById('tier2-price');
+      const periodEl = document.getElementById('tier2-period');
+      const textEl = document.getElementById('tier2-billing-text');
+
+      if (cycle === 'annual') {
+        btnAnnual.classList.add('active');
+        btnMonthly.classList.remove('active');
+        priceEl.innerText = '29,999';
+        periodEl.innerText = '/ year / seat';
+        textEl.innerText = 'Billed annually (Save ₹5,989) • 14-day money back guarantee';
+      } else {
+        btnMonthly.classList.add('active');
+        btnAnnual.classList.remove('active');
+        priceEl.innerText = '2,999';
+        periodEl.innerText = '/ month / seat';
+        textEl.innerText = 'Billed monthly • Cancel anytime';
+      }
+    }
+
+    function updateCalculator() {
+      const cirp = parseInt(document.getElementById('slider-cirp').value, 10);
+      const pra = parseInt(document.getElementById('slider-pra').value, 10);
+      const cibil = parseInt(document.getElementById('slider-cibil').value, 10);
+      const court = parseInt(document.getElementById('slider-court').value, 10);
+
+      document.getElementById('val-cirp').innerText = cirp + (cirp === 1 ? ' Matter' : ' Matters');
+      document.getElementById('val-pra').innerText = pra + ' PRAs';
+      document.getElementById('val-cibil').innerText = cibil + ' Searches';
+      document.getElementById('val-court').innerText = court + ' Sweeps';
+
+      const credits29A = pra * 50;
+      const creditsCibil = cibil * 20;
+      const creditsCourt = court * 15;
+
+      const totalCredits = credits29A + creditsCibil + creditsCourt;
+      const totalRupees = totalCredits * 25;
+      const packCredits = 1000;
+      const leftover = Math.max(0, packCredits - totalCredits);
+
+      document.getElementById('calc-total-credits').innerText = totalCredits.toLocaleString('en-IN');
+      document.getElementById('breakdown-29a').innerText = `${credits29A} Credits (₹${(credits29A * 25).toLocaleString('en-IN')})`;
+      document.getElementById('breakdown-cibil').innerText = `${creditsCibil} Credits (₹${(creditsCibil * 25).toLocaleString('en-IN')})`;
+      document.getElementById('breakdown-court').innerText = `${creditsCourt} Credits (₹${(creditsCourt * 25).toLocaleString('en-IN')})`;
+      document.getElementById('calc-total-rupees').innerText = `₹${totalRupees.toLocaleString('en-IN')}`;
+      document.getElementById('calc-leftover-credits').innerText = leftover.toLocaleString('en-IN');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCalculator();
+    });
+  </script>
+
+</body>
+</html>
