@@ -36,6 +36,9 @@ services:
         source: /articles
         destination: /blogs_articles.html
       - type: rewrite
+        source: /pricing
+        destination: /pricing.html
+      - type: rewrite
         source: /docs/*
         destination: /docs/*
     headers:
