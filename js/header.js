@@ -471,7 +471,7 @@
       <li class="nav-item nav-item-cta" style="margin-left: 0.5rem;">
         <a href="#" onclick="openIdeDownloadModal(); return false;" class="nav-btn-download-ide"
           id="nav-btn-download-ide">
-          <i class="fa-solid fa-download"></i> Harness <span class="nav-btn-badge">Beta</span>
+          <i class="fa-solid fa-download"></i> PIPIE <span class="nav-btn-badge">Beta</span>
         </a>
       </li>
     </ul>
