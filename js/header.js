@@ -499,8 +499,8 @@
             </div>
           </div>
           <div class="os-specs">272 MB · .exe Installer · Verified</div>
-          <a href="#" onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.exe'; return false;" class="btn-os-download">
-            <i class="fa-solid fa-download"></i> Download .exe
+          <a href="#" onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/HayagrivaSetup.exe'; return false;" class="btn-os-download">
+            <i class="fa-solid fa-download"></i> Download Setup.exe
           </a>
         </div>
 
@@ -529,8 +529,8 @@
             </div>
           </div>
           <div class="os-specs">203 MB · .deb Package · Verified</div>
-          <a href="#" onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.deb'; return false;" class="btn-os-download" style="background:#0f172a;">
-            <i class="fa-solid fa-download"></i> Download .deb
+          <a href="#" onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/HayagrivaSetup.deb'; return false;" class="btn-os-download" style="background:#0f172a;">
+            <i class="fa-solid fa-download"></i> Download Setup.deb
           </a>
         </div>
       </div>
@@ -884,8 +884,8 @@
     const urls = {
       'mac-arm': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg',
       'mac-intel': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg',
-      'windows': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.exe',
-      'linux': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.exe'
+      'windows': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/HayagrivaSetup.exe',
+      'linux': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.AppImage'
     };
     const targetUrl = urls[os] || urls['mac-arm'];
     window.location.href = targetUrl;
