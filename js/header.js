@@ -25,11 +25,12 @@
     <span class="announcement-badge" style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);"><i
         class="fa-solid fa-gift"></i> SOVEREIGN FREEDOM</span>
     <span class="announcement-msg" style="color:#e2e8f0; font-size:0.82rem;">
-      <strong>Tier 1 Sovereign IDE is 100% FREE</strong> • Fortnightly Knowledge Vault Delta Sync • Related Parties Report Free till 31 Dec 2026
+      <strong>Tier 1 Sovereign IDE is 100% FREE</strong> • Fortnightly Knowledge Vault Delta Sync • Related Parties
+      Report Free till 31 Dec 2026
     </span>
-    <!-- <a href="#" onclick="openIdeDownloadModal(); return false;" class="announcement-cta" style="background:rgba(255,255,255,0.2); color:#fff; border:1px solid rgba(255,255,255,0.3); padding:3px 12px; border-radius:6px; font-weight:700; font-size:0.75rem; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
-      Download IDE (Beta) <i class="fa-solid fa-arrow-right"></i>
-    </a>-->
+    <a href="#" onclick="openIdeDownloadModal(); return false;" class="announcement-cta" style="background:rgba(255,255,255,0.2); color:#fff; border:1px solid rgba(255,255,255,0.3); padding:4px 14px; border-radius:6px; font-weight:700; font-size:0.75rem; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+      📥 Download Free IDE v1.2 (150 MB) <i class="fa-solid fa-arrow-right"></i>
+    </a>
   </div>
 </div>
 <header class="site-header" id="site-header">
@@ -39,7 +40,7 @@
     <div class="brand-block-wireframe" id="header-brand-logo">
       <a href="index.html#home" class="brand-main-title">AGENTIC PROFESSIONALS NETWORK</a>
       <div class="brand-sub-url">
-        Sovereign Operating System for Insolvency Professionals
+        Sovereign AI Workbench for Professionals
       </div>
     </div>
 
@@ -53,88 +54,37 @@
         </a>
       </li>
 
-      <!-- 1. Chamber Workbench - 2-Column Mega Menu (3+3) -->
+      <!-- 1. Chamber Workbench - Single Column Menu (Case Management / Drafting Studio / Execution Engine) -->
       <li class="nav-item nav-item-dropdown" id="dropdown-harness-wrapper">
         <button class="nav-link nav-link-wireframe" id="nav-workspace" type="button" aria-haspopup="true"
           aria-expanded="false">
           <span class="nav-title-row">
-            <span>Harness</span>
+            <span>Workbench</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">PIPIE Workbench</span>
+          <span class="nav-subtitle-row">PIPIE Harness</span>
         </button>
-        <div class="dropdown-menu mega-menu-2col" id="harness-dropdown-menu">
-          <div class="mega-grid-2col">
-
-            <!-- Column 1: CASE WORKSPACE — knowledge in -->
+        <div class="dropdown-menu mega-menu-1col" id="harness-dropdown-menu" style="min-width: 320px;">
+          <div class="mega-grid-1col">
             <div class="mega-col-wireframe">
-              <div class="mega-col-wireframe-header">
-                <div class="mega-col-header-left">
-                  <span class="mega-col-icon-pill pill-emerald"><i class="fa-solid fa-folder-open"></i></span>
-                  <span class="mega-col-wireframe-title">CASE WORKSPACE</span>
-                </div>
-              </div>
               <div class="mega-col-wireframe-links">
-                <a href="harness_haya_ingest.html" class="mega-item-wireframe" id="nav-item-harness-ingest">
-                  <div class="mega-item-icon-box icon-teal">
-                    <i class="fa-solid fa-file-arrow-up"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Trial Record Ingestion</span>
-                    <span class="mega-item-wireframe-desc">PDF, Word &amp; Excel &#8594; parsed &amp; indexed
-                      offline</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
                 <a href="harness_haya_workbench.html" class="mega-item-wireframe" id="nav-item-harness-workbench">
                   <div class="mega-item-icon-box icon-emerald">
-                    <i class="fa-solid fa-briefcase"></i>
+                    <i class="fa-solid fa-folder-open"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Case Workbench</span>
-                    <span class="mega-item-wireframe-desc">Evidence manager, fact timeline &amp; exhibits</span>
+                    <span class="mega-item-wireframe-name">Case Management</span>
+                    <span class="mega-item-wireframe-desc">Trial record ingestion, evidence timeline &amp; fact wiki</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
-                <a href="harness_haya_wiki.html" class="mega-item-wireframe" id="nav-item-harness-wiki">
-                  <div class="mega-item-icon-box icon-amber">
-                    <i class="fa-solid fa-book-open"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Case Fact Wiki</span>
-                    <span class="mega-item-wireframe-desc">Automated compounding matter knowledge base</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Column 2: DRAFTING STUDIO — documents out -->
-            <div class="mega-col-wireframe">
-              <div class="mega-col-wireframe-header">
-                <div class="mega-col-header-left">
-                  <span class="mega-col-icon-pill pill-purple"><i class="fa-solid fa-pen-nib"></i></span>
-                  <span class="mega-col-wireframe-title">DRAFTING STUDIO</span>
-                </div>
-              </div>
-              <div class="mega-col-wireframe-links">
                 <a href="harness_haya_studio.html" class="mega-item-wireframe" id="nav-item-harness-studio">
                   <div class="mega-item-icon-box icon-purple">
-                    <i class="fa-solid fa-code"></i>
+                    <i class="fa-solid fa-pen-nib"></i>
                   </div>
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">Drafting Studio</span>
-                    <span class="mega-item-wireframe-desc">Court-ready pleadings, citation checks &amp; export</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="harness_haya_models.html" class="mega-item-wireframe" id="nav-item-harness-templates">
-                  <div class="mega-item-icon-box icon-rose">
-                    <i class="fa-solid fa-file-lines"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Court Draft Templates</span>
-                    <span class="mega-item-wireframe-desc">SC &amp; NCLT-compliant skeletons &amp; petitions</span>
+                    <span class="mega-item-wireframe-desc">Court pleadings, SC/NCLT skeletons &amp; citation checks</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -144,18 +94,17 @@
                   </div>
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">Execution Engine</span>
-                    <span class="mega-item-wireframe-desc">Private offline legal &amp; forensic cores</span>
+                    <span class="mega-item-wireframe-desc">Offline legal &amp; forensic cores, local ONNX runtimes</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       </li>
 
-      <!-- 2. Legal Intelligence - 2-Column Mega Menu -->
+      <!-- 2. Legal Intelligence - Single Column Menu (Legal Libraries) -->
       <li class="nav-item nav-item-dropdown" id="dropdown-lexai-wrapper">
         <button class="nav-link nav-link-wireframe" id="nav-lexai" type="button" aria-haspopup="true"
           aria-expanded="false">
@@ -163,19 +112,11 @@
             <span>Intelligence</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">Precedents &amp; Law</span>
+          <span class="nav-subtitle-row">Legal Libraries</span>
         </button>
-        <div class="dropdown-menu mega-menu-2col" id="lexai-dropdown-menu">
-          <div class="mega-grid-2col">
-
-            <!-- Column 1: LIBRARIES -->
+        <div class="dropdown-menu mega-menu-1col" id="lexai-dropdown-menu" style="min-width: 320px;">
+          <div class="mega-grid-1col">
             <div class="mega-col-wireframe">
-              <div class="mega-col-wireframe-header">
-                <div class="mega-col-header-left">
-                  <span class="mega-col-icon-pill pill-blue"><i class="fa-solid fa-vault"></i></span>
-                  <span class="mega-col-wireframe-title">LEGAL LIBRARIES</span>
-                </div>
-              </div>
               <div class="mega-col-wireframe-links">
                 <a href="vaults_law.html" class="mega-item-wireframe" id="nav-item-vault-law">
                   <div class="mega-item-icon-box icon-teal">
@@ -229,52 +170,9 @@
                 </a>
               </div>
             </div>
-
-            <!-- Column 2: LEGAL BRAINS -->
-            <div class="mega-col-wireframe">
-              <div class="mega-col-wireframe-header">
-                <div class="mega-col-header-left">
-                  <span class="mega-col-icon-pill pill-purple"><i class="fa-solid fa-brain"></i></span>
-                  <span class="mega-col-wireframe-title">LEGAL BRAINS</span>
-                </div>
-              </div>
-              <div class="mega-col-wireframe-links">
-                <a href="models_domain_slms.html" class="mega-item-wireframe" id="nav-item-model-slms">
-                  <div class="mega-item-icon-box icon-purple">
-                    <i class="fa-solid fa-brain"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Domain Legal Models</span>
-                    <span class="mega-item-wireframe-desc">Private legal &amp; financial offline brains</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="models_embeddings.html" class="mega-item-wireframe" id="nav-item-model-embeddings">
-                  <div class="mega-item-icon-box icon-blue">
-                    <i class="fa-solid fa-diagram-project"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Legal Search Models</span>
-                    <span class="mega-item-wireframe-desc">Instant semantic statutory retrieval</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="models_rerankers.html" class="mega-item-wireframe" id="nav-item-model-rerankers">
-                  <div class="mega-item-icon-box icon-amber">
-                    <i class="fa-solid fa-arrow-down-wide-short"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Citation Rankers</span>
-                    <span class="mega-item-wireframe-desc">Pinpoint critical precedent paragraphs</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </li>
-
 
       <!-- 3. Autonomous Co-Counsel - 2-Column Mega Menu -->
       <li class="nav-item nav-item-dropdown" id="dropdown-agents-wrapper">
@@ -456,24 +354,6 @@
       </li>
 
 
-
-      <!-- 5. Plans & Credits (fa-cubes icon) -->
-      <li class="nav-item">
-        <a href="pricing.html" class="nav-link nav-link-wireframe" id="nav-pricing">
-          <span class="nav-title-row">
-            <span style="display:flex; align-items:center; gap:6px;"><i class="fa-solid fa-cubes" style="color:#0284c7; font-size:0.95rem;"></i> Pricing</span>
-          </span>
-          <span class="nav-subtitle-row">Plans &amp; Credits</span>
-        </a>
-      </li>
-
-      <!-- Dedicated Navbar Download CTA -->
-      <li class="nav-item nav-item-cta" style="margin-left: 0.5rem;">
-        <a href="#" onclick="openIdeDownloadModal(); return false;" class="nav-btn-download-ide"
-          id="nav-btn-download-ide">
-          <i class="fa-solid fa-download"></i> PIPIE <span class="nav-btn-badge">Beta</span>
-        </a>
-      </li>
     </ul>
   </div>
 </header>
@@ -588,8 +468,8 @@
               <div class="os-meta">M1 · M2 · M3 · M4 · M5 (ARM64)</div>
             </div>
           </div>
-          <div class="os-specs">~84 MB · .dmg · SHA-256 Verified</div>
-          <a href="#" onclick="simulateDownload('mac-arm'); return false;" class="btn-os-download">
+          <div class="os-specs">334 MB · .dmg (Apple Silicon) · Verified</div>
+          <a href="#" onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg'; return false;" class="btn-os-download">
             <i class="fa-solid fa-download"></i> Download .dmg
           </a>
         </div>
@@ -603,8 +483,8 @@
               <div class="os-meta">Intel Core i5/i7/i9 (x86_64)</div>
             </div>
           </div>
-          <div class="os-specs">~89 MB · .dmg · SHA-256 Verified</div>
-          <a href="#" onclick="simulateDownload('mac-intel'); return false;" class="btn-os-download">
+          <div class="os-specs">334 MB · .dmg · Universal / Rosetta</div>
+          <a href="#" onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg'; return false;" class="btn-os-download">
             <i class="fa-solid fa-download"></i> Download .dmg
           </a>
         </div>
@@ -618,24 +498,39 @@
               <div class="os-meta">64-bit Architecture (x64)</div>
             </div>
           </div>
-          <div class="os-specs">~92 MB · .exe Installer · Signed</div>
-          <a href="#" onclick="simulateDownload('windows'); return false;" class="btn-os-download">
+          <div class="os-specs">272 MB · .exe Installer · Verified</div>
+          <a href="#" onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.exe'; return false;" class="btn-os-download">
             <i class="fa-solid fa-download"></i> Download .exe
           </a>
         </div>
 
-        <!-- Linux -->
-        <div class="os-card" id="card-linux">
+        <!-- Linux AppImage (Regular Linux) -->
+        <div class="os-card" id="card-linux-appimage">
           <div class="os-card-header">
             <div class="os-icon os-linux"><i class="fa-brands fa-linux"></i></div>
             <div class="os-info">
-              <div class="os-name">Linux</div>
-              <div class="os-meta">Ubuntu · Debian · Fedora</div>
+              <div class="os-name">Linux (Universal)</div>
+              <div class="os-meta">Portable AppImage · All Distros</div>
             </div>
           </div>
-          <div class="os-specs">~88 MB · .AppImage / .deb</div>
-          <a href="#" onclick="simulateDownload('linux'); return false;" class="btn-os-download">
+          <div class="os-specs">355 MB · .AppImage · Verified</div>
+          <a href="#" onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.AppImage'; return false;" class="btn-os-download">
             <i class="fa-solid fa-download"></i> Download .AppImage
+          </a>
+        </div>
+
+        <!-- Linux DEB (Debian / Ubuntu) -->
+        <div class="os-card" id="card-linux-deb">
+          <div class="os-card-header">
+            <div class="os-icon os-linux"><i class="fa-brands fa-ubuntu"></i></div>
+            <div class="os-info">
+              <div class="os-name">Linux (Ubuntu / Debian)</div>
+              <div class="os-meta">Native Package · Apt / Dpkg</div>
+            </div>
+          </div>
+          <div class="os-specs">203 MB · .deb Package · Verified</div>
+          <a href="#" onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.deb'; return false;" class="btn-os-download" style="background:#0f172a;">
+            <i class="fa-solid fa-download"></i> Download .deb
           </a>
         </div>
       </div>
@@ -900,7 +795,7 @@
       return (navigator.userAgentData?.architecture === 'arm' || /ARM/.test(ua) || (navigator.maxTouchPoints > 0 && !window.MSStream)) ? 'mac-arm' : 'mac-intel';
     }
     if (/Windows/.test(ua)) return 'windows';
-    if (/Linux/.test(ua)) return 'linux';
+    if (/Linux/.test(ua)) return 'linux-appimage';
     return 'mac-arm';
   }
 
@@ -912,7 +807,7 @@
 
     // Highlight detected OS card
     const detected = detectClientOS();
-    ['mac-arm', 'mac-intel', 'windows', 'linux'].forEach(function(os) {
+    ['mac-arm', 'mac-intel', 'windows', 'linux-appimage', 'linux-deb'].forEach(function(os) {
       const card = document.getElementById('card-' + os);
       if (card) {
         if (os === detected) {
@@ -986,14 +881,14 @@
   };
 
   window.simulateDownload = function(os) {
-    const filenames = {
-      'mac-arm': 'Hayagriva-IDE-1.75.0-arm64.dmg',
-      'mac-intel': 'Hayagriva-IDE-1.75.0-x64.dmg',
-      'windows': 'Hayagriva-IDE-Setup-1.75.0.exe',
-      'linux': 'Hayagriva-IDE-1.75.0.AppImage'
+    const urls = {
+      'mac-arm': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg',
+      'mac-intel': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg',
+      'windows': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.exe',
+      'linux': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.exe'
     };
-    const fn = filenames[os] || 'Hayagriva-IDE-1.75.0.dmg';
-    alert('Thank you! Starting download for ' + fn + ' (Beta v1.75).\n\nYour complimentary AS-18 Promo Code is PROMO-AS18-FREE-2026.');
+    const targetUrl = urls[os] || urls['mac-arm'];
+    window.location.href = targetUrl;
   };
 
   // Close modal on click outside dialog
