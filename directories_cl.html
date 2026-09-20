@@ -48,9 +48,12 @@
           </p>
         </div>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <a href="index.html#listing?category=counsel" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+          <a href="directory_listing.html?category=counsel" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
             <i class="fa-solid fa-map-location-dot" style="margin-right: 0.4rem;"></i> Interactive NCLT Map View
           </a>
+          <button type="button" class="btn btn-secondary" onclick="openAddMeModal('counsel');" style="padding: 0.75rem 1.4rem; background: #ffffff; color: var(--text-primary); border: 1px solid #cbd5e1; cursor: pointer; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center;">
+            <i class="fa-solid fa-user-plus" style="margin-right: 0.4rem; color: #9333ea;"></i> Add Me to Directory
+          </button>
         </div>
       </div>
     </div>
@@ -120,85 +123,17 @@
 
     <!-- Counsel Grid -->
     <div class="pro-card-grid" id="cl-card-container">
-      <!-- Counsel 1 -->
-      <div class="pro-card" data-city="New Delhi" data-name="Rohini Banerjee">
-        <div>
-          <div class="pro-card-header">
-            <div>
-              <div class="pro-name">Adv. Rohini Banerjee</div>
-              <div class="pro-reg">D/1420/2011 (Bar Council of Delhi)</div>
-            </div>
-            <span class="badge badge-success"><i class="fa-solid fa-check"></i> Supreme Court Bar</span>
-          </div>
-          <div class="pro-firm"><i class="fa-solid fa-building-columns" style="color: #64748b; margin-right: 4px;"></i> Chambers of Rohini Banerjee</div>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: #dc2626; margin-right: 4px;"></i> Supreme Court of India &amp; NCLAT New Delhi
-          </div>
-          <div class="pro-tag-list">
-            <span class="pro-tag">Constitutional Challenges</span>
-            <span class="pro-tag">Section 29A Litigation</span>
-            <span class="pro-tag">Operational Creditor Relief</span>
-          </div>
-        </div>
-        <div class="pro-card-footer">
-          <span style="font-weight: 600; color: #0f172a;"><i class="fa-solid fa-briefcase" style="color: #9333ea;"></i> 85+ Appearances</span>
-          <a href="mailto:rohini@banerjeechambers.com" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
-        </div>
-      </div>
-
-      <!-- Counsel 2 -->
-      <div class="pro-card" data-city="Mumbai" data-name="Vikramaditya Singhania">
-        <div>
-          <div class="pro-card-header">
-            <div>
-              <div class="pro-name">Adv. Vikramaditya Singhania</div>
-              <div class="pro-reg">MAH/318/2009 (Bar Council of Maharashtra &amp; Goa)</div>
-            </div>
-            <span class="badge badge-success"><i class="fa-solid fa-check"></i> NCLAT Advocate</span>
-          </div>
-          <div class="pro-firm"><i class="fa-solid fa-building-columns" style="color: #64748b; margin-right: 4px;"></i> Singhania Restructuring Law Offices</div>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: #dc2626; margin-right: 4px;"></i> High Court of Bombay &amp; NCLT Mumbai Bench
-          </div>
-          <div class="pro-tag-list">
-            <span class="pro-tag">Sec 7 Financial Admission</span>
-            <span class="pro-tag">PUFE Injunctions</span>
-            <span class="pro-tag">CoC Dispute Resolution</span>
-          </div>
-        </div>
-        <div class="pro-card-footer">
-          <span style="font-weight: 600; color: #0f172a;"><i class="fa-solid fa-briefcase" style="color: #9333ea;"></i> 120+ Appearances</span>
-          <a href="mailto:vikram@singhanialaw.in" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
-        </div>
-      </div>
-
-      <!-- Counsel 3 -->
-      <div class="pro-card" data-city="Kolkata" data-name="Prashant Mukherjee">
-        <div>
-          <div class="pro-card-header">
-            <div>
-              <div class="pro-name">Adv. Prashant Mukherjee</div>
-              <div class="pro-reg">WB/884/2014 (Bar Council of West Bengal)</div>
-            </div>
-            <span class="badge badge-success"><i class="fa-solid fa-check"></i> NCLT Advocate</span>
-          </div>
-          <div class="pro-firm"><i class="fa-solid fa-building-columns" style="color: #64748b; margin-right: 4px;"></i> Eastern Restructuring Chambers</div>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: #dc2626; margin-right: 4px;"></i> NCLT Kolkata Bench &amp; Cuttack Bench
-          </div>
-          <div class="pro-tag-list">
-            <span class="pro-tag">Heavy Industry Insolvency</span>
-            <span class="pro-tag">Mining &amp; Metals CIRP</span>
-            <span class="pro-tag">Section 9 Petitions</span>
-          </div>
-        </div>
-        <div class="pro-card-footer">
-          <span style="font-weight: 600; color: #0f172a;"><i class="fa-solid fa-briefcase" style="color: #9333ea;"></i> 64 Appearances</span>
-          <a href="mailto:prashant@easternchambers.law" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
-        </div>
+      <div style="grid-column: 1 / -1; padding: 3rem 1.5rem; text-align: center; background: #fff; border: 1.5px dashed #cbd5e1; border-radius: 12px;">
+        <i class="fa-solid fa-gavel" style="font-size: 2.5rem; color: #9333ea; margin-bottom: 1rem; display: block;"></i>
+        <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 0.5rem; font-weight: 700;">No Counsel Profiles Publicly Empanelled Yet</h3>
+        <p style="color: #64748b; font-size: 0.9rem; max-width: 500px; margin: 0 auto 1.5rem; line-height: 1.5;">
+          Are you a Corporate Restructuring Advocate practicing before NCLT / NCLAT / Supreme Court? Apply to feature your law chamber in the accredited APNET national directory.
+        </p>
+        <button type="button" class="btn btn-primary" onclick="openAddMeModal('counsel');" style="background: #9333ea; border-color: #9333ea; padding: 0.75rem 1.5rem;">
+          <i class="fa-solid fa-user-plus" style="margin-right: 0.4rem;"></i> Apply to Join Directory
+        </button>
       </div>
     </div>
-
   </main>
 
   <!-- Shared Site Footer Component -->

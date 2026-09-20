@@ -48,9 +48,12 @@
           </p>
         </div>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <a href="index.html#listing?category=rv" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+          <a href="directory_listing.html?category=rv" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
             <i class="fa-solid fa-map-location-dot" style="margin-right: 0.4rem;"></i> Interactive NCLT Map View
           </a>
+          <button type="button" class="btn btn-secondary" onclick="openAddMeModal('rv');" style="padding: 0.75rem 1.4rem; background: #ffffff; color: var(--text-primary); border: 1px solid #cbd5e1; cursor: pointer; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center;">
+            <i class="fa-solid fa-user-plus" style="margin-right: 0.4rem; color: #0d9488;"></i> Add Me to Directory
+          </button>
         </div>
       </div>
     </div>
@@ -118,85 +121,17 @@
 
     <!-- Valuers Grid -->
     <div class="pro-card-grid" id="rv-card-container">
-      <!-- RV 1 -->
-      <div class="pro-card" data-class="P&M" data-name="Arunachalam Venkataraman">
-        <div>
-          <div class="pro-card-header">
-            <div>
-              <div class="pro-name">Arunachalam Venkataraman</div>
-              <div class="pro-reg">IBBI/RV/02/2019/11842</div>
-            </div>
-            <span class="badge badge-success"><i class="fa-solid fa-check"></i> Active RV</span>
-          </div>
-          <div class="pro-firm"><i class="fa-solid fa-building" style="color: #64748b; margin-right: 4px;"></i> Southern Valuation Partners</div>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: #dc2626; margin-right: 4px;"></i> NCLT Bengaluru Bench &amp; Chennai Bench
-          </div>
-          <div class="pro-tag-list">
-            <span class="pro-tag">Plant &amp; Machinery</span>
-            <span class="pro-tag">Land &amp; Building</span>
-            <span class="pro-tag">Technology Parks</span>
-          </div>
-        </div>
-        <div class="pro-card-footer">
-          <span style="font-weight: 600; color: #0f172a;"><i class="fa-solid fa-briefcase" style="color: #0d9488;"></i> 32 Valuations</span>
-          <a href="mailto:arun@southernvaluation.org" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
-        </div>
-      </div>
-
-      <!-- RV 2 -->
-      <div class="pro-card" data-class="SFA" data-name="Meenakshi Sundaram">
-        <div>
-          <div class="pro-card-header">
-            <div>
-              <div class="pro-name">CA Meenakshi Sundaram</div>
-              <div class="pro-reg">IBBI/RV/06/2020/12940</div>
-            </div>
-            <span class="badge badge-success"><i class="fa-solid fa-check"></i> Active RV</span>
-          </div>
-          <div class="pro-firm"><i class="fa-solid fa-building" style="color: #64748b; margin-right: 4px;"></i> Sundaram Financial Advisory &amp; Valuations</div>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: #dc2626; margin-right: 4px;"></i> NCLT Chennai Bench &amp; Hyderabad Bench
-          </div>
-          <div class="pro-tag-list">
-            <span class="pro-tag">Securities or Financial Assets</span>
-            <span class="pro-tag">DCF Modeling</span>
-            <span class="pro-tag">Intangibles &amp; IP</span>
-          </div>
-        </div>
-        <div class="pro-card-footer">
-          <span style="font-weight: 600; color: #0f172a;"><i class="fa-solid fa-briefcase" style="color: #0d9488;"></i> 28 Valuations</span>
-          <a href="mailto:meenakshi@sundaramval.com" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
-        </div>
-      </div>
-
-      <!-- RV 3 -->
-      <div class="pro-card" data-class="L&B" data-name="Hardeep Singh Ahluwalia">
-        <div>
-          <div class="pro-card-header">
-            <div>
-              <div class="pro-name">Er. Hardeep Singh Ahluwalia</div>
-              <div class="pro-reg">IBBI/RV/01/2018/10512</div>
-            </div>
-            <span class="badge badge-success"><i class="fa-solid fa-check"></i> Active RV</span>
-          </div>
-          <div class="pro-firm"><i class="fa-solid fa-building" style="color: #64748b; margin-right: 4px;"></i> Ahluwalia Infrastructure &amp; Valuations</div>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: #dc2626; margin-right: 4px;"></i> NCLT Principal Bench &amp; Chandigarh Bench
-          </div>
-          <div class="pro-tag-list">
-            <span class="pro-tag">Land &amp; Building</span>
-            <span class="pro-tag">Commercial Real Estate</span>
-            <span class="pro-tag">Industrial Infrastructure</span>
-          </div>
-        </div>
-        <div class="pro-card-footer">
-          <span style="font-weight: 600; color: #0f172a;"><i class="fa-solid fa-briefcase" style="color: #0d9488;"></i> 45 Valuations</span>
-          <a href="mailto:hardeep@ahluwaliaval.in" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
-        </div>
+      <div style="grid-column: 1 / -1; padding: 3rem 1.5rem; text-align: center; background: #fff; border: 1.5px dashed #cbd5e1; border-radius: 12px;">
+        <i class="fa-solid fa-calculator" style="font-size: 2.5rem; color: #0d9488; margin-bottom: 1rem; display: block;"></i>
+        <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 0.5rem; font-weight: 700;">No Valuer Profiles Publicly Empanelled Yet</h3>
+        <p style="color: #64748b; font-size: 0.9rem; max-width: 500px; margin: 0 auto 1.5rem; line-height: 1.5;">
+          Are you an IBBI Registered Valuer (L&B, P&M, or SFA)? Submit your credentials for moderation and join the accredited APNET national directory.
+        </p>
+        <button type="button" class="btn btn-primary" onclick="openAddMeModal('rv');" style="background: #0d9488; border-color: #0d9488; padding: 0.75rem 1.5rem;">
+          <i class="fa-solid fa-user-plus" style="margin-right: 0.4rem;"></i> Apply to Join Directory
+        </button>
       </div>
     </div>
-
   </main>
 
   <!-- Shared Site Footer Component -->

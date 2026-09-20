@@ -95,55 +95,71 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
       <div id="contact-status-msg" class="contact-status-msg"></div>
     </div>
 
-        <!-- Section 3 (40%): ResolutionBazaar Statutory Inquests & Reports Hub -->
+    <!-- Section 3 (40%): Compact L-Tree Site Navigation Hub -->
     <div class="footer-col-nav-hub">
-      <div class="footer-nav-columns">
-        <!-- Pillar 1: Intake & Forensics -->
-        <div class="footer-nav-col">
-          <h4 class="footer-nav-heading">Intake &amp; Forensics</h4>
-          <ul class="footer-nav-links">
-            <li><a href="resolutionbazaar.html#rate-card"><span class="promo-mini-badge">FREE</span> AS-18 Connected Audit</a></li>
-            <li><a href="marketplace_reporting_assignment_forensics.html">Assignment Forensics Dossier</a></li>
-            <li><a href="marketplace_reporting_assignment_forensics.html">Section 65 Collusive Inquest</a></li>
-            <li><a href="agents_financial.html">Multi-Bank Forensic Audit</a></li>
+      <div class="footer-tree-grid">
+
+        <!-- Column 1: HARNESS -->
+        <div class="footer-tree-col">
+          <div class="tree-root-head">
+            <span class="tree-root-badge badge-harness"><i class="fa-solid fa-microchip"></i></span>
+            <span class="tree-root-name">HARNESS</span>
+          </div>
+          <ul class="footer-tree-list">
+            <li class="tree-item"><a href="vaults_law.html">Statutory Law</a></li>
+            <li class="tree-item"><a href="vaults_formats.html">Verified Formats</a></li>
+            <li class="tree-item"><a href="vaults_suites.html">Process Playbooks</a></li>
+            <li class="tree-item"><a href="chatroom.html">Chat Agents</a></li>
+            <li class="tree-item"><a href="harness_haya_studio.html">Drafting Agents</a></li>
+            <li class="tree-item"><a href="agents_claims.html">Verification Agents</a></li>
+            <li class="tree-item"><a href="models_domain_slms.html#legal">Haya-Legal SLM</a></li>
+            <li class="tree-item"><a href="models_domain_slms.html#finance">Haya-Finance SLM</a></li>
           </ul>
         </div>
 
-        <!-- Pillar 2: §29A Eligibility -->
-        <div class="footer-nav-col">
-          <h4 class="footer-nav-heading">§29A Eligibility</h4>
-          <ul class="footer-nav-links">
-            <li><a href="resolutionbazaar.html#rate-card">Director §29A Disqualification</a></li>
-            <li><a href="resolutionbazaar.html#rate-card">CIBIL &amp; RBI Wilful Defaulters</a></li>
-            <li><a href="marketplace_reporting_resolution_compliance.html">Form H Section 29A Dossier</a></li>
-            <li><a href="docs/FINAL_29A_COMPLIANCE_REPORT_APOGEE_ENTERPRISES.html" target="_blank" rel="noopener noreferrer">Apogee 29A Dossier <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.65rem; color:#38bdf8;"></i></a></li>
+        <!-- Column 2: TURBINE -->
+        <div class="footer-tree-col">
+          <div class="tree-root-head">
+            <span class="tree-root-badge badge-turbine"><i class="fa-solid fa-bolt"></i></span>
+            <span class="tree-root-name">TURBINE</span>
+          </div>
+          <ul class="footer-tree-list">
+            <li class="tree-item"><a href="marketplace_reporting_assignment_forensics.html">Section 65 Inquest</a></li>
+            <li class="tree-item"><a href="marketplace_reporting_resolution_compliance.html">Section 29A Screening</a></li>
+            <li class="tree-item"><a href="marketplace_reporting_liability_shields.html">Section 36 Shields</a></li>
+            <li class="tree-item"><a href="agents_claims.html">Claim Preparation</a></li>
+            <li class="tree-item"><a href="resolutionbazaar.html">Plan Preparation</a></li>
+            <li class="tree-item"><a href="harness_haya_vaults.html">Virtual Dataroom</a></li>
+            <li class="tree-item"><a href="agents_insolvency.html">Process Advisory</a></li>
+            <li class="tree-item"><a href="agents_legal.html">Legal Advisory</a></li>
           </ul>
         </div>
 
-        <!-- Pillar 3: Plan Audit & Shields -->
-        <div class="footer-nav-col">
-          <h4 class="footer-nav-heading">Plan Audit &amp; Shields</h4>
-          <ul class="footer-nav-links">
-            <li><a href="marketplace_reporting_resolution_compliance.html">Section 30(2) Compliance Audit</a></li>
-            <li><a href="marketplace_reporting_resolution_compliance.html">Reg 38 Mandatory Contents</a></li>
-            <li><a href="marketplace_reporting_liability_shields.html">Section 32A Liability Shields</a></li>
-            <li><a href="resolution_plan_verification_telephone_cables.html" target="_blank" rel="noopener noreferrer">TCL Plan Audit Docket <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.65rem; color:#38bdf8;"></i></a></li>
+        <!-- Column 3: NETWORK -->
+        <div class="footer-tree-col">
+          <div class="tree-root-head">
+            <span class="tree-root-badge badge-network"><i class="fa-solid fa-network-wired"></i></span>
+            <span class="tree-root-name">NETWORK</span>
+          </div>
+          <ul class="footer-tree-list">
+            <li class="tree-item"><a href="directory_listing.html">Directory Listing</a></li>
+            <li class="tree-item"><a href="https://forums.agenticprofessionals.net" target="_blank" rel="noopener noreferrer">Discussion Forums <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
+            <li class="tree-item"><a href="https://hayagriva.app" target="_blank" rel="noopener noreferrer">Enterprise Training <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
+            <li class="tree-item"><a href="index.html#home">Home Portal</a></li>
+            <li class="tree-item"><a href="pricing.html">Plans &amp; Pricing</a></li>
+            <li class="tree-item"><a href="#" onclick="openIdeDownloadModal(); return false;"><span class="promo-mini-badge">FREE</span> Chamber IDE</a></li>
+            <li class="tree-item"><a href="#" onclick="openAddMeModal(); return false;">Join Directory</a></li>
           </ul>
         </div>
+
       </div>
     </div>
 
-  </div><div class="footer-bottom">
+  </div>
+  <div class="footer-bottom">
     <div class="footer-bottom-left">
       <span>© 2026 Agentic Professionals Network &amp; Hayagriva. All rights reserved.</span>
-      <span class="footer-bottom-divider">•</span>
-      <a href="pricing.html" class="footer-legal-link" style="color:#38bdf8; font-weight:600;"><i class="fa-solid fa-cubes" style="margin-right:4px;"></i> Plans &amp; Pricing</a>
-      <span class="footer-bottom-divider">•</span>
-      <a href="https://forums.agenticprofessionals.net" target="_blank" rel="noopener noreferrer" class="footer-legal-link">APNET Forums</a>
-      <span class="footer-bottom-divider">•</span>
-      <a href="https://hayagriva.app" target="_blank" rel="noopener noreferrer" class="footer-legal-link">MSME-Sahyog</a>
     </div>
-    <div class="footer-bottom-right">Zero Cloud Data Transmission • Air-Gapped Local AI Compliance</div>
   </div>
 
 </footer>

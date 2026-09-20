@@ -332,81 +332,134 @@
 
 
 
-
-
       <!-- ======================================================================
-           Professional Community Expansion Roadmap (IPs First ➔ Legal ➔ Financial)
-           ====================================================================== 
-
-      <div class="container" style="padding-top: 1rem; padding-bottom: 2rem;">
-        <div
-          style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-          <div
-            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+           Section: 3-Panel Interactive Sovereign IDE Visual Mockup (Desktop Architecture Preview)
+    ====================================================================== -->
+      <div class="container" style="padding-top: 1.5rem; padding-bottom: 1rem;">
+        <div class="ide-mockup-frame" id="architecture">
+          <div class="ide-titlebar">
+            <div class="window-dots">
+              <div class="window-dot dot-red"></div>
+              <div class="window-dot dot-yellow"></div>
+              <div class="window-dot dot-green"></div>
+            </div>
+            <div class="ide-titlebar-text">
+              Hayagriva Sovereign IDE v1.75 — [CIRP-2026-DHFL-COMMERCIAL] — 100% Offline Air-Gapped
+            </div>
+            <div style="font-size:0.72rem; color:#4ade80; display:flex; align-items:center; gap:6px;">
+              <span
+                style="width:6px; height:6px; border-radius:50%; background:#4ade80; box-shadow:0 0 6px #4ade80;"></span>
+              SQLite Engine: Ready
+            </div>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
-            // Phase 1: IPs
-      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 18px;">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <span style="font-size: 0.75rem; font-weight: 800; color: #166534; text-transform: uppercase;">PHASE 1 ·
-            ACTIVE PRACTICE</span>
-          <span
-            style="width: 8px; height: 8px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 6px #16a34a;"></span>
+
+          <div class="ide-three-panes">
+
+            <!-- Left Pane: Case Workspace (FREE) -->
+            <div class="pane-column">
+              <div class="pane-header-label" style="color:#4ade80;">
+                <span><i class="fa-solid fa-folder-tree"></i> Evidence &amp; Wiki</span>
+                <span class="pane-free-tag">UNLOCKED FREE</span>
+              </div>
+
+              <div class="mock-tree-item active">
+                <i class="fa-solid fa-file-pdf" style="color:#ef4444;"></i>
+                <span>Loan_Agreement_2021.pdf</span>
+              </div>
+              <div class="mock-tree-item">
+                <i class="fa-solid fa-table" style="color:#22c55e;"></i>
+                <span>claims_registry.md</span>
+              </div>
+              <div class="mock-tree-item">
+                <i class="fa-solid fa-book-bookmark" style="color:#eab308;"></i>
+                <span>wiki/case_facts.md</span>
+              </div>
+              <div class="mock-tree-item">
+                <i class="fa-solid fa-inbox" style="color:#38bdf8;"></i>
+                <span>Case Action Inbox (2)</span>
+              </div>
+
+              <div
+                style="margin-top:auto; background:#1e293b; border-radius:8px; padding:10px; font-size:0.72rem; color:#94a3b8;">
+                <div style="color:#f8fafc; font-weight:700; margin-bottom:4px;">Active-Context Matrix</div>
+                <div style="display:flex; justify-content:space-between;">
+                  <span>Budget: 2,048 Tokens</span>
+                  <span style="color:#4ade80;">1,120 used</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Middle Pane: Monaco Editor & PDF Preview (FREE) -->
+            <div class="pane-column" style="background:#0b1120;">
+              <div class="pane-header-label" style="color:#60a5fa;">
+                <span><i class="fa-solid fa-pen-nib"></i> Monaco Drafting Studio</span>
+                <span class="pane-free-tag">UNLOCKED FREE</span>
+              </div>
+
+              <div class="mock-editor-tab">
+                <i class="fa-solid fa-file-lines" style="color:#38bdf8;"></i>
+                <span>section_43_avoidance_application.md</span>
+              </div>
+
+              <div class="mock-editor-code">
+                <span style="color:#94a3b8;">// Live Statutory LSP &amp; Diagnostics Active</span><br>
+                <span style="color:#60a5fa;">## BEFORE THE HON'BLE NATIONAL COMPANY LAW TRIBUNAL</span><br>
+                <span style="color:#f8fafc;">COMPANY APPLICATION NO. 142 OF 2026</span><br><br>
+                <span style="color:#38bdf8;">1.</span> That the Corporate Debtor entered into a transfer of asset on
+                14th June 2022 within the relevant lookback period of 2 years under <span
+                  style="color:#4ade80; text-decoration:underline;">Section 43(4)</span>.<br><br>
+                <span style="color:#eab308;">/export-sc</span> <span style="color:#94a3b8;">➔ Compiled to Supreme Court
+                  Format (Times New Roman 14pt, 1.5 spacing, 4cm margins)</span>
+              </div>
+
+              <div
+                style="margin-top:auto; display:flex; justify-content:space-between; align-items:center; background:#111c33; border:1px solid #1e293b; border-radius:6px; padding:8px 12px; font-size:0.72rem; color:#94a3b8;">
+                <span><i class="fa-solid fa-file-pdf" style="color:#ef4444;"></i> Split PDF Preview: #view=FitH</span>
+                <span style="color:#4ade80;"><i class="fa-solid fa-check"></i> SC Rule Compliant</span>
+              </div>
+            </div>
+
+            <!-- Right Pane: Autonomous Agents & Diligence Hub (GATED) -->
+            <div class="pane-column">
+              <div class="pane-header-label" style="color:#c084fc;">
+                <span><i class="fa-solid fa-robot"></i> Co-Counsel &amp; Gateway</span>
+                <span class="pane-gated-tag">HARD FLOOR GATED</span>
+              </div>
+
+              <div class="mock-chat-bubble">
+                <div style="font-weight:700; color:#38bdf8; margin-bottom:4px;">@Document Agent</div>
+                <div>Drafted Section 43 petition based on 3 bank contra-entries in your claims ledger.</div>
+              </div>
+
+              <div class="mock-chat-bubble">
+                <div style="font-weight:700; color:#c084fc; margin-bottom:4px;">@Forms Agent (Audit Loop)</div>
+                <div>Verified Form H compliance. Resolution Applicant director check required.</div>
+              </div>
+
+              <div class="mock-auth-card">
+                <div style="font-weight:700; color:#fca5a5; margin-bottom:4px;">
+                  <i class="fa-solid fa-shield-halved"></i> Hard Floor Spend Authorization
+                </div>
+                <div style="color:#cbd5e1; margin-bottom:8px;">
+                  Scan 4 Directors against MCC Sec 29A registry? Cost: ₹600.
+                </div>
+                <div style="display:flex; gap:6px;">
+                  <span
+                    style="background:#16a34a; color:#fff; padding:4px 8px; border-radius:4px; font-weight:700; font-size:0.7rem; cursor:pointer;">Authorize
+                    ₹600</span>
+                  <span
+                    style="background:#334155; color:#cbd5e1; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Cancel</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0 0 6px;">Insolvency
-          Professionals</h4>
-        <p style="font-size: 0.82rem; color: #475569; line-height: 1.45; margin: 0;">
-          CIRP Timeline milestones (T0-T330), Claims Form B/C/CA reconciliation, Section 29A screening, and
-          statutory Form H compilation.
-        </p>
       </div>
-      // Phase 2: Corporate Litigators
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; opacity: 0.85;">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <span style="font-size: 0.75rem; font-weight: 800; color: #2563eb; text-transform: uppercase;">PHASE 2 ·
-            Q1 2027</span>
-          <span style="font-size: 0.7rem; color: #64748b; font-weight: 600;">Upcoming</span>
-        </div>
-        <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0 0 6px;">Corporate Litigators
-        </h4>
-        <p style="font-size: 0.82rem; color: #64748b; line-height: 1.45; margin: 0;">
-          Supreme Court &amp; High Court commercial dispute briefing, Section 43-66 avoidance pleadings, and
-          binding precedent cross-examination.
-        </p>
-      </div>
-      // Phase 3: Valuers & Forensics
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; opacity: 0.85;">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-          <span style="font-size: 0.75rem; font-weight: 800; color: #7c3aed; text-transform: uppercase;">PHASE 3 ·
-            Q2 2027</span>
-          <span style="font-size: 0.7rem; color: #64748b; font-weight: 600;">Upcoming</span>
-        </div>
-        <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0 0 6px;">Registered Valuers
-          &amp; Forensics</h4>
-        <p style="font-size: 0.82rem; color: #64748b; line-height: 1.45; margin: 0;">
-          IBBI valuation schedules, liquidation value bounds, multi-bank ledger contra-elimination, and forensic
-          transaction tracing.
-        </p>
-      </div>
-      </div>
-      </div>
-      </div>. -->
 
       <section class="sovereign-arch-section" id="sovereign-architecture">
         <div class="container">
-          <div class="section-header" style="text-align: center; max-width: 900px; margin: 0 auto;">
-            <h3 class="section-title"
-              style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 12px; letter-spacing: -0.02em;">
-              Sovereign AI Workbench for Professionals
-            </h3>
-            <!-- <p class="section-desc" style="font-size: 1.05rem; color: #475569; line-height: 1.6;">
-              Traditional legal tech charges recurring SaaS rent just to view your own documents. 
-              <strong>Hayagriva IDE decouples chamber workspace from external diligence:</strong> Left and Middle panels are free forever in perpetuity. Zero subscriptions required to manage cases, view PDFs, or compile Supreme Court pleadings.
-            </p> -->
-          </div>
-
           <div class="three-panel-grid">
-
             <!-- Panel 1: Left Panel (Free Forever) -->
             <div class="panel-column-card panel-free">
               <div class="panel-header-row">
@@ -539,154 +592,6 @@
           </div>
         </div>
       </section>
-
-      <!-- Hayagriva Sovereign IDE Free Download Hero Card -->
-      <div class="container" style="max-width: 900px; margin: -10px auto 30px auto; padding: 0 1rem; text-align: center;">
-        <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98)); border: 1px solid #cbd5e1; border-radius: 16px; padding: 28px 24px; box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08); backdrop-filter: blur(10px);">
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 4px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; color: #065f46; margin-bottom: 12px;">
-            <i class="fa-solid fa-gift" style="color: #10b981;"></i> 100% FREE SOVEREIGN DESKTOP WORKBENCH (v1.2)
-          </div>
-          <h2 style="font-size: 1.85rem; font-weight: 800; color: #0f172a; margin: 0 0 10px; letter-spacing: -0.02em;">
-            Hayagriva Sovereign IDE v1.2
-          </h2>
-          <p style="font-size: 0.95rem; color: #475569; max-width: 680px; margin: 0 auto 20px; line-height: 1.55;">
-            Zero cloud leakage. The left and middle panels are <strong>100% free forever</strong>: index confidential case evidence, maintain fact wikis, use Monaco statutory LSP auto-complete, and export Supreme Court DOCX briefs. On-demand AI powered by fine-tuned <strong>HayaLegal-2.9B</strong> &amp; <strong>HayaFinance-2.9B</strong>.
-          </p>
-          <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-            <a href="#" onclick="openIdeDownloadModal(); return false;" class="btn-action-hero" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; padding: 12px 28px; border-radius: 10px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);">
-              <i class="fa-solid fa-download"></i> Download Free IDE v1.2
-            </a>
-            <a href="vaults_suites.html" style="background: #ffffff; color: #334155; border: 1px solid #cbd5e1; padding: 12px 24px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-layer-group" style="color: #ea580c;"></i> Explore Practice Suites
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ======================================================================
-           Section: 3-Panel Interactive Sovereign IDE Visual Mockup (Desktop Architecture Preview)
-           ====================================================================== -->
-      <div class="container" style="padding-top: 1.5rem; padding-bottom: 1rem;">
-        <div class="ide-mockup-frame" id="architecture">
-          <div class="ide-titlebar">
-            <div class="window-dots">
-              <div class="window-dot dot-red"></div>
-              <div class="window-dot dot-yellow"></div>
-              <div class="window-dot dot-green"></div>
-            </div>
-            <div class="ide-titlebar-text">
-              Hayagriva Sovereign IDE v1.75 — [CIRP-2026-DHFL-COMMERCIAL] — 100% Offline Air-Gapped
-            </div>
-            <div style="font-size:0.72rem; color:#4ade80; display:flex; align-items:center; gap:6px;">
-              <span
-                style="width:6px; height:6px; border-radius:50%; background:#4ade80; box-shadow:0 0 6px #4ade80;"></span>
-              SQLite Engine: Ready
-            </div>
-          </div>
-
-          <div class="ide-three-panes">
-
-            <!-- Left Pane: Case Workspace (FREE) -->
-            <div class="pane-column">
-              <div class="pane-header-label" style="color:#4ade80;">
-                <span><i class="fa-solid fa-folder-tree"></i> Evidence &amp; Wiki</span>
-                <span class="pane-free-tag">UNLOCKED FREE</span>
-              </div>
-
-              <div class="mock-tree-item active">
-                <i class="fa-solid fa-file-pdf" style="color:#ef4444;"></i>
-                <span>Loan_Agreement_2021.pdf</span>
-              </div>
-              <div class="mock-tree-item">
-                <i class="fa-solid fa-table" style="color:#22c55e;"></i>
-                <span>claims_registry.md</span>
-              </div>
-              <div class="mock-tree-item">
-                <i class="fa-solid fa-book-bookmark" style="color:#eab308;"></i>
-                <span>wiki/case_facts.md</span>
-              </div>
-              <div class="mock-tree-item">
-                <i class="fa-solid fa-inbox" style="color:#38bdf8;"></i>
-                <span>Case Action Inbox (2)</span>
-              </div>
-
-              <div
-                style="margin-top:auto; background:#1e293b; border-radius:8px; padding:10px; font-size:0.72rem; color:#94a3b8;">
-                <div style="color:#f8fafc; font-weight:700; margin-bottom:4px;">Active-Context Matrix</div>
-                <div style="display:flex; justify-content:space-between;">
-                  <span>Budget: 2,048 Tokens</span>
-                  <span style="color:#4ade80;">1,120 used</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Middle Pane: Monaco Editor & PDF Preview (FREE) -->
-            <div class="pane-column" style="background:#0b1120;">
-              <div class="pane-header-label" style="color:#60a5fa;">
-                <span><i class="fa-solid fa-pen-nib"></i> Monaco Drafting Studio</span>
-                <span class="pane-free-tag">UNLOCKED FREE</span>
-              </div>
-
-              <div class="mock-editor-tab">
-                <i class="fa-solid fa-file-lines" style="color:#38bdf8;"></i>
-                <span>section_43_avoidance_application.md</span>
-              </div>
-
-              <div class="mock-editor-code">
-                <span style="color:#94a3b8;">// Live Statutory LSP &amp; Diagnostics Active</span><br>
-                <span style="color:#60a5fa;">## BEFORE THE HON'BLE NATIONAL COMPANY LAW TRIBUNAL</span><br>
-                <span style="color:#f8fafc;">COMPANY APPLICATION NO. 142 OF 2026</span><br><br>
-                <span style="color:#38bdf8;">1.</span> That the Corporate Debtor entered into a transfer of asset on
-                14th June 2022 within the relevant lookback period of 2 years under <span
-                  style="color:#4ade80; text-decoration:underline;">Section 43(4)</span>.<br><br>
-                <span style="color:#eab308;">/export-sc</span> <span style="color:#94a3b8;">➔ Compiled to Supreme Court
-                  Format (Times New Roman 14pt, 1.5 spacing, 4cm margins)</span>
-              </div>
-
-              <div
-                style="margin-top:auto; display:flex; justify-content:space-between; align-items:center; background:#111c33; border:1px solid #1e293b; border-radius:6px; padding:8px 12px; font-size:0.72rem; color:#94a3b8;">
-                <span><i class="fa-solid fa-file-pdf" style="color:#ef4444;"></i> Split PDF Preview: #view=FitH</span>
-                <span style="color:#4ade80;"><i class="fa-solid fa-check"></i> SC Rule Compliant</span>
-              </div>
-            </div>
-
-            <!-- Right Pane: Autonomous Agents & Diligence Hub (GATED) -->
-            <div class="pane-column">
-              <div class="pane-header-label" style="color:#c084fc;">
-                <span><i class="fa-solid fa-robot"></i> Co-Counsel &amp; Gateway</span>
-                <span class="pane-gated-tag">HARD FLOOR GATED</span>
-              </div>
-
-              <div class="mock-chat-bubble">
-                <div style="font-weight:700; color:#38bdf8; margin-bottom:4px;">@Document Agent</div>
-                <div>Drafted Section 43 petition based on 3 bank contra-entries in your claims ledger.</div>
-              </div>
-
-              <div class="mock-chat-bubble">
-                <div style="font-weight:700; color:#c084fc; margin-bottom:4px;">@Forms Agent (Audit Loop)</div>
-                <div>Verified Form H compliance. Resolution Applicant director check required.</div>
-              </div>
-
-              <div class="mock-auth-card">
-                <div style="font-weight:700; color:#fca5a5; margin-bottom:4px;">
-                  <i class="fa-solid fa-shield-halved"></i> Hard Floor Spend Authorization
-                </div>
-                <div style="color:#cbd5e1; margin-bottom:8px;">
-                  Scan 4 Directors against MCC Sec 29A registry? Cost: ₹600.
-                </div>
-                <div style="display:flex; gap:6px;">
-                  <span
-                    style="background:#16a34a; color:#fff; padding:4px 8px; border-radius:4px; font-weight:700; font-size:0.7rem; cursor:pointer;">Authorize
-                    ₹600</span>
-                  <span
-                    style="background:#334155; color:#cbd5e1; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Cancel</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
 
     </section>
 

@@ -1631,6 +1631,14 @@ body.view-fullscreen-active .site-footer {
   box-sizing: border-box;
 }
 
+#harness-dropdown-menu.mega-menu-3col {
+  left: -20px;
+}
+
+#turbine-dropdown-menu.mega-menu-3col {
+  left: -200px;
+}
+
 .mega-menu-3col::after {
   content: '';
   position: absolute;
@@ -1752,6 +1760,27 @@ body.view-fullscreen-active .site-footer {
 .pill-amber {
   background-color: #fffbeb;
   color: #d97706;
+}
+
+.pill-teal {
+  background-color: #f0fdfa;
+  color: #0d9488;
+}
+
+.pill-rose {
+  background-color: #fff1f2;
+  color: #e11d48;
+}
+
+.pill-indigo {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+.icon-indigo {
+  background-color: #eef2ff;
+  color: #4f46e5;
+  border: 1px solid #e0e7ff;
 }
 
 .icon-emerald {

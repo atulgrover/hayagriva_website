@@ -48,9 +48,12 @@
           </p>
         </div>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <a href="index.html#listing?category=ip" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
+          <a href="directory_listing.html?category=ip" class="btn btn-primary" style="padding: 0.75rem 1.4rem;">
             <i class="fa-solid fa-map-location-dot" style="margin-right: 0.4rem;"></i> Interactive NCLT Map View
           </a>
+          <button type="button" class="btn btn-secondary" onclick="openAddMeModal('ip');" style="padding: 0.75rem 1.4rem; background: #ffffff; color: var(--text-primary); border: 1px solid #cbd5e1; cursor: pointer; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center;">
+            <i class="fa-solid fa-user-plus" style="margin-right: 0.4rem; color: #2563eb;"></i> Add Me to Directory
+          </button>
         </div>
       </div>
     </div>
@@ -63,8 +66,8 @@
         <i class="fa-solid fa-user-check"></i>
       </div>
       <div>
-        <div class="metric-value">4,200+</div>
-        <div class="metric-label">Registered IPs in India</div>
+        <div class="metric-value">1 Verified</div>
+        <div class="metric-label">Accredited IP Listed</div>
       </div>
     </div>
 
@@ -73,8 +76,8 @@
         <i class="fa-solid fa-building-columns"></i>
       </div>
       <div>
-        <div class="metric-value">16 Benches</div>
-        <div class="metric-label">NCLT Benches Empanelled</div>
+        <div class="metric-value">Chandigarh</div>
+        <div class="metric-label">NCLT Bench Empanelled</div>
       </div>
     </div>
 
@@ -123,85 +126,35 @@
 
     <!-- Professionals Grid -->
     <div class="pro-card-grid" id="ip-card-container">
-      <!-- IP 1 -->
-      <div class="pro-card" data-city="New Delhi" data-name="Rajesh K. Sharma">
-        <div>
-          <div class="pro-card-header">
-            <div>
-              <div class="pro-name">Rajesh K. Sharma</div>
-              <div class="pro-reg">IBBI/IPA-001/IP-P00214/2017-2018/10412</div>
-            </div>
-            <span class="badge badge-success"><i class="fa-solid fa-check"></i> AFA Valid</span>
-          </div>
-          <div class="pro-firm"><i class="fa-solid fa-building" style="color: #64748b; margin-right: 4px;"></i> Apex Restructuring Advisors LLP</div>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: #dc2626; margin-right: 4px;"></i> NCLT Principal Bench (New Delhi)
-          </div>
-          <div class="pro-tag-list">
-            <span class="pro-tag">Manufacturing CIRP</span>
-            <span class="pro-tag">Real Estate</span>
-            <span class="pro-tag">Fast-Track Liquidation</span>
-          </div>
-        </div>
-        <div class="pro-card-footer">
-          <span style="font-weight: 600; color: #0f172a;"><i class="fa-solid fa-briefcase" style="color: #2563eb;"></i> 18 Mandates</span>
-          <a href="mailto:rk.sharma@apexinsolvency.in" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
-        </div>
-      </div>
-
-      <!-- IP 2 -->
-      <div class="pro-card" data-city="Mumbai" data-name="Sunita Deshmukh">
-        <div>
-          <div class="pro-card-header">
-            <div>
-              <div class="pro-name">Sunita Deshmukh</div>
-              <div class="pro-reg">IBBI/IPA-002/IP-N00108/2018-2019/10291</div>
-            </div>
-            <span class="badge badge-success"><i class="fa-solid fa-check"></i> AFA Valid</span>
-          </div>
-          <div class="pro-firm"><i class="fa-solid fa-building" style="color: #64748b; margin-right: 4px;"></i> Deshmukh &amp; Associates</div>
-          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: #dc2626; margin-right: 4px;"></i> NCLT Mumbai Bench
-          </div>
-          <div class="pro-tag-list">
-            <span class="pro-tag">EPC Contractors</span>
-            <span class="pro-tag">Financial Services</span>
-            <span class="pro-tag">Cross-Border Insolvency</span>
-          </div>
-        </div>
-        <div class="pro-card-footer">
-          <span style="font-weight: 600; color: #0f172a;"><i class="fa-solid fa-briefcase" style="color: #2563eb;"></i> 24 Mandates</span>
-          <a href="mailto:sunita@deshmukhresolution.com" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
-        </div>
-      </div>
-
-      <!-- IP 3 -->
+      <!-- IP 1: IP Atul Grover -->
       <div class="pro-card" data-city="Chandigarh" data-name="Atul Grover">
         <div>
           <div class="pro-card-header">
             <div>
-              <div class="pro-name">Adv. Atul Grover</div>
+              <div class="pro-name">IP Atul Grover</div>
               <div class="pro-reg">IBBI/IPA-002/IP-N00128/2018-19/10342</div>
             </div>
             <span class="badge badge-success"><i class="fa-solid fa-check"></i> AFA Valid</span>
           </div>
-          <div class="pro-firm"><i class="fa-solid fa-building" style="color: #64748b; margin-right: 4px;"></i> Grover &amp; Co. Resolution Advisors</div>
+          <div class="pro-firm"><i class="fa-solid fa-building" style="color: #64748b; margin-right: 4px;"></i> Resolution Bazaar</div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.35rem;">
+            <i class="fa-solid fa-phone" style="color: #2563eb; margin-right: 5px;"></i> +91 98722 33110
+          </div>
           <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: #dc2626; margin-right: 4px;"></i> Principal Bench &amp; Chandigarh Bench
+            <i class="fa-solid fa-envelope" style="color: #64748b; margin-right: 5px;"></i> resolutionbazaar@gmail.com
           </div>
           <div class="pro-tag-list">
-            <span class="pro-tag">Institutional Restructuring</span>
-            <span class="pro-tag">MSME Pre-pack (PPIRP)</span>
+            <span class="pro-tag">Corporate Insolvency (CIRP)</span>
+            <span class="pro-tag">MSME Pre-packs (PPIRP)</span>
             <span class="pro-tag">Section 29A Audits</span>
           </div>
         </div>
         <div class="pro-card-footer">
-          <span style="font-weight: 600; color: #0f172a;"><i class="fa-solid fa-briefcase" style="color: #2563eb;"></i> 31 Mandates</span>
-          <a href="mailto:contact@agenticprofessionals.net" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
+          
+          <a href="mailto:resolutionbazaar@gmail.com" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Connect</a>
         </div>
       </div>
     </div>
-
   </main>
 
   <!-- Shared Site Footer Component -->

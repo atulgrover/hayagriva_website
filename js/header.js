@@ -52,71 +52,27 @@
         <a href="index.html#home" class="nav-icon-wireframe" id="nav-home" aria-label="Home" title="Home">
           <i class="fa-solid fa-house nav-home-icon"></i>
         </a>
-      </li>
-
-      <!-- 1. Chamber Workbench - Single Column Menu (Case Management / Drafting Studio / Execution Engine) -->
+            <!-- 1. HARNESS Dropdown (3 Columns: Vaults, Agents, Models) -->
       <li class="nav-item nav-item-dropdown" id="dropdown-harness-wrapper">
-        <button class="nav-link nav-link-wireframe" id="nav-workspace" type="button" aria-haspopup="true"
+        <button class="nav-link nav-link-wireframe" id="nav-harness" type="button" aria-haspopup="true"
           aria-expanded="false">
           <span class="nav-title-row">
-            <span>Workbench</span>
+            <span>HARNESS</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">PIPIE Harness</span>
+          <span class="nav-subtitle-row">Sovereign AI Stack</span>
         </button>
-        <div class="dropdown-menu mega-menu-1col" id="harness-dropdown-menu" style="min-width: 320px;">
-          <div class="mega-grid-1col">
-            <div class="mega-col-wireframe">
-              <div class="mega-col-wireframe-links">
-                <a href="harness_haya_workbench.html" class="mega-item-wireframe" id="nav-item-harness-workbench">
-                  <div class="mega-item-icon-box icon-emerald">
-                    <i class="fa-solid fa-folder-open"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Case Management</span>
-                    <span class="mega-item-wireframe-desc">Trial record ingestion, evidence timeline &amp; fact wiki</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="harness_haya_studio.html" class="mega-item-wireframe" id="nav-item-harness-studio">
-                  <div class="mega-item-icon-box icon-purple">
-                    <i class="fa-solid fa-pen-nib"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Drafting Studio</span>
-                    <span class="mega-item-wireframe-desc">Court pleadings, SC/NCLT skeletons &amp; citation checks</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="harness_haya_engine.html" class="mega-item-wireframe" id="nav-item-harness-engine">
-                  <div class="mega-item-icon-box icon-teal">
-                    <i class="fa-solid fa-microchip"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Execution Engine</span>
-                    <span class="mega-item-wireframe-desc">Offline legal &amp; forensic cores, local ONNX runtimes</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
+        <div class="dropdown-menu mega-menu-3col" id="harness-dropdown-menu">
+          <div class="mega-grid-3col">
 
-      <!-- 2. Legal Intelligence - Single Column Menu (Legal Libraries) -->
-      <li class="nav-item nav-item-dropdown" id="dropdown-lexai-wrapper">
-        <button class="nav-link nav-link-wireframe" id="nav-lexai" type="button" aria-haspopup="true"
-          aria-expanded="false">
-          <span class="nav-title-row">
-            <span>Intelligence</span>
-            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
-          </span>
-          <span class="nav-subtitle-row">Legal Libraries</span>
-        </button>
-        <div class="dropdown-menu mega-menu-1col" id="lexai-dropdown-menu" style="min-width: 320px;">
-          <div class="mega-grid-1col">
+            <!-- Column 1: Vaults -->
             <div class="mega-col-wireframe">
+              <div class="mega-col-wireframe-header">
+                <div class="mega-col-header-left">
+                  <span class="mega-col-icon-pill pill-teal"><i class="fa-solid fa-vault"></i></span>
+                  <span class="mega-col-wireframe-title">VAULTS</span>
+                </div>
+              </div>
               <div class="mega-col-wireframe-links">
                 <a href="vaults_law.html" class="mega-item-wireframe" id="nav-item-vault-law">
                   <div class="mega-item-icon-box icon-teal">
@@ -125,16 +81,6 @@
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">Statutory Law</span>
                     <span class="mega-item-wireframe-desc">IBC, Companies Act, RERA &amp; Rules</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="vaults_precedence.html" class="mega-item-wireframe" id="nav-item-vault-precedence">
-                  <div class="mega-item-icon-box icon-sky">
-                    <i class="fa-solid fa-gavel"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Judicial Precedents</span>
-                    <span class="mega-item-wireframe-desc">Landmark SC, NCLAT &amp; High Court rulings</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -153,141 +99,82 @@
                     <i class="fa-solid fa-boxes-packing"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Practice Playbooks</span>
+                    <span class="mega-item-wireframe-name">Process Playbooks</span>
                     <span class="mega-item-wireframe-desc">CIRP, Liquidation &amp; PG workflows</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
-                <a href="vaults_contracts.html" class="mega-item-wireframe" id="nav-item-vault-contracts">
-                  <div class="mega-item-icon-box icon-rose">
-                    <i class="fa-solid fa-file-shield"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Commercial Contracts</span>
-                    <span class="mega-item-wireframe-desc">Clause risk analysis &amp; market benchmarks</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
               </div>
             </div>
-          </div>
-        </div>
-      </li>
 
-      <!-- 3. Autonomous Co-Counsel - 2-Column Mega Menu -->
-      <li class="nav-item nav-item-dropdown" id="dropdown-agents-wrapper">
-        <button class="nav-link nav-link-wireframe" id="nav-agents" type="button" aria-haspopup="true"
-          aria-expanded="false">
-          <span class="nav-title-row">
-            <span>Co-Counsel</span>
-            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
-          </span>
-          <span class="nav-subtitle-row">Autonomous Agents</span>
-        </button>
-        <div class="dropdown-menu mega-menu-2col" id="agents-dropdown-menu">
-          <div class="mega-grid-2col">
-
-            <!-- Column 1: WORKFLOW CO-COUNSEL -->
+            <!-- Column 2: Agents -->
             <div class="mega-col-wireframe">
               <div class="mega-col-wireframe-header">
                 <div class="mega-col-header-left">
                   <span class="mega-col-icon-pill pill-emerald"><i class="fa-solid fa-robot"></i></span>
-                  <span class="mega-col-wireframe-title">WORKFLOW CO-COUNSEL</span>
+                  <span class="mega-col-wireframe-title">AGENTS</span>
                 </div>
               </div>
               <div class="mega-col-wireframe-links">
-                <a href="agents_insolvency.html" class="mega-item-wireframe" id="nav-item-agent-insolvency">
+                <a href="chatroom.html" class="mega-item-wireframe" id="nav-item-agent-chat">
                   <div class="mega-item-icon-box icon-emerald">
+                    <i class="fa-solid fa-comments"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Chat Agent</span>
+                    <span class="mega-item-wireframe-desc">Real-time legal reasoning &amp; assistance</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="harness_haya_studio.html" class="mega-item-wireframe" id="nav-item-agent-drafting">
+                  <div class="mega-item-icon-box icon-purple">
+                    <i class="fa-solid fa-pen-nib"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Drafting Agent</span>
+                    <span class="mega-item-wireframe-desc">Court pleadings, petitions &amp; skeletons</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="agents_claims.html" class="mega-item-wireframe" id="nav-item-agent-verification">
+                  <div class="mega-item-icon-box icon-blue">
                     <i class="fa-solid fa-shield-halved"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Insolvency Co-Counsel</span>
-                    <span class="mega-item-wireframe-desc">CIRP timeline, §29A &amp; Form H assembly</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="agents_legal.html" class="mega-item-wireframe" id="nav-item-agent-legal">
-                  <div class="mega-item-icon-box icon-rose">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Litigation Co-Counsel</span>
-                    <span class="mega-item-wireframe-desc">Court petitions, precedent checks &amp; strategy</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="agents_financial.html" class="mega-item-wireframe" id="nav-item-agent-financial">
-                  <div class="mega-item-icon-box icon-amber">
-                    <i class="fa-solid fa-coins"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Financial Co-Counsel</span>
-                    <span class="mega-item-wireframe-desc">Suspicious transaction review &amp; valuations</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="agents_claims.html" class="mega-item-wireframe" id="nav-item-agent-claims">
-                  <div class="mega-item-icon-box icon-blue">
-                    <i class="fa-solid fa-file-invoice-dollar"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Claims Co-Counsel</span>
-                    <span class="mega-item-wireframe-desc">Creditor claims audit &amp; voting shares</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="agents_governance.html" class="mega-item-wireframe" id="nav-item-agent-governance">
-                  <div class="mega-item-icon-box icon-purple">
-                    <i class="fa-solid fa-network-wired"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Governance Co-Counsel</span>
-                    <span class="mega-item-wireframe-desc">MCA filings, corporate entity trees &amp; compliance</span>
+                    <span class="mega-item-wireframe-name">Verification Agent</span>
+                    <span class="mega-item-wireframe-desc">Statutory audits, claims &amp; compliance</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
               </div>
             </div>
 
-            <!-- Column 2: FORENSIC INVESTIGATORS -->
+            <!-- Column 3: Models -->
             <div class="mega-col-wireframe">
               <div class="mega-col-wireframe-header">
                 <div class="mega-col-header-left">
-                  <span class="mega-col-icon-pill pill-blue"><i class="fa-solid fa-file-shield"></i></span>
-                  <span class="mega-col-wireframe-title">FORENSIC INVESTIGATORS</span>
+                  <span class="mega-col-icon-pill pill-blue"><i class="fa-solid fa-microchip"></i></span>
+                  <span class="mega-col-wireframe-title">MODELS</span>
                 </div>
               </div>
               <div class="mega-col-wireframe-links">
-                <a href="marketplace_reporting_assignment_forensics.html" class="mega-item-wireframe"
-                  id="nav-item-rep-assignment">
-                  <div class="mega-item-icon-box icon-purple">
-                    <i class="fa-solid fa-clipboard-check"></i>
+                <a href="models_domain_slms.html#legal" class="mega-item-wireframe" id="nav-item-model-legal">
+                  <div class="mega-item-icon-box icon-rose">
+                    <i class="fa-solid fa-brain"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Assignment Forensics</span>
-                    <span class="mega-item-wireframe-desc">Pre-admission audit, §65 inquest &amp; fee defense</span>
+                    <span class="mega-item-wireframe-name">Haya-Legal</span>
+                    <span class="mega-item-wireframe-desc">Sovereign 2.9B legal core for chambers</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
-                <a href="marketplace_reporting_resolution_compliance.html" class="mega-item-wireframe"
-                  id="nav-item-rep-resolution">
-                  <div class="mega-item-icon-box icon-blue">
-                    <i class="fa-solid fa-shield-halved"></i>
+                <a href="models_domain_slms.html#finance" class="mega-item-wireframe" id="nav-item-model-finance">
+                  <div class="mega-item-icon-box icon-amber">
+                    <i class="fa-solid fa-coins"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Resolution Compliance</span>
-                    <span class="mega-item-wireframe-desc">Sec 29A master screening &amp; cartel detection</span>
-                  </div>
-                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
-                </a>
-                <a href="marketplace_reporting_liability_shields.html" class="mega-item-wireframe"
-                  id="nav-item-rep-shields">
-                  <div class="mega-item-icon-box icon-teal">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                  </div>
-                  <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Liability Shields</span>
-                    <span class="mega-item-wireframe-desc">Sec 32A clean slate immunity &amp; asset tracing</span>
+                    <span class="mega-item-wireframe-name">Haya-Finance</span>
+                    <span class="mega-item-wireframe-desc">Forensic audit &amp; valuation domain core</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -298,17 +185,150 @@
         </div>
       </li>
 
-      <!-- 4. APNet Members - Dropdown Menu -->
-      <li class="nav-item nav-item-dropdown" id="dropdown-members-wrapper">
-        <button class="nav-link nav-link-wireframe" id="nav-directories" type="button" aria-haspopup="true"
+      <!-- 2. TURBINE Dropdown (3 Columns: Reports, Services, Advisory) -->
+      <li class="nav-item nav-item-dropdown" id="dropdown-turbine-wrapper">
+        <button class="nav-link nav-link-wireframe" id="nav-turbine" type="button" aria-haspopup="true"
           aria-expanded="false">
           <span class="nav-title-row">
-            <span>Community</span>
+            <span>TURBINE</span>
+            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+          </span>
+          <span class="nav-subtitle-row">Execution Engine</span>
+        </button>
+        <div class="dropdown-menu mega-menu-3col" id="turbine-dropdown-menu">
+          <div class="mega-grid-3col">
+
+            <!-- Column 1: Reports -->
+            <div class="mega-col-wireframe">
+              <div class="mega-col-wireframe-header">
+                <div class="mega-col-header-left">
+                  <span class="mega-col-icon-pill pill-purple"><i class="fa-solid fa-file-shield"></i></span>
+                  <span class="mega-col-wireframe-title">REPORTS</span>
+                </div>
+              </div>
+              <div class="mega-col-wireframe-links">
+                <a href="marketplace_reporting_assignment_forensics.html" class="mega-item-wireframe" id="nav-item-rep-sec65">
+                  <div class="mega-item-icon-box icon-purple">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Section 65</span>
+                    <span class="mega-item-wireframe-desc">Pre-admission audit &amp; §65 inquest</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="marketplace_reporting_resolution_compliance.html" class="mega-item-wireframe" id="nav-item-rep-sec29a">
+                  <div class="mega-item-icon-box icon-blue">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Section 29A</span>
+                    <span class="mega-item-wireframe-desc">Sec 29A master screening &amp; cartel check</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="marketplace_reporting_liability_shields.html" class="mega-item-wireframe" id="nav-item-rep-sec36">
+                  <div class="mega-item-icon-box icon-teal">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Section 36</span>
+                    <span class="mega-item-wireframe-desc">Liquidation estate &amp; liability shields</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Column 2: Services -->
+            <div class="mega-col-wireframe">
+              <div class="mega-col-wireframe-header">
+                <div class="mega-col-header-left">
+                  <span class="mega-col-icon-pill pill-amber"><i class="fa-solid fa-handshake"></i></span>
+                  <span class="mega-col-wireframe-title">SERVICES</span>
+                </div>
+              </div>
+              <div class="mega-col-wireframe-links">
+                <a href="agents_claims.html" class="mega-item-wireframe" id="nav-item-srv-claims">
+                  <div class="mega-item-icon-box icon-emerald">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Claim Prep</span>
+                    <span class="mega-item-wireframe-desc">Creditor claim collation &amp; verification</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="resolutionbazaar.html" class="mega-item-wireframe" id="nav-item-srv-plan">
+                  <div class="mega-item-icon-box icon-amber">
+                    <i class="fa-solid fa-file-signature"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Plan Prep</span>
+                    <span class="mega-item-wireframe-desc">Resolution plan vetting &amp; feasibility</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="harness_haya_vaults.html" class="mega-item-wireframe" id="nav-item-srv-dataroom">
+                  <div class="mega-item-icon-box icon-sky">
+                    <i class="fa-solid fa-database"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Dataroom</span>
+                    <span class="mega-item-wireframe-desc">Virtual dataroom &amp; IM management</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Column 3: Advisory -->
+            <div class="mega-col-wireframe">
+              <div class="mega-col-wireframe-header">
+                <div class="mega-col-header-left">
+                  <span class="mega-col-icon-pill pill-rose"><i class="fa-solid fa-user-tie"></i></span>
+                  <span class="mega-col-wireframe-title">ADVISORY</span>
+                </div>
+              </div>
+              <div class="mega-col-wireframe-links">
+                <a href="agents_insolvency.html" class="mega-item-wireframe" id="nav-item-adv-process">
+                  <div class="mega-item-icon-box icon-indigo">
+                    <i class="fa-solid fa-compass"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Process Advice</span>
+                    <span class="mega-item-wireframe-desc">CIRP statutory timelines &amp; CoC guide</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+                <a href="agents_legal.html" class="mega-item-wireframe" id="nav-item-adv-legal">
+                  <div class="mega-item-icon-box icon-rose">
+                    <i class="fa-solid fa-gavel"></i>
+                  </div>
+                  <div class="mega-item-text-group">
+                    <span class="mega-item-wireframe-name">Legal Advice</span>
+                    <span class="mega-item-wireframe-desc">Court petitions &amp; NCLT litigation</span>
+                  </div>
+                  <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- 3. NETWORK Dropdown (Directory Listing, Discussion Forums, Enterprise Training) -->
+      <li class="nav-item nav-item-dropdown" id="dropdown-network-wrapper">
+        <button class="nav-link nav-link-wireframe" id="nav-network" type="button" aria-haspopup="true"
+          aria-expanded="false">
+          <span class="nav-title-row">
+            <span>NETWORK</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
           <span class="nav-subtitle-row">IBC Ecosystem</span>
         </button>
-        <div class="dropdown-menu mega-menu-1col dropdown-menu-end" id="members-dropdown-menu"
+        <div class="dropdown-menu mega-menu-1col dropdown-menu-end" id="network-dropdown-menu"
           style="right: 0; left: auto; min-width: 320px;">
           <div class="mega-grid-1col">
             <div class="mega-col-wireframe">
@@ -319,7 +339,7 @@
                   </div>
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">Directory Listing</span>
-                    <span class="mega-item-wireframe-desc">Agentic Professionals</span>
+                    <span class="mega-item-wireframe-desc">Accredited IPs, Valuers &amp; Advocates</span>
                   </div>
                   <i class="fa-solid fa-arrow-right mega-item-arrow"></i>
                 </a>
@@ -330,19 +350,19 @@
                   </div>
                   <div class="mega-item-text-group">
                     <span class="mega-item-wireframe-name">Discussion Forums</span>
-                    <span class="mega-item-wireframe-desc">Practical Insights</span>
+                    <span class="mega-item-wireframe-desc">Peer jurisprudence &amp; practical benchmarks</span>
                   </div>
                   <i class="fa-solid fa-arrow-up-right-from-square mega-item-arrow"
                     style="font-size: 0.72rem; color: #94a3b8;"></i>
                 </a>
                 <a href="https://hayagriva.app" target="_blank" rel="noopener noreferrer" class="mega-item-wireframe"
-                  id="nav-item-dir-sahyog">
+                  id="nav-item-dir-training">
                   <div class="mega-item-icon-box icon-teal">
-                    <i class="fa-solid fa-handshake-angle"></i>
+                    <i class="fa-solid fa-graduation-cap"></i>
                   </div>
                   <div class="mega-item-text-group">
-                    <span class="mega-item-wireframe-name">Enterprise Skills</span>
-                    <span class="mega-item-wireframe-desc">MSME Sahyog</span>
+                    <span class="mega-item-wireframe-name">Enterprise Training</span>
+                    <span class="mega-item-wireframe-desc">MSME Sahyog &amp; practitioner upskilling</span>
                   </div>
                   <i class="fa-solid fa-arrow-up-right-from-square mega-item-arrow"
                     style="font-size: 0.72rem; color: #94a3b8;"></i>
@@ -548,7 +568,181 @@
     </div>
 
   </div>
-</div>`;
+</div>
+<div class="hayagriva-modal-backdrop" id="directory-add-me-modal" style="display: none; z-index: 100000;">
+  <div class="hayagriva-modal-dialog" style="max-width: 650px; width: 100%; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden;">
+
+    <!-- Modal Header -->
+    <div class="hayagriva-modal-header" style="flex-shrink: 0;">
+      <div class="hayagriva-modal-title-group">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="modal-badge-promo" style="background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe;">
+            <i class="fa-solid fa-address-card"></i> ACCREDITED DIRECTORY
+          </span>
+          <span class="modal-badge-beta" style="background: #f0fdf4; color: #15803d; border-color: #bbf7d0;">
+            MODERATED INTAKE
+          </span>
+        </div>
+        <h3 class="hayagriva-modal-title">Apply to Join National Directory</h3>
+        <p class="hayagriva-modal-subtitle">
+          Submit your credentials for IBBI &amp; Bar verification. Approved profiles are featured on the APNET map.
+        </p>
+      </div>
+      <button type="button" class="hayagriva-modal-close" onclick="closeAddMeModal();" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Step 1: Registration Form -->
+    <div id="add-me-form-step" class="hayagriva-modal-body" style="overflow-y: auto; padding: 20px 24px;">
+      <div class="modal-promo-callout" style="margin-bottom: 16px; background: #f8fafc; border-color: #e2e8f0;">
+        <div style="font-weight: 700; color: #0f172a; font-size: 0.85rem; margin-bottom: 2px;">
+          <i class="fa-solid fa-shield-halved" style="color: #2563eb;"></i> IBBI Credential Verification &amp; Moderation
+        </div>
+        <div style="font-size: 0.78rem; color: #475569;">
+          To maintain directory integrity, all applications are audited by registry administration. Your dossier will be delivered to <strong>agenticprofessionals@gmail.com</strong> for approval.
+        </div>
+      </div>
+
+      <form id="directory-add-me-form" onsubmit="handleDirectoryAddMe(event);">
+        <!-- Row 1: Name & Role -->
+        <div class="modal-form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <div class="modal-form-row">
+            <label class="modal-label" for="addme-name" style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
+              Full Name (with Prefix) <span style="color:#ef4444;">*</span>
+            </label>
+            <input type="text" id="addme-name" class="modal-input" placeholder="e.g. IP Rajesh Sharma / Adv. Priya Verma" required />
+          </div>
+
+          <div class="modal-form-row">
+            <label class="modal-label" for="addme-category" style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
+              Professional Category <span style="color:#ef4444;">*</span>
+            </label>
+            <select id="addme-category" class="modal-input" required>
+              <option value="ip">Insolvency Professional (IP)</option>
+              <option value="rv">Registered Valuer (RV)</option>
+              <option value="counsel">Restructuring Advocate / Counsel</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 2: Reg No & Firm -->
+        <div class="modal-form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <div class="modal-form-row">
+            <label class="modal-label" for="addme-regno" style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
+              IBBI / Bar Registration No <span style="color:#ef4444;">*</span>
+            </label>
+            <input type="text" id="addme-regno" class="modal-input" placeholder="e.g. IBBI/IPA-002/IP-N00128/..." required />
+          </div>
+
+          <div class="modal-form-row">
+            <label class="modal-label" for="addme-firm" style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
+              Firm / Practice / Chamber Name <span style="color:#ef4444;">*</span>
+            </label>
+            <input type="text" id="addme-firm" class="modal-input" placeholder="e.g. Resolution Advisors LLP" required />
+          </div>
+        </div>
+
+        <!-- Row 3: City & Sector/Address -->
+        <div class="modal-form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <div class="modal-form-row">
+            <label class="modal-label" for="addme-city" style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
+              City <span style="color:#ef4444;">*</span>
+            </label>
+            <select id="addme-city" class="modal-input" required onchange="handleCityChange(this.value);">
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="New Delhi">New Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Bengaluru">Bengaluru</option>
+              <option value="Ahmedabad">Ahmedabad</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Jaipur">Jaipur</option>
+              <option value="Cuttack">Cuttack</option>
+              <option value="Kochi">Kochi</option>
+              <option value="Indore">Indore</option>
+              <option value="Allahabad">Allahabad</option>
+              <option value="Guwahati">Guwahati</option>
+              <option value="Amravati">Amravati</option>
+            </select>
+          </div>
+
+          <div class="modal-form-row">
+            <label class="modal-label" for="addme-address" style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
+              Office Address / Sector <span style="color:#ef4444;">*</span>
+            </label>
+            <input type="text" id="addme-address" class="modal-input" placeholder="e.g. Sector 18, Chandigarh" required />
+          </div>
+        </div>
+
+        
+
+        <!-- Row 5: Email & Phone -->
+        <div class="modal-form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <div class="modal-form-row">
+            <label class="modal-label" for="addme-email" style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
+              Official Email <span style="color:#ef4444;">*</span>
+            </label>
+            <input type="email" id="addme-email" class="modal-input" placeholder="practitioner@firm.in" required />
+          </div>
+
+          <div class="modal-form-row">
+            <label class="modal-label" for="addme-phone" style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
+              Phone Number <span style="color:#ef4444;">*</span>
+            </label>
+            <input type="tel" id="addme-phone" class="modal-input" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+
+        <!-- Row 6: Specialization -->
+        <div class="modal-form-row" style="margin-bottom: 16px;">
+          <label class="modal-label" for="addme-specialization" style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
+            Key Practice Areas &amp; Specializations <span style="color:#ef4444;">*</span>
+          </label>
+          <input type="text" id="addme-specialization" class="modal-input" placeholder="e.g. Corporate Insolvency (CIRP), Pre-packaged PPIRP, Section 29A Audits" required />
+        </div>
+
+        <div class="modal-form-actions" style="display: flex; justify-content: flex-end; gap: 10px; padding-top: 12px; border-top: 1px solid #e2e8f0;">
+          <button type="button" class="btn-modal-secondary" onclick="closeAddMeModal();">Cancel</button>
+          <button type="submit" id="addme-submit-btn" class="btn-modal-primary" style="background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 8px 18px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-paper-plane"></i> Submit Application
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 2: Confirmation / Success Step -->
+    <div id="add-me-success-step" class="hayagriva-modal-body" style="display: none; padding: 28px 24px; text-align: center; overflow-y: auto;">
+      <div style="width: 56px; height: 56px; background: #ecfdf5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; border: 2px solid #a7f3d0;">
+        <i class="fa-solid fa-check" style="color: #059669; font-size: 24px;"></i>
+      </div>
+      <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Application Dispatched for Audit</h3>
+      <p style="color: #475569; font-size: 0.85rem; max-width: 520px; margin: 0 auto 16px; line-height: 1.5;">
+        Your accreditation dossier has been forwarded to <strong>agenticprofessionals@gmail.com</strong>.
+        Once the registry administrator audits and approves your IBBI credentials, your profile will be added to the live directory and map coordinates.
+      </p>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; max-width: 540px; margin: 0 auto 16px; text-align: left;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <span style="font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Registry JSON Record</span>
+          <button type="button" onclick="copyAddMeJson();" id="btn-copy-json" style="background: #e2e8f0; border: none; border-radius: 4px; padding: 3px 8px; font-size: 0.72rem; font-weight: 600; cursor: pointer; color: #334155;">
+            <i class="fa-regular fa-copy"></i> Copy JSON
+          </button>
+        </div>
+        <pre id="addme-json-preview" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #0f172a; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px; max-height: 140px; overflow-y: auto; margin: 0; white-space: pre-wrap; word-break: break-all;"></pre>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 10px;">
+        <button type="button" class="btn-modal-secondary" onclick="closeAddMeModal();">
+          Close Window
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
 
   function applyHeader(htmlContent) {
     const mountContainer = document.getElementById('shared-header') ||
@@ -669,67 +863,49 @@
     if (path === '' || path === 'index.html') {
       if (hash.startsWith('#home') || hash === '') {
         setActive('nav-home');
-      } else if (hash.startsWith('#chats') || hash.startsWith('#workspace')) {
-        setActive('nav-workspace');
-      } else if (hash.startsWith('#agents_assets') || hash.startsWith('#models') || hash.startsWith('#vaults') || hash.startsWith('#lexai')) {
-        setActive('nav-lexai');
-      } else if (hash.startsWith('#listing') || hash.startsWith('#directories')) {
-        setActive('nav-directories');
-      } else if (hash.startsWith('#agents') || hash.startsWith('#bazaar') || hash.startsWith('#reports') || hash.startsWith('#process') || hash.startsWith('#engine')) {
-        setActive('nav-agents');
+      } else if (hash.startsWith('#harness') || hash.startsWith('#workspace') || hash.startsWith('#models') || hash.startsWith('#vaults')) {
+        setActive('nav-harness');
+      } else if (hash.startsWith('#turbine') || hash.startsWith('#reports') || hash.startsWith('#services') || hash.startsWith('#advisory') || hash.startsWith('#bazaar')) {
+        setActive('nav-turbine');
+      } else if (hash.startsWith('#network') || hash.startsWith('#directories') || hash.startsWith('#listing') || hash.startsWith('#community')) {
+        setActive('nav-network');
       }
     } else if (path === 'index.html#download') {
-      setActive('nav-workspace');
+      setActive('nav-harness');
     } else if (path === 'pipie_assets.html') {
-      setActive('nav-lexai');
-    } else if (path === 'directory_listing.html') {
-      setActive('nav-directories', 'nav-item-dir-listing');
-    } else if (path === 'models_domain_slms.html') {
-      setActive('nav-lexai', 'nav-item-model-slms');
-    } else if (path === 'models_embeddings.html') {
-      setActive('nav-lexai', 'nav-item-model-embeddings');
-    } else if (path === 'models_rerankers.html') {
-      setActive('nav-lexai', 'nav-item-model-rerankers');
+      setActive('nav-harness');
+    } else if (path === 'directory_listing.html' || path === 'directories_ip.html' || path === 'directories_rv.html' || path === 'directories_cl.html') {
+      setActive('nav-network', 'nav-item-dir-listing');
     } else if (path === 'vaults_law.html') {
-      setActive('nav-lexai', 'nav-item-vault-law');
-    } else if (path === 'vaults_precedence.html') {
-      setActive('nav-lexai', 'nav-item-vault-precedence');
+      setActive('nav-harness', 'nav-item-vault-law');
     } else if (path === 'vaults_formats.html') {
-      setActive('nav-lexai', 'nav-item-vault-formats');
-    } else if (path === 'vaults_suites.html') {
-      setActive('nav-lexai', 'nav-item-vault-suites');
-    } else if (path === 'vaults_contracts.html') {
-      setActive('nav-lexai', 'nav-item-vault-contracts');
-    } else if (path === 'agents_insolvency.html') {
-      setActive('nav-agents', 'nav-item-agent-insolvency');
-    } else if (path === 'agents_legal.html') {
-      setActive('nav-agents', 'nav-item-agent-legal');
-    } else if (path === 'agents_financial.html') {
-      setActive('nav-agents', 'nav-item-agent-financial');
-    } else if (path === 'agents_claims.html') {
-      setActive('nav-agents', 'nav-item-agent-claims');
-    } else if (path === 'agents_governance.html') {
-      setActive('nav-agents', 'nav-item-agent-governance');
-    } else if (path === 'agents_process_agents.html') {
-      setActive('nav-agents', 'nav-item-agent-insolvency');
-    } else if (path === 'agents_reporting_agents.html') {
-      setActive('nav-agents', 'nav-item-agent-insolvency');
-    } else if (path === 'marketplace_reporting_assignment_forensics.html') {
-      setActive('nav-agents', 'nav-item-rep-assignment');
-    } else if (path === 'marketplace_reporting_resolution_compliance.html') {
-      setActive('nav-agents', 'nav-item-rep-resolution');
-    } else if (path === 'marketplace_reporting_liability_shields.html') {
-      setActive('nav-agents', 'nav-item-rep-shields');
-    } else if (path === 'harness_haya_engine.html' || path === 'harness_haya_vaults.html' || path === 'harness_haya_models.html') {
-      setActive('nav-lexai');
+      setActive('nav-harness', 'nav-item-vault-formats');
+    } else if (path === 'vaults_suites.html' || path === 'vaults_precedence.html' || path === 'vaults_contracts.html') {
+      setActive('nav-harness', 'nav-item-vault-suites');
     } else if (path === 'chatroom.html') {
-      setActive('nav-workspace');
-    } else if (path === 'pricing.html') {
-      setActive('nav-pricing');
+      setActive('nav-harness', 'nav-item-agent-chat');
+    } else if (path === 'harness_haya_studio.html' || path === 'harness_haya_workbench.html' || path === 'harness_haya_engine.html') {
+      setActive('nav-harness', 'nav-item-agent-drafting');
+    } else if (path === 'models_domain_slms.html' || path === 'models_embeddings.html' || path === 'models_rerankers.html' || path === 'harness_haya_models.html') {
+      setActive('nav-harness', 'nav-item-model-legal');
+    } else if (path === 'marketplace_reporting_assignment_forensics.html') {
+      setActive('nav-turbine', 'nav-item-rep-sec65');
+    } else if (path === 'marketplace_reporting_resolution_compliance.html') {
+      setActive('nav-turbine', 'nav-item-rep-sec29a');
+    } else if (path === 'marketplace_reporting_liability_shields.html') {
+      setActive('nav-turbine', 'nav-item-rep-sec36');
+    } else if (path === 'agents_claims.html') {
+      setActive('nav-turbine', 'nav-item-srv-claims');
     } else if (path === 'resolutionbazaar.html') {
-      setActive('nav-bazaar');
-    } else if (path === 'directories_ip.html' || path === 'directories_rv.html' || path === 'directories_cl.html') {
-      setActive('nav-directories');
+      setActive('nav-turbine', 'nav-item-srv-plan');
+    } else if (path === 'harness_haya_vaults.html' || path === 'harness_haya_ingest.html' || path === 'harness_haya_wiki.html') {
+      setActive('nav-turbine', 'nav-item-srv-dataroom');
+    } else if (path === 'agents_insolvency.html' || path === 'agents_process_agents.html' || path === 'agents_governance.html') {
+      setActive('nav-turbine', 'nav-item-adv-process');
+    } else if (path === 'agents_legal.html' || path === 'agents_financial.html' || path === 'agents_reporting_agents.html') {
+      setActive('nav-turbine', 'nav-item-adv-legal');
+    } else if (path === 'pricing.html') {
+      setActive('nav-turbine');
     }
   }
 
@@ -912,5 +1088,226 @@
       window.openIdeDownloadModal();
     }, 300);
   }
+
+
+  // ==========================================================================
+  // Directory "Add Me" Modal & Application Controller
+  // ==========================================================================
+  let currentGeneratedJson = "";
+
+  window.openAddMeModal = function(category) {
+    const modal = document.getElementById("directory-add-me-modal");
+    if (!modal) return;
+
+    const formStep = document.getElementById("add-me-form-step");
+    const successStep = document.getElementById("add-me-success-step");
+    if (formStep) formStep.style.display = "block";
+    if (successStep) successStep.style.display = "none";
+
+    const form = document.getElementById("directory-add-me-form");
+    if (form) form.reset();
+
+    const catSelect = document.getElementById("addme-category");
+    if (catSelect && category) {
+      catSelect.value = category;
+    }
+
+    const citySelect = document.getElementById("addme-city");
+
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  };
+
+  window.closeAddMeModal = function() {
+    const modal = document.getElementById("directory-add-me-modal");
+    if (!modal) return;
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  };
+
+  window.handleCityChange = function(city) {
+    const cityMap = {
+      "Chandigarh": "NCLT Chandigarh Bench & Principal Bench",
+      "New Delhi": "NCLT Principal Bench (New Delhi)",
+      "Mumbai": "NCLT Mumbai Bench",
+      "Bengaluru": "NCLT Bengaluru Bench",
+      "Ahmedabad": "NCLT Ahmedabad Bench",
+      "Kolkata": "NCLT Kolkata Bench",
+      "Chennai": "NCLT Chennai Bench",
+      "Hyderabad": "NCLT Hyderabad Bench",
+      "Jaipur": "NCLT Jaipur Bench",
+      "Cuttack": "NCLT Cuttack Bench",
+      "Kochi": "NCLT Kochi Bench",
+      "Indore": "NCLT Indore Bench",
+      "Allahabad": "NCLT Allahabad Bench",
+      "Guwahati": "NCLT Guwahati Bench",
+      "Amravati": "NCLT Amravati Bench"
+    };
+    if (benchInput && cityMap[city]) {
+      benchInput.value = cityMap[city];
+    }
+  };
+
+  window.handleDirectoryAddMe = async function(event) {
+    if (event && event.preventDefault) event.preventDefault();
+    const submitBtn = document.getElementById("addme-submit-btn");
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting Dossier...';
+    }
+
+    const name = (document.getElementById("addme-name")?.value || "").trim();
+    const category = document.getElementById("addme-category")?.value || "ip";
+    const reg_no = (document.getElementById("addme-regno")?.value || "").trim();
+    const firm = (document.getElementById("addme-firm")?.value || "").trim();
+    const city = (document.getElementById("addme-city")?.value || "Chandigarh").trim();
+    const address = (document.getElementById("addme-address")?.value || "").trim();
+    const email = (document.getElementById("addme-email")?.value || "").trim();
+    const phone = (document.getElementById("addme-phone")?.value || "").trim();
+    const specialization = (document.getElementById("addme-specialization")?.value || "").trim();
+
+    const BENCH_COORDINATES = {
+      "chandigarh": { lat: 30.7398, lng: 76.7827, state: "Chandigarh (UT)" },
+      "new delhi": { lat: 28.6139, lng: 77.2090, state: "Delhi" },
+      "mumbai": { lat: 18.9220, lng: 72.8347, state: "Maharashtra" },
+      "bengaluru": { lat: 12.9716, lng: 77.5946, state: "Karnataka" },
+      "ahmedabad": { lat: 23.0225, lng: 72.5714, state: "Gujarat" },
+      "kolkata": { lat: 22.5726, lng: 88.3639, state: "West Bengal" },
+      "chennai": { lat: 13.0827, lng: 80.2707, state: "Tamil Nadu" },
+      "hyderabad": { lat: 17.3850, lng: 78.4867, state: "Telangana" },
+      "jaipur": { lat: 26.9124, lng: 75.7873, state: "Rajasthan" },
+      "cuttack": { lat: 20.4625, lng: 85.8828, state: "Odisha" },
+      "kochi": { lat: 9.9312, lng: 76.2673, state: "Kerala" },
+      "indore": { lat: 22.7196, lng: 75.8577, state: "Madhya Pradesh" },
+      "allahabad": { lat: 25.4358, lng: 81.8463, state: "Uttar Pradesh" },
+      "guwahati": { lat: 26.1445, lng: 91.7362, state: "Assam" },
+      "amravati": { lat: 16.5062, lng: 80.6480, state: "Andhra Pradesh" }
+    };
+
+    const geo = BENCH_COORDINATES[city.toLowerCase()] || { lat: 30.7398, lng: 76.7827, state: "India" };
+
+    const designation = 
+      category === "ip" ? "Insolvency Professional" :
+      category === "rv" ? "Registered Valuer" : "Restructuring Advocate";
+
+    const newRecord = {
+      id: category + "-" + Date.now().toString().slice(-4),
+      name: name,
+      designation: designation,
+      category: category,
+      reg_no: reg_no,
+      firm: firm,
+      city: city,
+      address: address,
+      state: geo.state,
+      lat: geo.lat,
+      lng: geo.lng,
+      email: email,
+      phone: phone,
+      specialization: specialization
+    };
+
+    currentGeneratedJson = JSON.stringify(newRecord, null, 2);
+
+    const emailSubject = "[APNET Directory Accreditation] " + name + " - " + designation + " (" + city + ")";
+    const emailMessage = 
+"============================================================\n" +
+"NEW DIRECTORY ACCREDITATION APPLICATION\n" +
+"============================================================\n" +
+"Applicant Name:  " + name + "\n" +
+"Role / Category: " + designation + " (" + category.toUpperCase() + ")\n" +
+"Registration No: " + reg_no + "\n" +
+"Firm / Practice: " + firm + "\n" +
+"Office Address:  " + address + "\n" +
+"City & State:    " + city + ", " + geo.state + "\n" +
+
+"Applicant Email: " + email + "\n" +
+"Phone Number:    " + phone + "\n" +
+
+"Specializations: " + specialization + "\n\n" +
+"------------------------------------------------------------\n" +
+"READY-TO-PASTE JSON FOR js/professionals.json:\n" +
+"------------------------------------------------------------\n" +
+currentGeneratedJson + "\n" +
+"============================================================\n";
+
+    try {
+      await fetch("https://formsubmit.co/ajax/agenticprofessionals@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: emailSubject,
+          name: name,
+          category: designation,
+          reg_no: reg_no,
+          firm: firm,
+          city: city,
+          address: address,
+          email: email,
+          phone: phone,
+          specialization: specialization,
+          json_payload: currentGeneratedJson,
+          message: emailMessage
+        })
+      });
+    } catch (err) {
+      console.warn("Direct form submission fetch warning:", err);
+    }
+
+    try {
+      const existing = JSON.parse(localStorage.getItem("apnet_pending_submissions") || "[]");
+      existing.push({ submitted_at: new Date().toISOString(), ...newRecord });
+      localStorage.setItem("apnet_pending_submissions", JSON.stringify(existing));
+    } catch (e) {}
+
+    const formStep = document.getElementById("add-me-form-step");
+    const successStep = document.getElementById("add-me-success-step");
+    const jsonPreview = document.getElementById("addme-json-preview");
+
+    if (formStep) formStep.style.display = "none";
+    if (successStep) successStep.style.display = "block";
+    if (jsonPreview) jsonPreview.textContent = currentGeneratedJson;
+
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit Application';
+    }
+  };
+
+  window.copyAddMeJson = function() {
+    if (!currentGeneratedJson) return;
+    navigator.clipboard.writeText(currentGeneratedJson).then(function() {
+      const btn = document.getElementById("btn-copy-json");
+      if (btn) {
+        const oldText = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        btn.style.background = "#dcfce7";
+        btn.style.color = "#15803d";
+        setTimeout(function() {
+          btn.innerHTML = oldText;
+          btn.style.background = "#e2e8f0";
+          btn.style.color = "#334155";
+        }, 2000);
+      }
+    });
+  };
+
+  // Close directory modal on outside click
+  document.addEventListener("click", function(e) {
+    const modal = document.getElementById("directory-add-me-modal");
+    if (modal && modal.style.display === "flex" && e.target === modal) {
+      window.closeAddMeModal();
+    }
+  });
+
+  // Close directory modal on Escape key
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      window.closeAddMeModal();
+    }
+  });
 
 })();

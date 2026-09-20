@@ -7,7 +7,7 @@
 .compact-footer {
   background-color: #0F172A;
   border-top: 3px solid #1E6C93;
-  padding: 22px 32px 14px;
+  padding: 14px 28px 10px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
@@ -198,101 +198,161 @@
 }
 
 /* ==========================================================================
-   Section 3 (40%): Comprehensive Site Navigation & Action Hub
+   Section 3 (40%): Compact L-Tree Site Navigation Hub
    ========================================================================== */
 .footer-col-nav-hub {
-  background: linear-gradient(145deg, rgba(30, 41, 59, 0.45) 0%, rgba(15, 23, 42, 0.75) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 14px 18px;
+  padding: 10px 14px 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100%;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
 }
 
-.footer-nav-columns {
+.footer-tree-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
+  width: 100%;
 }
 
-.footer-nav-col {
+.footer-tree-col {
   display: flex;
   flex-direction: column;
 }
 
-.footer-nav-heading {
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #38bdf8;
-  margin: 0 0 8px 0;
+.tree-root-head {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-nav-links {
+.tree-root-badge {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.58rem;
+  flex-shrink: 0;
+}
+
+.badge-harness {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.badge-turbine {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.badge-network {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.tree-root-name {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+
+.footer-tree-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
-.footer-nav-links li a {
+.tree-item {
+  position: relative;
+  padding-left: 14px;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+/* Branch L-Line Connector */
+.tree-item::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: -4px;
+  height: 11px;
+  width: 7px;
+  border-left: 1.5px solid rgba(148, 163, 184, 0.28);
+  border-bottom: 1.5px solid rgba(148, 163, 184, 0.28);
+}
+
+/* Continuous vertical guide line for non-last items */
+.tree-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 7px;
+  bottom: -4px;
+  width: 1.5px;
+  border-left: 1.5px solid rgba(148, 163, 184, 0.28);
+}
+
+/* First item connector adjustment */
+.tree-item:first-child::before {
+  top: 0px;
+  height: 7px;
+}
+
+.tree-item a {
   color: #94a3b8;
-  font-size: 0.74rem;
+  font-size: 0.69rem;
   text-decoration: none;
-  transition: color 0.15s ease;
-  white-space: nowrap;
-}
-
-.footer-nav-links li a:hover {
-  color: #ffffff;
-}
-
-
-
-.footer-chamber-signature {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  font-size: 0.68rem;
-  color: #cbd5e1;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 6px;
+  transition: all 0.15s ease;
   white-space: nowrap;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.sig-name {
-  font-weight: 700;
-  color: #f8fafc;
-}
-
-.sig-dot {
-  color: rgba(255, 255, 255, 0.2);
-}
-
-.sig-addr {
-  color: #94a3b8;
-}
-
-.sig-phone {
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-.sig-phone:hover {
+.tree-item a:hover {
   color: #38bdf8;
+  transform: translateX(2px);
+}
+
+.footer-ext-icon {
+  font-size: 0.55rem;
+  color: #64748b;
+  margin-left: 3px;
+}
+
+.tree-item a:hover .footer-ext-icon {
+  color: #38bdf8;
+}
+
+.promo-mini-badge {
+  background: #16a34a;
+  color: #ffffff;
+  font-size: 0.54rem;
+  font-weight: 800;
+  padding: 0px 3px;
+  border-radius: 3px;
+  margin-right: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
 }
 
 /* ==========================================================================
@@ -303,9 +363,9 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 14px;
-  padding-top: 10px;
-  font-size: 0.72rem;
+  margin-top: 10px;
+  padding-top: 8px;
+  font-size: 0.70rem;
   color: #94A3B8;
   max-width: 1800px;
   margin-left: auto;
@@ -352,62 +412,49 @@
   .footer-col-sacred {
     grid-column: 1 / -1;
   }
+  .footer-col-nav-hub {
+    grid-column: 2 / 3;
+  }
 }
 
-@media (max-width: 768px) {
-  .compact-footer {
-    padding: 16px 14px 10px;
-  }
+@media (max-width: 900px) {
   .footer-single-row-grid {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+  .footer-col-sacred,
+  .footer-col-contact-form,
+  .footer-col-nav-hub {
+    grid-column: 1 / -1;
+  }
+  .footer-tree-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .compact-footer {
+    padding: 14px 14px 10px;
   }
   .footer-col-sacred {
     flex-direction: column;
     text-align: center;
     gap: 12px;
-    padding: 14px;
+    padding: 12px;
   }
   .sacred-emblem-wrap {
     width: 100px;
   }
-  .footer-nav-columns {
-    grid-template-columns: 1fr 1fr;
+  .footer-tree-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
-  .footer-chamber-signature {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
+  .tree-item a {
     white-space: normal;
-  }
-  .sig-dot {
-    display: none;
   }
   .footer-bottom {
     flex-direction: column;
     gap: 6px;
     text-align: center;
   }
-}
-
-.promo-mini-badge {
-  background: #16a34a;
-  color: #ffffff;
-  font-size: 0.58rem;
-  font-weight: 800;
-  padding: 1px 4px;
-  border-radius: 4px;
-  margin-right: 4px;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1.2;
-}
-
-.footer-nav-links li a {
-  color: #94a3b8;
-  font-size: 0.74rem;
-  line-height: 1.35;
-  text-decoration: none;
-  transition: color 0.15s ease;
-  white-space: normal;
 }

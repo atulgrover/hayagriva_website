@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ip-001",
+    "name": "IP Atul Grover",
+    "designation": "Insolvency Professional",
+    "category": "ip",
+    "reg_no": "IBBI/IPA-002/IP-N00128/2018-19/10342",
+    "firm": "Resolution Bazaar",
+    "city": "Chandigarh",
+    "address": "Sector 18, Chandigarh",
+    "state": "Chandigarh (UT)",
+    "lat": 30.7398,
+    "lng": 76.7827,
+    "email": "resolutionbazaar@gmail.com",
+    "phone": "+91 98722 33110",
+    "specialization": "Corporate Insolvency Resolution (CIRP), MSME Pre-packs (PPIRP), Section 29A Audits"
+  }
+]

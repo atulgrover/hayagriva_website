@@ -58,6 +58,10 @@ async function reloadDirectoryData(filters = {}) {
   if (countBadge) {
     countBadge.textContent = `${professionals.length} Verified`;
   }
+
+  if (mapInstance && professionals.length === 1) {
+    mapInstance.setView([professionals[0].lat, professionals[0].lng], 9);
+  }
 }
 
 function renderCards(list) {
@@ -92,7 +96,7 @@ function renderCards(list) {
         </div>
         <div class="professional-location">
           <i class="fa-solid fa-location-dot" style="color: #94a3b8; font-size: 0.75rem;"></i>
-          <span>${item.city} &bull; ${item.bench}</span>
+          <span>${item.address || item.city}</span>
         </div>
       </div>
     `;
@@ -128,9 +132,8 @@ function renderMarkers(list) {
         <div class="popup-reg">${item.reg_no}</div>
         <div class="popup-meta">
           <div><strong>Firm:</strong> ${item.firm}</div>
-          <div><strong>Bench:</strong> ${item.bench}</div>
-          <div><strong>Cases:</strong> ${item.cases_handled} Resolution/Valuations</div>
-          <div><strong>Contact:</strong> ${item.email}</div>
+          <div><strong>Phone:</strong> ${item.phone || "+91 98722 33110"}</div>
+          <div><strong>Email:</strong> ${item.email}</div>
         </div>
         <a href="mailto:${item.email}" class="popup-cta">
           <i class="fa-regular fa-envelope"></i> Contact Professional
