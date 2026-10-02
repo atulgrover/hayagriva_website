@@ -70,9 +70,9 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
         <img src="branding/hayagriva_multi_arm_white.png" alt="Lord Hayagriva Sacred Multi-Armed Icon" class="footer-logo-img" />
       </div>
       <div class="sacred-shloka-wrap">
-        <p class="shloka-devanagari-banner">ज्ञानानन्दमयं देवं निर्मलस्फटिकाकृतिम् । आधारं सर्वविद्यानां हयग्रीवमुपास्महे ॥</p>
+        <p class="shloka-devanagari-banner">ज्ञानानन्दमयं देवं निर्मलस्फटिकाकृतिम् ।<br>आधारं सर्वविद्यानां हयग्रीवमुपास्महे ॥</p>
         <p class="shloka-meaning-banner">
-          &ldquo;We meditate upon Lord Hayagriva, who is the very embodiment of knowledge and pure bliss, who possesses a radiant form as clear as a blemishless crystal, and who is the ultimate foundation of all learning and sciences.&rdquo;
+          &ldquo;We meditate upon Lord Hayagriva, the embodiment of knowledge, possessor of radiant form clear as crystal, and ultimate founder of all knowledge and sciences.&rdquo;
         </p>
       </div>
     </div>

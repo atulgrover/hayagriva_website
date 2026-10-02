@@ -70,7 +70,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .shloka-devanagari-banner {
@@ -78,10 +78,10 @@
   font-size: 1.08rem;
   font-weight: 500;
   color: #FFFFFF;
-  line-height: 1.55;
+  line-height: 1.6;
   letter-spacing: 0.3px;
   margin: 0 0 10px 0;
-  white-space: nowrap;
+  white-space: normal;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
