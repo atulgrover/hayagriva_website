@@ -215,8 +215,8 @@
 
 .footer-tree-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   width: 100%;
 }
 
@@ -249,6 +249,12 @@
   background: rgba(56, 189, 248, 0.15);
   color: #38bdf8;
   border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.badge-agents {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .badge-turbine {
@@ -402,6 +408,12 @@
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
+@media (max-width: 1250px) {
+  .footer-tree-grid {
+    gap: 16px;
+  }
+}
+
 @media (max-width: 1100px) {
   .shloka-devanagari-banner {
     white-space: normal;
@@ -414,9 +426,20 @@
   .footer-col-nav-hub {
     grid-column: 1 / -1;
   }
+  .footer-tree-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
+  .footer-tree-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 580px) {
   .compact-footer {
     padding: 20px 16px 12px;
   }
