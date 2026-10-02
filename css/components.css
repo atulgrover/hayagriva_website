@@ -2036,7 +2036,7 @@ body.view-fullscreen-active .site-footer {
 
 .nav-home-icon {
   font-size: 1.05rem;
-  color: #334155;
+  color: #0284c7;
   transition: color 0.15s ease, transform 0.15s ease;
 }
 
@@ -2066,11 +2066,24 @@ body.view-fullscreen-active .site-footer {
   background-color: #f1f5f9;
 }
 
+#nav-home.nav-icon-wireframe {
+  background-color: #f0f9ff;
+  border: 1px solid #e0f2fe;
+}
+
+#nav-home.nav-icon-wireframe:hover {
+  background-color: #e0f2fe;
+}
+
 .nav-icon-wireframe:hover .nav-home-icon,
-.nav-icon-wireframe.active .nav-home-icon,
+.nav-icon-wireframe.active .nav-home-icon {
+  color: #0369a1;
+  transform: none;
+}
+
 .nav-icon-wireframe:hover .nav-cart-icon,
 .nav-icon-wireframe.active .nav-cart-icon {
-  color: #2563eb;
+  color: #0369a1;
   transform: scale(1.08);
 }
 
@@ -2082,6 +2095,59 @@ body.view-fullscreen-active .site-footer {
 
 .nav-item-dropdown.dropdown-open .nav-icon-wireframe .nav-v-svg {
   transform: rotate(180deg);
+}
+
+/* Download Harness CTA Button (Header) */
+.nav-item-cta {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.nav-btn-download-harness {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0284c7;
+  color: #ffffff !important;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+  line-height: 1.2;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.2);
+  transform: none !important;
+}
+
+.nav-btn-download-harness:hover {
+  background: #0369a1;
+  color: #ffffff !important;
+  transform: none !important;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.2);
+}
+
+.nav-btn-download-harness i {
+  font-size: 0.8rem;
+  transform: none !important;
+}
+
+.nav-btn-download-harness:hover i {
+  transform: none !important;
+}
+
+@media (max-width: 992px) {
+  .nav-item-cta {
+    margin-left: 0.25rem;
+  }
+  .nav-btn-download-harness {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    gap: 6px;
+  }
 }
 
 

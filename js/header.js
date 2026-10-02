@@ -17,22 +17,6 @@
        4. Directories - Agentic Professionals (directory_listing.html)
        V. More - APNET Forums & MSME Sahyog
      ====================================================================== -->
-<!-- ======================================================================
-     Global Announcement Bar: Clean Single Line with IDE Download & Free Promo
-     ====================================================================== -->
-<div class="site-announcement-bar" id="site-announcement-bar">
-  <div class="announcement-single-row">
-    <span class="announcement-badge" style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);"><i
-        class="fa-solid fa-gift"></i> SOVEREIGN FREEDOM</span>
-    <span class="announcement-msg" style="color:#e2e8f0; font-size:0.82rem;">
-      <strong>Tier 1 Sovereign IDE is 100% FREE</strong> • Fortnightly Knowledge Vault Delta Sync • Related Parties
-      Report Free till 31 Dec 2026
-    </span>
-    <a href="#" onclick="openIdeDownloadModal(); return false;" class="announcement-cta" style="background:rgba(255,255,255,0.2); color:#fff; border:1px solid rgba(255,255,255,0.3); padding:4px 14px; border-radius:6px; font-weight:700; font-size:0.75rem; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
-      📥 Download Free IDE v1.2 (150 MB) <i class="fa-solid fa-arrow-right"></i>
-    </a>
-  </div>
-</div>
 <header class="site-header" id="site-header">
   <div class="nav-container">
 
@@ -185,12 +169,12 @@
         </div>
       </li>
 
-      <!-- 2. TURBINE Dropdown (3 Columns: Reports, Services, Advisory) -->
+      <!-- 2. BACK-OFFICE Dropdown (3 Columns: Reports, Services, Advisory) -->
       <li class="nav-item nav-item-dropdown" id="dropdown-turbine-wrapper">
         <button class="nav-link nav-link-wireframe" id="nav-turbine" type="button" aria-haspopup="true"
           aria-expanded="false">
           <span class="nav-title-row">
-            <span>TURBINE</span>
+            <span>BACK-OFFICE</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
           <span class="nav-subtitle-row">Execution Engine</span>
@@ -373,6 +357,13 @@
         </div>
       </li>
 
+      <!-- 4. Download Harness CTA Button -->
+      <li class="nav-item nav-item-cta" id="nav-cta-download-wrapper">
+        <a href="https://app.agenticprofessionals.net" target="_blank" rel="noopener noreferrer" class="nav-btn-download-harness" id="btn-download-harness">
+          <span>Download Harness</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </li>
 
     </ul>
   </div>

@@ -166,6 +166,53 @@
       </div>
     </div>
 
+    
+    <!-- 3-Dot Status Pipeline Showcase -->
+    <div id="three-dots-pipeline" class="section-anchor" style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:2rem;margin-bottom:2.5rem;box-shadow:0 2px 8px rgba(15,23,42,.04);">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.25rem;">
+        <div>
+          <span class="badge badge-success" style="font-size:0.75rem;font-weight:700;"><i class="fa-solid fa-circle-nodes"></i> Real-Time Visual Feedback</span>
+          <h3 style="font-size:1.35rem;font-weight:800;color:#0f172a;margin:0.4rem 0 0.2rem;">
+            The 3-Dot Visual Ingestion Pipeline
+          </h3>
+          <p style="font-size:0.9rem;color:#64748b;margin:0;">
+            Every file in the Hayagriva case tree displays three independent status indicators giving instant transparency over document readiness:
+          </p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;">
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1.25rem;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#10b981;box-shadow:0 0 8px rgba(16,185,129,0.5);"></span>
+            <strong style="font-size:0.95rem;color:#0f172a;">Dot 1: Companion Markdown Ready</strong>
+          </div>
+          <p style="font-size:0.85rem;color:#475569;line-height:1.5;margin:0;">
+            Shows whether the companion <code style="color:#0284c7;">.md</code> has been extracted and reviewed. Right-click ➔ <strong>"🟢 1. Review Companion"</strong> opens Dual-Pane Live Authoring Mode with rendered HTML preview.
+          </p>
+        </div>
+
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1.25rem;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#10b981;box-shadow:0 0 8px rgba(16,185,129,0.5);"></span>
+            <strong style="font-size:0.95rem;color:#0f172a;">Dot 2: Indexed in AI Memory</strong>
+          </div>
+          <p style="font-size:0.85rem;color:#475569;line-height:1.5;margin:0;">
+            Indicates whether document chunks are fully indexed into SQLite FTS5 (lexical search) and ONNX dense vector embeddings for hybrid RAG retrieval.
+          </p>
+        </div>
+
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1.25rem;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#10b981;box-shadow:0 0 8px rgba(16,185,129,0.5);"></span>
+            <strong style="font-size:0.95rem;color:#0f172a;">Dot 3: Facts &amp; Claims Extracted</strong>
+          </div>
+          <p style="font-size:0.85rem;color:#475569;line-height:1.5;margin:0;">
+            Confirms case facts, financial claims, and statutory dates have been extracted into <code style="color:#0284c7;">case_kv_dictionary.json</code> and synced to Monaco LSP autocompletion.
+          </p>
+        </div>
+      </div>
+    </div>
     <!-- Format Support Table -->
     <div id="formats" class="section-anchor" style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:2rem;margin-bottom:2.5rem;box-shadow:0 2px 8px rgba(15,23,42,.04);">
       <h3 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:1rem;">
