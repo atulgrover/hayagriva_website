@@ -7,7 +7,7 @@
 .compact-footer {
   background-color: #0F172A;
   border-top: 3px solid #1E6C93;
-  padding: 14px 28px 10px;
+  padding: 26px 36px 16px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
@@ -16,8 +16,8 @@
 
 .footer-single-row-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr; /* 40% : 20% : 40% */
-  gap: 18px;
+  grid-template-columns: 38% 62%; /* 38% Sacred : 62% Nav Hub */
+  gap: 24px;
   align-items: stretch;
   max-width: 1800px;
   margin: 0 auto;
@@ -26,16 +26,16 @@
 }
 
 /* ==========================================================================
-   Section 1 (40%): Sacred Hayagriva Card
+   Section 1 (38%): Sacred Hayagriva Card
    ========================================================================== */
 .footer-col-sacred {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 16px 20px;
+  padding: 22px 24px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
   height: 100%;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
@@ -43,7 +43,7 @@
 
 .sacred-emblem-wrap {
   flex-shrink: 0;
-  width: 135px;
+  width: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,8 +51,8 @@
 
 .footer-logo-img {
   width: 100%;
-  max-width: 135px;
-  max-height: 145px;
+  max-width: 140px;
+  max-height: 155px;
   object-fit: contain;
   display: block;
   opacity: 0.65;
@@ -75,22 +75,22 @@
 
 .shloka-devanagari-banner {
   font-family: 'Noto Serif Devanagari', serif;
-  font-size: 0.98rem;
+  font-size: 1.08rem;
   font-weight: 500;
   color: #FFFFFF;
-  line-height: 1.5;
+  line-height: 1.55;
   letter-spacing: 0.3px;
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
   white-space: nowrap;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .shloka-meaning-banner {
   font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Inter", sans-serif);
-  font-size: 0.76rem;
+  font-size: 0.84rem;
   font-weight: 400;
   color: #CBD5E1;
-  line-height: 1.45;
+  line-height: 1.55;
   font-style: italic;
   margin: 0;
 }
@@ -198,13 +198,13 @@
 }
 
 /* ==========================================================================
-   Section 3 (40%): Compact L-Tree Site Navigation Hub
+   Section 2 (62%): Spacious L-Tree Site Navigation Hub
    ========================================================================== */
 .footer-col-nav-hub {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 10px 14px 8px;
+  padding: 18px 24px 14px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -216,7 +216,7 @@
 .footer-tree-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 28px;
   width: 100%;
 }
 
@@ -228,20 +228,20 @@
 .tree-root-head {
   display: flex;
   align-items: center;
-  gap: 5px;
-  margin-bottom: 4px;
-  padding-bottom: 3px;
+  gap: 7px;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .tree-root-badge {
-  width: 16px;
-  height: 16px;
-  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.58rem;
+  font-size: 0.68rem;
   flex-shrink: 0;
 }
 
@@ -264,7 +264,7 @@
 }
 
 .tree-root-name {
-  font-size: 0.74rem;
+  font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: #ffffff;
@@ -280,43 +280,43 @@
 
 .tree-item {
   position: relative;
-  padding-left: 14px;
-  line-height: 1.25;
-  margin-bottom: 2px;
+  padding-left: 18px;
+  line-height: 1.35;
+  margin-bottom: 6px;
 }
 
 /* Branch L-Line Connector */
 .tree-item::before {
   content: '';
   position: absolute;
-  left: 3px;
-  top: -4px;
-  height: 11px;
-  width: 7px;
-  border-left: 1.5px solid rgba(148, 163, 184, 0.28);
-  border-bottom: 1.5px solid rgba(148, 163, 184, 0.28);
+  left: 4px;
+  top: -5px;
+  height: 14px;
+  width: 9px;
+  border-left: 1.5px solid rgba(148, 163, 184, 0.3);
+  border-bottom: 1.5px solid rgba(148, 163, 184, 0.3);
 }
 
 /* Continuous vertical guide line for non-last items */
 .tree-item:not(:last-child)::after {
   content: '';
   position: absolute;
-  left: 3px;
-  top: 7px;
-  bottom: -4px;
+  left: 4px;
+  top: 9px;
+  bottom: -6px;
   width: 1.5px;
-  border-left: 1.5px solid rgba(148, 163, 184, 0.28);
+  border-left: 1.5px solid rgba(148, 163, 184, 0.3);
 }
 
 /* First item connector adjustment */
 .tree-item:first-child::before {
   top: 0px;
-  height: 7px;
+  height: 9px;
 }
 
 .tree-item a {
   color: #94a3b8;
-  font-size: 0.69rem;
+  font-size: 0.85rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -333,9 +333,9 @@
 }
 
 .footer-ext-icon {
-  font-size: 0.55rem;
+  font-size: 0.66rem;
   color: #64748b;
-  margin-left: 3px;
+  margin-left: 4px;
 }
 
 .tree-item a:hover .footer-ext-icon {
@@ -345,11 +345,11 @@
 .promo-mini-badge {
   background: #16a34a;
   color: #ffffff;
-  font-size: 0.54rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  padding: 0px 3px;
+  padding: 1px 4px;
   border-radius: 3px;
-  margin-right: 3px;
+  margin-right: 4px;
   display: inline-block;
   vertical-align: middle;
   line-height: 1.2;
@@ -402,52 +402,36 @@
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
   .shloka-devanagari-banner {
     white-space: normal;
   }
   .footer-single-row-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-col-sacred {
-    grid-column: 1 / -1;
-  }
-  .footer-col-nav-hub {
-    grid-column: 2 / 3;
-  }
-}
-
-@media (max-width: 900px) {
-  .footer-single-row-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 20px;
   }
   .footer-col-sacred,
-  .footer-col-contact-form,
   .footer-col-nav-hub {
     grid-column: 1 / -1;
   }
-  .footer-tree-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .compact-footer {
-    padding: 14px 14px 10px;
+    padding: 20px 16px 12px;
   }
   .footer-col-sacred {
     flex-direction: column;
     text-align: center;
-    gap: 12px;
-    padding: 12px;
+    gap: 14px;
+    padding: 18px 16px;
   }
   .sacred-emblem-wrap {
-    width: 100px;
+    width: 110px;
   }
   .footer-tree-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
   .tree-item a {
     white-space: normal;
