@@ -3062,3 +3062,101 @@ body.view-fullscreen-active .site-footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ======================================================================
+   APNET 4-Pillar Sovereign Navigation Revamp (2026-10-06)
+   ====================================================================== */
+#workbench-dropdown-menu.mega-menu-3col {
+  left: -20px;
+}
+
+#intelligence-dropdown-menu.mega-menu-3col {
+  left: -180px;
+}
+
+#agents-dropdown-menu.mega-menu-3col {
+  left: -320px;
+}
+
+#community-dropdown-menu.mega-menu-3col {
+  right: -20px;
+  left: auto;
+}
+
+/* Action Cluster Styling */
+.nav-action-cluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn-chamber-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(241, 245, 249, 0.9);
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 7px 13px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  font-family: inherit;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.nav-btn-chamber-login:hover {
+  background: #ffffff;
+  border-color: #94a3b8;
+  color: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+.nav-btn-chamber-login i {
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+.nav-btn-chamber-login:hover i {
+  color: #0284c7;
+}
+
+.nav-btn-download-ide {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  border: 1px solid rgba(217, 119, 6, 0.9);
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  font-family: inherit;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
+}
+
+.nav-btn-download-ide:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.nav-btn-download-ide i {
+  color: #ffffff;
+  font-size: 0.82rem;
+}
+
+/* Modal dialog display override when active */
+#login-account-modal.active {
+  display: flex !important;
+}
