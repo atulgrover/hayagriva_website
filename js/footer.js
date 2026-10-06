@@ -137,8 +137,7 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
             <li class="tree-item"><a href="https://agenticprofessionals.zulipchat.com" target="_blank" rel="noopener noreferrer">Discussion Forums <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
             <li class="tree-item"><a href="https://haya-website.onrender.com" target="_blank" rel="noopener noreferrer">Skillpedia <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
             <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer">Hayagriva AI Portal <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
-            <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer"><span class="promo-mini-badge">FREE</span> DOWNLOAD HARNESS <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
-            <li class="tree-item"><a href="#" onclick="openAddMeModal(); return false;">Join Directory</a></li>
+                        <li class="tree-item"><a href="#" onclick="openAddMeModal(); return false;">Join Directory</a></li>
           </ul>
         </div>
 
