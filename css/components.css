@@ -1591,16 +1591,17 @@ body.view-fullscreen-active .site-footer {
 }
 
 
-/* 2-Column Mega Menu (AI Assets, Agents) - Balanced Glass & Card Layout */
+/* 2-Column Mega Menu (Community / APNET Resources) - Sleek & Compact */
 .mega-menu-2col {
-  width: 770px;
-  max-width: min(770px, calc(100vw - 32px));
+  width: 550px;
+  max-width: min(550px, calc(100vw - 32px));
   padding: 1.15rem 1.25rem 0.85rem 1.25rem;
   background: #ffffff;
   border: 1px solid rgba(203, 213, 225, 0.85);
   border-radius: 12px;
   box-shadow: 0 20px 42px -8px rgba(15, 23, 42, 0.16), 0 6px 16px -2px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.04);
-  left: -215px;
+  right: 0;
+  left: auto;
   position: absolute;
   overflow: hidden;
   box-sizing: border-box;
@@ -1986,6 +1987,32 @@ body.view-fullscreen-active .site-footer {
 .mega-footer-link:hover {
   background-color: #eff6ff;
   color: #1d4ed8;
+}
+
+
+/* Compact Single-Column Dropdown Menu (e.g. WORKBENCH, COMMUNITY) */
+.dropdown-menu-compact {
+  min-width: 380px;
+  max-width: 440px;
+  padding: 0.65rem;
+  border-radius: 12px;
+}
+
+.dropdown-menu-compact .mega-col-wireframe-header {
+  padding: 0.35rem 0.5rem 0.45rem 0.5rem;
+  margin-bottom: 0.45rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dropdown-menu-compact .mega-col-wireframe-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.dropdown-menu-compact .mega-item-wireframe {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
 }
 
 /* Directory Wireframe Dropdown Box (Exact visual match to sketch) */
