@@ -1485,14 +1485,15 @@ body.view-fullscreen-active .site-footer {
 }
 
 .brand-sub-url {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: #64748b;
+  display: inline-block;
+  font-size: 0.735rem;
+  font-weight: 700;
+  letter-spacing: 0.018em;
+  text-transform: uppercase;
+  color: #475569;
   line-height: 1;
-  margin-top: 1px;
+  margin-top: 3px;
+  white-space: nowrap;
 }
 
 .brand-url-link {
@@ -2066,19 +2067,95 @@ body.view-fullscreen-active .site-footer {
   background-color: #f1f5f9;
 }
 
-#nav-home.nav-icon-wireframe {
+#nav-home.nav-icon-wireframe,
+#btn-login.nav-icon-wireframe,
+.nav-portal-btn.nav-icon-wireframe,
+.nav-profile-btn.nav-icon-wireframe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  padding: 0;
+  border-radius: 6px;
   background-color: #f0f9ff;
   border: 1px solid #e0f2fe;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  line-height: 1;
+  box-shadow: none;
 }
 
-#nav-home.nav-icon-wireframe:hover {
+#nav-home.nav-icon-wireframe:hover,
+#btn-login.nav-icon-wireframe:hover,
+.nav-portal-btn.nav-icon-wireframe:hover,
+.nav-profile-btn.nav-icon-wireframe:hover {
   background-color: #e0f2fe;
+  border-color: #bae6fd;
+}
+
+/* Optical sizing compensation: calibrated glyph balance */
+.nav-home-icon {
+  font-size: 0.95rem;
+  color: #0284c7;
+  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+  line-height: 1;
+}
+
+.nav-portal-icon,
+.nav-profile-icon {
+  font-size: 1.10rem;
+  color: #0284c7;
+  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+  line-height: 1;
 }
 
 .nav-icon-wireframe:hover .nav-home-icon,
-.nav-icon-wireframe.active .nav-home-icon {
+.nav-icon-wireframe.active .nav-home-icon,
+.nav-icon-wireframe:hover .nav-portal-icon,
+.nav-icon-wireframe.active .nav-portal-icon,
+.nav-icon-wireframe:hover .nav-profile-icon,
+.nav-icon-wireframe.active .nav-profile-icon {
   color: #0369a1;
   transform: none;
+}
+
+/* Tooltip Badge for Header Actions */
+.nav-tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.nav-tooltip-wrap[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  transform: translateY(-4px);
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 5px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  z-index: 1000;
+}
+
+.nav-tooltip-wrap:hover[data-tooltip]::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .nav-icon-wireframe:hover .nav-cart-icon,

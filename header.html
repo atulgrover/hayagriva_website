@@ -1,12 +1,12 @@
 <!-- ======================================================================
      AgenticProfessionals.Net - Shared Site Header Component
      Brand: Agentic Professionals Network
-            Powered by Hayagriva OS • www.apnet.co.in
+            Powered by Hayagriva Sovereign Intelligence
      Tabs (Four Sovereign Pillars):
        0. Home
        1. WORKBENCH (Sovereign Harness: Desktop Core, Workspaces, Local SLMs)
        2. INTELLIGENCE (Knowledge Vaults: Statutory Law, Practice Suites, Precedents)
-       3. AGENTS (Enterprise Co-Counsel: Court Archetypes, Specialist Team, Forensic Dossiers)
+       3. ENTERPRISE (Co-Counsel Agents: Court Archetypes, Specialist Team, Forensic Dossiers)
        4. COMMUNITY (Hayagriva Resources: Directories, Asset Exchange, Knowledge Base)
      Actions:
        - Chamber Login (opens #login-account-modal)
@@ -20,7 +20,7 @@
     <div class="brand-block-wireframe" id="header-brand-logo">
       <a href="index.html#home" class="brand-main-title">AGENTIC PROFESSIONALS NETWORK</a>
       <div class="brand-sub-url">
-        Powered by Hayagriva OS &bull; www.apnet.co.in
+        POWERED BY HAYAGRIVA SOVEREIGN INTELLIGENCE
       </div>
     </div>
 
@@ -320,15 +320,15 @@
         </div>
       </li>
 
-      <!-- 3. AGENTS Dropdown (Enterprise Co-Counsel) -->
+      <!-- 3. ENTERPRISE Dropdown (Co-Counsel Agents) -->
       <li class="nav-item nav-item-dropdown" id="dropdown-agents-wrapper">
         <button class="nav-link nav-link-wireframe" id="nav-agents" type="button" aria-haspopup="true"
           aria-expanded="false">
           <span class="nav-title-row">
-            <span>AGENTS</span>
+            <span>ENTERPRISE</span>
             <i class="fa-solid fa-chevron-down dropdown-icon"></i>
           </span>
-          <span class="nav-subtitle-row">Enterprise Co-Counsel</span>
+          <span class="nav-subtitle-row">Co-Counsel Agents</span>
         </button>
         <div class="dropdown-menu mega-menu-3col" id="agents-dropdown-menu">
           <div class="mega-grid-3col">
@@ -626,13 +626,12 @@
         </div>
       </li>
 
-      <!-- 5. Right Action: Login -->
+      <!-- 5. Right Action: Hayagriva Downloads Portal -->
       <li class="nav-item nav-item-cta" id="nav-action-cluster-wrapper">
-        <div class="nav-action-cluster">
-          <button type="button" class="nav-btn-login" id="btn-login" onclick="openAccountModal();" aria-label="Login">
-            <i class="fa-solid fa-circle-user"></i>
-            <span>Login</span>
-          </button>
+        <div class="nav-action-cluster nav-tooltip-wrap" data-tooltip="Hayagriva Downloads">
+          <a href="http://localhost:3300/dashboard/harness" target="_blank" rel="noopener noreferrer" class="nav-icon-wireframe nav-portal-btn" id="btn-login" aria-label="Hayagriva Downloads" title="Hayagriva Downloads">
+            <i class="fa-solid fa-right-to-bracket nav-portal-icon"></i>
+          </a>
         </div>
       </li>
 
