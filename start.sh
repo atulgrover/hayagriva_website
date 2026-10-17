@@ -4,7 +4,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PID_FILE="$SCRIPT_DIR/.server.pid"
 LOG_FILE="$SCRIPT_DIR/server.log"
-PORT=8000
+PORT=5050
 
 # Check if server is already running via PID file
 if [ -f "$PID_FILE" ]; then

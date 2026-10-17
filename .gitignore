@@ -6,12 +6,11 @@ __pycache__/
 .server.pid
 *.log
 
-# Cloudflare Master Digital Assets - Ignore large binaries & weights
-cloudflare_assets/models/*.gguf
-cloudflare_assets/models/*.bin
-cloudflare_assets/models/*.onnx
-cloudflare_assets/vaults/*.zip
-cloudflare_assets/agent_packs/*.vlt
+# Cloudflare Master Digital Assets - Ignore all binary asset contents
+cloudflare_assets/models/*
+cloudflare_assets/vaults/*
+cloudflare_assets/agent_packs/*
 cloudflare_assets/builds/*
+cloudflare_assets/dossiers/*
 !cloudflare_assets/**/README.md
 !cloudflare_assets/**/.gitkeep

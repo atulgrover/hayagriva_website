@@ -3,7 +3,7 @@
 # Resolve project root directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PID_FILE="$SCRIPT_DIR/.server.pid"
-PORT=8000
+PORT=5050
 STOPPED=0
 
 # Check PID file first
