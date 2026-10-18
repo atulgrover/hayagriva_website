@@ -2096,6 +2096,7 @@ body.view-fullscreen-active .site-footer {
 
 #nav-home.nav-icon-wireframe,
 #btn-login.nav-icon-wireframe,
+#btn-download-app.nav-icon-wireframe,
 .nav-portal-btn.nav-icon-wireframe,
 .nav-profile-btn.nav-icon-wireframe {
   display: inline-flex;
@@ -2117,6 +2118,7 @@ body.view-fullscreen-active .site-footer {
 
 #nav-home.nav-icon-wireframe:hover,
 #btn-login.nav-icon-wireframe:hover,
+#btn-download-app.nav-icon-wireframe:hover,
 .nav-portal-btn.nav-icon-wireframe:hover,
 .nav-profile-btn.nav-icon-wireframe:hover {
   background-color: #e0f2fe;
@@ -3309,4 +3311,375 @@ body.view-fullscreen-active .site-footer {
 .nav-btn-login:hover i,
 .nav-btn-chamber-login:hover i {
   color: #1d4ed8;
+}
+
+/* ==========================================================================
+   Hayagriva Header Download Dropdown Menu
+   ========================================================================== */
+.download-dropdown-menu {
+  min-width: 290px;
+  width: 300px;
+  padding: 0;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.16), 0 8px 16px -4px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.download-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.9rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.download-menu-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.download-menu-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  background: #e0f2fe;
+  color: #0369a1;
+  border-radius: 4px;
+}
+
+.download-menu-list {
+  padding: 0.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.download-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.download-menu-item.download-item-active {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.download-menu-item.download-item-active:hover {
+  background: #f0f9ff;
+  border-color: #7dd3fc;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.12);
+  transform: translateY(-1px);
+}
+
+.download-menu-item.download-item-disabled {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  cursor: not-allowed;
+  opacity: 0.82;
+}
+
+.download-item-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+}
+
+.download-item-icon.icon-windows {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.download-item-icon.icon-mac {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.download-item-icon.icon-linux {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.download-item-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.download-item-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.download-item-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.download-item-desc {
+  font-size: 0.72rem;
+  color: #64748b;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+.download-item-action-icon {
+  font-size: 0.8rem;
+  color: #0284c7;
+  transition: transform 0.15s ease;
+}
+
+.download-item-active:hover .download-item-action-icon {
+  transform: translateY(2px);
+}
+
+.badge-direct-dl {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 4px;
+  border: 1px solid #bbf7d0;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.badge-coming-soon {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.download-menu-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.download-menu-footer i {
+  color: #10b981;
+}
+
+/* ==========================================================================
+   5-Pillar Standardized Hero Banner & Teaser Cards
+   ========================================================================== */
+.pillar-hero-banner {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e2e8f0;
+  padding: 2.25rem 1.5rem 2rem;
+  position: relative;
+}
+
+.pillar-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.pillar-hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.pillar-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  margin-bottom: 0.6rem;
+  border: 1px solid #bae6fd;
+}
+
+.pillar-hero-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.4rem;
+  line-height: 1.15;
+}
+
+.pillar-hero-subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 720px;
+}
+
+.pillar-hero-action {
+  flex-shrink: 0;
+}
+
+.btn-pillar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #0284c7;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-pillar-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  color: #ffffff !important;
+}
+
+.pillar-teaser-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 2.5rem;
+}
+
+.pillar-teaser-heading {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pillar-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.pillar-teaser-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.35rem 1.25rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-teaser-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  transform: translateY(-2px);
+}
+
+.pillar-card-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.pillar-card-icon-box.icon-blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.pillar-card-icon-box.icon-purple {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.pillar-card-icon-box.icon-teal {
+  background: #f0fdfa;
+  color: #0d9488;
+}
+
+.pillar-card-icon-box.icon-amber {
+  background: #fefce8;
+  color: #ca8a04;
+}
+
+.pillar-card-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.45rem;
+  line-height: 1.3;
+}
+
+.pillar-card-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  flex: 1;
+}
+
+.pillar-card-footer {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-top: 1px dashed #f1f5f9;
+  padding-top: 0.65rem;
 }

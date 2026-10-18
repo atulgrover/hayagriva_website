@@ -23,6 +23,7 @@
   <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/leaflet-custom.css">
 </head>
 
@@ -31,8 +32,66 @@
   <!-- Shared Site Header -->
   <div id="shared-header"></div>
 
+  <!-- Pillar 5 Hero Banner: COMMUNITY -->
+  <section class="pillar-hero-banner">
+    <div class="pillar-hero-container">
+      <div class="pillar-hero-text">
+        <span class="pillar-hero-tag"><i class="fa-solid fa-address-book"></i> Pillar 05 &bull; Registry</span>
+        <h1 class="pillar-hero-title">COMMUNITY</h1>
+        <p class="pillar-hero-subtitle">IBBI Accredited Registry of IPs, RVs &amp; Restructuring Advocates</p>
+      </div>
+      <div class="pillar-hero-action">
+        <button type="button" class="btn-pillar-cta" onclick="openAddMeModal();" id="cta-join-community">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Join Now</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Teaser Cards for COMMUNITY -->
+  <section class="pillar-teaser-section">
+    <div class="pillar-teaser-heading">
+      <i class="fa-solid fa-layer-group"></i> Ecosystem Registry &amp; Directory Segments
+    </div>
+    <div class="pillar-teaser-grid">
+      <div class="pillar-teaser-card">
+        <div class="pillar-card-icon-box icon-blue">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <h3 class="pillar-card-title">Insolvency Professionals (IP)</h3>
+        <p class="pillar-card-desc">IBBI-licensed resolution professionals and liquidators across Principal Bench and regional NCLT benches nationwide.</p>
+        <div class="pillar-card-footer"><i class="fa-solid fa-book"></i> Read Directory Manual for IP credentials</div>
+      </div>
+      <div class="pillar-teaser-card">
+        <div class="pillar-card-icon-box icon-teal">
+          <i class="fa-solid fa-coins"></i>
+        </div>
+        <h3 class="pillar-card-title">Registered Valuers (RV)</h3>
+        <p class="pillar-card-desc">Certified asset and financial valuation specialists across Land &amp; Building, Plant &amp; Machinery, and Securities.</p>
+        <div class="pillar-card-footer"><i class="fa-solid fa-book"></i> Read Directory Manual for RV verification</div>
+      </div>
+      <div class="pillar-teaser-card">
+        <div class="pillar-card-icon-box icon-purple">
+          <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+        <h3 class="pillar-card-title">Restructuring Advocates</h3>
+        <p class="pillar-card-desc">Senior legal counsel and commercial practitioners specializing in CIRP, liquidation, and appellate advocacy.</p>
+        <div class="pillar-card-footer"><i class="fa-solid fa-book"></i> Read Directory Manual for court rosters</div>
+      </div>
+      <div class="pillar-teaser-card">
+        <div class="pillar-card-icon-box icon-amber">
+          <i class="fa-solid fa-toolbox"></i>
+        </div>
+        <h3 class="pillar-card-title">Hayagriva Skills &amp; Resources</h3>
+        <p class="pillar-card-desc">Open directory of domain tools, automation skills, verified practitioner profiles, and ecosystem knowledge.</p>
+        <div class="pillar-card-footer"><i class="fa-solid fa-book"></i> Read Directory Manual for skill certification</div>
+      </div>
+    </div>
+  </section>
+
   <!-- Main Directory Application Layout -->
-  <main class="directory-container" style="height: calc(100vh - var(--header-height, 65px));">
+  <main class="directory-container" style="height: 720px; max-width: 1200px; margin: 0 auto 3.5rem; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(15,23,42,0.06);">
 
     <!-- Directory Left Sidebar -->
     <aside class="directory-sidebar">
@@ -100,10 +159,14 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
+  <!-- Shared Footer -->
+  <div id="shared-footer"></div>
+
   <!-- Application Logic -->
   <script src="js/data.js"></script>
   <script src="js/directory.js"></script>
   <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof initDirectory === 'function') {

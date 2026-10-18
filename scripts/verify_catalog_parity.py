@@ -3,8 +3,8 @@ import os
 import re
 import sys
 
-GARUDA_CATALOG = '/Users/atulgrover/Desktop/GARUDA/src/lib/catalog.ts'
-MASTER_ASSETS_DIR = '/Users/atulgrover/Desktop/SANATAN/cloudflare_assets'
+GARUDA_CATALOG = '/Users/atulgrover/Desktop/HAYAGRIVA PORTAL/src/lib/catalog.ts'
+MASTER_ASSETS_DIR = '/Users/atulgrover/Desktop/HAYAGRIVA WEBSITE/cloudflare_assets'
 
 def main():
     if not os.path.exists(GARUDA_CATALOG):

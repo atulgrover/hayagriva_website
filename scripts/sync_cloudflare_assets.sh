@@ -6,8 +6,9 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-MASTER_DIR="/Users/atulgrover/Desktop/SANATAN/cloudflare_assets"
-GARUDA_ENV="/Users/atulgrover/Desktop/GARUDA/.env"
+MASTER_DIR="/Users/atulgrover/Desktop/HAYAGRIVA WEBSITE/cloudflare_assets"
+PORTAL_ENV="/Users/atulgrover/Desktop/HAYAGRIVA PORTAL/.env.local"
+[ ! -f "$PORTAL_ENV" ] && PORTAL_ENV="/Users/atulgrover/Desktop/HAYAGRIVA PORTAL/.env"
 
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
@@ -20,9 +21,9 @@ echo -e "\n${CYAN}${BOLD}=======================================================
 echo -e "${CYAN}${BOLD}      ☁️  CLOUDFLARE R2 DIGITAL ASSETS SYNCHRONIZER                 ${NC}"
 echo -e "${CYAN}${BOLD}====================================================================${NC}\n"
 
-# Load R2 credentials from GARUDA .env if available
-if [ -f "$GARUDA_ENV" ]; then
-    export $(grep -E '^(R2_|S3_)' "$GARUDA_ENV" | xargs) || true
+# Load R2 credentials from HAYAGRIVA PORTAL .env if available
+if [ -f "$PORTAL_ENV" ]; then
+    export $(grep -E '^(R2_|S3_)' "$PORTAL_ENV" | xargs) || true
 fi
 
 ACCOUNT_ID="${R2_ACCOUNT_ID:-}"
@@ -33,10 +34,10 @@ BUCKET="${R2_BUCKET_NAME:-hayagriva}"
 MODE="${1:---dry-run}"
 
 if [ -z "$ACCOUNT_ID" ] || [ -z "$ACCESS_KEY" ] || [ -z "$SECRET_KEY" ]; then
-    echo -e "${YELLOW}⚠  Cloudflare R2 credentials (R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY) not set in $GARUDA_ENV.${NC}"
+    echo -e "${YELLOW}⚠  Cloudflare R2 credentials (R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY) not set in $PORTAL_ENV.${NC}"
     echo -e "   Running in local simulation / integrity check mode.\n"
     python3 "$SCRIPT_DIR/verify_catalog_parity.py"
-    echo -e "\n${CYAN}To sync to real Cloudflare R2, populate credentials in /Users/atulgrover/Desktop/GARUDA/.env${NC}"
+    echo -e "\n${CYAN}To sync to real Cloudflare R2, populate credentials in /Users/atulgrover/Desktop/HAYAGRIVA PORTAL/.env.local${NC}"
     exit 0
 fi
 
