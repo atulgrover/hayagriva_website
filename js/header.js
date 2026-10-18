@@ -233,12 +233,89 @@
         </div>
       </li>
 
-      <!-- 5. Right Action: Hayagriva Downloads Portal -->
-      <li class="nav-item nav-item-cta" id="nav-action-cluster-wrapper">
-        <div class="nav-action-cluster nav-tooltip-wrap" data-tooltip="Hayagriva Downloads">
-          <a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer" class="nav-icon-wireframe nav-portal-btn" id="btn-login" aria-label="Hayagriva Downloads" title="Hayagriva Downloads">
-            <i class="fa-solid fa-right-to-bracket nav-portal-icon"></i>
-          </a>
+      <!-- 5. Right Action: Hayagriva App Downloads Menu -->
+      <li class="nav-item nav-item-dropdown nav-item-cta" id="nav-action-download-wrapper">
+        <div class="nav-action-cluster nav-tooltip-wrap" data-tooltip="Download Hayagriva">
+          <button type="button" class="nav-icon-wireframe nav-portal-btn" id="btn-download-app" aria-label="Download Hayagriva" title="Download Hayagriva" aria-haspopup="true" aria-expanded="false">
+            <i class="fa-solid fa-download nav-portal-icon"></i>
+          </button>
+        </div>
+        <div class="dropdown-menu dropdown-menu-end download-dropdown-menu" id="download-dropdown-menu">
+          <div class="download-menu-header">
+            <div class="download-menu-title">
+              <i class="fa-solid fa-download" style="color: #0284c7;"></i>
+              <span>Download Hayagriva</span>
+            </div>
+            <span class="download-menu-badge">v1.17</span>
+          </div>
+
+          <div class="download-menu-list">
+            <!-- Windows (Direct Cloudflare Download) -->
+            <a href="https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva-Setup-1.17.0.exe"
+               download="Hayagriva-Setup-1.17.0.exe"
+               class="download-menu-item download-item-active"
+               id="dl-opt-windows"
+               title="Download Hayagriva for Windows">
+              <div class="download-item-icon icon-windows">
+                <i class="fa-brands fa-windows"></i>
+              </div>
+              <div class="download-item-body">
+                <div class="download-item-title-row">
+                  <span class="download-item-name">Windows</span>
+                  <span class="badge-direct-dl"><i class="fa-solid fa-cloud-arrow-down"></i> Direct</span>
+                </div>
+                <span class="download-item-desc">64-bit (.exe) · Cloudflare Mirror</span>
+              </div>
+              <i class="fa-solid fa-arrow-down download-item-action-icon"></i>
+            </a>
+
+            <!-- Linux (Coming Soon) -->
+            <div class="download-menu-item download-item-disabled" id="dl-opt-linux" title="Linux - Coming Soon">
+              <div class="download-item-icon icon-linux">
+                <i class="fa-brands fa-linux"></i>
+              </div>
+              <div class="download-item-body">
+                <div class="download-item-title-row">
+                  <span class="download-item-name">Linux</span>
+                  <span class="badge-coming-soon">Coming Soon</span>
+                </div>
+                <span class="download-item-desc">Universal AppImage / .deb</span>
+              </div>
+            </div>
+
+            <!-- Mac-i (Intel - Coming Soon) -->
+            <div class="download-menu-item download-item-disabled" id="dl-opt-mac-i" title="Mac-i (Intel) - Coming Soon">
+              <div class="download-item-icon icon-mac">
+                <i class="fa-brands fa-apple"></i>
+              </div>
+              <div class="download-item-body">
+                <div class="download-item-title-row">
+                  <span class="download-item-name">Mac-i</span>
+                  <span class="badge-coming-soon">Coming Soon</span>
+                </div>
+                <span class="download-item-desc">Intel Core (x86_64)</span>
+              </div>
+            </div>
+
+            <!-- Mac-M (Apple Silicon - Coming Soon) -->
+            <div class="download-menu-item download-item-disabled" id="dl-opt-mac-m" title="Mac-M (Apple Silicon) - Coming Soon">
+              <div class="download-item-icon icon-mac">
+                <i class="fa-brands fa-apple"></i>
+              </div>
+              <div class="download-item-body">
+                <div class="download-item-title-row">
+                  <span class="download-item-name">Mac-M</span>
+                  <span class="badge-coming-soon">Coming Soon</span>
+                </div>
+                <span class="download-item-desc">Apple Silicon (M1–M5)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="download-menu-footer">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>100% Sovereign &amp; Air-Gapped Desktop IDE</span>
+          </div>
         </div>
       </li>
 
@@ -330,7 +407,7 @@
       });
     }
 
-    document.querySelectorAll('.site-header .dropdown-item, .site-header .mega-item-wireframe, .site-header .dropdown-wireframe-item').forEach(link => {
+    document.querySelectorAll('.site-header .dropdown-item, .site-header .mega-item-wireframe, .site-header .dropdown-wireframe-item, .site-header .download-item-active').forEach(link => {
       if (link.dataset.headerBound === 'true') return;
       link.dataset.headerBound = 'true';
 
@@ -536,7 +613,7 @@
     const urls = {
       'mac-arm': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg',
       'mac-intel': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg',
-      'windows': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/HayagrivaSetup.exe',
+      'windows': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva-Setup-1.17.0.exe',
       'linux': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.AppImage'
     };
     const targetUrl = urls[os] || urls['mac-arm'];
