@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accredited Directory Roster | Agentic Professionals Network</title>
+  <title>Community Directory | Agentic Professionals Network</title>
   <meta name="description"
-    content="Accredited Directory Roster of Insolvency Professionals, Registered Valuers, and Corporate Restructuring Advocates across NCLT benches in India with interactive Leaflet map.">
+    content="Community Directory of Insolvency Professionals, Registered Valuers, and Corporate Restructuring Advocates across NCLT benches in India with interactive Leaflet map.">
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,10 +33,10 @@
   <div id="shared-header"></div>
 
   <!-- Main Directory Application Layout: Full Width & Viewport Edge-to-Edge -->
-  <main class="directory-container" style="display: flex !important; flex-direction: row !important; width: 100vw !important; max-width: 100% !important; height: calc(100vh - 65px) !important; margin: 0 !important; border: none !important; border-radius: 0 !important; overflow: hidden !important; background: #ffffff; box-sizing: border-box;">
+  <main class="directory-container" id="directory-app" style="display: flex !important; flex-direction: row !important; width: 100vw !important; max-width: 100% !important; height: calc(100vh - 65px) !important; margin: 0 !important; border: none !important; border-radius: 0 !important; overflow: hidden !important; background: #ffffff; box-sizing: border-box; position: relative;">
 
     <!-- Directory Left Sidebar -->
-    <aside class="directory-sidebar" style="width: 440px !important; min-width: 380px !important; max-width: 440px !important; flex-shrink: 0 !important; display: flex !important; flex-direction: column !important; border-right: 1px solid #e2e8f0; background: #ffffff; height: 100%; box-sizing: border-box; z-index: 10;">
+    <aside class="directory-sidebar" id="directory-sidebar" style="width: 440px !important; min-width: 440px !important; max-width: 440px !important; flex-shrink: 0 !important; display: flex !important; flex-direction: column !important; border-right: 1px solid #e2e8f0; background: #ffffff; height: 100%; box-sizing: border-box; z-index: 10; position: relative; transition: margin-left 0.28s cubic-bezier(0.16, 1, 0.3, 1);">
 
       <!-- Search Header -->
       <div class="directory-search-header" style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; background: #ffffff; flex-shrink: 0;">
@@ -47,10 +47,9 @@
               <span>COMMUNITY DIRECTORY</span>
             </h1>
             <div style="font-size: 0.72rem; color: #64748b; margin-top: 2px;">
-              National Bench Map &bull; Accredited Registry
+              National Bench Map &bull; <span id="results-count-badge" style="color: #0284c7; font-weight: 600;">Loading...</span>
             </div>
           </div>
-          <span class="badge badge-primary" id="results-count-badge" style="font-size: 0.75rem; padding: 4px 8px;">Loading...</span>
         </div>
 
         <div class="search-input-group" style="margin-bottom: 0.75rem;">
@@ -100,6 +99,19 @@
       </div>
 
     </aside>
+
+    <!-- Sidebar Edge Toggle Tab -->
+    <button type="button" class="sidebar-edge-toggle" id="sidebar-edge-toggle" onclick="toggleDirectorySidebar()" title="Toggle Directory Roster" aria-label="Toggle Directory Roster">
+      <i class="fa-solid fa-chevron-left" id="sidebar-toggle-icon"></i>
+    </button>
+
+    <!-- Floating Expand Pill (Visible when collapsed) -->
+    <button type="button" class="floating-roster-pill" id="floating-roster-pill" onclick="toggleDirectorySidebar()" aria-label="Expand Directory Roster">
+      <i class="fa-solid fa-address-book" style="color: #0284c7;"></i>
+      <span style="font-weight: 700; color: #0f172a;">Show Directory</span>
+      <span id="floating-count-badge" style="font-size: 0.725rem; font-weight: 600; color: #0284c7; background: #e0f2fe; padding: 2px 8px; border-radius: 9999px;">Loading...</span>
+      <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem; color: #64748b;"></i>
+    </button>
 
     <!-- Directory Right Leaflet Map -->
     <div class="directory-map-container" style="flex: 1 1 0% !important; min-width: 450px !important; width: 100% !important; height: 100% !important; position: relative !important; background: #f8fafc !important;">
