@@ -1642,9 +1642,31 @@ body.view-fullscreen-active .site-footer {
 
 /* Brand Identity Block */
 .brand-block-wireframe {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1.1;
+}
+
+.brand-logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-block-wireframe:hover .brand-logo-img {
+  transform: scale(1.08);
+}
+
+.brand-text-block {
   display: flex;
   flex-direction: column;
-  text-decoration: none;
   line-height: 1.1;
   gap: 1px;
 }
@@ -1657,21 +1679,22 @@ body.view-fullscreen-active .site-footer {
   text-decoration: none;
   display: inline-block;
   line-height: 1.15;
+  transition: color 0.15s ease;
 }
 
-.brand-main-title:hover {
-  color: #2563eb;
+.brand-block-wireframe:hover .brand-main-title {
+  color: #0284c7;
 }
 
 .brand-sub-url {
   display: inline-block;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.022em;
   text-transform: uppercase;
   color: #475569;
   line-height: 1;
-  margin-top: 3px;
+  margin-top: 2px;
   white-space: nowrap;
 }
 

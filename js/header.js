@@ -22,13 +22,14 @@
 <header class="site-header" id="site-header">
   <div class="nav-container">
 
-    <!-- Brand Identity (Wireframe exact match) -->
-    <div class="brand-block-wireframe" id="header-brand-logo">
-      <a href="index.html#home" class="brand-main-title">AGENTIC PROFESSIONALS</a>
-      <div class="brand-sub-url">
-        SOVEREIGN INTELLIGENCE (AIR-GAPPED)
+    <!-- Brand Identity -->
+    <a href="index.html#home" class="brand-block-wireframe" id="header-brand-logo" aria-label="Agentic Professionals Home">
+      <img src="branding/hayagriva_knight_light.png" alt="Hayagriva Knight Logo" class="brand-logo-img" />
+      <div class="brand-text-block">
+        <span class="brand-main-title">AGENTIC PROFESSIONALS</span>
+        <span class="brand-sub-url">SOVEREIGN INTELLIGENCE (AIR-GAPPED)</span>
       </div>
-    </div>
+    </a>
 
     <!-- Primary Navigation Menu -->
     <ul class="nav-menu" id="header-nav-menu">
