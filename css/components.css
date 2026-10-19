@@ -609,10 +609,18 @@
    Directory View (APNET-Listing with Leaflet Map)
    -------------------------------------------------------------------------- */
 .directory-container {
-  display: flex;
-  height: calc(100vh - var(--header-height));
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100vw !important;
+  max-width: 100% !important;
+  height: calc(100vh - var(--header-height, 65px)) !important;
+  margin: 0 !important;
   overflow: hidden;
   background-color: #ffffff;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
 }
 
 .directory-sidebar {
@@ -1471,7 +1479,7 @@ body.view-fullscreen-active .site-footer {
 }
 
 .brand-main-title {
-  font-size: 1.125rem;
+  font-size: 1.18rem;
   font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.015em;
@@ -1486,9 +1494,9 @@ body.view-fullscreen-active .site-footer {
 
 .brand-sub-url {
   display: inline-block;
-  font-size: 0.735rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.018em;
+  letter-spacing: 0.022em;
   text-transform: uppercase;
   color: #475569;
   line-height: 1;
@@ -3503,7 +3511,7 @@ body.view-fullscreen-active .site-footer {
 .pillar-hero-banner {
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   border-bottom: 1px solid #e2e8f0;
-  padding: 2.25rem 1.5rem 2rem;
+  padding: 1.5rem 1.5rem 1.35rem;
   position: relative;
 }
 
@@ -3514,7 +3522,7 @@ body.view-fullscreen-active .site-footer {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .pillar-hero-text {
@@ -3539,20 +3547,20 @@ body.view-fullscreen-active .site-footer {
 }
 
 .pillar-hero-title {
-  font-size: 2.1rem;
-  font-weight: 800;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: #0f172a;
-  letter-spacing: -0.025em;
-  margin: 0 0 0.4rem;
-  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.25rem;
+  line-height: 1.25;
 }
 
 .pillar-hero-subtitle {
-  font-size: 1.05rem;
-  color: #475569;
+  font-size: 0.92rem;
+  color: #64748b;
   font-weight: 400;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.45;
   max-width: 720px;
 }
 
@@ -3563,15 +3571,15 @@ body.view-fullscreen-active .site-footer {
 .btn-pillar-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.75rem;
-  font-size: 0.95rem;
-  font-weight: 700;
+  gap: 0.5rem;
+  padding: 0.62rem 1.35rem;
+  font-size: 0.88rem;
+  font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
   background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid #0284c7;
   cursor: pointer;
@@ -3580,7 +3588,7 @@ body.view-fullscreen-active .site-footer {
 
 .btn-pillar-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
   background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
   color: #ffffff !important;
 }
@@ -3588,7 +3596,8 @@ body.view-fullscreen-active .site-footer {
 .pillar-teaser-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 2.5rem;
+  padding: 2.25rem 1.5rem 4rem;
+  width: 100%;
 }
 
 .pillar-teaser-heading {
@@ -3605,19 +3614,20 @@ body.view-fullscreen-active .site-footer {
 
 .pillar-teaser-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.15rem;
 }
 
 .pillar-teaser-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 1.35rem 1.25rem;
+  padding: 1.25rem 1.15rem;
   box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .pillar-teaser-card:hover {
@@ -3657,8 +3667,18 @@ body.view-fullscreen-active .site-footer {
   color: #ca8a04;
 }
 
+.pillar-card-icon-box.icon-red {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.pillar-card-icon-box.icon-emerald {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
 .pillar-card-title {
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #0f172a;
   margin: 0 0 0.45rem;
@@ -3666,15 +3686,15 @@ body.view-fullscreen-active .site-footer {
 }
 
 .pillar-card-desc {
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   color: #64748b;
-  line-height: 1.5;
-  margin: 0 0 1rem;
+  line-height: 1.45;
+  margin: 0 0 0.85rem;
   flex: 1;
 }
 
 .pillar-card-footer {
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   color: #94a3b8;
   font-style: italic;
   display: flex;
@@ -3682,4 +3702,28 @@ body.view-fullscreen-active .site-footer {
   gap: 0.35rem;
   border-top: 1px dashed #f1f5f9;
   padding-top: 0.65rem;
+}
+
+@media (max-width: 900px) {
+  .pillar-teaser-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .pillar-teaser-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ensure footer gracefully anchors to bottom on compact pillar pages */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#shared-footer {
+  margin-top: auto;
+  width: 100%;
 }

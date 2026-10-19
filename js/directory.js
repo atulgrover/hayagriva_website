@@ -46,7 +46,24 @@ function initDirectory() {
 
   // Initial Load
   reloadDirectoryData();
+
+  setTimeout(() => {
+    if (mapInstance) mapInstance.invalidateSize();
+  }, 100);
+  setTimeout(() => {
+    if (mapInstance) mapInstance.invalidateSize();
+  }, 500);
+  setTimeout(() => {
+    if (mapInstance) mapInstance.invalidateSize();
+  }, 1200);
+
+  window.addEventListener('resize', () => {
+    if (mapInstance) mapInstance.invalidateSize();
+  });
 }
+
+window.reloadDirectoryData = reloadDirectoryData;
+window.initDirectory = initDirectory;
 
 async function reloadDirectoryData(filters = {}) {
   const professionals = await fetchProfessionals(filters);

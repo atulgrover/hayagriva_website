@@ -1,16 +1,12 @@
 <!-- ======================================================================
      AgenticProfessionals.Net - Shared Site Header Component
-     Brand: Agentic Professionals Network
-            Powered by Hayagriva Sovereign Intelligence
+     Brand: Agentic Professionals (Sovereign Intelligence)
      Tabs (Four Sovereign Pillars):
        0. Home
        1. WORKBENCH (Sovereign Harness, Deterministic Engine)
        2. INTELLIGENCE (BharatGen Models, Knowledge Vaults)
        3. AGENTS (Air Gapped Agents, Air Trusted Agents)
        4. COMMUNITY (Network Websites & Ecosystem Resources)
-     Actions:
-       - Chamber Login (opens #login-account-modal)
-       - Download Hayagriva (opens #hayagriva-ide-modal)
      ====================================================================== -->
 
 <header class="site-header" id="site-header">
@@ -18,9 +14,9 @@
 
     <!-- Brand Identity (Wireframe exact match) -->
     <div class="brand-block-wireframe" id="header-brand-logo">
-      <a href="index.html#home" class="brand-main-title">AGENTIC PROFESSIONALS NETWORK</a>
+      <a href="index.html#home" class="brand-main-title">AGENTIC PROFESSIONALS</a>
       <div class="brand-sub-url">
-        POWERED BY HAYAGRIVA SOVEREIGN INTELLIGENCE
+        SOVEREIGN INTELLIGENCE (AIR-GAPPED)
       </div>
     </div>
 
@@ -45,7 +41,7 @@
       <!-- 2. CO-WORKERS (Custom Agents) -->
       <li class="nav-item">
         <a href="agents_insolvency.html" class="nav-link nav-link-wireframe" id="nav-coworkers">
-          <span class="nav-title-row">CO-WORKERS</span>
+          <span class="nav-title-row">COWORKERS</span>
           <span class="nav-subtitle-row">Custom Agents</span>
         </a>
       </li>
@@ -53,7 +49,7 @@
       <!-- 3. CO-COUNSEL (Confidential Advice) -->
       <li class="nav-item">
         <a href="chatroom.html" class="nav-link nav-link-wireframe" id="nav-cocounsel">
-          <span class="nav-title-row">CO-COUNSEL</span>
+          <span class="nav-title-row">COCOUNSEL</span>
           <span class="nav-subtitle-row">Confidential Advice</span>
         </a>
       </li>
@@ -77,635 +73,357 @@
     </ul>
   </div>
 </header>
-<!-- ======================================================================
-     [ARCHIVED] Login / Account Modal Dialog (Licenses, Payments, Profile)
-     Archived from index.html per user instruction on 2026-09-10
-     ====================================================================== -->
-<div id="login-account-modal" class="app-modal-backdrop" role="dialog" aria-modal="true"
-  aria-labelledby="modal-login-title">
-  <div class="app-modal-dialog">
-    <!-- Modal Header -->
-    <div class="modal-header-corporate">
-      <h3 id="modal-login-title">
-        <i class="fa-solid fa-circle-user" style="color: var(--primary);"></i>
-        <span>Practitioner Account & Licensing</span>
-      </h3>
-      <button type="button" class="modal-close-icon" id="btn-close-login-modal" aria-label="Close modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
-
-    <!-- Tab Navigation -->
-    <div class="modal-tabs-nav">
-      <button type="button" class="modal-tab-btn active" data-tab="licenses">
-        <i class="fa-solid fa-key"></i> Licenses
-      </button>
-      <button type="button" class="modal-tab-btn" data-tab="payments">
-        <i class="fa-solid fa-credit-card"></i> Payments
-      </button>
-      <button type="button" class="modal-tab-btn" data-tab="profile">
-        <i class="fa-solid fa-id-badge"></i> Profile
-      </button>
-    </div>
-
-    <!-- Tab 1: Licenses -->
-    <div class="modal-tab-pane active" data-tab-pane="licenses">
-      <div class="license-box">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-          <div>
-            <span class="badge badge-success" style="margin-bottom: 0.35rem;"><i class="fa-solid fa-circle-check"></i>
-              Active Institutional License</span>
-            <h4 style="font-size: 1.05rem; font-weight: 700; color: #0f172a;">Hayagriva Enterprise Desktop IDE</h4>
-          </div>
-          <span class="badge badge-primary">Seat 1 / 5 Deployed</span>
-        </div>
-
-        <div
-          style="background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 0.65rem 0.85rem; font-family: var(--font-mono); font-size: 0.825rem; color: #1e293b; margin-bottom: 0.75rem; word-break: break-all;">
-          HAYA-ENT-2026-X892-CIRP-SOV-91A7
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.8rem; color: #64748b;">
-          <div><i class="fa-solid fa-shield-halved" style="color: #10b981; margin-right: 4px;"></i> Vaults: <strong>15
-              Air-Gapped Master Packages</strong></div>
-          <div><i class="fa-solid fa-calendar" style="color: #3b82f6; margin-right: 4px;"></i> Validity: <strong>31
-              Dec 2026 (Renewable)</strong></div>
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.75rem;">
-        <button type="button" class="btn btn-secondary btn-sm" id="btn-copy-license">
-          <i class="fa-solid fa-copy"></i> Copy License Key
-        </button>
-        <button type="button" class="btn btn-primary btn-sm" id="btn-add-seat">
-          <i class="fa-solid fa-plus"></i> Activate New Seat
-        </button>
-      </div>
-    </div>
-
-    <!-- Tab 2: Payments -->
-    <div class="modal-tab-pane" data-tab-pane="payments">
-      <div
-        style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-          <span style="font-size: 0.85rem; color: #64748b;">Current Tier</span>
-          <span class="badge badge-primary">Annual Institutional Enterprise</span>
-        </div>
-        <div style="font-size: 1.25rem; font-weight: 700; color: #0f172a;">
-          ₹45,000 <span style="font-size: 0.85rem; font-weight: 400; color: #64748b;">/ practitioner seat / year +
-            GST</span>
-        </div>
-      </div>
-
-      <div style="font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 0.5rem;">Recent Tax Invoices
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;">
-        <div
-          style="display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 0.85rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.825rem;">
-          <div>
-            <div style="font-weight: 600; color: #0f172a;">INV-2026-0881 · Hayagriva IDE License</div>
-            <div style="color: #64748b; font-size: 0.75rem;">Paid on 02 Jan 2026 via Corporate NetBanking</div>
-          </div>
-          <a href="#" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;"><i
-              class="fa-solid fa-download"></i> PDF</a>
-        </div>
-      </div>
-
-      <div style="text-align: right;">
-        <button type="button" class="btn btn-secondary btn-sm">
-          <i class="fa-solid fa-file-invoice"></i> View All Invoices
-        </button>
-      </div>
-    </div>
-
-    <!-- Tab 3: Profile -->
-    <div class="modal-tab-pane" data-tab-pane="profile">
-      <div class="profile-grid" style="margin-bottom: 1.25rem;">
-        <div class="profile-field">
-          <label>Practitioner Name</label>
-          <div class="field-value">Adv. Atul Grover</div>
-        </div>
-        <div class="profile-field">
-          <label>Designation</label>
-          <div class="field-value">Insolvency Professional / Advocate</div>
-        </div>
-        <div class="profile-field">
-          <label>IBBI Reg. Number</label>
-          <div class="field-value" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary);">
-            IBBI/IPA-002/IP-N00128/2018-19/10342</div>
-        </div>
-        <div class="profile-field">
-          <label>Enrolled IPA</label>
-          <div class="field-value">Indian Institute of IPs of ICAI (IIIPI)</div>
-        </div>
-        <div class="profile-field">
-          <label>Primary NCLT Benches</label>
-          <div class="field-value">New Delhi (Principal) &amp; Chandigarh</div>
-        </div>
-        <div class="profile-field">
-          <label>Digital Signature (DSC)</label>
-          <div class="field-value"><span class="badge badge-success"><i class="fa-solid fa-check"></i> Class 3 Token
-              Valid</span></div>
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
-        <button type="button" class="btn btn-secondary btn-sm" id="btn-edit-profile">
-          <i class="fa-solid fa-pen"></i> Edit Profile
-        </button>
-        <button type="button" class="btn btn-primary btn-sm" id="btn-save-profile">
-          <i class="fa-solid fa-check"></i> Verified Practitioner
-        </button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<!-- Script helper for Chamber Login Modal -->
-<script>
-window.openAccountModal = function(tabName = 'licenses') {
-  const modal = document.getElementById('login-account-modal');
-  if (modal) {
-    modal.classList.add('active');
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    if (typeof window.switchLoginTab === 'function') {
-      window.switchLoginTab(tabName);
-    }
-  } else if (typeof window.openLoginModal === 'function') {
-    window.openLoginModal(tabName);
-  } else {
-    window.location.hash = '#login';
-  }
-};
-
-window.closeAccountModal = function() {
-  const modal = document.getElementById('login-account-modal');
-  if (modal) {
-    modal.classList.remove('active');
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-};
-
-window.switchLoginTab = function(tabName) {
-  document.querySelectorAll('.modal-tab-btn').forEach(btn => {
-    if (btn.getAttribute('data-tab') === tabName) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
-  });
-  document.querySelectorAll('.modal-tab-pane').forEach(pane => {
-    if (pane.getAttribute('data-tab-pane') === tabName) {
-      pane.classList.add('active');
-    } else {
-      pane.classList.remove('active');
-    }
-  });
-};
-
-document.addEventListener('DOMContentLoaded', function() {
-  const closeBtn = document.getElementById('btn-close-login-modal');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', window.closeAccountModal);
-  }
-  const modal = document.getElementById('login-account-modal');
-  if (modal) {
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) window.closeAccountModal();
-    });
-  }
-  document.querySelectorAll('.modal-tab-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const tab = btn.getAttribute('data-tab');
-      if (tab) window.switchLoginTab(tab);
-    });
-  });
-  const copyBtn = document.getElementById('btn-copy-license');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', function() {
-      navigator.clipboard.writeText('HAYA-ENT-2026-X892-CIRP-SOV-91A7');
-      const orig = copyBtn.innerHTML;
-      copyBtn.innerHTML = '<i class="fa-solid fa-check" style="color:#10b981;"></i> Copied!';
-      setTimeout(() => { copyBtn.innerHTML = orig; }, 1500);
-    });
-  }
-});
-</script>
-
 
 <!-- ======================================================================
-     Universal Hayagriva IDE Download Modal (Mac · Windows · Linux)
+     Unified Practitioner Authentication & SSO Modal
+     Central identity gate for Controller Downloads, Directory & Chamber
      ====================================================================== -->
-<div class="hayagriva-modal-backdrop" id="hayagriva-ide-modal" style="display: none;">
-  <div class="hayagriva-modal-dialog">
-
-    <!-- Modal Header -->
-    <div class="hayagriva-modal-header">
-      <div class="hayagriva-modal-title-group">
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-          <span class="modal-badge-promo"><i class="fa-solid fa-gift"></i> FREE PROMOTION</span>
-          <span class="modal-badge-beta">BETA V1.75</span>
-        </div>
-        <h3 class="hayagriva-modal-title">Download Hayagriva IDE (Beta)</h3>
-        <p class="hayagriva-modal-subtitle">
-          Sovereign Chamber OS for Insolvency Professionals · 100% Air-Gapped &amp; Local First
-        </p>
-      </div>
-      <button type="button" class="hayagriva-modal-close" onclick="closeIdeDownloadModal();" aria-label="Close modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
-
-    <!-- Step 1: Lightweight Registration Form -->
-    <div id="ide-step-register" class="hayagriva-modal-body">
-      <div class="modal-promo-callout">
-        <div style="font-weight: 700; color: #065f46; font-size: 0.85rem; margin-bottom: 2px;">
-          <i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> AS-18 Related Parties Report Included Free
-        </div>
-        <div style="font-size: 0.78rem; color: #047857;">
-          Register once to unlock sovereign installer binaries and your complimentary Section 5(24) connected-party
-          voucher valid through 31st December 2026.
-        </div>
-      </div>
-
-      <form id="ide-registration-form" onsubmit="handleIdeRegistration(event);">
-        <div class="modal-form-row">
-          <label class="modal-label" for="reg-practitioner-name">Practitioner / Firm Name <span
-              style="color:#ef4444;">*</span></label>
-          <input type="text" id="reg-practitioner-name" class="modal-input"
-            placeholder="e.g. Adv. Rajesh Sharma / CA Priya Verma" required />
-        </div>
-
-        <div class="modal-form-grid">
-          <div class="modal-form-row">
-            <label class="modal-label" for="reg-practitioner-role">Professional Category <span
-                style="color:#ef4444;">*</span></label>
-            <select id="reg-practitioner-role" class="modal-input" required>
-              <option value="" disabled selected>Select Your Role...</option>
-              <option value="ip">Insolvency Professional (IP / IRP / Liquidator)</option>
-              <option value="rv">Registered Valuer (RV)</option>
-              <option value="advocate">Corporate Insolvency Advocate / Litigator</option>
-              <option value="auditor">Forensic Auditor / Financial Advisor</option>
-            </select>
-          </div>
-
-          <div class="modal-form-row">
-            <label class="modal-label" for="reg-practitioner-email">Professional Email Address <span
-                style="color:#ef4444;">*</span></label>
-            <input type="email" id="reg-practitioner-email" class="modal-input" placeholder="name@firm-or-chambers.com"
-              required />
-          </div>
-        </div>
-
-        <div class="modal-trust-notice">
-          <i class="fa-solid fa-lock" style="color:#16a34a; font-size: 0.9rem; margin-top: 2px;"></i>
-          <span><strong>Zero Cloud Leaks:</strong> Hayagriva IDE runs strictly on your own hardware. Your case documents
-            and claims data are never transmitted to any external server.</span>
-        </div>
-
-        <div class="modal-form-actions">
-          <button type="button" class="btn-modal-secondary" onclick="closeIdeDownloadModal();">Cancel</button>
-          <button type="submit" class="btn-modal-primary">
-            <i class="fa-solid fa-unlock-keyhole"></i> Register &amp; Unlock Downloads ➔
-          </button>
-        </div>
-      </form>
-    </div>
-
-    <!-- Step 2: Unlocked OS Download Cards (Revealed on Register) -->
-    <div id="ide-step-downloads" class="hayagriva-modal-body" style="display: none;">
-      <div class="unlocked-welcome-box">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-          <div>
-            <span
-              style="font-size:0.75rem; font-weight:700; color:#15803d; text-transform:uppercase; letter-spacing:0.06em;">
-              <i class="fa-solid fa-circle-check"></i> Registration Verified
-            </span>
-            <div style="font-weight:700; color:#0f172a; font-size:0.95rem;">
-              Welcome, <span id="display-user-name">Practitioner</span>!
-            </div>
-            <div style="font-size:0.75rem; color:#64748b;">
-              Complimentary AS-18 Promo Code: <code style="color:#16a34a; font-weight:700;">PROMO-AS18-FREE-2026</code>
-            </div>
-          </div>
-          <button type="button" onclick="editPractitionerDetails();" class="btn-edit-details">
-            <i class="fa-solid fa-pen"></i> Edit Details
-          </button>
-        </div>
-      </div>
-
-      <div class="os-download-grid">
-        <!-- macOS Apple Silicon -->
-        <div class="os-card" id="card-mac-arm">
-          <div class="os-card-header">
-            <div class="os-icon os-apple"><i class="fa-brands fa-apple"></i></div>
-            <div class="os-info">
-              <div class="os-name">macOS (Apple Silicon)</div>
-              <div class="os-meta">M1 · M2 · M3 · M4 · M5 (ARM64)</div>
-            </div>
-          </div>
-          <div class="os-specs">334 MB · .dmg (Apple Silicon) · Verified</div>
-          <a href="#"
-            onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg'; return false;"
-            class="btn-os-download">
-            <i class="fa-solid fa-download"></i> Download .dmg
-          </a>
-        </div>
-
-        <!-- macOS Intel -->
-        <div class="os-card" id="card-mac-intel">
-          <div class="os-card-header">
-            <div class="os-icon os-apple"><i class="fa-brands fa-apple"></i></div>
-            <div class="os-info">
-              <div class="os-name">macOS (Intel)</div>
-              <div class="os-meta">Intel Core i5/i7/i9 (x86_64)</div>
-            </div>
-          </div>
-          <div class="os-specs">334 MB · .dmg · Universal / Rosetta</div>
-          <a href="#"
-            onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg'; return false;"
-            class="btn-os-download">
-            <i class="fa-solid fa-download"></i> Download .dmg
-          </a>
-        </div>
-
-        <!-- Windows -->
-        <div class="os-card" id="card-windows">
-          <div class="os-card-header">
-            <div class="os-icon os-windows"><i class="fa-brands fa-windows"></i></div>
-            <div class="os-info">
-              <div class="os-name">Windows 10 / 11</div>
-              <div class="os-meta">64-bit Architecture (x64)</div>
-            </div>
-          </div>
-          <div class="os-specs">96 MB · .exe Installer · Verified</div>
-          <a href="https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva-Setup-1.17.0.exe"
-            onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva-Setup-1.17.0.exe'; return false;"
-            class="btn-os-download" download="Hayagriva-Setup-1.17.0.exe">
-            <i class="fa-solid fa-download"></i> Download Setup.exe
-          </a>
-        </div>
-
-        <!-- Linux AppImage (Regular Linux) -->
-        <div class="os-card" id="card-linux-appimage">
-          <div class="os-card-header">
-            <div class="os-icon os-linux"><i class="fa-brands fa-linux"></i></div>
-            <div class="os-info">
-              <div class="os-name">Linux (Universal)</div>
-              <div class="os-meta">Portable AppImage · All Distros</div>
-            </div>
-          </div>
-          <div class="os-specs">355 MB · .AppImage · Verified</div>
-          <a href="#"
-            onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.AppImage'; return false;"
-            class="btn-os-download">
-            <i class="fa-solid fa-download"></i> Download .AppImage
-          </a>
-        </div>
-
-        <!-- Linux DEB (Debian / Ubuntu) -->
-        <div class="os-card" id="card-linux-deb">
-          <div class="os-card-header">
-            <div class="os-icon os-linux"><i class="fa-brands fa-ubuntu"></i></div>
-            <div class="os-info">
-              <div class="os-name">Linux (Ubuntu / Debian)</div>
-              <div class="os-meta">Native Package · Apt / Dpkg</div>
-            </div>
-          </div>
-          <div class="os-specs">203 MB · .deb Package · Verified</div>
-          <a href="#"
-            onclick="window.location.href='https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/HayagrivaSetup.deb'; return false;"
-            class="btn-os-download" style="background:#0f172a;">
-            <i class="fa-solid fa-download"></i> Download Setup.deb
-          </a>
-        </div>
-      </div>
-
-      <div class="modal-requirements-footnote">
-        <span><i class="fa-solid fa-circle-info" style="color:#2563eb;"></i> <strong>Hardware Requirement:</strong> 8 GB
-          RAM minimum (16 GB recommended for local SLMs). 100% Offline Air-Gapped.</span>
-      </div>
-
-      <div style="display:flex; justify-content:flex-end; margin-top:16px;">
-        <button type="button" class="btn-modal-secondary" onclick="closeIdeDownloadModal();">
-          Close Window
-        </button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ======================================================================
-     Directory "Add Me" Application Modal
-     Intake form sending dossier to agenticprofessionals@gmail.com
-     ====================================================================== -->
-<div class="hayagriva-modal-backdrop" id="directory-add-me-modal" style="display: none; z-index: 100000;">
-  <div class="hayagriva-modal-dialog"
-    style="max-width: 650px; width: 100%; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden;">
+<div class="hayagriva-modal-backdrop" id="unified-auth-modal" style="display: none; z-index: 100000;" role="dialog" aria-modal="true" aria-labelledby="unified-modal-title">
+  <div class="hayagriva-modal-dialog" style="max-width: 620px; width: 100%; max-height: 92vh; display: flex; flex-direction: column; overflow: hidden;">
 
     <!-- Modal Header -->
     <div class="hayagriva-modal-header" style="flex-shrink: 0;">
       <div class="hayagriva-modal-title-group">
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-          <span class="modal-badge-promo" style="background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe;">
-            <i class="fa-solid fa-address-card"></i> ACCREDITED DIRECTORY
-          </span>
-          <span class="modal-badge-beta" style="background: #f0fdf4; color: #15803d; border-color: #bbf7d0;">
-            MODERATED INTAKE
-          </span>
+          <span class="modal-badge-promo" id="unified-modal-badge"><i class="fa-solid fa-shield-halved"></i> SOVEREIGN SSO</span>
+          <span class="modal-badge-beta">BETA V1.75</span>
         </div>
-        <h3 class="hayagriva-modal-title">Apply to Join National Directory</h3>
-        <p class="hayagriva-modal-subtitle">
-          Submit your credentials for IBBI &amp; Bar verification. Approved profiles are featured on the APNET map.
+        <h3 class="hayagriva-modal-title" id="unified-modal-title">Practitioner Chamber &amp; Tools</h3>
+        <p class="hayagriva-modal-subtitle" id="unified-modal-subtitle">
+          One account across Controller Desktop, Knowledge Graph &amp; National Directory.
         </p>
       </div>
-      <button type="button" class="hayagriva-modal-close" onclick="closeAddMeModal();" aria-label="Close modal">
+      <button type="button" class="hayagriva-modal-close" onclick="closeUnifiedAuthModal();" aria-label="Close modal">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
 
-    <!-- Step 1: Registration Form -->
-    <div id="add-me-form-step" class="hayagriva-modal-body" style="overflow-y: auto; padding: 20px 24px;">
-      <div class="modal-promo-callout" style="margin-bottom: 16px; background: #f8fafc; border-color: #e2e8f0;">
-        <div style="font-weight: 700; color: #0f172a; font-size: 0.85rem; margin-bottom: 2px;">
-          <i class="fa-solid fa-shield-halved" style="color: #2563eb;"></i> IBBI Credential Verification &amp;
-          Moderation
-        </div>
-        <div style="font-size: 0.78rem; color: #475569;">
-          To maintain directory integrity, all applications are audited by registry administration. Your dossier will be
-          delivered to <strong>agenticprofessionals@gmail.com</strong> for approval.
-        </div>
-      </div>
+    <!-- Modal Body Wrapper (Scrollable) -->
+    <div class="hayagriva-modal-body" style="overflow-y: auto; padding: 20px 24px;">
 
-      <form id="directory-add-me-form" onsubmit="handleDirectoryAddMe(event);">
-        <!-- Row 1: Name & Role -->
-        <div class="modal-form-grid"
-          style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-          <div class="modal-form-row">
-            <label class="modal-label" for="addme-name"
-              style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
-              Full Name (with Prefix) <span style="color:#ef4444;">*</span>
-            </label>
-            <input type="text" id="addme-name" class="modal-input"
-              placeholder="e.g. IP Rajesh Sharma / Adv. Priya Verma" required />
-          </div>
-
-          <div class="modal-form-row">
-            <label class="modal-label" for="addme-category"
-              style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
-              Professional Category <span style="color:#ef4444;">*</span>
-            </label>
-            <select id="addme-category" class="modal-input" required>
-              <option value="ip">Insolvency Professional (IP)</option>
-              <option value="rv">Registered Valuer (RV)</option>
-              <option value="counsel">Restructuring Advocate / Counsel</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Row 2: Reg No & Firm -->
-        <div class="modal-form-grid"
-          style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-          <div class="modal-form-row">
-            <label class="modal-label" for="addme-regno"
-              style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
-              IBBI / Bar Registration No <span style="color:#ef4444;">*</span>
-            </label>
-            <input type="text" id="addme-regno" class="modal-input" placeholder="e.g. IBBI/IPA-002/IP-N00128/..."
-              required />
-          </div>
-
-          <div class="modal-form-row">
-            <label class="modal-label" for="addme-firm"
-              style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
-              Firm / Practice / Chamber Name <span style="color:#ef4444;">*</span>
-            </label>
-            <input type="text" id="addme-firm" class="modal-input" placeholder="e.g. Resolution Advisors LLP"
-              required />
-          </div>
-        </div>
-
-        <!-- Row 3: City & Sector/Address -->
-        <div class="modal-form-grid"
-          style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-          <div class="modal-form-row">
-            <label class="modal-label" for="addme-city"
-              style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
-              City <span style="color:#ef4444;">*</span>
-            </label>
-            <select id="addme-city" class="modal-input" required onchange="handleCityChange(this.value);">
-              <option value="Chandigarh">Chandigarh</option>
-              <option value="New Delhi">New Delhi</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Bengaluru">Bengaluru</option>
-              <option value="Ahmedabad">Ahmedabad</option>
-              <option value="Kolkata">Kolkata</option>
-              <option value="Chennai">Chennai</option>
-              <option value="Hyderabad">Hyderabad</option>
-              <option value="Jaipur">Jaipur</option>
-              <option value="Cuttack">Cuttack</option>
-              <option value="Kochi">Kochi</option>
-              <option value="Indore">Indore</option>
-              <option value="Allahabad">Allahabad</option>
-              <option value="Guwahati">Guwahati</option>
-              <option value="Amravati">Amravati</option>
-            </select>
-          </div>
-
-          <div class="modal-form-row">
-            <label class="modal-label" for="addme-address"
-              style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
-              Office Address / Sector <span style="color:#ef4444;">*</span>
-            </label>
-            <input type="text" id="addme-address" class="modal-input" placeholder="e.g. Sector 18, Chandigarh"
-              required />
-          </div>
-        </div>
-
-
-
-        <!-- Row 5: Email & Phone -->
-        <div class="modal-form-grid"
-          style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-          <div class="modal-form-row">
-            <label class="modal-label" for="addme-email"
-              style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
-              Official Email <span style="color:#ef4444;">*</span>
-            </label>
-            <input type="email" id="addme-email" class="modal-input" placeholder="practitioner@firm.in" required />
-          </div>
-
-          <div class="modal-form-row">
-            <label class="modal-label" for="addme-phone"
-              style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
-              Phone Number <span style="color:#ef4444;">*</span>
-            </label>
-            <input type="tel" id="addme-phone" class="modal-input" placeholder="+91 98765 43210" required />
-          </div>
-        </div>
-
-        <!-- Row 6: Specialization -->
-        <div class="modal-form-row" style="margin-bottom: 16px;">
-          <label class="modal-label" for="addme-specialization"
-            style="display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 4px;">
-            Key Practice Areas &amp; Specializations <span style="color:#ef4444;">*</span>
-          </label>
-          <input type="text" id="addme-specialization" class="modal-input"
-            placeholder="e.g. Corporate Insolvency (CIRP), Pre-packaged PPIRP, Section 29A Audits" required />
-        </div>
-
-        <div class="modal-form-actions"
-          style="display: flex; justify-content: flex-end; gap: 10px; padding-top: 12px; border-top: 1px solid #e2e8f0;">
-          <button type="button" class="btn-modal-secondary" onclick="closeAddMeModal();">Cancel</button>
-          <button type="submit" id="addme-submit-btn" class="btn-modal-primary"
-            style="background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 8px 18px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-paper-plane"></i> Submit Application
+      <!-- SECTION 1: UNAUTHENTICATED TABS (Sign In vs Register) -->
+      <div id="auth-unauthenticated-pane">
+        <!-- Auth Tabs Navigation -->
+        <div class="modal-tabs-nav" style="margin-bottom: 16px;">
+          <button type="button" class="modal-tab-btn active" id="tab-btn-signin" onclick="switchAuthTab('signin');">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+          </button>
+          <button type="button" class="modal-tab-btn" id="tab-btn-register" onclick="switchAuthTab('register');">
+            <i class="fa-solid fa-user-plus"></i> Quick Register
           </button>
         </div>
-      </form>
-    </div>
 
-    <!-- Step 2: Confirmation / Success Step -->
-    <div id="add-me-success-step" class="hayagriva-modal-body"
-      style="display: none; padding: 28px 24px; text-align: center; overflow-y: auto;">
-      <div
-        style="width: 56px; height: 56px; background: #ecfdf5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; border: 2px solid #a7f3d0;">
-        <i class="fa-solid fa-check" style="color: #059669; font-size: 24px;"></i>
-      </div>
-      <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Application Dispatched for
-        Audit</h3>
-      <p style="color: #475569; font-size: 0.85rem; max-width: 520px; margin: 0 auto 16px; line-height: 1.5;">
-        Your accreditation dossier has been forwarded to <strong>agenticprofessionals@gmail.com</strong>.
-        Once the registry administrator audits and approves your IBBI credentials, your profile will be added to the
-        live directory and map coordinates.
-      </p>
+        <!-- Alert / Error message container -->
+        <div id="auth-alert-box" style="display: none; padding: 10px 14px; border-radius: 8px; font-size: 0.82rem; margin-bottom: 14px;"></div>
 
-      <div
-        style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; max-width: 540px; margin: 0 auto 16px; text-align: left;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-          <span
-            style="font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Registry
-            JSON Record</span>
-          <button type="button" onclick="copyAddMeJson();" id="btn-copy-json"
-            style="background: #e2e8f0; border: none; border-radius: 4px; padding: 3px 8px; font-size: 0.72rem; font-weight: 600; cursor: pointer; color: #334155;">
-            <i class="fa-regular fa-copy"></i> Copy JSON
-          </button>
+        <!-- Sub-pane A: Sign In Form -->
+        <div id="auth-subpane-signin">
+          <form id="unified-signin-form" onsubmit="handleUnifiedSignIn(event);">
+            <div class="modal-form-row" style="margin-bottom: 12px;">
+              <label class="modal-label" for="signin-email" style="display:block; font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px;">
+                Professional Email Address <span style="color:#ef4444;">*</span>
+              </label>
+              <input type="email" id="signin-email" class="modal-input" placeholder="practitioner@firm-or-chambers.com" required style="width:100%; box-sizing:border-box;" />
+            </div>
+
+            <div class="modal-form-row" style="margin-bottom: 16px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <label class="modal-label" for="signin-password" style="font-size:0.8rem; font-weight:600; color:#334155;">
+                  Password <span style="color:#ef4444;">*</span>
+                </label>
+                <a href="#" onclick="alert('Password reset verification dispatched to your registered email.'); return false;" style="font-size:0.75rem; color:#0284c7; text-decoration:none;">Forgot?</a>
+              </div>
+              <input type="password" id="signin-password" class="modal-input" placeholder="••••••••••••" required style="width:100%; box-sizing:border-box;" />
+            </div>
+
+            <div class="modal-form-actions" style="display:flex; justify-content:flex-end; gap:10px;">
+              <button type="button" class="btn-modal-secondary" onclick="closeUnifiedAuthModal();">Cancel</button>
+              <button type="submit" id="btn-signin-submit" class="btn-modal-primary" style="background:#0284c7; color:#fff; border:none; border-radius:8px; padding:9px 18px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:8px;">
+                <i class="fa-solid fa-unlock-keyhole"></i> Sign In &amp; Continue ➔
+              </button>
+            </div>
+          </form>
         </div>
-        <pre id="addme-json-preview"
-          style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #0f172a; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px; max-height: 140px; overflow-y: auto; margin: 0; white-space: pre-wrap; word-break: break-all;"></pre>
+
+        <!-- Sub-pane B: Quick Register Form -->
+        <div id="auth-subpane-register" style="display: none;">
+          <form id="unified-register-form" onsubmit="handleUnifiedRegister(event);">
+            <div class="modal-form-row" style="margin-bottom: 12px;">
+              <label class="modal-label" for="reg-name" style="display:block; font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px;">
+                Practitioner / Advocate Name <span style="color:#ef4444;">*</span>
+              </label>
+              <input type="text" id="reg-name" class="modal-input" placeholder="e.g. Adv. Rajesh Sharma / CA Priya Verma" required style="width:100%; box-sizing:border-box;" />
+            </div>
+
+            <div class="modal-form-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+              <div class="modal-form-row">
+                <label class="modal-label" for="reg-role" style="display:block; font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px;">
+                  Professional Role <span style="color:#ef4444;">*</span>
+                </label>
+                <select id="reg-role" class="modal-input" required style="width:100%; box-sizing:border-box;">
+                  <option value="ip" selected>Insolvency Professional (IP)</option>
+                  <option value="rv">Registered Valuer (RV)</option>
+                  <option value="advocate">Restructuring Advocate</option>
+                  <option value="auditor">Forensic Auditor</option>
+                </select>
+              </div>
+
+              <div class="modal-form-row">
+                <label class="modal-label" for="reg-email" style="display:block; font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px;">
+                  Professional Email <span style="color:#ef4444;">*</span>
+                </label>
+                <input type="email" id="reg-email" class="modal-input" placeholder="name@firm-or-chambers.com" required style="width:100%; box-sizing:border-box;" />
+              </div>
+            </div>
+
+            <div class="modal-form-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+              <div class="modal-form-row">
+                <label class="modal-label" for="reg-password" style="display:block; font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px;">
+                  Create Password <span style="color:#ef4444;">*</span>
+                </label>
+                <input type="password" id="reg-password" class="modal-input" placeholder="Min. 8 characters" required minlength="6" style="width:100%; box-sizing:border-box;" />
+              </div>
+
+              <div class="modal-form-row">
+                <label class="modal-label" for="reg-ibbi-no" style="display:block; font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px;">
+                  IBBI / Bar Reg. No
+                </label>
+                <input type="text" id="reg-ibbi-no" class="modal-input" placeholder="e.g. IBBI/IPA-002/..." style="width:100%; box-sizing:border-box;" />
+              </div>
+            </div>
+
+            <div class="modal-form-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+              <div class="modal-form-row">
+                <label class="modal-label" for="reg-city" style="display:block; font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px;">
+                  Primary NCLT Bench / City <span style="color:#ef4444;">*</span>
+                </label>
+                <select id="reg-city" class="modal-input" required style="width:100%; box-sizing:border-box;">
+                  <option value="New Delhi" selected>New Delhi (Principal Bench)</option>
+                  <option value="Mumbai">Mumbai Bench</option>
+                  <option value="Chandigarh">Chandigarh Bench</option>
+                  <option value="Bengaluru">Bengaluru Bench</option>
+                  <option value="Kolkata">Kolkata Bench</option>
+                  <option value="Chennai">Chennai Bench</option>
+                  <option value="Hyderabad">Hyderabad Bench</option>
+                  <option value="Ahmedabad">Ahmedabad Bench</option>
+                  <option value="Jaipur">Jaipur Bench</option>
+                  <option value="Cuttack">Cuttack Bench</option>
+                  <option value="Kochi">Kochi Bench</option>
+                  <option value="Indore">Indore Bench</option>
+                  <option value="Guwahati">Guwahati Bench</option>
+                  <option value="Allahabad">Allahabad Bench</option>
+                </select>
+              </div>
+
+              <div class="modal-form-row">
+                <label class="modal-label" for="reg-address" style="display:block; font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px;">
+                  Chambers Address / Pincode
+                </label>
+                <input type="text" id="reg-address" class="modal-input" placeholder="e.g. Nariman Point / 160018" style="width:100%; box-sizing:border-box;" />
+              </div>
+            </div>
+
+            <div class="modal-trust-notice" style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:10px 12px; margin-bottom:14px; font-size:0.78rem; color:#166534; display:flex; gap:8px;">
+              <i class="fa-solid fa-shield-halved" style="color:#16a34a; font-size:0.95rem; margin-top:2px;"></i>
+              <span><strong>One Account Everywhere:</strong> Registering unlocks Controller downloads, grants accredited community access, and provides instant single sign-on to LightRAG Chat.</span>
+            </div>
+
+            <div class="modal-form-actions" style="display:flex; justify-content:flex-end; gap:10px;">
+              <button type="button" class="btn-modal-secondary" onclick="closeUnifiedAuthModal();">Cancel</button>
+              <button type="submit" id="btn-register-submit" class="btn-modal-primary" style="background:#0284c7; color:#fff; border:none; border-radius:8px; padding:9px 18px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:8px;">
+                <i class="fa-solid fa-user-check"></i> Register &amp; Continue ➔
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
 
-      <div style="display: flex; justify-content: center; gap: 10px;">
-        <button type="button" class="btn-modal-secondary" onclick="closeAddMeModal();">
-          Close Window
-        </button>
+      <!-- SECTION 2: AUTHENTICATED INTENT VIEWS -->
+      <div id="auth-authenticated-pane" style="display: none;">
+
+        <!-- View A: Controller Downloads View -->
+        <div id="unified-view-downloads" style="display: none;">
+          <div class="unlocked-welcome-box" style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:12px 16px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+              <div>
+                <span style="font-size:0.75rem; font-weight:700; color:#15803d; text-transform:uppercase; letter-spacing:0.06em;">
+                  <i class="fa-solid fa-circle-check"></i> 30-Day Air-Gapped Lease Active
+                </span>
+                <div style="font-weight:700; color:#0f172a; font-size:0.98rem;">
+                  Welcome, <span class="auth-user-display-name">Practitioner</span>!
+                </div>
+                <div style="font-size:0.75rem; color:#475569;">
+                  Sovereign Local-First Runtime &bull; DPDP Act 2023 Shield Verified
+                </div>
+              </div>
+              <button type="button" onclick="handleAuthLogout();" class="btn-edit-details" style="font-size:0.75rem; color:#dc2626; border:1px solid #fecaca; background:#fff; padding:4px 10px; border-radius:6px; cursor:pointer;">
+                <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+              </button>
+            </div>
+          </div>
+
+          <div class="os-download-grid">
+            <!-- macOS Apple Silicon -->
+            <div class="os-card" id="card-mac-arm">
+              <div class="os-card-header">
+                <div class="os-icon os-apple"><i class="fa-brands fa-apple"></i></div>
+                <div class="os-info">
+                  <div class="os-name">macOS (Apple Silicon)</div>
+                  <div class="os-meta">M1 · M2 · M3 · M4 · M5 (ARM64)</div>
+                </div>
+              </div>
+              <div class="os-specs">334 MB · .dmg (Apple Silicon) · Verified</div>
+              <a href="https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg" class="btn-os-download">
+                <i class="fa-solid fa-download"></i> Download .dmg
+              </a>
+            </div>
+
+            <!-- macOS Intel -->
+            <div class="os-card" id="card-mac-intel">
+              <div class="os-card-header">
+                <div class="os-icon os-apple"><i class="fa-brands fa-apple"></i></div>
+                <div class="os-info">
+                  <div class="os-name">macOS (Intel)</div>
+                  <div class="os-meta">Intel Core i5/i7/i9 (x86_64)</div>
+                </div>
+              </div>
+              <div class="os-specs">334 MB · .dmg · Universal</div>
+              <a href="https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg" class="btn-os-download">
+                <i class="fa-solid fa-download"></i> Download .dmg
+              </a>
+            </div>
+
+            <!-- Windows 10/11 -->
+            <div class="os-card" id="card-windows">
+              <div class="os-card-header">
+                <div class="os-icon os-windows"><i class="fa-brands fa-windows"></i></div>
+                <div class="os-info">
+                  <div class="os-name">Windows 10 / 11</div>
+                  <div class="os-meta">64-bit Direct Installer (.exe)</div>
+                </div>
+              </div>
+              <div class="os-specs">128 MB · Standalone .exe · Local First</div>
+              <a href="https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva-Setup-1.17.0.exe" class="btn-os-download">
+                <i class="fa-solid fa-download"></i> Download .exe
+              </a>
+            </div>
+
+            <!-- Linux -->
+            <div class="os-card" id="card-linux-appimage">
+              <div class="os-card-header">
+                <div class="os-icon os-linux"><i class="fa-brands fa-linux"></i></div>
+                <div class="os-info">
+                  <div class="os-name">Linux AppImage</div>
+                  <div class="os-meta">Ubuntu · Debian · Fedora · RHEL</div>
+                </div>
+              </div>
+              <div class="os-specs">312 MB · .AppImage (x86_64)</div>
+              <a href="https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.AppImage" class="btn-os-download">
+                <i class="fa-solid fa-download"></i> Download AppImage
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- View B: Directory & Community View -->
+        <div id="unified-view-directory" style="display: none;">
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="font-size:0.75rem; font-weight:700; color:#0284c7; text-transform:uppercase; letter-spacing:0.06em;">
+                <i class="fa-solid fa-address-card"></i> Community Membership Active
+              </span>
+              <span class="badge badge-success" id="directory-badge-status"><i class="fa-solid fa-check"></i> Registered Member</span>
+            </div>
+            <div style="font-size:1.05rem; font-weight:700; color:#0f172a;" class="auth-user-display-name">Practitioner</div>
+            <div style="font-size:0.82rem; color:#64748b; margin-top:2px;" id="directory-user-email">email@chambers.com</div>
+          </div>
+
+          <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:12px; margin-bottom:12px; font-size:0.82rem; color:#1e40af;">
+            <i class="fa-solid fa-circle-info" style="margin-right:4px;"></i>
+            <strong>National Bench Map:</strong> Ensure your NCLT Bench and IBBI/Bar registration number are recorded to pin your chamber onto the directory roster.
+          </div>
+
+          <div id="dir-profile-update-box" style="margin-bottom: 14px; background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:12px;">
+            <div style="font-size:0.8rem; font-weight:700; color:#1e293b; margin-bottom:8px;">
+              <i class="fa-solid fa-location-dot" style="color:#0284c7;"></i> Practice Location &amp; Bench Pin
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+              <div>
+                <label style="display:block; font-size:0.73rem; color:#475569; margin-bottom:2px; font-weight:600;">NCLT Bench City</label>
+                <select id="auth-update-city" class="modal-input" style="width:100%; font-size:0.78rem; padding:6px 8px; box-sizing:border-box;">
+                  <option value="New Delhi">New Delhi (Principal)</option>
+                  <option value="Mumbai">Mumbai Bench</option>
+                  <option value="Chandigarh">Chandigarh Bench</option>
+                  <option value="Bengaluru">Bengaluru Bench</option>
+                  <option value="Kolkata">Kolkata Bench</option>
+                  <option value="Chennai">Chennai Bench</option>
+                  <option value="Hyderabad">Hyderabad Bench</option>
+                  <option value="Ahmedabad">Ahmedabad Bench</option>
+                  <option value="Jaipur">Jaipur Bench</option>
+                  <option value="Cuttack">Cuttack Bench</option>
+                  <option value="Kochi">Kochi Bench</option>
+                  <option value="Indore">Indore Bench</option>
+                  <option value="Guwahati">Guwahati Bench</option>
+                  <option value="Allahabad">Allahabad Bench</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block; font-size:0.73rem; color:#475569; margin-bottom:2px; font-weight:600;">IBBI / Bar Reg. No</label>
+                <input type="text" id="auth-update-regno" class="modal-input" placeholder="IBBI/IPA-002/..." style="width:100%; font-size:0.78rem; padding:6px 8px; box-sizing:border-box;" />
+              </div>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label style="display:block; font-size:0.73rem; color:#475569; margin-bottom:2px; font-weight:600;">Chambers Office Address / Pincode</label>
+              <input type="text" id="auth-update-address" class="modal-input" placeholder="e.g. Sector 18 / Nariman Point / 160018" style="width:100%; font-size:0.78rem; padding:6px 8px; box-sizing:border-box;" />
+            </div>
+            <button type="button" onclick="handleUpdateDirectoryProfile();" class="btn-modal-primary" style="width:100%; background:#0284c7; color:#fff; border:none; padding:8px; border-radius:6px; font-size:0.8rem; font-weight:700; cursor:pointer;">
+              <i class="fa-solid fa-map-pin"></i> Save &amp; Pin On Map
+            </button>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end; gap:10px;">
+            <button type="button" class="btn-modal-secondary" onclick="closeUnifiedAuthModal();">Close</button>
+            <a href="directory_listing.html" class="btn-modal-primary" onclick="closeUnifiedAuthModal();" style="background:#0f172a; color:#fff; border-radius:8px; padding:8px 16px; font-weight:600; text-decoration:none;">View Directory Map ➔</a>
+          </div>
+        </div>
+
+        <!-- View C: Chamber & Account View -->
+        <div id="unified-view-account" style="display: none;">
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+              <div>
+                <span class="badge badge-success" style="font-size:0.72rem; padding:3px 8px; margin-bottom:6px; display:inline-block;">
+                  <i class="fa-solid fa-circle-check"></i> Active SSO Session
+                </span>
+                <h4 style="font-size:1.1rem; font-weight:700; color:#0f172a; margin:0;" class="auth-user-display-name">Practitioner</h4>
+                <div style="font-size:0.8rem; color:#64748b;" id="account-user-email">email@chambers.com</div>
+              </div>
+              <span class="badge badge-primary" style="font-size:0.75rem;">30-Day Air-Gap Lease</span>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.8rem; color:#475569; padding-top:10px; border-top:1px solid #e2e8f0;">
+              <div><i class="fa-solid fa-cloud" style="color:#0284c7; margin-right:4px;"></i> Neon Auth: <strong>Connected</strong></div>
+              <div><i class="fa-solid fa-brain" style="color:#7c3aed; margin-right:4px;"></i> LightRAG Chat: <strong>Unlocked</strong></div>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button type="button" onclick="handleAuthLogout();" class="btn-modal-secondary" style="color:#dc2626; border-color:#fecaca;">
+              <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+            </button>
+            <div style="display:flex; gap:8px;">
+              <a href="https://chats.agenticprofessionals.net/workspace/" target="_blank" class="btn-modal-secondary" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Chat
+              </a>
+              <button type="button" class="btn-modal-primary" onclick="closeUnifiedAuthModal();" style="background:#0284c7; color:#fff; border:none; border-radius:8px; padding:8px 16px; font-weight:700; cursor:pointer;">
+                Done
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </div>
-
   </div>
 </div>

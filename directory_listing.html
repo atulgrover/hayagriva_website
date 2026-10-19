@@ -32,89 +32,36 @@
   <!-- Shared Site Header -->
   <div id="shared-header"></div>
 
-  <!-- Pillar 5 Hero Banner: COMMUNITY -->
-  <section class="pillar-hero-banner">
-    <div class="pillar-hero-container">
-      <div class="pillar-hero-text">
-        <span class="pillar-hero-tag"><i class="fa-solid fa-address-book"></i> Pillar 05 &bull; Registry</span>
-        <h1 class="pillar-hero-title">COMMUNITY</h1>
-        <p class="pillar-hero-subtitle">IBBI Accredited Registry of IPs, RVs &amp; Restructuring Advocates</p>
-      </div>
-      <div class="pillar-hero-action">
-        <button type="button" class="btn-pillar-cta" onclick="openAddMeModal();" id="cta-join-community">
-          <i class="fa-solid fa-user-plus"></i>
-          <span>Join Now</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4 Teaser Cards for COMMUNITY -->
-  <section class="pillar-teaser-section">
-    <div class="pillar-teaser-heading">
-      <i class="fa-solid fa-layer-group"></i> Ecosystem Registry &amp; Directory Segments
-    </div>
-    <div class="pillar-teaser-grid">
-      <div class="pillar-teaser-card">
-        <div class="pillar-card-icon-box icon-blue">
-          <i class="fa-solid fa-user-tie"></i>
-        </div>
-        <h3 class="pillar-card-title">Insolvency Professionals (IP)</h3>
-        <p class="pillar-card-desc">IBBI-licensed resolution professionals and liquidators across Principal Bench and regional NCLT benches nationwide.</p>
-        <div class="pillar-card-footer"><i class="fa-solid fa-book"></i> Read Directory Manual for IP credentials</div>
-      </div>
-      <div class="pillar-teaser-card">
-        <div class="pillar-card-icon-box icon-teal">
-          <i class="fa-solid fa-coins"></i>
-        </div>
-        <h3 class="pillar-card-title">Registered Valuers (RV)</h3>
-        <p class="pillar-card-desc">Certified asset and financial valuation specialists across Land &amp; Building, Plant &amp; Machinery, and Securities.</p>
-        <div class="pillar-card-footer"><i class="fa-solid fa-book"></i> Read Directory Manual for RV verification</div>
-      </div>
-      <div class="pillar-teaser-card">
-        <div class="pillar-card-icon-box icon-purple">
-          <i class="fa-solid fa-scale-balanced"></i>
-        </div>
-        <h3 class="pillar-card-title">Restructuring Advocates</h3>
-        <p class="pillar-card-desc">Senior legal counsel and commercial practitioners specializing in CIRP, liquidation, and appellate advocacy.</p>
-        <div class="pillar-card-footer"><i class="fa-solid fa-book"></i> Read Directory Manual for court rosters</div>
-      </div>
-      <div class="pillar-teaser-card">
-        <div class="pillar-card-icon-box icon-amber">
-          <i class="fa-solid fa-toolbox"></i>
-        </div>
-        <h3 class="pillar-card-title">Hayagriva Skills &amp; Resources</h3>
-        <p class="pillar-card-desc">Open directory of domain tools, automation skills, verified practitioner profiles, and ecosystem knowledge.</p>
-        <div class="pillar-card-footer"><i class="fa-solid fa-book"></i> Read Directory Manual for skill certification</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Directory Application Layout -->
-  <main class="directory-container" style="height: 720px; max-width: 1200px; margin: 0 auto 3.5rem; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(15,23,42,0.06);">
+  <!-- Main Directory Application Layout: Full Width & Viewport Edge-to-Edge -->
+  <main class="directory-container" style="display: flex !important; flex-direction: row !important; width: 100vw !important; max-width: 100% !important; height: calc(100vh - 65px) !important; margin: 0 !important; border: none !important; border-radius: 0 !important; overflow: hidden !important; background: #ffffff; box-sizing: border-box;">
 
     <!-- Directory Left Sidebar -->
-    <aside class="directory-sidebar">
+    <aside class="directory-sidebar" style="width: 440px !important; min-width: 380px !important; max-width: 440px !important; flex-shrink: 0 !important; display: flex !important; flex-direction: column !important; border-right: 1px solid #e2e8f0; background: #ffffff; height: 100%; box-sizing: border-box; z-index: 10;">
 
       <!-- Search Header -->
-      <div class="directory-search-header">
+      <div class="directory-search-header" style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; background: #ffffff; flex-shrink: 0;">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-          <h1 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0; display: inline-flex; align-items: center; gap: 0.45rem;">
-            <i class="fa-solid fa-address-book" style="color: #2563eb;"></i>
-            <span>Accredited Directory</span>
-          </h1>
-          <span class="badge badge-primary" id="results-count-badge">Loading...</span>
+          <div>
+            <h1 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0; display: inline-flex; align-items: center; gap: 0.45rem; letter-spacing: -0.01em;">
+              <i class="fa-solid fa-address-book" style="color: #0284c7;"></i>
+              <span>COMMUNITY DIRECTORY</span>
+            </h1>
+            <div style="font-size: 0.72rem; color: #64748b; margin-top: 2px;">
+              National Bench Map &bull; Accredited Registry
+            </div>
+          </div>
+          <span class="badge badge-primary" id="results-count-badge" style="font-size: 0.75rem; padding: 4px 8px;">Loading...</span>
         </div>
 
-        <div class="search-input-group">
+        <div class="search-input-group" style="margin-bottom: 0.75rem;">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <input type="text" id="dir-search-input" class="search-input"
-            placeholder="Search by name, firm, reg no...">
+            placeholder="Search by name, firm, reg no..." style="width: 100%; box-sizing: border-box;">
         </div>
 
-        <div class="filter-row">
-          <select id="dir-city-filter" class="filter-select" aria-label="Filter by NCLT City Bench">
-            <option value="all">All NCLT Cities</option>
+        <div class="filter-row" style="display: flex; gap: 0.5rem;">
+          <select id="dir-city-filter" class="filter-select" aria-label="Filter by NCLT City Bench" style="flex: 1; box-sizing: border-box;">
+            <option value="all">All NCLT Benches</option>
             <option value="Chandigarh">Chandigarh Bench</option>
             <option value="New Delhi">New Delhi (Principal)</option>
             <option value="Mumbai">Mumbai Bench</option>
@@ -123,46 +70,54 @@
             <option value="Kolkata">Kolkata Bench</option>
             <option value="Chennai">Chennai Bench</option>
             <option value="Hyderabad">Hyderabad Bench</option>
+            <option value="Jaipur">Jaipur Bench</option>
+            <option value="Cuttack">Cuttack Bench</option>
+            <option value="Kochi">Kochi Bench</option>
+            <option value="Indore">Indore Bench</option>
+            <option value="Guwahati">Guwahati Bench</option>
+            <option value="Allahabad">Allahabad Bench</option>
           </select>
 
-          <select id="dir-category-filter" class="filter-select" aria-label="Filter by Professional Category">
-            <option value="all">All Professionals</option>
+          <select id="dir-category-filter" class="filter-select" aria-label="Filter by Professional Category" style="flex: 1; box-sizing: border-box;">
+            <option value="all">All Roles</option>
             <option value="ip">Insolvency Professionals (IP)</option>
             <option value="rv">Registered Valuers (RV)</option>
             <option value="counsel">Restructuring Advocates</option>
           </select>
         </div>
 
+        <!-- In-Sidebar Primary Join / Claim Button -->
         <div style="margin-top: 0.75rem;">
-          <button type="button" class="btn btn-primary" onclick="openAddMeModal();" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 600; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); cursor: pointer;">
-            <i class="fa-solid fa-user-plus"></i> Add Me to Directory
+          <button type="button" class="btn btn-primary" onclick="openAddMeModal();" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.65rem 1rem; font-size: 0.85rem; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(2,132,199,0.25); cursor: pointer; background: #0284c7; color: #ffffff; border: none;">
+            <i class="fa-solid fa-user-plus"></i> + Add My Chamber to Map
           </button>
         </div>
       </div>
 
       <!-- Dynamic Cards List -->
-      <div class="directory-results-list" id="directory-results-container">
+      <div class="directory-results-list" id="directory-results-container" style="flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem;">
         <!-- Populated dynamically by directory.js -->
       </div>
 
     </aside>
 
     <!-- Directory Right Leaflet Map -->
-    <div class="directory-map-container" style="flex: 1; height: 100%;">
-      <div id="leaflet-map" style="width: 100%; height: 100%;"></div>
+    <div class="directory-map-container" style="flex: 1 1 0% !important; min-width: 450px !important; width: 100% !important; height: 100% !important; position: relative !important; background: #f8fafc !important;">
+      <div id="leaflet-map" style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; z-index: 1 !important;"></div>
     </div>
 
   </main>
+
+  <!-- Shared Footer -->
+  <div id="shared-footer"></div>
 
   <!-- JavaScript Libraries & Scripts -->
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <!-- Shared Footer -->
-  <div id="shared-footer"></div>
-
   <!-- Application Logic -->
+  <script src="js/auth.js"></script>
   <script src="js/data.js"></script>
   <script src="js/directory.js"></script>
   <script src="js/header.js"></script>
@@ -174,6 +129,5 @@
       }
     });
   </script>
-
 </body>
 </html>

@@ -101,18 +101,49 @@
 
 
 
-    .card-danger .card-warning .card-shield .reality-text {
-      font-size: 0.88rem;
-      color: #64748b;
-      line-height: 1.55;
-      margin: 0;
+    .workbench-preview-wrapper {
+      margin-top: 2.75rem;
+      width: 100%;
     }
 
-    @media (max-width: 992px) {}
+    .workbench-preview-heading {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748b;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-workbench-preview {
+      margin: 0 auto;
+      max-width: 100%;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.04);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .hero-workbench-preview:hover {
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.18), 0 6px 16px rgba(15, 23, 42, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .hero-workbench-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     @media (max-width: 768px) {
       .hayagriva-hero-section {
-        padding: 24px 16px 20px;
+        padding: 24px 16px 24px;
       }
 
       .hero-logo-card {
@@ -124,176 +155,12 @@
         max-height: 140px;
       }
 
-
-
-      .btn-threat-primary,
-    }
-
-    /* 3-Panel Visual IDE Mockup */
-    :root {
-      --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
-    }
-
-    .ide-mockup-frame {
-      background: #090d16;
-      border: 1px solid #1e293b;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
-      margin: 1rem 0;
-    }
-
-    .ide-titlebar {
-      background: #0f172a;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #1e293b;
-    }
-
-    .window-dots {
-      display: flex;
-      gap: 6px;
-    }
-
-    .window-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    .dot-red {
-      background: #ef4444;
-    }
-
-    .dot-yellow {
-      background: #eab308;
-    }
-
-    .dot-green {
-      background: #22c55e;
-    }
-
-    .ide-titlebar-text {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: #94a3b8;
-    }
-
-    .ide-three-panes {
-      display: grid;
-      grid-template-columns: 280px 1fr 340px;
-      min-height: 480px;
-      background: #090d16;
-      border-top: 1px solid #1e293b;
-    }
-
-    .pane-column {
-      border-right: 1px solid #1e293b;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .pane-column:last-child {
-      border-right: none;
-    }
-
-    .pane-header-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .pane-free-tag {
-      background: rgba(34, 197, 94, 0.15);
-      color: #4ade80;
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.65rem;
-    }
-
-    .pane-gated-tag {
-      background: rgba(168, 85, 247, 0.15);
-      color: #c084fc;
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.65rem;
-    }
-
-    .mock-tree-item {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: #cbd5e1;
-      padding: 5px 8px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 3px;
-    }
-
-    .mock-tree-item.active {
-      background: rgba(37, 99, 235, 0.2);
-      color: #60a5fa;
-    }
-
-    .mock-editor-tab {
-      background: #1e293b;
-      color: #f8fafc;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      padding: 6px 12px;
-      border-radius: 6px 6px 0 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .mock-editor-code {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: #e2e8f0;
-      line-height: 1.6;
-      flex: 1;
-    }
-
-    .mock-chat-bubble {
-      background: #131d31;
-      border: 1px solid #233554;
-      border-radius: 8px;
-      padding: 10px 12px;
-      font-size: 0.78rem;
-      color: #e2e8f0;
-      margin-bottom: 10px;
-    }
-
-    .mock-auth-card {
-      background: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      border-radius: 8px;
-      padding: 10px 12px;
-      font-size: 0.75rem;
-      margin-top: auto;
-    }
-
-    @media (max-width: 1080px) {
-      .ide-three-panes {
-        grid-template-columns: 1fr;
+      .workbench-preview-wrapper {
+        margin-top: 1.75rem;
       }
 
-      .pane-column {
-        border-right: none;
-        border-bottom: 1px solid #1e293b;
+      .hero-workbench-preview {
+        border-radius: 10px;
       }
     }
   </style>
@@ -328,278 +195,76 @@
         <div class="hero-logo-card" id="heroLogoCard" title="Lord Hayagriva - Embodiment of Knowledge & Pure Bliss">
           <img src="branding/hayagriva_logo.png" alt="Lord Hayagriva Emblem Logo" />
         </div>
-
-        <!-- AI Drip Resolution Hero Value Proposition -->
-        <div class="hero-text-block" style="margin-top: 24px; text-align: center; max-width: 860px; padding: 0 16px;">
-          <div class="hero-badge" style="display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 6px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px;">
-            <i class="fa-solid fa-shield-halved"></i> Sovereign Legal Operating System
-          </div>
-          <h1 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; color: #0f172a; line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.02em;">
-            AI Drip Resolution for Insolvency Professionals &amp; Advocates
-          </h1>
-          <p style="font-size: clamp(1rem, 1.8vw, 1.15rem); color: #475569; line-height: 1.6; max-width: 740px; margin: 0 auto 20px;">
-            Continuous compliance from Day 1 to Day 330. The moment documents arrive, local agents immediately ingest, reconcile, and audit them—ensuring zero missed statutory deadlines and complete protection from IBBI liability.
-          </p>
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 12px;">
-            <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.86rem; font-weight: 600; color: #15803d; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 6px 14px; border-radius: 6px;">
-              <i class="fa-solid fa-lock"></i> 100% Private On-Device (Zero Cloud Leakage)
-            </div>
-            <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.86rem; font-weight: 600; color: #1d4ed8; background: #eff6ff; border: 1px solid #bfdbfe; padding: 6px 14px; border-radius: 6px;">
-              <i class="fa-solid fa-bolt"></i> Real-Time Claims &amp; Avoidance Audit
-            </div>
-            <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.86rem; font-weight: 600; color: #7c3aed; background: #f5f3ff; border: 1px solid #ddd6fe; padding: 6px 14px; border-radius: 6px;">
-              <i class="fa-solid fa-scale-balanced"></i> NCLT &amp; Supreme Court Pleading Ready
-            </div>
-          </div>
-        </div>
       </section>
 
-      <!-- ======================================================================
-           Section: 3-Panel Interactive Sovereign Workspace Mockup (Desktop Architecture Preview)
-      ====================================================================== -->
-      <div class="container" style="padding-top: 1.5rem; padding-bottom: 1rem;">
-        <div class="ide-mockup-frame" id="architecture">
-          <div class="ide-titlebar">
-            <div class="window-dots">
-              <div class="window-dot dot-red"></div>
-              <div class="window-dot dot-yellow"></div>
-              <div class="window-dot dot-green"></div>
+      <!-- 4 Sovereign Legal Reality & Scale Cards -->
+      <section class="pillar-teaser-section">
+        <!--<div class="pillar-teaser-heading">
+          <i class="fa-solid fa-shield-halved" style="color: #0284c7;"></i> Statutory Liability Shields &amp; Practice
+          Multipliers
+        </div>-->
+        <div class="pillar-teaser-grid">
+
+          <!-- Card 1: DPDP & IT Act Shield -->
+          <div class="pillar-teaser-card">
+            <div class="pillar-card-icon-box icon-red">
+              <i class="fa-solid fa-user-shield"></i>
             </div>
-            <div class="ide-titlebar-text">
-              Hayagriva Sovereign Legal OS — [Matter: CIRP-2026-DHFL-COMMERCIAL] — 100% Private &amp; Offline
-            </div>
-            <div style="font-size:0.72rem; color:#4ade80; display:flex; align-items:center; gap:6px;">
-              <span
-                style="width:6px; height:6px; border-radius:50%; background:#4ade80; box-shadow:0 0 6px #4ade80;"></span>
-              AI Drip Ingestion: Active
-            </div>
+            <span
+              style="font-size: 0.72rem; font-weight: 800; color: #dc2626; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Data
+              Breach Immunity</span>
+            <h3 class="pillar-card-title">DPDP &amp; IT Act Shield</h3>
+            <p class="pillar-card-desc">Uploading debtor financials, promoter records, or valuations to cloud AI
+              platforms triggers severe data breach liabilities under DPDP Act 2023 &amp; IT Act Sec 72A—with personal
+              penalties up to ₹250 Crore. Hayagriva runs 100% on-device with zero cloud leakage.</p>
           </div>
 
-          <div class="ide-three-panes">
-
-            <!-- Left Pane: Case Evidence & Drip Ingestion (FREE) -->
-            <div class="pane-column">
-              <div class="pane-header-label" style="color:#4ade80;">
-                <span><i class="fa-solid fa-folder-tree"></i> Evidence &amp; Claims Binder</span>
-                <span class="pane-free-tag">UNLOCKED FREE</span>
-              </div>
-
-              <div class="mock-tree-item active">
-                <i class="fa-solid fa-file-pdf" style="color:#ef4444;"></i>
-                <span>Bank_Statement_HDFC.pdf</span>
-              </div>
-              <div class="mock-tree-item">
-                <i class="fa-solid fa-table" style="color:#22c55e;"></i>
-                <span>Form_C_Claims_Ledger.xlsx</span>
-              </div>
-              <div class="mock-tree-item">
-                <i class="fa-solid fa-book-bookmark" style="color:#eab308;"></i>
-                <span>Forensic_Audit_Contra_Entries.pdf</span>
-              </div>
-              <div class="mock-tree-item">
-                <i class="fa-solid fa-inbox" style="color:#38bdf8;"></i>
-                <span>Statutory Alerts (2 Urgent)</span>
-              </div>
-
-              <div
-                style="margin-top:auto; background:#1e293b; border-radius:8px; padding:10px; font-size:0.72rem; color:#94a3b8;">
-                <div style="color:#f8fafc; font-weight:700; margin-bottom:4px;">AI Drip Resolution Status</div>
-                <div style="display:flex; justify-content:space-between;">
-                  <span>Claims Processed: 42/42</span>
-                  <span style="color:#4ade80;"><i class="fa-solid fa-check"></i> 100% Reconciled</span>
-                </div>
-              </div>
+          <!-- Card 2: IBBI Reg 40A Immunity -->
+          <div class="pillar-teaser-card">
+            <div class="pillar-card-icon-box icon-amber">
+              <i class="fa-solid fa-clock-rotate-left"></i>
             </div>
-
-            <!-- Middle Pane: NCLT Pleading & Application Studio (FREE) -->
-            <div class="pane-column" style="background:#0b1120;">
-              <div class="pane-header-label" style="color:#60a5fa;">
-                <span><i class="fa-solid fa-scale-balanced"></i> NCLT Pleading &amp; Drafting Studio</span>
-                <span class="pane-free-tag">UNLOCKED FREE</span>
-              </div>
-
-              <div class="mock-editor-tab">
-                <i class="fa-solid fa-file-lines" style="color:#38bdf8;"></i>
-                <span>Section_43_Avoidance_Application.docx</span>
-              </div>
-
-              <div class="mock-editor-code">
-                <span style="color:#94a3b8;">// Continuous Statutory Compliance Verification: ACTIVE</span><br>
-                <span style="color:#60a5fa;">## BEFORE THE HON'BLE NATIONAL COMPANY LAW TRIBUNAL, MUMBAI BENCH</span><br>
-                <span style="color:#f8fafc;">INTERLOCUTORY APPLICATION NO. 142 OF 2026 IN CP(IB) NO. 88/MB/2024</span><br><br>
-                <span style="color:#38bdf8;">1.</span> That the Corporate Debtor entered into a transfer of asset on
-                14th June 2022 within the relevant lookback period of 2 years under <span
-                  style="color:#4ade80; text-decoration:underline;">Section 43(4) of IBC, 2016</span>.<br><br>
-                <span style="color:#eab308;">Court Export</span> <span style="color:#94a3b8;">➔ Formatted to NCLT / Supreme Court Rules
-                  (Times New Roman 14pt, 1.5 spacing, 4cm margins, Exhibit Stamps)</span>
-              </div>
-
-              <div
-                style="margin-top:auto; display:flex; justify-content:space-between; align-items:center; background:#111c33; border:1px solid #1e293b; border-radius:6px; padding:8px 12px; font-size:0.72rem; color:#94a3b8;">
-                <span><i class="fa-solid fa-file-pdf" style="color:#ef4444;"></i> Split Evidence Preview: Bank Vouchers</span>
-                <span style="color:#4ade80;"><i class="fa-solid fa-check"></i> Ready for e-Filing</span>
-              </div>
-            </div>
-
-            <!-- Right Pane: Autonomous Risk Shield & Diligence (GATED) -->
-            <div class="pane-column">
-              <div class="pane-header-label" style="color:#c084fc;">
-                <span><i class="fa-solid fa-shield-halved"></i> Autonomous Risk Shield</span>
-                <span class="pane-gated-tag">PROTECTION ENGINE</span>
-              </div>
-
-              <div class="mock-chat-bubble">
-                <div style="font-weight:700; color:#38bdf8; margin-bottom:4px;"><i class="fa-solid fa-triangle-exclamation" style="color:#eab308;"></i> Avoidance Transaction Alert</div>
-                <div>Flagged ₹4.2 Cr transfer dated 14-Jun-2022 to related entity within 2-year statutory lookback window under Section 43.</div>
-              </div>
-
-              <div class="mock-chat-bubble">
-                <div style="font-weight:700; color:#c084fc; margin-bottom:4px;"><i class="fa-solid fa-clipboard-check" style="color:#4ade80;"></i> Form H Compliance Audit</div>
-                <div>All 28 CIRP regulatory checklists verified. Section 29A screening required for Resolution Applicant directors.</div>
-              </div>
-
-              <div class="mock-auth-card">
-                <div style="font-weight:700; color:#fca5a5; margin-bottom:4px;">
-                  <i class="fa-solid fa-fingerprint"></i> Section 29A Diligence Authorization
-                </div>
-                <div style="color:#cbd5e1; margin-bottom:8px;">
-                  Screen 4 Applicant Directors against MCA debarment, RBI wilful defaulter &amp; SEBI registries? Cost: ₹600.
-                </div>
-                <div style="display:flex; gap:6px;">
-                  <span
-                    style="background:#16a34a; color:#fff; padding:4px 8px; border-radius:4px; font-weight:700; font-size:0.7rem; cursor:pointer;">Authorize &amp; Verify</span>
-                  <span
-                    style="background:#334155; color:#cbd5e1; padding:4px 8px; border-radius:4px; font-size:0.7rem;">Dismiss</span>
-                </div>
-              </div>
-            </div>
-
+            <span
+              style="font-size: 0.72rem; font-weight: 800; color: #d97706; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">AFA
+              &amp; Show-Cause Defense</span>
+            <h3 class="pillar-card-title">IBBI Reg 40A Immunity</h3>
+            <p class="pillar-card-desc">A single missed milestone in the strict 330-day statutory countdown invites IBBI
+              Disciplinary Committee show-cause notices, creditor litigation, and cancellation of your Authorisation for
+              Assignment (AFA). Automated timeline watchdogs self-audit every statutory filing before deadlines strike.
+            </p>
           </div>
+
+          <!-- Card 3: ED, SFIO & Avoidance Defense -->
+          <div class="pillar-teaser-card">
+            <div class="pillar-card-icon-box icon-purple">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <span
+              style="font-size: 0.72rem; font-weight: 800; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Fraud
+              &amp; Section 66 Defense</span>
+            <h3 class="pillar-card-title">ED, SFIO &amp; Avoidance Defense</h3>
+            <p class="pillar-card-desc">Failure to detect and report preferential, undervalued, or fraudulent
+              transactions under Sections 43, 45, 50, and 66 puts the IP under direct scrutiny of the Enforcement
+              Directorate (ED) and SFIO for gross negligence. Ingest millions of ledger entries into tamper-evident
+              avoidance dossiers instantly.</p>
+          </div>
+
+          <!-- Card 4: 10x Practice Scale -->
+          <div class="pillar-teaser-card">
+            <div class="pillar-card-icon-box icon-emerald">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+            <span
+              style="font-size: 0.72rem; font-weight: 800; color: #16a34a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Practice
+              Multiplier</span>
+            <h3 class="pillar-card-title">10x Scale with Lean Teams</h3>
+            <p class="pillar-card-desc">Eliminate 80% of repetitive mechanical burden in claims collation, checklist
+              verification, and pleading drafting. Your chamber commands 5x to 10x more concurrent CIRP &amp;
+              Liquidation appointments with zero staff inflation and maximum resolution success fees.</p>
+          </div>
+
         </div>
-      </div>
 
-      <section class="sovereign-arch-section" id="sovereign-architecture">
-        <div class="container">
-          <div class="three-panel-grid">
-            <!-- Panel 1: Left Panel (Free Forever) -->
-            <div class="panel-column-card panel-free">
-              <div class="panel-header-row">
-                <span
-                  style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #15803d;">
-                  <i class="fa-solid fa-folder-tree" style="margin-right: 4px;"></i> Evidence Vault
-                </span>
-                <span class="panel-badge-free">
-                  <i class="fa-solid fa-infinity"></i> Free Forever
-                </span>
-              </div>
-              <h3 class="panel-title">Case Evidence &amp; AI Drip Ingestion</h3>
-              <p class="panel-tagline">
-                The continuous filing cabinet, evidentiary timeline, and factual foundation of your insolvency matter.
-              </p>
-              <ul class="panel-features-list">
-                <li>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Instant Ingestion:</strong> Drop bank statements, contracts, audits, and claims; agents parse and cross-index text and tables immediately.</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Real-Time Claims Collation:</strong> Continuous automated verification of Form B, C, D, and E submissions against corporate debtor books.</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Instant Evidence Search:</strong> Pinpoint critical ledger entries and contract clauses across 100,000+ pages in milliseconds with exact page numbers.</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Statutory Action Inbox:</strong> Priority queue highlighting mandatory CIRP deadlines and pending verifications without disruptive notifications.</span>
-                </li>
-              </ul>
-              <div class="panel-footer-box">
-                <i class="fa-solid fa-hard-drive" style="color: #16a34a;"></i>
-                <span>100% Private Local Storage. Your client records never leave your machine.</span>
-              </div>
-            </div>
-
-            <!-- Panel 2: Middle Panel (Free Forever) -->
-            <div class="panel-column-card panel-middle">
-              <div class="panel-header-row">
-                <span
-                  style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #1d4ed8;">
-                  <i class="fa-solid fa-scale-balanced" style="margin-right: 4px;"></i> Drafting Studio
-                </span>
-                <span class="panel-badge-free">
-                  <i class="fa-solid fa-infinity"></i> Free Forever
-                </span>
-              </div>
-              <h3 class="panel-title">NCLT Pleading &amp; Application Studio</h3>
-              <p class="panel-tagline">
-                Court-ready legal drafting studio with live statutory rule checking and automatic Tribunal layout compliance.
-              </p>
-              <ul class="panel-features-list">
-                <li>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Live Statutory Citation Checker:</strong> Live verification against IBC 2016, IBBI Regulations, and NCLAT precedents as you draft.</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Side-by-Side Evidence Viewer:</strong> Cross-examine loan agreements, balance sheets, and bank statements directly beside your petition.</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Automatic Court Formatting:</strong> Pre-set to NCLT and Supreme Court filing standards (Times New Roman 14pt, 1.5 line spacing, 4cm left margin).</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span><strong>Instant e-Filing Export:</strong> Generate print-ready PDFs and editable Word documents with auto-numbered annexures and exhibit stamps.</span>
-                </li>
-              </ul>
-              <div class="panel-footer-box">
-                <i class="fa-solid fa-file-shield" style="color: #2563eb;"></i>
-                <span>Pleadings saved in standard Word &amp; PDF formats. Never locked or proprietary.</span>
-              </div>
-            </div>
-
-            <!-- Panel 3: Right Panel (Governed Diligence) -->
-            <div class="panel-column-card panel-gated">
-              <div class="panel-header-row">
-                <span
-                  style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #6b21a8;">
-                  <i class="fa-solid fa-shield-halved" style="margin-right: 4px;"></i> Risk Shield
-                </span>
-                <span class="panel-badge-gated">
-                  <i class="fa-solid fa-shield-halved"></i> Protection Engine
-                </span>
-              </div>
-              <h3 class="panel-title">Autonomous Risk Shield &amp; Diligence</h3>
-              <p class="panel-tagline">
-                Proactive regulatory protection preventing missed deadlines, IBBI show-cause penalties, and Section 29A oversights.
-              </p>
-              <ul class="panel-features-list">
-                <li>
-                  <i class="fa-solid fa-bolt"></i>
-                  <span><strong>Section 29A Disqualification Screening:</strong> Instant nationwide check on Resolution Applicants across wilful defaulter and debarred director databases.</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-bolt"></i>
-                  <span><strong>Avoidance Transaction Auditor:</strong> Proactively surfaces preferential (Sec 43), undervalued (Sec 45), and fraudulent (Sec 66) transactions within lookback periods.</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-bolt"></i>
-                  <span><strong>Form H Compliance Verifier:</strong> 28-point regulatory checklist verification ensuring zero compliance defects before NCLT submission.</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-bolt"></i>
-                  <span><strong>Court-Admissible Audit Trail:</strong> Cryptographic timestamped ledger documenting every diligence action to protect the IP against regulatory scrutiny.</span>
-                </li>
-              </ul>
-              <div class="panel-footer-box">
-                <i class="fa-solid fa-receipt" style="color: #7c3aed;"></i>
-                <span>Zero Surprise Charges. Diligence searches execute only with your explicit authorization.</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </section>
 
     </section>
@@ -621,6 +286,7 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Application Logic -->
+  <script src="js/auth.js"></script>
   <script src="js/data.js"></script>
   <script src="js/directory.js"></script>
   <script src="js/header.js?v=20260909_v5"></script>
@@ -631,11 +297,10 @@
   <script>
     function initHeroParallax() {
       const heroCard = document.getElementById('heroLogoCard');
-      const heroSection = document.getElementById('heroSection');
 
-      if (heroSection && heroCard) {
-        heroSection.addEventListener('mousemove', (e) => {
-          const rect = heroSection.getBoundingClientRect();
+      if (heroCard) {
+        heroCard.addEventListener('mousemove', (e) => {
+          const rect = heroCard.getBoundingClientRect();
           const x = (e.clientX - rect.left) / rect.width - 0.5;
           const y = (e.clientY - rect.top) / rect.height - 0.5;
 
@@ -643,7 +308,7 @@
           heroCard.style.boxShadow = `${-x * 24}px ${-y * 24}px 40px rgba(30, 108, 147, 0.18), 0 12px 28px rgba(0, 0, 0, 0.08)`;
         });
 
-        heroSection.addEventListener('mouseleave', () => {
+        heroCard.addEventListener('mouseleave', () => {
           heroCard.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale(1)';
           heroCard.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
         });

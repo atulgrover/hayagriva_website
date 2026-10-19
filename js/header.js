@@ -7,8 +7,7 @@
 (function () {
   const fallbackHTML = `<!-- ======================================================================
      AgenticProfessionals.Net - Shared Site Header Component
-     Brand: Agentic Professionals Network
-            Powered by Hayagriva Sovereign Intelligence
+     Brand: Agentic Professionals (Sovereign Intelligence)
      Tabs (Four Sovereign Pillars):
        0. Home
        1. WORKBENCH (Sovereign Harness, Deterministic Engine)
@@ -25,9 +24,9 @@
 
     <!-- Brand Identity (Wireframe exact match) -->
     <div class="brand-block-wireframe" id="header-brand-logo">
-      <a href="index.html#home" class="brand-main-title">AGENTIC PROFESSIONALS NETWORK</a>
+      <a href="index.html#home" class="brand-main-title">AGENTIC PROFESSIONALS</a>
       <div class="brand-sub-url">
-        POWERED BY HAYAGRIVA SOVEREIGN INTELLIGENCE
+        SOVEREIGN INTELLIGENCE (AIR-GAPPED)
       </div>
     </div>
 
@@ -52,7 +51,7 @@
       <!-- 2. CO-WORKERS (Custom Agents) -->
       <li class="nav-item">
         <a href="agents_insolvency.html" class="nav-link nav-link-wireframe" id="nav-coworkers">
-          <span class="nav-title-row">CO-WORKERS</span>
+          <span class="nav-title-row">COWORKERS</span>
           <span class="nav-subtitle-row">Custom Agents</span>
         </a>
       </li>
@@ -60,7 +59,7 @@
       <!-- 3. CO-COUNSEL (Confidential Advice) -->
       <li class="nav-item">
         <a href="chatroom.html" class="nav-link nav-link-wireframe" id="nav-cocounsel">
-          <span class="nav-title-row">CO-COUNSEL</span>
+          <span class="nav-title-row">COCOUNSEL</span>
           <span class="nav-subtitle-row">Confidential Advice</span>
         </a>
       </li>
@@ -92,8 +91,17 @@
                            document.querySelector('header.site-header');
 
     if (mountContainer) {
+      const currentHeader = mountContainer.querySelector('#site-header');
       const temp = document.createElement('div');
       temp.innerHTML = htmlContent.trim();
+      const newHeader = temp.querySelector('#site-header');
+
+      // If header is already populated and matches, avoid DOM teardown to prevent jump/shake
+      if (currentHeader && newHeader && currentHeader.innerHTML.trim() === newHeader.innerHTML.trim()) {
+        updateActiveNav();
+        return;
+      }
+
       mountContainer.innerHTML = '';
       while (temp.firstChild) {
         mountContainer.appendChild(temp.firstChild);
@@ -282,8 +290,19 @@
   }
 
   // =========================================================================
-  // Universal Hayagriva IDE Download Modal Controller
+  // Unified Practitioner Authentication & SSO Controller
   // =========================================================================
+  let currentModalIntent = 'download'; // 'download' | 'directory' | 'account'
+
+  function ensureAuthLoaded() {
+    if (!window.HayagrivaAuth && !document.querySelector('script[src*="js/auth.js"]')) {
+      const s = document.createElement('script');
+      s.src = 'js/auth.js';
+      document.head.appendChild(s);
+    }
+  }
+  ensureAuthLoaded();
+
   function detectClientOS() {
     const ua = navigator.userAgent || '';
     if (/Macintosh|Mac OS X/.test(ua)) {
@@ -294,15 +313,9 @@
     return 'mac-arm';
   }
 
-  window.openIdeDownloadModal = function() {
-    const modal = document.getElementById('hayagriva-ide-modal');
-    if (!modal) return;
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-
-    // Highlight detected OS card
+  function highlightDetectedOS() {
     const detected = detectClientOS();
-    ['mac-arm', 'mac-intel', 'windows', 'linux-appimage', 'linux-deb'].forEach(function(os) {
+    ['mac-arm', 'mac-intel', 'windows', 'linux-appimage'].forEach(function(os) {
       const card = document.getElementById('card-' + os);
       if (card) {
         if (os === detected) {
@@ -312,348 +325,287 @@
         }
       }
     });
+  }
 
-    // Check if user is already registered in this browser
-    const storedUser = localStorage.getItem('hayagriva_registered_user');
-    if (storedUser) {
-      try {
-        const user = JSON.parse(storedUser);
-        const nameEl = document.getElementById('display-user-name');
-        if (nameEl) nameEl.textContent = user.name || 'Practitioner';
-        showDownloadsStep();
-      } catch (e) {
-        showRegisterStep();
+  window.switchAuthTab = function(tabName) {
+    const btnSignin = document.getElementById('tab-btn-signin');
+    const btnReg = document.getElementById('tab-btn-register');
+    const paneSignin = document.getElementById('auth-subpane-signin');
+    const paneReg = document.getElementById('auth-subpane-register');
+    const alertBox = document.getElementById('auth-alert-box');
+    if (alertBox) alertBox.style.display = 'none';
+
+    if (tabName === 'register') {
+      if (btnReg) btnReg.classList.add('active');
+      if (btnSignin) btnSignin.classList.remove('active');
+      if (paneReg) paneReg.style.display = 'block';
+      if (paneSignin) paneSignin.style.display = 'none';
+    } else {
+      if (btnSignin) btnSignin.classList.add('active');
+      if (btnReg) btnReg.classList.remove('active');
+      if (paneSignin) paneSignin.style.display = 'block';
+      if (paneReg) paneReg.style.display = 'none';
+    }
+  };
+
+  function updateModalHeaders(intent, isAuthenticated, user) {
+    const titleEl = document.getElementById('unified-modal-title');
+    const subEl = document.getElementById('unified-modal-subtitle');
+    const badgeEl = document.getElementById('unified-modal-badge');
+
+    if (!isAuthenticated) {
+      if (intent === 'download') {
+        if (titleEl) titleEl.textContent = 'Unlock Hayagriva Controller';
+        if (subEl) subEl.textContent = 'Sign in or register once to access sovereign installer binaries for Mac, Windows & Linux.';
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-gift"></i> FREE PROMOTION';
+      } else if (intent === 'directory') {
+        if (titleEl) titleEl.textContent = 'Accredited Practitioner Directory';
+        if (subEl) subEl.textContent = 'Sign in or register to verify your professional credentials and join the national map.';
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-address-card"></i> DIRECTORY INTAKE';
+      } else if (intent === 'chat') {
+        if (titleEl) titleEl.textContent = 'Access Co-Counsel Advisory';
+        if (subEl) subEl.textContent = 'Sign in or register to unlock live LightRAG precedent graphs and confidential queries.';
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-brain"></i> COGNITIVE ADVISORY';
+      } else {
+        if (titleEl) titleEl.textContent = 'Practitioner Chamber Sign In';
+        if (subEl) subEl.textContent = 'Universal Single Sign-On across Controller Desktop, Knowledge Graph & National Directory.';
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-shield-halved"></i> SOVEREIGN SSO';
       }
     } else {
-      showRegisterStep();
-    }
-  };
-
-  window.closeIdeDownloadModal = function() {
-    const modal = document.getElementById('hayagriva-ide-modal');
-    if (!modal) return;
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  };
-
-  function showRegisterStep() {
-    const regStep = document.getElementById('ide-step-register');
-    const dlStep = document.getElementById('ide-step-downloads');
-    if (regStep) regStep.style.display = 'block';
-    if (dlStep) dlStep.style.display = 'none';
-  }
-
-  function showDownloadsStep() {
-    const regStep = document.getElementById('ide-step-register');
-    const dlStep = document.getElementById('ide-step-downloads');
-    if (regStep) regStep.style.display = 'none';
-    if (dlStep) dlStep.style.display = 'block';
-  }
-
-  window.handleIdeRegistration = function(e) {
-    if (e && e.preventDefault) e.preventDefault();
-    const name = document.getElementById('reg-practitioner-name')?.value?.trim();
-    const role = document.getElementById('reg-practitioner-role')?.value;
-    const email = document.getElementById('reg-practitioner-email')?.value?.trim();
-
-    if (!name || !role || !email) {
-      alert('Please provide your Name, Professional Category, and Email to unlock downloads.');
-      return;
-    }
-
-    // Persist registration in local storage
-    const userData = { name: name, role: role, email: email, registeredAt: new Date().toISOString() };
-    localStorage.setItem('hayagriva_registered_user', JSON.stringify(userData));
-
-    const nameEl = document.getElementById('display-user-name');
-    if (nameEl) nameEl.textContent = name;
-
-    showDownloadsStep();
-  };
-
-  window.editPractitionerDetails = function() {
-    showRegisterStep();
-  };
-
-  window.simulateDownload = function(os) {
-    const urls = {
-      'mac-arm': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg',
-      'mac-intel': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.dmg',
-      'windows': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva-Setup-1.17.0.exe',
-      'linux': 'https://pub-35371afc7da748a481da639a4f0d486e.r2.dev/Hayagriva.AppImage'
-    };
-    const targetUrl = urls[os] || urls['mac-arm'];
-    window.location.href = targetUrl;
-  };
-
-  // Close modal on click outside dialog
-  document.addEventListener('click', function(e) {
-    const modal = document.getElementById('hayagriva-ide-modal');
-    if (modal && modal.style.display === 'flex' && e.target === modal) {
-      window.closeIdeDownloadModal();
-    }
-  });
-
-  // Close modal on Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      window.closeIdeDownloadModal();
-    }
-  });
-
-  // Auto-open modal if URL hash is #download
-  if (window.location.hash === '#download' || window.location.search.includes('download=1')) {
-    setTimeout(function() {
-      window.openIdeDownloadModal();
-    }, 300);
-  }
-
-
-  // ==========================================================================
-  // Directory "Add Me" Modal & Application Controller
-  // ==========================================================================
-  let currentGeneratedJson = "";
-
-  window.openAddMeModal = function(category) {
-    const modal = document.getElementById("directory-add-me-modal");
-    if (!modal) return;
-
-    const formStep = document.getElementById("add-me-form-step");
-    const successStep = document.getElementById("add-me-success-step");
-    if (formStep) formStep.style.display = "block";
-    if (successStep) successStep.style.display = "none";
-
-    const form = document.getElementById("directory-add-me-form");
-    if (form) form.reset();
-
-    const catSelect = document.getElementById("addme-category");
-    if (catSelect && category) {
-      catSelect.value = category;
-    }
-
-    const citySelect = document.getElementById("addme-city");
-
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-  };
-
-  window.closeAddMeModal = function() {
-    const modal = document.getElementById("directory-add-me-modal");
-    if (!modal) return;
-    modal.style.display = "none";
-    document.body.style.overflow = "";
-  };
-
-  window.handleCityChange = function(city) {
-    const cityMap = {
-      "Chandigarh": "NCLT Chandigarh Bench & Principal Bench",
-      "New Delhi": "NCLT Principal Bench (New Delhi)",
-      "Mumbai": "NCLT Mumbai Bench",
-      "Bengaluru": "NCLT Bengaluru Bench",
-      "Ahmedabad": "NCLT Ahmedabad Bench",
-      "Kolkata": "NCLT Kolkata Bench",
-      "Chennai": "NCLT Chennai Bench",
-      "Hyderabad": "NCLT Hyderabad Bench",
-      "Jaipur": "NCLT Jaipur Bench",
-      "Cuttack": "NCLT Cuttack Bench",
-      "Kochi": "NCLT Kochi Bench",
-      "Indore": "NCLT Indore Bench",
-      "Allahabad": "NCLT Allahabad Bench",
-      "Guwahati": "NCLT Guwahati Bench",
-      "Amravati": "NCLT Amravati Bench"
-    };
-    if (benchInput && cityMap[city]) {
-      benchInput.value = cityMap[city];
-    }
-  };
-
-  window.handleDirectoryAddMe = async function(event) {
-    if (event && event.preventDefault) event.preventDefault();
-    const submitBtn = document.getElementById("addme-submit-btn");
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting Dossier...';
-    }
-
-    const name = (document.getElementById("addme-name")?.value || "").trim();
-    const category = document.getElementById("addme-category")?.value || "ip";
-    const reg_no = (document.getElementById("addme-regno")?.value || "").trim();
-    const firm = (document.getElementById("addme-firm")?.value || "").trim();
-    const city = (document.getElementById("addme-city")?.value || "Chandigarh").trim();
-    const address = (document.getElementById("addme-address")?.value || "").trim();
-    const email = (document.getElementById("addme-email")?.value || "").trim();
-    const phone = (document.getElementById("addme-phone")?.value || "").trim();
-    const specialization = (document.getElementById("addme-specialization")?.value || "").trim();
-
-    const BENCH_COORDINATES = {
-      "chandigarh": { lat: 30.7398, lng: 76.7827, state: "Chandigarh (UT)" },
-      "new delhi": { lat: 28.6139, lng: 77.2090, state: "Delhi" },
-      "mumbai": { lat: 18.9220, lng: 72.8347, state: "Maharashtra" },
-      "bengaluru": { lat: 12.9716, lng: 77.5946, state: "Karnataka" },
-      "ahmedabad": { lat: 23.0225, lng: 72.5714, state: "Gujarat" },
-      "kolkata": { lat: 22.5726, lng: 88.3639, state: "West Bengal" },
-      "chennai": { lat: 13.0827, lng: 80.2707, state: "Tamil Nadu" },
-      "hyderabad": { lat: 17.3850, lng: 78.4867, state: "Telangana" },
-      "jaipur": { lat: 26.9124, lng: 75.7873, state: "Rajasthan" },
-      "cuttack": { lat: 20.4625, lng: 85.8828, state: "Odisha" },
-      "kochi": { lat: 9.9312, lng: 76.2673, state: "Kerala" },
-      "indore": { lat: 22.7196, lng: 75.8577, state: "Madhya Pradesh" },
-      "allahabad": { lat: 25.4358, lng: 81.8463, state: "Uttar Pradesh" },
-      "guwahati": { lat: 26.1445, lng: 91.7362, state: "Assam" },
-      "amravati": { lat: 16.5062, lng: 80.6480, state: "Andhra Pradesh" }
-    };
-
-    const geo = BENCH_COORDINATES[city.toLowerCase()] || { lat: 30.7398, lng: 76.7827, state: "India" };
-
-    const designation = 
-      category === "ip" ? "Insolvency Professional" :
-      category === "rv" ? "Registered Valuer" : "Restructuring Advocate";
-
-    const newRecord = {
-      id: category + "-" + Date.now().toString().slice(-4),
-      name: name,
-      designation: designation,
-      category: category,
-      reg_no: reg_no,
-      firm: firm,
-      city: city,
-      address: address,
-      state: geo.state,
-      lat: geo.lat,
-      lng: geo.lng,
-      email: email,
-      phone: phone,
-      specialization: specialization
-    };
-
-    currentGeneratedJson = JSON.stringify(newRecord, null, 2);
-
-    const emailSubject = "[APNET Directory Accreditation] " + name + " - " + designation + " (" + city + ")";
-    const emailMessage = 
-"============================================================\n" +
-"NEW DIRECTORY ACCREDITATION APPLICATION\n" +
-"============================================================\n" +
-"Applicant Name:  " + name + "\n" +
-"Role / Category: " + designation + " (" + category.toUpperCase() + ")\n" +
-"Registration No: " + reg_no + "\n" +
-"Firm / Practice: " + firm + "\n" +
-"Office Address:  " + address + "\n" +
-"City & State:    " + city + ", " + geo.state + "\n" +
-
-"Applicant Email: " + email + "\n" +
-"Phone Number:    " + phone + "\n" +
-
-"Specializations: " + specialization + "\n\n" +
-"------------------------------------------------------------\n" +
-"READY-TO-PASTE JSON FOR js/professionals.json:\n" +
-"------------------------------------------------------------\n" +
-currentGeneratedJson + "\n" +
-"============================================================\n";
-
-    try {
-      await fetch("https://formsubmit.co/ajax/agenticprofessionals@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          _subject: emailSubject,
-          name: name,
-          category: designation,
-          reg_no: reg_no,
-          firm: firm,
-          city: city,
-          address: address,
-          email: email,
-          phone: phone,
-          specialization: specialization,
-          json_payload: currentGeneratedJson,
-          message: emailMessage
-        })
-      });
-    } catch (err) {
-      console.warn("Direct form submission fetch warning:", err);
-    }
-
-    try {
-      const existing = JSON.parse(localStorage.getItem("apnet_pending_submissions") || "[]");
-      existing.push({ submitted_at: new Date().toISOString(), ...newRecord });
-      localStorage.setItem("apnet_pending_submissions", JSON.stringify(existing));
-    } catch (e) {}
-
-    const formStep = document.getElementById("add-me-form-step");
-    const successStep = document.getElementById("add-me-success-step");
-    const jsonPreview = document.getElementById("addme-json-preview");
-
-    if (formStep) formStep.style.display = "none";
-    if (successStep) successStep.style.display = "block";
-    if (jsonPreview) jsonPreview.textContent = currentGeneratedJson;
-
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit Application';
-    }
-  };
-
-  window.copyAddMeJson = function() {
-    if (!currentGeneratedJson) return;
-    navigator.clipboard.writeText(currentGeneratedJson).then(function() {
-      const btn = document.getElementById("btn-copy-json");
-      if (btn) {
-        const oldText = btn.innerHTML;
-        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-        btn.style.background = "#dcfce7";
-        btn.style.color = "#15803d";
-        setTimeout(function() {
-          btn.innerHTML = oldText;
-          btn.style.background = "#e2e8f0";
-          btn.style.color = "#334155";
-        }, 2000);
+      if (intent === 'download') {
+        if (titleEl) titleEl.textContent = 'Hayagriva Controller Binaries';
+        if (subEl) subEl.textContent = '100% Air-Gapped & Local-First Desktop Runtime for Insolvency Professionals.';
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> LICENSED RUNTIME';
+      } else if (intent === 'directory') {
+        if (titleEl) titleEl.textContent = 'Accredited Directory Profile';
+        if (subEl) subEl.textContent = 'Your verified national profile & bench map status.';
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-id-badge"></i> DIRECTORY MEMBER';
+      } else {
+        if (titleEl) titleEl.textContent = 'Practitioner Chamber Account';
+        if (subEl) subEl.textContent = 'Central Identity, Active Licenses & Single Sign-On Entitlements.';
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-user-shield"></i> ACTIVE SESSION';
       }
+    }
+
+    // Update display name across all views
+    const displayName = (user && (user.name || user.email?.split('@')[0])) || 'Practitioner';
+    document.querySelectorAll('.auth-user-display-name').forEach(function(el) {
+      el.textContent = displayName;
     });
-  };
 
-  // Close directory modal on outside click
-  document.addEventListener("click", function(e) {
-    const modal = document.getElementById("directory-add-me-modal");
-    if (modal && modal.style.display === "flex" && e.target === modal) {
-      window.closeAddMeModal();
-    }
-  });
+    const userEmail = (user && user.email) || '';
+    const accEmail = document.getElementById('account-user-email');
+    if (accEmail) accEmail.textContent = userEmail;
+    const dirEmail = document.getElementById('directory-user-email');
+    if (dirEmail) dirEmail.textContent = userEmail;
+  }
 
-  // Close directory modal on Escape key
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-      window.closeAddMeModal();
-    }
-  });
+  window.openUnifiedAuthModal = function(intent = 'download') {
+    currentModalIntent = intent;
+    const modal = document.getElementById('unified-auth-modal');
+    if (!modal) return;
 
+    const isAuth = window.HayagrivaAuth ? window.HayagrivaAuth.isAuthenticated() : false;
+    const user = window.HayagrivaAuth ? window.HayagrivaAuth.getUser() : null;
 
-  // Sovereign Navigation: Chamber Login Modal Hook
-  window.openAccountModal = function(tabName) {
-    const modal = document.getElementById('login-account-modal');
-    if (modal) {
-      modal.classList.add('active');
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      if (typeof window.switchLoginTab === 'function' && tabName) {
-        window.switchLoginTab(tabName);
-      }
-    } else if (typeof window.openLoginModal === 'function') {
-      window.openLoginModal(tabName);
+    updateModalHeaders(intent, isAuth, user);
+
+    const unauthPane = document.getElementById('auth-unauthenticated-pane');
+    const authPane = document.getElementById('auth-authenticated-pane');
+    const viewDl = document.getElementById('unified-view-downloads');
+    const viewDir = document.getElementById('unified-view-directory');
+    const viewAcc = document.getElementById('unified-view-account');
+
+    if (!isAuth) {
+      if (unauthPane) unauthPane.style.display = 'block';
+      if (authPane) authPane.style.display = 'none';
+      window.switchAuthTab(intent === 'account' ? 'signin' : 'register');
     } else {
-      window.location.hash = '#login';
+      if (unauthPane) unauthPane.style.display = 'none';
+      if (authPane) authPane.style.display = 'block';
+
+      if (viewDl) viewDl.style.display = (intent === 'download') ? 'block' : 'none';
+      if (viewDir) viewDir.style.display = (intent === 'directory') ? 'block' : 'none';
+      if (viewAcc) viewAcc.style.display = (intent === 'account') ? 'block' : 'none';
+
+      if (intent === 'download') {
+        highlightDetectedOS();
+      }
     }
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   };
 
-  window.closeAccountModal = function() {
-    const modal = document.getElementById('login-account-modal');
+  window.closeUnifiedAuthModal = function() {
+    const modal = document.getElementById('unified-auth-modal');
     if (modal) {
-      modal.classList.remove('active');
       modal.style.display = 'none';
       document.body.style.overflow = '';
     }
   };
+
+  function showAlert(msg, isError = true) {
+    const box = document.getElementById('auth-alert-box');
+    if (!box) return;
+    box.style.display = 'block';
+    box.style.background = isError ? '#fef2f2' : '#f0fdf4';
+    box.style.color = isError ? '#991b1b' : '#166534';
+    box.style.border = isError ? '1px solid #fecaca' : '1px solid #bbf7d0';
+    box.innerHTML = (isError ? '<i class="fa-solid fa-triangle-exclamation"></i> ' : '<i class="fa-solid fa-circle-check"></i> ') + msg;
+  }
+
+  window.handleUnifiedSignIn = async function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const email = document.getElementById('signin-email')?.value?.trim();
+    const password = document.getElementById('signin-password')?.value;
+    const submitBtn = document.getElementById('btn-signin-submit');
+
+    if (!email || !password) {
+      showAlert('Please enter both your email address and password.');
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Signing In...';
+    }
+
+    try {
+      const res = await window.HayagrivaAuth.login(email, password);
+      if (res.success) {
+        if (currentModalIntent === 'chat') {
+          window.closeUnifiedAuthModal();
+          window.open('https://chats.agenticprofessionals.net/workspace/', '_blank');
+          return;
+        }
+        window.openUnifiedAuthModal(currentModalIntent);
+      }
+    } catch (err) {
+      showAlert(err.message || 'Login failed. Please check your credentials.');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-unlock-keyhole"></i> Sign In &amp; Continue ➔';
+      }
+    }
+  };
+
+  window.handleUnifiedRegister = async function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const name = document.getElementById('reg-name')?.value?.trim();
+    const role = document.getElementById('reg-role')?.value || 'ip';
+    const email = document.getElementById('reg-email')?.value?.trim();
+    const password = document.getElementById('reg-password')?.value;
+    const regNo = document.getElementById('reg-ibbi-no')?.value?.trim();
+    const city = document.getElementById('reg-city')?.value || 'New Delhi';
+    const address = document.getElementById('reg-address')?.value?.trim() || '';
+    const submitBtn = document.getElementById('btn-register-submit');
+
+    if (!name || !email || !password) {
+      showAlert('Please complete all required fields.');
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Registering Account...';
+    }
+
+    try {
+      const res = await window.HayagrivaAuth.register({
+        name: name,
+        role: role,
+        email: email,
+        password: password,
+        reg_no: regNo,
+        city: city,
+        address: address
+      });
+      if (res.success) {
+        if (currentModalIntent === 'chat') {
+          window.closeUnifiedAuthModal();
+          window.open('https://chats.agenticprofessionals.net/workspace/', '_blank');
+          return;
+        }
+        window.openUnifiedAuthModal(currentModalIntent);
+      }
+    } catch (err) {
+      showAlert(err.message || 'Registration failed.');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-user-check"></i> Register &amp; Continue ➔';
+      }
+    }
+  };
+
+  window.handleUpdateDirectoryProfile = function() {
+    if (!window.HayagrivaAuth) return;
+    const user = window.HayagrivaAuth.getUser();
+    if (!user) return;
+
+    const city = document.getElementById('auth-update-city')?.value || 'New Delhi';
+    const regNo = document.getElementById('auth-update-regno')?.value?.trim() || '';
+    const address = document.getElementById('auth-update-address')?.value?.trim() || '';
+
+    user.city = city;
+    user.reg_no = regNo;
+    user.address = address;
+    user.is_directory_listed = true;
+
+    window.HayagrivaAuth.setSession(window.HayagrivaAuth.getToken(), user);
+
+    // If on directory page, refresh the map and roster immediately
+    if (typeof reloadDirectoryData === 'function') {
+      reloadDirectoryData();
+    }
+
+    alert('Your chamber profile and NCLT bench pin have been updated successfully!');
+    window.openUnifiedAuthModal('directory');
+  };
+
+  window.handleAuthLogout = function() {
+    if (window.HayagrivaAuth) {
+      window.HayagrivaAuth.logout();
+    }
+    window.openUnifiedAuthModal('account');
+  };
+
+  // Close on outside click & Escape
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('unified-auth-modal');
+    if (modal && modal.style.display === 'flex' && e.target === modal) {
+      window.closeUnifiedAuthModal();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      window.closeUnifiedAuthModal();
+    }
+  });
+
+  // Seamless Legacy Bridges
+  window.openIdeDownloadModal = function() { window.openUnifiedAuthModal('download'); };
+  window.closeIdeDownloadModal = function() { window.closeUnifiedAuthModal(); };
+  window.openAddMeModal = function() { window.openUnifiedAuthModal('directory'); };
+  window.closeAddMeModal = function() { window.closeUnifiedAuthModal(); };
+  window.openAccountModal = function() { window.openUnifiedAuthModal('account'); };
+  window.closeAccountModal = function() { window.closeUnifiedAuthModal(); };
+  window.openChatWorkspace = function() {
+    if (window.HayagrivaAuth && window.HayagrivaAuth.isAuthenticated()) {
+      window.open('https://chats.agenticprofessionals.net/workspace/', '_blank');
+    } else {
+      window.openUnifiedAuthModal('chat');
+    }
+  };
+
+  // Auto-open modal if URL hash is #download or #login
+  if (window.location.hash === '#download' || window.location.search.includes('download=1')) {
+    setTimeout(function() { window.openUnifiedAuthModal('download'); }, 300);
+  } else if (window.location.hash === '#login' || window.location.hash === '#account') {
+    setTimeout(function() { window.openUnifiedAuthModal('account'); }, 300);
+  }
 
 })();
