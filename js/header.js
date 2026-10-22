@@ -41,13 +41,6 @@
         </a>
       </li>
 
-      <!-- 1. CONTEXT (Confidential Data) -->
-      <li class="nav-item">
-        <a href="context.html" class="nav-link nav-link-wireframe" id="nav-context">
-          <span class="nav-title-row">CONTEXT</span>
-          <span class="nav-subtitle-row">Confidential Data</span>
-        </a>
-      </li>
 
       <!-- 2. KNOWLEDGE (Legal Vaults) -->
       <li class="nav-item">
@@ -219,10 +212,8 @@
     const hash = window.location.hash || '';
 
     if (path === '' || path === 'index.html') {
-      if (hash.startsWith('#home') || hash === '') {
+      if (hash.startsWith('#home') || hash.startsWith('#context') || hash === '') {
         setActive('nav-home');
-      } else if (hash.startsWith('#context')) {
-        setActive('nav-context');
       } else if (hash.startsWith('#knowledge')) {
         setActive('nav-knowledge');
       } else if (hash.startsWith('#intelligence') || hash.startsWith('#workbench') || hash.startsWith('#models')) {
@@ -232,8 +223,6 @@
       } else if (hash.startsWith('#community') || hash.startsWith('#network') || hash.startsWith('#directories')) {
         setActive('nav-community');
       }
-    } else if (path === 'context.html') {
-      setActive('nav-context');
     } else if (path === 'knowledge.html' || path.startsWith('vaults_')) {
       setActive('nav-knowledge');
     } else if (path === 'intelligence.html' || path.startsWith('models_') || path.startsWith('harness_haya_')) {
