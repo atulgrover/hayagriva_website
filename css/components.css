@@ -2416,24 +2416,26 @@ body.view-fullscreen-active .site-footer {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #0284c7;
+  background: #0f172a;
   color: #ffffff !important;
   font-size: 0.94rem;
   font-weight: 700;
   letter-spacing: 0.035em;
   padding: 10px 22px;
-  border-radius: 9px;
+  border-radius: 6px;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease;
   white-space: nowrap;
   line-height: 1.2;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.32);
+  border: 1px solid #0f172a;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
   transform: none !important;
 }
 
 .nav-btn-download-harness:hover {
-  background: #0369a1;
+  background: #1e293b;
+  border-color: #1e293b;
   color: #ffffff !important;
   transform: none !important;
   box-shadow: 0 2px 8px rgba(2, 132, 199, 0.32);
@@ -3755,19 +3757,20 @@ body.view-fullscreen-active .site-footer {
   font-weight: 700;
   border-radius: 7px;
   text-decoration: none;
-  background: #0284c7;
+  background: #0f172a;
   color: #ffffff !important;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
-  border: 1px solid #0284c7;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+  border: 1px solid #0f172a;
   transition: all 0.18s ease;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .btn-pillar-cta-center:hover {
-  background: #0369a1;
+  background: #1e293b;
+  border-color: #1e293b;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
   color: #ffffff !important;
 }
 
@@ -3900,19 +3903,20 @@ body.view-fullscreen-active .site-footer {
   font-weight: 600;
   border-radius: 6px;
   text-decoration: none;
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  background: #0f172a;
   color: #ffffff !important;
-  box-shadow: 0 1px 4px rgba(2, 132, 199, 0.2);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.15);
   transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid #0284c7;
+  border: 1px solid #0f172a;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .btn-pillar-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.3);
-  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.25);
+  background: #1e293b;
+  border-color: #1e293b;
   color: #ffffff !important;
 }
 
