@@ -77,63 +77,63 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
       </div>
     </div>
 
-    <!-- Section 2 (62%): 4-Tree Site Navigation Hub -->
+    <!-- Section 2 (62%): 5-Tree Site Navigation Hub -->
     <div class="footer-col-nav-hub">
       <div class="footer-tree-grid">
 
-        <!-- Column 1: CONTROLLER -->
+        <!-- Column 1: CONTEXT -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
-            <span class="tree-root-badge badge-harness"><i class="fa-solid fa-cube"></i></span>
-            <span class="tree-root-name">CONTROLLER</span>
+            <span class="tree-root-badge badge-harness"><i class="fa-solid fa-folder-closed"></i></span>
+            <span class="tree-root-name">CONTEXT</span>
           </div>
           <ul class="footer-tree-list">
-            <li class="tree-item"><a href="harness_haya_workbench.html">Sovereign Harness</a></li>
-            <li class="tree-item"><a href="harness_haya_engine.html">Deterministic Engine</a></li>
-            <li class="tree-item"><a href="harness_haya_vaults.html">Case Evidence Vault</a></li>
-            <li class="tree-item"><a href="#" onclick="openIdeDownloadModal(); return false;"><i class="fa-solid fa-download"></i> Download IDE</a></li>
+            <li class="tree-item"><a href="context.html">Confidential Data</a></li>
+            <li class="tree-item"><a href="context.html">Air-Gapped Ingest</a></li>
+            <li class="tree-item"><a href="context.html">SHA-256 Vaults</a></li>
+            <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer">Ingestion Portal <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
           </ul>
         </div>
 
-        <!-- Column 2: CO-WORKERS -->
-        <div class="footer-tree-col">
-          <div class="tree-root-head">
-            <span class="tree-root-badge badge-turbine"><i class="fa-solid fa-robot"></i></span>
-            <span class="tree-root-name">CO-WORKERS</span>
-          </div>
-          <ul class="footer-tree-list">
-            <li class="tree-item"><a href="agents_insolvency.html">Custom Agents</a></li>
-            <li class="tree-item"><a href="agents_process_agents.html">Process Agents</a></li>
-            <li class="tree-item"><a href="marketplace_reporting_resolution_compliance.html">Section 29A Screening</a></li>
-            <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer">Agents Portal <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
-          </ul>
-        </div>
-
-        <!-- Column 3: CO-COUNSEL -->
+        <!-- Column 2: KNOWLEDGE -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-agents"><i class="fa-solid fa-scale-balanced"></i></span>
-            <span class="tree-root-name">CO-COUNSEL</span>
+            <span class="tree-root-name">KNOWLEDGE</span>
           </div>
           <ul class="footer-tree-list">
-            <li class="tree-item"><a href="chatroom.html">Confidential Advice</a></li>
-            <li class="tree-item"><a href="vaults_law.html">Commercial Law Graph</a></li>
+            <li class="tree-item"><a href="knowledge.html">Legal Vaults</a></li>
+            <li class="tree-item"><a href="vaults_law.html">Statutory Acts</a></li>
             <li class="tree-item"><a href="vaults_precedence.html">SC &amp; NCLAT Precedents</a></li>
-            <li class="tree-item"><a href="https://chats.agenticprofessionals.net/workspace/" target="_blank" rel="noopener noreferrer">LightRAG Chat <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
+            <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer">Legal Graph Search <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
           </ul>
         </div>
 
-        <!-- Column 4: COLLECTIVE -->
+        <!-- Column 3: INTELLIGENCE -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
-            <span class="tree-root-badge badge-network"><i class="fa-solid fa-users-viewfinder"></i></span>
-            <span class="tree-root-name">COLLECTIVE</span>
+            <span class="tree-root-badge badge-harness"><i class="fa-solid fa-brain"></i></span>
+            <span class="tree-root-name">INTELLIGENCE</span>
           </div>
           <ul class="footer-tree-list">
-            <li class="tree-item"><a href="collective.html">Discussion Forum</a></li>
-            <li class="tree-item"><a href="https://agenticprofessionals.zulipchat.com" target="_blank" rel="noopener noreferrer">#cirp-guidance</a></li>
-            <li class="tree-item"><a href="https://agenticprofessionals.zulipchat.com" target="_blank" rel="noopener noreferrer">#nclat-precedents</a></li>
-            <li class="tree-item"><a href="https://agenticprofessionals.zulipchat.com" target="_blank" rel="noopener noreferrer">Zulip Community <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
+            <li class="tree-item"><a href="intelligence.html">Sovereign AI</a></li>
+            <li class="tree-item"><a href="models_domain_slms.html">BharatGen SLMs</a></li>
+            <li class="tree-item"><a href="#" onclick="openIdeDownloadModal(); return false;"><i class="fa-solid fa-download"></i> Download Controller</a></li>
+            <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer">Inference Portal <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: AGENTS -->
+        <div class="footer-tree-col">
+          <div class="tree-root-head">
+            <span class="tree-root-badge badge-turbine"><i class="fa-solid fa-robot"></i></span>
+            <span class="tree-root-name">AGENTS</span>
+          </div>
+          <ul class="footer-tree-list">
+            <li class="tree-item"><a href="agents.html">Custom Agents</a></li>
+            <li class="tree-item"><a href="marketplace_reporting_resolution_compliance.html">Sec 29A Screening</a></li>
+            <li class="tree-item"><a href="marketplace_reporting_assignment_forensics.html">Forensic Inquest</a></li>
+            <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer">Agent Studio <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
           </ul>
         </div>
 
@@ -144,10 +144,10 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
             <span class="tree-root-name">COMMUNITY</span>
           </div>
           <ul class="footer-tree-list">
-            <li class="tree-item"><a href="directory_listing.html">Directory Listing</a></li>
-            <li class="tree-item"><a href="directory_listing.html">Insolvency Pros (IP)</a></li>
-            <li class="tree-item"><a href="directory_listing.html">Registered Valuers</a></li>
+            <li class="tree-item"><a href="community.html">Agentic Professionals</a></li>
+            <li class="tree-item"><a href="community.html">National Bench Map</a></li>
             <li class="tree-item"><a href="#" onclick="openAddMeModal(); return false;"><i class="fa-solid fa-user-plus"></i> Join Directory</a></li>
+            <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer">Member Login <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
           </ul>
         </div>
 

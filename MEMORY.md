@@ -51,21 +51,28 @@ All three repositories are fully committed, clean, and pushed to origin:
 
 ---
 
-## 3. Architecture & Pillar Endpoints
+## 3. Architecture & 5-Pillar Endpoints (Updated 2026-10-22)
 
-| # | Pillar | Subtitle | Destination Page | Primary Action / Target |
+The website navigation and information architecture was streamlined into 5 foundational pillars with centered heroes, minimalist typographic cards (`.card-minimal`), and a top-right `LOGIN` CTA to the portal (`https://app-apnet-net.onrender.com/login`):
+
+| # | Pillar | Subtitle | Destination Page | Primary Hero CTA / Target |
 |---|---|---|---|---|
-| 1 | **CONTROLLER** | Sovereign Harness | `harness_haya_workbench.html` | Download Controller modal (Cloudflare R2 Windows direct download + Mac/Linux) |
-| 2 | **CO-WORKERS** | Custom Agents | `agents_insolvency.html` | `https://app-apnet-net.onrender.com/login` (Portal Control Center) |
-| 3 | **CO-COUNSEL** | Confidential Advice | `chatroom.html` | `https://chats.agenticprofessionals.net/workspace/` (Azure LightRAG UI) |
-| 4 | **COLLECTIVE** | Discussion Forum | `collective.html` | `https://agenticprofessionals.zulipchat.com` (Zulip Community) |
-| 5 | **COMMUNITY** | Directory Listing | `directory_listing.html` | Full-screen interactive Leaflet bench map & directory roster |
+| 1 | **CONTEXT** | Confidential Data | `context.html` | Ingestion Portal (`https://app-apnet-net.onrender.com/login`) |
+| 2 | **KNOWLEDGE** | Legal Vaults | `knowledge.html` | Legal Graph Search (`https://app-apnet-net.onrender.com/login`) |
+| 3 | **INTELLIGENCE** | Sovereign AI | `intelligence.html` | Download Controller modal (`openIdeDownloadModal()`) & Inference Portal |
+| 4 | **AGENTS** | Custom Agents | `agents.html` | Agent Studio (`https://app-apnet-net.onrender.com/login`) |
+| 5 | **COMMUNITY** | Agentic Professionals | `community.html` | Full-screen interactive Leaflet bench map & directory roster |
+
+### Design Decision: Option B (Minimalist / Cards Only)
+- **Typographic Cards:** All pastel colored icon boxes removed in favor of high-contrast, clean minimalist cards (`01`, `02`, `03` step badge + category tag + title + description + key attributes).
+- **Proof-of-Image UI Mockups:** Per user instruction, large UI preview mockup boxes under the cards are omitted for now (Option B). They will be added later when explicitly instructed.
+- **Decommissioned Pages:** `collective.html`, `chatroom.html`, and `harness_haya_ingest.html` removed; consultations and chats rerouted directly to portal login.
 
 ---
 
 ## 4. Port Configuration & Control Scripts
 
-- **Shutdown Command:** `/Users/atulgrover/Desktop/stop_all.command` (Executed 2026-10-19 20:03; all ports verified closed).
+- **Shutdown Command:** `/Users/atulgrover/Desktop/stop_all.command`
 - **Startup Command:** `/Users/atulgrover/Desktop/start_all.command`
 
 ### Port Allocation Map:
@@ -75,11 +82,3 @@ All three repositories are fully committed, clean, and pushed to origin:
 - `9621 / 3101`: Saraswati Knowledge Graph & LightRAG
 - `8080`: Varaha Skilling Portal
 - `8000`: Narsimha Inquest Hub
-
----
-
-## 5. Next Steps for Tomorrow's Session
-1. **Resume Ecosystem:** Run `/Users/atulgrover/Desktop/start_all.command` or launch local website test server on port 5050.
-2. **Review Render Deployments:** Verify that Render auto-deploy picked up the latest commits on `hayagriva_website` and `hayagriva_portal`.
-3. **Favicon Update:** Optionally propagate `hayagriva_knight_light.png` into `favicon.ico` across all website pages.
-4. **Hero 3D Card:** If requested, update `#heroLogoCard` on `index.html` to display the sleek Hayagriva Knight badge instead of the legacy drawing.

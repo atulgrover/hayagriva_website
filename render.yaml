@@ -12,29 +12,29 @@ services:
     staticPublishPath: .
     routes:
       - type: rewrite
-        source: /workbench
-        destination: /pipie_ide.html
+        source: /context
+        destination: /context.html
+      - type: rewrite
+        source: /knowledge
+        destination: /knowledge.html
+      - type: rewrite
+        source: /intelligence
+        destination: /intelligence.html
       - type: rewrite
         source: /agents
-        destination: /pipie_assets.html
+        destination: /agents.html
       - type: rewrite
-        source: /chatrooms
-        destination: /chatroom.html
+        source: /community
+        destination: /community.html
       - type: rewrite
-        source: /chatroom
-        destination: /chatroom.html
+        source: /workbench
+        destination: /intelligence.html
       - type: rewrite
         source: /directories
-        destination: /directory_listing.html
+        destination: /community.html
       - type: rewrite
         source: /vaults
-        destination: /harness_haya_vaults.html
-      - type: rewrite
-        source: /blogs
-        destination: /blogs_articles.html
-      - type: rewrite
-        source: /articles
-        destination: /blogs_articles.html
+        destination: /knowledge.html
       - type: rewrite
         source: /pricing
         destination: /pricing.html
