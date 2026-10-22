@@ -41,43 +41,51 @@
         </a>
       </li>
 
-      <!-- 1. CONTROLLER (Sovereign Harness) -->
+      <!-- 1. CONTEXT (Confidential Data) -->
       <li class="nav-item">
-        <a href="harness_haya_workbench.html" class="nav-link nav-link-wireframe" id="nav-controller">
-          <span class="nav-title-row">CONTROLLER</span>
-          <span class="nav-subtitle-row">Sovereign Harness</span>
+        <a href="context.html" class="nav-link nav-link-wireframe" id="nav-context">
+          <span class="nav-title-row">CONTEXT</span>
+          <span class="nav-subtitle-row">Confidential Data</span>
         </a>
       </li>
 
-      <!-- 2. CO-WORKERS (Custom Agents) -->
+      <!-- 2. KNOWLEDGE (Legal Vaults) -->
       <li class="nav-item">
-        <a href="agents_insolvency.html" class="nav-link nav-link-wireframe" id="nav-coworkers">
-          <span class="nav-title-row">COWORKERS</span>
+        <a href="knowledge.html" class="nav-link nav-link-wireframe" id="nav-knowledge">
+          <span class="nav-title-row">KNOWLEDGE</span>
+          <span class="nav-subtitle-row">Legal Vaults</span>
+        </a>
+      </li>
+
+      <!-- 3. INTELLIGENCE (Sovereign AI) -->
+      <li class="nav-item">
+        <a href="intelligence.html" class="nav-link nav-link-wireframe" id="nav-intelligence">
+          <span class="nav-title-row">INTELLIGENCE</span>
+          <span class="nav-subtitle-row">Sovereign AI</span>
+        </a>
+      </li>
+
+      <!-- 4. AGENTS (Custom Agents) -->
+      <li class="nav-item">
+        <a href="agents.html" class="nav-link nav-link-wireframe" id="nav-agents">
+          <span class="nav-title-row">AGENTS</span>
           <span class="nav-subtitle-row">Custom Agents</span>
         </a>
       </li>
 
-      <!-- 3. CO-COUNSEL (Confidential Advice) -->
+      <!-- 5. COMMUNITY (Agentic Professionals) -->
       <li class="nav-item">
-        <a href="chatroom.html" class="nav-link nav-link-wireframe" id="nav-cocounsel">
-          <span class="nav-title-row">COCOUNSEL</span>
-          <span class="nav-subtitle-row">Confidential Advice</span>
-        </a>
-      </li>
-
-      <!-- 4. COLLECTIVE (Discussion Forum) -->
-      <li class="nav-item">
-        <a href="collective.html" class="nav-link nav-link-wireframe" id="nav-collective">
-          <span class="nav-title-row">COLLECTIVE</span>
-          <span class="nav-subtitle-row">Discussion Forum</span>
-        </a>
-      </li>
-
-      <!-- 5. COMMUNITY (Directory Listing) -->
-      <li class="nav-item">
-        <a href="directory_listing.html" class="nav-link nav-link-wireframe" id="nav-community">
+        <a href="community.html" class="nav-link nav-link-wireframe" id="nav-community">
           <span class="nav-title-row">COMMUNITY</span>
-          <span class="nav-subtitle-row">Directory Listing</span>
+          <span class="nav-subtitle-row">Agentic Professionals</span>
+        </a>
+      </li>
+
+      <!-- 6. Portal Login CTA -->
+      <li class="nav-item">
+        <a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer" class="portal-cta-main" id="nav-portal-login">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <span>LOGIN</span>
         </a>
       </li>
 
@@ -213,26 +221,26 @@
     if (path === '' || path === 'index.html') {
       if (hash.startsWith('#home') || hash === '') {
         setActive('nav-home');
-      } else if (hash.startsWith('#controller') || hash.startsWith('#workbench') || hash.startsWith('#harness')) {
-        setActive('nav-controller');
-      } else if (hash.startsWith('#coworkers') || hash.startsWith('#agents')) {
-        setActive('nav-coworkers');
-      } else if (hash.startsWith('#cocounsel') || hash.startsWith('#chats') || hash.startsWith('#counsel')) {
-        setActive('nav-cocounsel');
-      } else if (hash.startsWith('#collective') || hash.startsWith('#forums')) {
-        setActive('nav-collective');
-      } else if (hash.startsWith('#community') || hash.startsWith('#directories') || hash.startsWith('#listing')) {
+      } else if (hash.startsWith('#context')) {
+        setActive('nav-context');
+      } else if (hash.startsWith('#knowledge')) {
+        setActive('nav-knowledge');
+      } else if (hash.startsWith('#intelligence') || hash.startsWith('#workbench') || hash.startsWith('#models')) {
+        setActive('nav-intelligence');
+      } else if (hash.startsWith('#agents') || hash.startsWith('#coworkers') || hash.startsWith('#actions')) {
+        setActive('nav-agents');
+      } else if (hash.startsWith('#community') || hash.startsWith('#network') || hash.startsWith('#directories')) {
         setActive('nav-community');
       }
-    } else if (path.startsWith('harness_haya_') || path === 'controller.html' || path.startsWith('models_') || path.startsWith('vaults_')) {
-      setActive('nav-controller');
-    } else if (path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
-      setActive('nav-coworkers');
-    } else if (path === 'chatroom.html') {
-      setActive('nav-cocounsel');
-    } else if (path === 'collective.html') {
-      setActive('nav-collective');
-    } else if (path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
+    } else if (path === 'context.html') {
+      setActive('nav-context');
+    } else if (path === 'knowledge.html' || path.startsWith('vaults_')) {
+      setActive('nav-knowledge');
+    } else if (path === 'intelligence.html' || path.startsWith('models_') || path.startsWith('harness_haya_')) {
+      setActive('nav-intelligence');
+    } else if (path === 'agents.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
+      setActive('nav-agents');
+    } else if (path === 'community.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
       setActive('nav-community');
     }
   }
