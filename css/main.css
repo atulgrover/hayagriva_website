@@ -1,3 +1,5 @@
+@import url('design-tokens.css');
+
 /* ==========================================================================
    AgenticProfessionals.Net - Main Design System
    Theme: Strictly Light, Clean & Corporate Executive (No Dark Mode)
@@ -79,6 +81,7 @@ html {
   scroll-behavior: smooth;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
   max-width: 100vw;
   scrollbar-gutter: stable;
 }
@@ -213,44 +216,66 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
-  font-weight: 500;
-  font-size: 0.875rem;
-  border-radius: var(--radius-md);
+  height: var(--btn-h-md, 36px);
+  min-height: var(--btn-h-md, 36px);
+  max-height: var(--btn-h-md, 36px);
+  padding: 0 var(--btn-px-md, 16px);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  border-radius: var(--btn-radius, 6px);
   border: 1px solid transparent;
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 1;
 }
 
 .btn-primary {
-  background-color: var(--primary);
-  color: var(--text-white);
+  background-color: #0f172a;
+  color: #ffffff !important;
+  border-color: #0f172a;
   box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
-  color: var(--text-white);
+  background-color: #1e293b;
+  border-color: #1e293b;
+  color: #ffffff !important;
   box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
-  background-color: var(--bg-surface);
-  color: var(--text-primary);
-  border-color: var(--border-color);
+  background-color: #ffffff;
+  color: #0f172a !important;
+  border-color: #cbd5e1;
   box-shadow: var(--shadow-xs);
 }
 
 .btn-secondary:hover {
-  background-color: var(--bg-muted);
-  border-color: var(--border-color);
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a !important;
 }
 
 .btn-sm {
-  padding: 0.4rem 0.8rem;
-  font-size: 0.8125rem;
-  border-radius: var(--radius-sm);
+  height: var(--btn-h-sm, 32px);
+  min-height: var(--btn-h-sm, 32px);
+  max-height: var(--btn-h-sm, 32px);
+  padding: 0 var(--btn-px-sm, 12px);
+  font-size: 0.75rem;
+  border-radius: var(--btn-radius, 6px);
+}
+
+.btn-lg {
+  height: var(--btn-h-lg, 40px);
+  min-height: var(--btn-h-lg, 40px);
+  max-height: var(--btn-h-lg, 40px);
+  padding: 0 var(--btn-px-lg, 20px);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--btn-radius, 6px);
 }
 
 .card {

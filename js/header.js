@@ -24,7 +24,7 @@
 
     <!-- Brand Identity -->
     <a href="index.html#home" class="brand-block-wireframe" id="header-brand-logo" aria-label="Agentic Professionals Home">
-      <img src="branding/hayagriva_knight_light.png" alt="Hayagriva Knight Logo" class="brand-logo-img" />
+      <img src="branding/hayagriva_knight_light.png" alt="Hayagriva Knight Logo" class="brand-logo-img" width="36" height="36" loading="eager" decoding="sync" />
       <div class="brand-text-block">
         <span class="brand-main-title">AGENTIC PROFESSIONALS</span>
         <span class="brand-sub-url">SOVEREIGN INTELLIGENCE (AIR-GAPPED)</span>
@@ -97,9 +97,14 @@
       const temp = document.createElement('div');
       temp.innerHTML = htmlContent.trim();
       const newHeader = temp.querySelector('#site-header');
+      const newModal = temp.querySelector('#unified-auth-modal');
 
-      // If header is already populated and matches, avoid DOM teardown to prevent jump/shake
-      if (currentHeader && newHeader && currentHeader.innerHTML.trim() === newHeader.innerHTML.trim()) {
+      // If header is already in the DOM, NEVER tear down mountContainer to avoid logo flicker / jump!
+      if (currentHeader && newHeader) {
+        // Only append modal if missing
+        if (newModal && !document.getElementById('unified-auth-modal')) {
+          mountContainer.appendChild(newModal);
+        }
         updateActiveNav();
         return;
       }
@@ -261,7 +266,7 @@
     // 1. Immediately apply fallback HTML for 0ms render latency across all pages
     applyHeader(fallbackHTML);
 
-    // 2. If running on a web server, fetch header.html directly with cache busting to synchronize updates
+    // 2. If running on a web server, fetch header.html directly to ensure modal and dynamic updates are loaded
     if (window.location.protocol.startsWith('http')) {
       fetch('header.html?v=' + Date.now())
         .then(res => {
@@ -270,7 +275,20 @@
         })
         .then(html => {
           const currentHeader = document.querySelector('header.site-header');
-          if (currentHeader && currentHeader.outerHTML.trim() !== html.trim()) {
+          const mountContainer = document.getElementById('shared-header');
+          const temp = document.createElement('div');
+          temp.innerHTML = html.trim();
+          const newHeader = temp.querySelector('#site-header');
+          const newModal = temp.querySelector('#unified-auth-modal');
+
+          // If header is already rendered in DOM, NEVER wipe the header DOM!
+          if (currentHeader && newHeader) {
+            // Append modal if not present
+            if (newModal && !document.getElementById('unified-auth-modal') && mountContainer) {
+              mountContainer.appendChild(newModal);
+            }
+            updateActiveNav();
+          } else if (!currentHeader) {
             applyHeader(html);
           }
         })

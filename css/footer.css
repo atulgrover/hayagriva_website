@@ -167,14 +167,22 @@
   background: #FFFFFF;
   color: #0F172A;
   border: 1px solid #CBD5E1;
-  border-radius: 6px;
-  padding: 7px 10px;
-  font-weight: 700;
-  font-size: 0.78rem;
+  border-radius: var(--btn-radius, 6px);
+  height: var(--btn-h-md, 36px);
+  min-height: var(--btn-h-md, 36px);
+  max-height: var(--btn-h-md, 36px);
+  padding: 0 var(--btn-px-md, 16px);
+  font-weight: 600;
+  font-size: 0.8125rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   width: 100%;
   margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  line-height: 1;
 }
 
 .contact-submit-btn:hover {

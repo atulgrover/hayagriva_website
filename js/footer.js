@@ -67,7 +67,7 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
     <!-- Section 1 (40%): Unified Sacred Card (Emblem ~135px + Single-Line Shloka & Meaning) -->
     <div class="footer-col-sacred">
       <div class="sacred-emblem-wrap">
-        <img src="branding/hayagriva_multi_arm_white.png" alt="Lord Hayagriva Sacred Multi-Armed Icon" class="footer-logo-img" />
+        <img src="branding/hayagriva_multi_arm_white.png" alt="Lord Hayagriva Sacred Multi-Armed Icon" class="footer-logo-img" width="140" height="155" loading="eager" />
       </div>
       <div class="sacred-shloka-wrap">
         <p class="shloka-devanagari-banner">ज्ञानानन्दमयं देवं निर्मलस्फटिकाकृतिम् ।<br>आधारं सर्वविद्यानां हयग्रीवमुपास्महे ॥</p>
@@ -174,7 +174,7 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
     // Immediate fallback
     applyFooter(fallbackFooterHTML);
 
-    // Live sync via fetch on HTTP
+    // Live sync via fetch on HTTP - avoid re-replacing DOM if already matching
     if (window.location.protocol.startsWith('http')) {
       fetch('footer.html?v=' + Date.now())
         .then(res => {
@@ -182,7 +182,16 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
           return res.text();
         })
         .then(html => {
-          if (html && html.trim().length > 50) {
+          const currentFooter = document.getElementById('site-footer');
+          const temp = document.createElement('div');
+          temp.innerHTML = html.trim();
+          const newFooter = temp.querySelector('#site-footer');
+
+          // If footer is already rendered and identical, DO NOT replace DOM!
+          if (currentFooter && newFooter && currentFooter.innerHTML.trim() === newFooter.innerHTML.trim()) {
+            return;
+          }
+          if (!currentFooter && html && html.trim().length > 50) {
             applyFooter(html);
           }
         })
