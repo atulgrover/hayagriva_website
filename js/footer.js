@@ -123,11 +123,11 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
           </ul>
         </div>
 
-        <!-- Column 4: COMMUNITY -->
+        <!-- Column 4: DIRECTORY -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-network"><i class="fa-solid fa-address-book"></i></span>
-            <span class="tree-root-name">COMMUNITY</span>
+            <span class="tree-root-name">DIRECTORY</span>
           </div>
           <ul class="footer-tree-list">
             <li class="tree-item"><a href="community.html">Agentic Professionals</a></li>

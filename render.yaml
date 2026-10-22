@@ -33,6 +33,9 @@ services:
         source: /community
         destination: /community.html
       - type: rewrite
+        source: /directory
+        destination: /community.html
+      - type: rewrite
         source: /workbench
         destination: /intelligence.html
       - type: rewrite

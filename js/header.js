@@ -66,10 +66,10 @@
         </a>
       </li>
 
-      <!-- 5. COMMUNITY (Agentic Professionals) -->
+      <!-- 5. DIRECTORY (Agentic Professionals) -->
       <li class="nav-item">
         <a href="community.html" class="nav-link nav-link-wireframe" id="nav-community">
-          <span class="nav-title-row">COMMUNITY</span>
+          <span class="nav-title-row">DIRECTORY</span>
           <span class="nav-subtitle-row">Agentic Professionals</span>
         </a>
       </li>
@@ -220,7 +220,7 @@
         setActive('nav-intelligence');
       } else if (hash.startsWith('#cocounsel') || hash.startsWith('#co-counsel') || hash.startsWith('#agents') || hash.startsWith('#coworkers') || hash.startsWith('#actions')) {
         setActive('nav-agents');
-      } else if (hash.startsWith('#community') || hash.startsWith('#network') || hash.startsWith('#directories')) {
+      } else if (hash.startsWith('#directory') || hash.startsWith('#directories') || hash.startsWith('#community') || hash.startsWith('#network')) {
         setActive('nav-community');
       }
     } else if (path === 'knowledge.html' || path.startsWith('vaults_')) {
@@ -229,7 +229,7 @@
       setActive('nav-intelligence');
     } else if (path === 'agents.html' || path === 'cocounsel.html' || path === 'co-counsel.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
       setActive('nav-agents');
-    } else if (path === 'community.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
+    } else if (path === 'community.html' || path === 'directory.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
       setActive('nav-community');
     }
   }

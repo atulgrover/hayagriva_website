@@ -61,7 +61,7 @@ The website navigation and information architecture is organized into 4 sovereig
 | 1 | **KNOWLEDGE** | Legal Vaults | `knowledge.html` | Legal Graph Search (`https://app-apnet-net.onrender.com/login`) |
 | 2 | **INTELLIGENCE** | Sovereign AI | `intelligence.html` | Download Controller modal (`openIdeDownloadModal()`) & Inference Portal |
 | 3 | **CO-COUNSEL** | Chamber Personas | `agents.html` | Co-Counsel Studio (`https://app-apnet-net.onrender.com/login`) |
-| 4 | **COMMUNITY** | Agentic Professionals | `community.html` | Full-screen interactive Leaflet bench map & directory roster |
+| 4 | **DIRECTORY** | Agentic Professionals | `community.html` | Full-screen interactive Leaflet bench map & directory roster |
 
 ### Design Decisions:
 - **Home as Context Foundation:** Context creation, air-gapped ingestion, SHA-256 evidence vaults, and role enclaves merged into `index.html` alongside the statutory liability reality (DPDP ₹250 Cr, IBBI Reg 40A, Sec 66 fraud, and evidence spoliation).
