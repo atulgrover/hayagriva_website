@@ -58,11 +58,11 @@
         </a>
       </li>
 
-      <!-- 4. AGENTS (Custom Agents) -->
+      <!-- 4. CO-COUNSEL (Chamber Personas) -->
       <li class="nav-item">
         <a href="agents.html" class="nav-link nav-link-wireframe" id="nav-agents">
-          <span class="nav-title-row">AGENTS</span>
-          <span class="nav-subtitle-row">Custom Agents</span>
+          <span class="nav-title-row">CO-COUNSEL</span>
+          <span class="nav-subtitle-row">Chamber Personas</span>
         </a>
       </li>
 
@@ -218,7 +218,7 @@
         setActive('nav-knowledge');
       } else if (hash.startsWith('#intelligence') || hash.startsWith('#workbench') || hash.startsWith('#models')) {
         setActive('nav-intelligence');
-      } else if (hash.startsWith('#agents') || hash.startsWith('#coworkers') || hash.startsWith('#actions')) {
+      } else if (hash.startsWith('#cocounsel') || hash.startsWith('#co-counsel') || hash.startsWith('#agents') || hash.startsWith('#coworkers') || hash.startsWith('#actions')) {
         setActive('nav-agents');
       } else if (hash.startsWith('#community') || hash.startsWith('#network') || hash.startsWith('#directories')) {
         setActive('nav-community');
@@ -227,7 +227,7 @@
       setActive('nav-knowledge');
     } else if (path === 'intelligence.html' || path.startsWith('models_') || path.startsWith('harness_haya_')) {
       setActive('nav-intelligence');
-    } else if (path === 'agents.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
+    } else if (path === 'agents.html' || path === 'cocounsel.html' || path === 'co-counsel.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
       setActive('nav-agents');
     } else if (path === 'community.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
       setActive('nav-community');

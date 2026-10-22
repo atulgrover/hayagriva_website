@@ -24,6 +24,12 @@ services:
         source: /agents
         destination: /agents.html
       - type: rewrite
+        source: /cocounsel
+        destination: /agents.html
+      - type: rewrite
+        source: /co-counsel
+        destination: /agents.html
+      - type: rewrite
         source: /community
         destination: /community.html
       - type: rewrite

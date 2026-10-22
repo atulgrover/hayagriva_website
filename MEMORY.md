@@ -60,7 +60,7 @@ The website navigation and information architecture is organized into 4 sovereig
 | 0 | **HOME / CONTEXT** | Sovereign Context Foundation | `index.html#home` | Ingestion Pipeline (`https://app-apnet-net.onrender.com/login`) |
 | 1 | **KNOWLEDGE** | Legal Vaults | `knowledge.html` | Legal Graph Search (`https://app-apnet-net.onrender.com/login`) |
 | 2 | **INTELLIGENCE** | Sovereign AI | `intelligence.html` | Download Controller modal (`openIdeDownloadModal()`) & Inference Portal |
-| 3 | **AGENTS** | Custom Agents | `agents.html` | Agent Studio (`https://app-apnet-net.onrender.com/login`) |
+| 3 | **CO-COUNSEL** | Chamber Personas | `agents.html` | Co-Counsel Studio (`https://app-apnet-net.onrender.com/login`) |
 | 4 | **COMMUNITY** | Agentic Professionals | `community.html` | Full-screen interactive Leaflet bench map & directory roster |
 
 ### Design Decisions:
