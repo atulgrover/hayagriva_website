@@ -77,25 +77,11 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
       </div>
     </div>
 
-    <!-- Section 2 (62%): 5-Tree Site Navigation Hub -->
+    <!-- Section 2 (62%): 4-Tree Site Navigation Hub -->
     <div class="footer-col-nav-hub">
       <div class="footer-tree-grid">
 
-        <!-- Column 1: CONTEXT -->
-        <div class="footer-tree-col">
-          <div class="tree-root-head">
-            <span class="tree-root-badge badge-harness"><i class="fa-solid fa-folder-closed"></i></span>
-            <span class="tree-root-name">CONTEXT</span>
-          </div>
-          <ul class="footer-tree-list">
-            <li class="tree-item"><a href="context.html">Confidential Data</a></li>
-            <li class="tree-item"><a href="context.html">Air-Gapped Ingest</a></li>
-            <li class="tree-item"><a href="context.html">SHA-256 Vaults</a></li>
-            <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer">Ingestion Portal <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
-          </ul>
-        </div>
-
-        <!-- Column 2: KNOWLEDGE -->
+        <!-- Column 1: KNOWLEDGE -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-agents"><i class="fa-solid fa-scale-balanced"></i></span>
@@ -103,13 +89,13 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
           </div>
           <ul class="footer-tree-list">
             <li class="tree-item"><a href="knowledge.html">Legal Vaults</a></li>
+            <li class="tree-item"><a href="index.html#home">Sovereign Context</a></li>
             <li class="tree-item"><a href="vaults_law.html">Statutory Acts</a></li>
-            <li class="tree-item"><a href="vaults_precedence.html">SC &amp; NCLAT Precedents</a></li>
             <li class="tree-item"><a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer">Legal Graph Search <i class="fa-solid fa-arrow-up-right-from-square footer-ext-icon"></i></a></li>
           </ul>
         </div>
 
-        <!-- Column 3: INTELLIGENCE -->
+        <!-- Column 2: INTELLIGENCE -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-harness"><i class="fa-solid fa-brain"></i></span>
@@ -123,7 +109,7 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
           </ul>
         </div>
 
-        <!-- Column 4: AGENTS -->
+        <!-- Column 3: AGENTS -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-turbine"><i class="fa-solid fa-robot"></i></span>
@@ -137,7 +123,7 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
           </ul>
         </div>
 
-        <!-- Column 5: COMMUNITY -->
+        <!-- Column 4: COMMUNITY -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-network"><i class="fa-solid fa-address-book"></i></span>
