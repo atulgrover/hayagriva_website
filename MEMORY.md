@@ -51,22 +51,22 @@ All three repositories are fully committed, clean, and pushed to origin:
 
 ---
 
-## 3. Architecture & 5-Pillar Endpoints (Updated 2026-10-22)
+## 3. Architecture & 4-Pillar Endpoints (Updated 2026-10-22)
 
-The website navigation and information architecture was streamlined into 5 foundational pillars with centered heroes, minimalist typographic cards (`.card-minimal`), and a top-right `LOGIN` CTA to the portal (`https://app-apnet-net.onrender.com/login`):
+The website navigation and information architecture is organized into 4 sovereign pillars with Home (`index.html`) serving as the central Sovereign Context Foundation:
 
-| # | Pillar | Subtitle | Destination Page | Primary Hero CTA / Target |
+| # | Pillar / Section | Subtitle | Destination Page | Primary Hero CTA / Target |
 |---|---|---|---|---|
-| 1 | **CONTEXT** | Confidential Data | `context.html` | Ingestion Portal (`https://app-apnet-net.onrender.com/login`) |
-| 2 | **KNOWLEDGE** | Legal Vaults | `knowledge.html` | Legal Graph Search (`https://app-apnet-net.onrender.com/login`) |
-| 3 | **INTELLIGENCE** | Sovereign AI | `intelligence.html` | Download Controller modal (`openIdeDownloadModal()`) & Inference Portal |
-| 4 | **AGENTS** | Custom Agents | `agents.html` | Agent Studio (`https://app-apnet-net.onrender.com/login`) |
-| 5 | **COMMUNITY** | Agentic Professionals | `community.html` | Full-screen interactive Leaflet bench map & directory roster |
+| 0 | **HOME / CONTEXT** | Sovereign Context Foundation | `index.html#home` | Ingestion Pipeline (`https://app-apnet-net.onrender.com/login`) |
+| 1 | **KNOWLEDGE** | Legal Vaults | `knowledge.html` | Legal Graph Search (`https://app-apnet-net.onrender.com/login`) |
+| 2 | **INTELLIGENCE** | Sovereign AI | `intelligence.html` | Download Controller modal (`openIdeDownloadModal()`) & Inference Portal |
+| 3 | **AGENTS** | Custom Agents | `agents.html` | Agent Studio (`https://app-apnet-net.onrender.com/login`) |
+| 4 | **COMMUNITY** | Agentic Professionals | `community.html` | Full-screen interactive Leaflet bench map & directory roster |
 
-### Design Decision: Option B (Minimalist / Cards Only)
-- **Typographic Cards:** All pastel colored icon boxes removed in favor of high-contrast, clean minimalist cards (`01`, `02`, `03` step badge + category tag + title + description + key attributes).
-- **Proof-of-Image UI Mockups:** Per user instruction, large UI preview mockup boxes under the cards are omitted for now (Option B). They will be added later when explicitly instructed.
-- **Decommissioned Pages:** `collective.html`, `chatroom.html`, and `harness_haya_ingest.html` removed; consultations and chats rerouted directly to portal login.
+### Design Decisions:
+- **Home as Context Foundation:** Context creation, air-gapped ingestion, SHA-256 evidence vaults, and role enclaves merged into `index.html` alongside the statutory liability reality (DPDP ₹250 Cr, IBBI Reg 40A, Sec 66 fraud, and evidence spoliation).
+- **Option B (Minimalist Cards):** Clean typographic cards (`.pillar-teaser-card`) without colored icon boxes, top eyebrow badges, or bottom attribute rows.
+- **Decommissioned Pages:** `context.html` merged into home; `collective.html`, `chatroom.html`, and `harness_haya_ingest.html` removed. Consultations and chats route directly to portal login.
 
 ---
 

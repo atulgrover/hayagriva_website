@@ -13,7 +13,7 @@ services:
     routes:
       - type: rewrite
         source: /context
-        destination: /context.html
+        destination: /index.html
       - type: rewrite
         source: /knowledge
         destination: /knowledge.html
