@@ -33,17 +33,20 @@ services:
         source: /co-counsel
         destination: /counsels.html
       - type: rewrite
+        source: /professionals
+        destination: /professionals.html
+      - type: rewrite
         source: /directory
-        destination: /directory.html
+        destination: /professionals.html
       - type: rewrite
         source: /community
-        destination: /directory.html
+        destination: /professionals.html
       - type: rewrite
         source: /workbench
         destination: /intelligence.html
       - type: rewrite
         source: /directories
-        destination: /directory.html
+        destination: /professionals.html
       - type: rewrite
         source: /vaults
         destination: /knowledge.html

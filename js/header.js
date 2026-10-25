@@ -58,17 +58,17 @@
         </a>
       </li>
 
-      <!-- 4. CO-COUNSEL (Chamber Personas) -->
+      <!-- 4. CO-COUNSELS (Chamber Agents) -->
       <li class="nav-item">
         <a href="counsels.html" class="nav-link nav-link-wireframe" id="nav-agents">
-          <span class="nav-title-row">CO-COUNSEL</span>
-          <span class="nav-subtitle-row">Chamber Personas</span>
+          <span class="nav-title-row">CO-COUNSELS</span>
+          <span class="nav-subtitle-row">Chamber Agents</span>
         </a>
       </li>
 
       <!-- 5. PROFESSIONALS (Directory Listing) -->
       <li class="nav-item">
-        <a href="directory.html" class="nav-link nav-link-wireframe" id="nav-community">
+        <a href="professionals.html" class="nav-link nav-link-wireframe" id="nav-community">
           <span class="nav-title-row">PROFESSIONALS</span>
           <span class="nav-subtitle-row">Directory Listing</span>
         </a>
@@ -234,7 +234,7 @@
       setActive('nav-intelligence');
     } else if (path === 'counsels.html' || path === 'agents.html' || path === 'cocounsel.html' || path === 'co-counsel.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
       setActive('nav-agents');
-    } else if (path === 'directory.html' || path === 'community.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
+    } else if (path === 'professionals.html' || path === 'directory.html' || path === 'community.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
       setActive('nav-community');
     }
   }
