@@ -21,14 +21,18 @@ All three repositories are fully committed, clean, and pushed to origin:
 
 ### A. Brandmark & Typography Harmonization (Unicorn Emblem & Chakra Petch)
 - **Brandmark Symbolism:** The **Circular Unicorn Emblem** representing sovereign intelligence, paired with lowercase **`agentic professionals`** in Google Font **`Chakra Petch`**.
+- **Header Navigation Architecture:**
+  - Modernized to single-line lowercase tabs in `Chakra Petch`: `knowledge`, `intelligence`, `co-counsels`, `professionals`, and `login`.
+  - Redundant `#nav-home` icon removed; the top-left clickable brand logo serves as the single canonical home target (`index.html#home`).
+  - Active routes highlighted with subtle `#0284c7` color and `#f1f5f9` pill backgrounds.
 - **3-Tier Typography Architecture:**
-  - **Tier 1 (Brand & Tech Accents):** `Chakra Petch` — header brand wordmark and future tech badges / numerical counters.
-  - **Tier 2 (Interface & Editorial Prose):** `Inter` — site navigation, hero titles, card headings, and legal prose to prevent visual fatigue and maintain institutional legal authority.
+  - **Tier 1 (Brand & Tech Accents / Navigation):** `Chakra Petch` — header brand wordmark, navbar tabs, login CTA, and future tech badges.
+  - **Tier 2 (Interface & Editorial Prose):** `Inter` — hero titles, pillar body prose, card descriptions, and legal statutes to maintain readability and institutional authority.
   - **Tier 3 (Verification & Data):** `JetBrains Mono` — statutory sections, avoidance transaction hashes, terminal outputs.
 - **HAYAGRIVA WEBSITE:**
-  - Header brand block updated in `header.html` and `js/header.js` (`fallbackHTML`) to `branding/unicorn_emblem.png` (34px) + `.brand-chakra-title`.
+  - Header brand block and navigation synchronously updated in `header.html` and `js/header.js` (`fallbackHTML`).
   - Hero section updated to the **Hayagriva Cosmic Unicorn** emblem in `index.html`.
-- **Outcome:** Clean, razor-sharp modern tech identity paired with maximum readability for commercial law practitioners.
+- **Outcome:** Razor-sharp modern tech identity with zero vertical bloat and optical harmony between logo and navigation.
 
 ### B. Community Directory & Map Overhaul (`directory_listing.html`)
 - **Map Vector Tiles:** Upgraded to **Esri World Light Gray Canvas** (`Canvas/World_Light_Gray_Base` + `Canvas/World_Light_Gray_Reference`), completely free, zero watermarks, high contrast monochrome with English labels.
