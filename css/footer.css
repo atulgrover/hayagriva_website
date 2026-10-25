@@ -7,7 +7,7 @@
 .compact-footer {
   background-color: #0F172A;
   border-top: 1px solid #1E293B;
-  padding: 26px 36px 16px;
+  padding: 26px 1.75rem 16px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
@@ -19,7 +19,7 @@
   grid-template-columns: 38% 62%; /* 38% Sacred : 62% Nav Hub */
   gap: 24px;
   align-items: stretch;
-  max-width: 1800px;
+  max-width: min(var(--max-width, 1360px), 100%);
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
@@ -382,7 +382,7 @@
   padding-top: 8px;
   font-size: 0.70rem;
   color: #94A3B8;
-  max-width: 1800px;
+  max-width: min(var(--max-width, 1360px), 100%);
   margin-left: auto;
   margin-right: auto;
 }
