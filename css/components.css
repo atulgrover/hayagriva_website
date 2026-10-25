@@ -1734,42 +1734,38 @@ body.view-fullscreen-active .site-footer {
   user-select: none;
 }
 
-/* Two-Line Nav Links */
+/* Single-Line Nav Links in Chakra Petch */
 .nav-link-wireframe {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   background: none;
   border: none;
-  padding: 0.3rem 0.55rem;
+  padding: 0.42rem 0.8rem;
   border-radius: 6px;
   cursor: pointer;
-  line-height: 1.05;
+  line-height: 1;
   gap: 0;
   transition: all 0.15s ease;
-  font-family: inherit;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 .nav-link-wireframe .nav-title-row {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-family: inherit;
+  font-family: 'Chakra Petch', sans-serif;
   font-size: 0.95rem;
-  font-weight: 700;
-  color: #1e293b;
-  letter-spacing: -0.01em;
-  line-height: 1.15;
+  font-weight: 500;
+  color: #334155;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-transform: lowercase;
+  transition: color 0.15s ease;
 }
 
 .nav-link-wireframe .nav-subtitle-row {
-  font-size: 0.73rem;
-  font-weight: 500;
-  color: #64748b;
-  letter-spacing: normal;
-  line-height: 1.1;
-  margin-top: 0px;
+  display: none;
 }
 
 .nav-link-wireframe:hover,
@@ -1779,12 +1775,8 @@ body.view-fullscreen-active .site-footer {
 
 .nav-link-wireframe:hover .nav-title-row,
 .nav-link-wireframe.active .nav-title-row {
-  color: #2563eb;
-}
-
-.nav-link-wireframe:hover .nav-subtitle-row,
-.nav-link-wireframe.active .nav-subtitle-row {
-  color: #1d4ed8;
+  color: #0284c7;
+  font-weight: 600;
 }
 
 .nav-link-wireframe .dropdown-icon {
@@ -3830,6 +3822,11 @@ body.view-fullscreen-active .site-footer {
 
 /* Header Login CTA Button */
 .portal-cta-main {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
   background: #0f172a !important;
   color: #ffffff !important;
   height: var(--btn-h-md, 36px);
@@ -3837,9 +3834,6 @@ body.view-fullscreen-active .site-footer {
   max-height: var(--btn-h-md, 36px);
   padding: 0 var(--btn-px-md, 16px);
   border-radius: var(--btn-radius, 6px);
-  font-weight: 700;
-  font-size: 0.8125rem;
-  letter-spacing: 0.04em;
   text-decoration: none;
   display: inline-flex;
   align-items: center;

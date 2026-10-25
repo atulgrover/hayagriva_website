@@ -31,51 +31,39 @@
     <!-- Primary Navigation Menu -->
     <ul class="nav-menu" id="header-nav-menu">
 
-      <!-- 0. Home Icon Link -->
-      <li class="nav-item">
-        <a href="index.html#home" class="nav-icon-wireframe" id="nav-home" aria-label="Home" title="Home">
-          <i class="fa-solid fa-house nav-home-icon"></i>
-        </a>
-      </li>
-
-
-      <!-- 2. KNOWLEDGE (Legal Vaults) -->
+      <!-- 1. knowledge -->
       <li class="nav-item">
         <a href="knowledge.html" class="nav-link nav-link-wireframe" id="nav-knowledge">
-          <span class="nav-title-row">KNOWLEDGE</span>
-          <span class="nav-subtitle-row">Legal Vaults</span>
+          <span class="nav-title-row">knowledge</span>
         </a>
       </li>
 
-      <!-- 3. INTELLIGENCE (Sovereign AI) -->
+      <!-- 2. intelligence -->
       <li class="nav-item">
         <a href="intelligence.html" class="nav-link nav-link-wireframe" id="nav-intelligence">
-          <span class="nav-title-row">INTELLIGENCE</span>
-          <span class="nav-subtitle-row">Sovereign AI</span>
+          <span class="nav-title-row">intelligence</span>
         </a>
       </li>
 
-      <!-- 4. CO-COUNSELS (Chamber Agents) -->
+      <!-- 3. co-counsels -->
       <li class="nav-item">
         <a href="counsels.html" class="nav-link nav-link-wireframe" id="nav-agents">
-          <span class="nav-title-row">CO-COUNSELS</span>
-          <span class="nav-subtitle-row">Chamber Agents</span>
+          <span class="nav-title-row">co-counsels</span>
         </a>
       </li>
 
-      <!-- 5. PROFESSIONALS (Directory Listing) -->
+      <!-- 4. professionals -->
       <li class="nav-item">
         <a href="professionals.html" class="nav-link nav-link-wireframe" id="nav-community">
-          <span class="nav-title-row">PROFESSIONALS</span>
-          <span class="nav-subtitle-row">Directory Listing</span>
+          <span class="nav-title-row">professionals</span>
         </a>
       </li>
 
-      <!-- 6. Portal Login CTA -->
+      <!-- 5. Portal Login CTA -->
       <li class="nav-item">
         <a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer" class="portal-cta-main" id="nav-portal-login">
           <i class="fa-solid fa-arrow-right-to-bracket"></i>
-          <span>LOGIN</span>
+          <span>login</span>
         </a>
       </li>
 
@@ -215,7 +203,7 @@
 
     if (path === '' || path === 'index.html') {
       if (hash.startsWith('#home') || hash.startsWith('#context') || hash === '') {
-        setActive('nav-home');
+        // Home route is represented by the top-left brand logo (#header-brand-logo)
       } else if (hash.startsWith('#knowledge')) {
         setActive('nav-knowledge');
       } else if (hash.startsWith('#intelligence') || hash.startsWith('#workbench') || hash.startsWith('#models')) {
