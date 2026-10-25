@@ -81,11 +81,11 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
     <div class="footer-col-nav-hub">
       <div class="footer-tree-grid">
 
-        <!-- Column 1: KNOWLEDGE -->
+        <!-- Column 1: knowledge -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-agents"><i class="fa-solid fa-scale-balanced"></i></span>
-            <span class="tree-root-name">KNOWLEDGE</span>
+            <span class="tree-root-name">knowledge</span>
           </div>
           <ul class="footer-tree-list">
             <li class="tree-item"><a href="knowledge.html">Legal Vaults</a></li>
@@ -95,11 +95,11 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
           </ul>
         </div>
 
-        <!-- Column 2: INTELLIGENCE -->
+        <!-- Column 2: intelligence -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-harness"><i class="fa-solid fa-brain"></i></span>
-            <span class="tree-root-name">INTELLIGENCE</span>
+            <span class="tree-root-name">intelligence</span>
           </div>
           <ul class="footer-tree-list">
             <li class="tree-item"><a href="intelligence.html">Sovereign AI</a></li>
@@ -109,11 +109,11 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
           </ul>
         </div>
 
-        <!-- Column 3: CO-COUNSELS -->
+        <!-- Column 3: co-counsels -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-turbine"><i class="fa-solid fa-user-tie"></i></span>
-            <span class="tree-root-name">CO-COUNSELS</span>
+            <span class="tree-root-name">co-counsels</span>
           </div>
           <ul class="footer-tree-list">
             <li class="tree-item"><a href="counsels.html">Chamber Agents</a></li>
@@ -123,11 +123,11 @@ window.handleVolunteerSubmit = handleVolunteerSubmit;
           </ul>
         </div>
 
-        <!-- Column 4: PROFESSIONALS -->
+        <!-- Column 4: professionals -->
         <div class="footer-tree-col">
           <div class="tree-root-head">
             <span class="tree-root-badge badge-network"><i class="fa-solid fa-address-book"></i></span>
-            <span class="tree-root-name">PROFESSIONALS</span>
+            <span class="tree-root-name">professionals</span>
           </div>
           <ul class="footer-tree-list">
             <li class="tree-item"><a href="professionals.html">Directory Listing</a></li>
