@@ -19,17 +19,16 @@ All three repositories are fully committed, clean, and pushed to origin:
 
 ## 2. Completed Milestones (2026-10-19 Session)
 
-### A. Tri-System Brandmark Harmonization (The Hayagriva Knight)
-- **Brandmark Symbolism:** The **Segmented Sovereign Knight** (the avatar of Lord Hayagriva — horse-headed embodiment of knowledge, wisdom, and obstacle-bypassing speed; combined with the tactical foresight of the chess knight and modular agentic mane slices).
-- **Assets Imported:** `hayagriva_knight_light.png` (dark navy silhouette for light backgrounds) and `hayagriva_knight_dark.png` (white silhouette for dark backgrounds).
+### A. Brandmark & Typography Harmonization (Unicorn Emblem & Chakra Petch)
+- **Brandmark Symbolism:** The **Circular Unicorn Emblem** representing sovereign intelligence, paired with lowercase **`agentic professionals`** in Google Font **`Chakra Petch`**.
+- **3-Tier Typography Architecture:**
+  - **Tier 1 (Brand & Tech Accents):** `Chakra Petch` — header brand wordmark and future tech badges / numerical counters.
+  - **Tier 2 (Interface & Editorial Prose):** `Inter` — site navigation, hero titles, card headings, and legal prose to prevent visual fatigue and maintain institutional legal authority.
+  - **Tier 3 (Verification & Data):** `JetBrains Mono` — statutory sections, avoidance transaction hashes, terminal outputs.
 - **HAYAGRIVA WEBSITE:**
-  - Placed before `AGENTIC PROFESSIONALS` in the sticky global header (`header.html` and `js/header.js`).
-  - Sized cleanly at `36px × 36px` in `css/components.css` with smooth hover micro-interaction.
-- **HAYAGRIVA PORTAL:**
-  - Updated both `AdminSidebar` (`src/components/admin/sidebar.tsx`) and `ClientSidebar` (`src/components/client/sidebar.tsx`) to render the Hayagriva Knight mark on the top left.
-  - Both light and dark theme switching enabled.
-- **HAYAGRIVA HARNESS:** Already natively uses this brandmark in `HayagrivaLogo/index.jsx`.
-- **Outcome:** Unified visual identity across Harness, Website, and Portal.
+  - Header brand block updated in `header.html` and `js/header.js` (`fallbackHTML`) to `branding/unicorn_emblem.png` (34px) + `.brand-chakra-title`.
+  - Hero section updated to the **Hayagriva Cosmic Unicorn** emblem in `index.html`.
+- **Outcome:** Clean, razor-sharp modern tech identity paired with maximum readability for commercial law practitioners.
 
 ### B. Community Directory & Map Overhaul (`directory_listing.html`)
 - **Map Vector Tiles:** Upgraded to **Esri World Light Gray Canvas** (`Canvas/World_Light_Gray_Base` + `Canvas/World_Light_Gray_Reference`), completely free, zero watermarks, high contrast monochrome with English labels.
