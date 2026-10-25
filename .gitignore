@@ -5,6 +5,7 @@ __pycache__/
 .tempmediaStorage/
 .server.pid
 *.log
+.superpowers/
 
 # Cloudflare Master Digital Assets - Ignore all binary asset contents
 cloudflare_assets/models/*

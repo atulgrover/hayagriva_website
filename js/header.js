@@ -60,17 +60,17 @@
 
       <!-- 4. CO-COUNSEL (Chamber Personas) -->
       <li class="nav-item">
-        <a href="agents.html" class="nav-link nav-link-wireframe" id="nav-agents">
+        <a href="counsels.html" class="nav-link nav-link-wireframe" id="nav-agents">
           <span class="nav-title-row">CO-COUNSEL</span>
           <span class="nav-subtitle-row">Chamber Personas</span>
         </a>
       </li>
 
-      <!-- 5. DIRECTORY (Agentic Professionals) -->
+      <!-- 5. PROFESSIONALS (Directory Listing) -->
       <li class="nav-item">
-        <a href="community.html" class="nav-link nav-link-wireframe" id="nav-community">
-          <span class="nav-title-row">DIRECTORY</span>
-          <span class="nav-subtitle-row">Agentic Professionals</span>
+        <a href="directory.html" class="nav-link nav-link-wireframe" id="nav-community">
+          <span class="nav-title-row">PROFESSIONALS</span>
+          <span class="nav-subtitle-row">Directory Listing</span>
         </a>
       </li>
 
@@ -223,18 +223,18 @@
         setActive('nav-knowledge');
       } else if (hash.startsWith('#intelligence') || hash.startsWith('#workbench') || hash.startsWith('#models')) {
         setActive('nav-intelligence');
-      } else if (hash.startsWith('#cocounsel') || hash.startsWith('#co-counsel') || hash.startsWith('#agents') || hash.startsWith('#coworkers') || hash.startsWith('#actions')) {
+      } else if (hash.startsWith('#counsels') || hash.startsWith('#cocounsel') || hash.startsWith('#co-counsel') || hash.startsWith('#agents') || hash.startsWith('#coworkers') || hash.startsWith('#actions')) {
         setActive('nav-agents');
-      } else if (hash.startsWith('#directory') || hash.startsWith('#directories') || hash.startsWith('#community') || hash.startsWith('#network')) {
+      } else if (hash.startsWith('#professionals') || hash.startsWith('#directory') || hash.startsWith('#directories') || hash.startsWith('#community') || hash.startsWith('#network')) {
         setActive('nav-community');
       }
     } else if (path === 'knowledge.html' || path.startsWith('vaults_')) {
       setActive('nav-knowledge');
     } else if (path === 'intelligence.html' || path.startsWith('models_') || path.startsWith('harness_haya_')) {
       setActive('nav-intelligence');
-    } else if (path === 'agents.html' || path === 'cocounsel.html' || path === 'co-counsel.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
+    } else if (path === 'counsels.html' || path === 'agents.html' || path === 'cocounsel.html' || path === 'co-counsel.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
       setActive('nav-agents');
-    } else if (path === 'community.html' || path === 'directory.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
+    } else if (path === 'directory.html' || path === 'community.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
       setActive('nav-community');
     }
   }

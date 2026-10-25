@@ -21,26 +21,29 @@ services:
         source: /intelligence
         destination: /intelligence.html
       - type: rewrite
+        source: /counsels
+        destination: /counsels.html
+      - type: rewrite
         source: /agents
-        destination: /agents.html
+        destination: /counsels.html
       - type: rewrite
         source: /cocounsel
-        destination: /agents.html
+        destination: /counsels.html
       - type: rewrite
         source: /co-counsel
-        destination: /agents.html
-      - type: rewrite
-        source: /community
-        destination: /community.html
+        destination: /counsels.html
       - type: rewrite
         source: /directory
-        destination: /community.html
+        destination: /directory.html
+      - type: rewrite
+        source: /community
+        destination: /directory.html
       - type: rewrite
         source: /workbench
         destination: /intelligence.html
       - type: rewrite
         source: /directories
-        destination: /community.html
+        destination: /directory.html
       - type: rewrite
         source: /vaults
         destination: /knowledge.html
