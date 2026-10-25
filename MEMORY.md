@@ -25,14 +25,19 @@ All three repositories are fully committed, clean, and pushed to origin:
   - Modernized to single-line lowercase tabs in `Chakra Petch`: `knowledge`, `intelligence`, `co-counsels`, `professionals`, and `login`.
   - Redundant `#nav-home` icon removed; the top-left clickable brand logo serves as the single canonical home target (`index.html#home`).
   - Active routes highlighted with subtle `#0284c7` color and `#f1f5f9` pill backgrounds.
+- **Footer Navigation & Color Architecture:**
+  - Modernized column titles to `Chakra Petch` lowercase: `knowledge`, `intelligence`, `co-counsels`, `professionals`, perfectly mirroring the top header tabs.
+  - Sub-links remain in clean `Inter` (`Legal Vaults`, `BharatGen SLMs`, `National Bench Map`) to preserve effortless readability.
+  - Background upgraded from near-black midnight charcoal (`#0F172A`) to rich **Sovereign Cobalt Slate (`#0b1f3b`)** with top border `#1a365d` and translucent card containers (`rgba(255, 255, 255, 0.045)` / border `rgba(255, 255, 255, 0.12)`).
+  - Preserves 100% luminous contrast for the white Lord Hayagriva sacred emblem and Sanskrit shloka.
 - **3-Tier Typography Architecture:**
-  - **Tier 1 (Brand & Tech Accents / Navigation):** `Chakra Petch` — header brand wordmark, navbar tabs, login CTA, and future tech badges.
-  - **Tier 2 (Interface & Editorial Prose):** `Inter` — hero titles, pillar body prose, card descriptions, and legal statutes to maintain readability and institutional authority.
+  - **Tier 1 (Brand, Tech Accents & Navigation Pillars):** `Chakra Petch` — header brand wordmark, navbar tabs, login CTA, and footer column headers.
+  - **Tier 2 (Interface & Editorial Prose):** `Inter` — hero titles, pillar body prose, card descriptions, sub-links, and legal statutes to maintain readability and institutional authority.
   - **Tier 3 (Verification & Data):** `JetBrains Mono` — statutory sections, avoidance transaction hashes, terminal outputs.
 - **HAYAGRIVA WEBSITE:**
-  - Header brand block and navigation synchronously updated in `header.html` and `js/header.js` (`fallbackHTML`).
+  - Header & footer components synchronously updated in `header.html`, `js/header.js`, `footer.html`, `js/footer.js`.
   - Hero section updated to the **Hayagriva Cosmic Unicorn** emblem in `index.html`.
-- **Outcome:** Razor-sharp modern tech identity with zero vertical bloat and optical harmony between logo and navigation.
+- **Outcome:** Razor-sharp modern tech identity with zero vertical bloat and complete optical harmony between header and footer.
 
 ### B. Community Directory & Map Overhaul (`directory_listing.html`)
 - **Map Vector Tiles:** Upgraded to **Esri World Light Gray Canvas** (`Canvas/World_Light_Gray_Base` + `Canvas/World_Light_Gray_Reference`), completely free, zero watermarks, high contrast monochrome with English labels.
