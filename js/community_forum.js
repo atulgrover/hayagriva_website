@@ -4,11 +4,43 @@
  */
 
 (function () {
-  // Resolve API Base URL (Local dev fallback to localhost:3000 / localhost:3300, Prod to portal)
-  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-  const API_BASE = isLocal
-    ? 'http://localhost:3000' // Live Next.js dev server with shared Neon DB
-    : 'https://app-apnet-net.onrender.com';
+  // Candidate backend API endpoints in priority order:
+  // 1. Hayagriva Portal on localhost:3300
+  // 2. Resolution Bazaar on localhost:3000
+  // 3. Deployed Cloud Portal on Render
+  const CANDIDATES = [
+    'http://localhost:3300',
+    'http://localhost:3000',
+    'https://app-apnet-net.onrender.com',
+  ];
+
+  let activeApiBase = null;
+
+  async function resolveApiBase() {
+    if (activeApiBase) return activeApiBase;
+
+    for (const base of CANDIDATES) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 1500);
+        const res = await fetch(`${base}/api/community/threads?limit=1`, {
+          signal: controller.signal,
+          cache: 'no-store',
+        });
+        clearTimeout(timeoutId);
+        if (res.ok) {
+          activeApiBase = base;
+          console.log(`[Forum] Successfully connected to API backend at: ${base}`);
+          return base;
+        }
+      } catch (e) {
+        // Try next candidate
+      }
+    }
+
+    activeApiBase = CANDIDATES[0];
+    return activeApiBase;
+  }
 
   let currentCategory = 'all';
   let currentSearch = '';
@@ -45,7 +77,8 @@
     `;
 
     try {
-      const url = new URL(`${API_BASE}/api/community/threads`);
+      const apiBase = await resolveApiBase();
+      const url = new URL(`${apiBase}/api/community/threads`);
       if (currentCategory !== 'all') url.searchParams.set('category', currentCategory);
       if (currentSearch) url.searchParams.set('search', currentSearch);
 
@@ -60,7 +93,7 @@
         <div style="padding: 30px; text-align: center; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 12px; color: #e11d48;">
           <i class="fa-solid fa-triangle-exclamation" style="font-size: 22px; margin-bottom: 8px;"></i>
           <p style="font-size: 13px; font-weight: 600;">Unable to connect to shared forum database.</p>
-          <p style="font-size: 11px; margin-top: 4px; color: #be123c;">Please ensure backend service is running on ${API_BASE}.</p>
+          <p style="font-size: 11px; margin-top: 4px; color: #be123c;">Please ensure backend service is running on ${activeApiBase || 'http://localhost:3300'}.</p>
         </div>
       `;
     }
@@ -144,7 +177,8 @@
     `;
 
     try {
-      const res = await fetch(`${API_BASE}/api/community/threads/${threadId}`);
+      const apiBase = await resolveApiBase();
+      const res = await fetch(`${apiBase}/api/community/threads/${threadId}`);
       if (!res.ok) throw new Error('Failed to load thread');
       const { thread, replies } = await res.json();
 
@@ -291,7 +325,8 @@
     }
 
     try {
-      const res = await fetch(`${API_BASE}/api/community/threads`, {
+      const apiBase = await resolveApiBase();
+      const res = await fetch(`${apiBase}/api/community/threads`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
