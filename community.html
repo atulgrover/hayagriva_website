@@ -2,12 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=professionals.html">
-  <title>Redirecting to Professionals Directory Listing...</title>
-  <link rel="canonical" href="professionals.html">
-  <script>window.location.replace("professionals.html");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBC Community Forum &amp; Statutory Bare Act Knowledge Base — AgenticProfessionals.Net</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="Sovereign commercial law &amp; CIRP community forum for advocates, insolvency practitioners, and researchers. Pose statutory inquiries to our 64k-entity Azure LightRAG knowledge graph.">
+
+  <!-- Google Fonts: Inter, Chakra Petch & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/community_forum.css">
 </head>
-<body style="font-family: sans-serif; padding: 2rem; text-align: center; color: #475569;">
-  <p>Redirecting to <a href="professionals.html">Professionals Directory Listing</a>...</p>
+<body style="background: #f8fafc;">
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- Main Community Forum Wrapper -->
+  <main class="forum-page-wrap">
+
+    <!-- 1. Top Hero Banner -->
+    <div class="forum-hero-banner">
+      <div class="forum-badge-pill">
+        <i class="fa-solid fa-sparkles"></i> SOVEREIGN LEGAL INTELLIGENCE • 3 FREE DAILY INQUIRIES
+      </div>
+      <h1 class="forum-hero-title">Insolvency &amp; Commercial Law Forum</h1>
+      <p class="forum-hero-subtitle">
+        Direct peer discussions and instant Azure LightRAG knowledge graph analysis on statutory Bare Acts, CIRP regulations, Section 29A eligibility, and NCLT precedents.
+      </p>
+
+      <div class="forum-hero-actions">
+        <button type="button" class="btn-ask-question" onclick="openAskModal()">
+          <i class="fa-solid fa-plus"></i> Ask Question
+        </button>
+
+        <div class="quota-indicator">
+          <span>Free Daily Quota:</span> <span id="quota-val">3/3</span> Remaining
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Categories & Search Toolbar -->
+    <div class="forum-toolbar">
+      <div class="category-pills">
+        <button type="button" class="category-pill active" data-category="all">all inquiries</button>
+        <button type="button" class="category-pill" data-category="Section 29A">section 29a</button>
+        <button type="button" class="category-pill" data-category="CIRP Regulations">cirp regulations</button>
+        <button type="button" class="category-pill" data-category="SARFAESI">sarfaesi &amp; recovery</button>
+        <button type="button" class="category-pill" data-category="NCLT Practice">nclt practice</button>
+      </div>
+
+      <div class="forum-search-wrap">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="forum-search-box" class="forum-search-input" placeholder="Search inquiries, sections, or citations..." />
+      </div>
+    </div>
+
+    <!-- 3. Dynamic Thread Stream Container -->
+    <div class="thread-list-stream" id="thread-list-stream">
+      <!-- Populated via js/community_forum.js -->
+    </div>
+
+  </main>
+
+  <!-- 4. Slide-over Thread Drawer Component -->
+  <div class="thread-drawer-backdrop" id="thread-drawer-backdrop" onclick="closeThreadDrawer()"></div>
+  <aside class="thread-drawer-panel" id="thread-drawer-panel">
+    <div class="drawer-header">
+      <div>
+        <h2 id="drawer-thread-title" style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 6px 0; line-height: 1.35;"></h2>
+        <div id="drawer-thread-meta" style="font-size: 11px; color: #64748b;"></div>
+      </div>
+      <button type="button" class="drawer-close-btn" onclick="closeThreadDrawer()" aria-label="Close drawer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="drawer-body-stream" id="drawer-body-stream">
+      <!-- Loaded dynamically via API -->
+    </div>
+  </aside>
+
+  <!-- 5. Ask Question Modal -->
+  <div class="modal-overlay" id="ask-question-modal">
+    <div class="modal-box">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h3>Submit Statutory Inquiry</h3>
+        <button type="button" class="drawer-close-btn" onclick="closeAskModal()" style="font-size: 16px;">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="submitQuestion(event)">
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label class="form-label">Inquiry Title / Subject</label>
+          <input type="text" id="inquiry-title" class="form-input" placeholder="e.g., Eligibility under Section 29A(c) for NPA accounts" required minlength="5" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label class="form-label">Statutory Category</label>
+          <select id="inquiry-category" class="form-select">
+            <option value="Section 29A">Section 29A Eligibility</option>
+            <option value="CIRP Regulations">CIRP Regulations &amp; Timelines</option>
+            <option value="SARFAESI">SARFAESI &amp; Debt Recovery</option>
+            <option value="NCLT Practice">NCLT Practice &amp; Interim Applications</option>
+            <option value="Pleadings">Statutory Pleadings &amp; Formats</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label class="form-label">Your Name or Chamber Reference (Optional)</label>
+          <input type="text" id="inquiry-author" class="form-input" placeholder="e.g., Advocate Singhania / Chamber Partner" />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label class="form-label">Inquiry Details / Statutory Context</label>
+          <textarea id="inquiry-body" class="form-textarea" placeholder="Provide factual context or specific statutory section queries..." required minlength="10"></textarea>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+          <button type="button" onclick="closeAskModal()" style="background: none; border: 1px solid #cbd5e1; border-radius: 8px; padding: 8px 16px; font-size: 12px; cursor: pointer; color: #475569;">
+            Cancel
+          </button>
+          <button type="submit" id="btn-submit-inquiry" class="btn-ask-question" style="padding: 8px 18px; font-size: 12px;">
+            Submit Question
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. Daily Limit Reached Modal -->
+  <div class="modal-overlay" id="daily-limit-modal">
+    <div class="modal-box" style="max-width: 460px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.25); display: flex; align-items: center; justify-content: center; color: #d97706; font-size: 18px;">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div>
+          <h3 style="margin: 0; font-size: 16px; font-weight: 700;">Daily Guest Limit Reached (3/3)</h3>
+          <p style="margin: 2px 0 0 0; font-size: 11px; color: #64748b;">Free Sovereign AI Consultations</p>
+        </div>
+      </div>
+
+      <p style="font-size: 12px; color: #334155; line-height: 1.6; margin: 0;">
+        To protect computing clusters and ensure equitable access, guest inquiries are capped at <strong>3 free questions per day</strong>.
+      </p>
+
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px; font-size: 11px; color: #166534; display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-weight: 700; display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-sparkles"></i> Sign in to unlock:
+        </div>
+        <div>• Unlimited Bare Act &amp; CIRP inquiries</div>
+        <div>• Instant SMS / Email alerts on synthesis completion</div>
+        <div>• Direct Chamber dossier integration</div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 6px;">
+        <button type="button" onclick="closeDailyLimitModal()" style="background: none; border: 1px solid #cbd5e1; border-radius: 8px; padding: 8px 16px; font-size: 12px; cursor: pointer; color: #475569;">
+          Browse Answers
+        </button>
+        <a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <button type="button" class="btn-ask-question" style="background: #0b1f3b; color: #ffffff; padding: 8px 18px; font-size: 12px;">
+            Sign In to Portal ↗
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Site Footer Component -->
+  <div id="shared-footer"></div>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="js/auth.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/community_forum.js"></script>
 </body>
 </html>
