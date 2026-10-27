@@ -40,7 +40,10 @@ services:
         destination: /professionals.html
       - type: rewrite
         source: /community
-        destination: /professionals.html
+        destination: /community.html
+      - type: rewrite
+        source: /forum
+        destination: /community.html
       - type: rewrite
         source: /workbench
         destination: /intelligence.html

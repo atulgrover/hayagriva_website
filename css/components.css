@@ -4167,3 +4167,32 @@ body {
   margin-top: auto;
   width: 100%;
 }
+/* ==========================================================================
+   Live IBC Forum Nav Indicator
+   ========================================================================== */
+.nav-link-forum {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+}
+
+.forum-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  animation: pulseForumDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseForumDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.65;
+  }
+}

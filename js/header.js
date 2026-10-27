@@ -59,7 +59,15 @@
         </a>
       </li>
 
-      <!-- 5. Portal Login CTA -->
+      <!-- 5. ibc forum -->
+      <li class="nav-item">
+        <a href="community.html" class="nav-link nav-link-wireframe nav-link-forum" id="nav-forum">
+          <span class="forum-live-dot"></span>
+          <span class="nav-title-row">ibc forum</span>
+        </a>
+      </li>
+
+      <!-- 6. Portal Login CTA -->
       <li class="nav-item">
         <a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer" class="portal-cta-main" id="nav-portal-login">
           <i class="fa-solid fa-arrow-right-to-bracket"></i>
@@ -219,7 +227,9 @@
       setActive('nav-intelligence');
     } else if (path === 'counsels.html' || path === 'agents.html' || path === 'cocounsel.html' || path === 'co-counsel.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
       setActive('nav-agents');
-    } else if (path === 'professionals.html' || path === 'directory.html' || path === 'community.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
+    } else if (path === 'community.html' || path === 'forum.html') {
+      setActive('nav-forum');
+    } else if (path === 'professionals.html' || path === 'directory.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
       setActive('nav-community');
     }
   }
