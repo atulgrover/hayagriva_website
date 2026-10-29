@@ -8,74 +8,119 @@
   const fallbackHTML = `<!-- ======================================================================
      AgenticProfessionals.Net - Shared Site Header Component
      Brand: Agentic Professionals (Sovereign Intelligence)
-     Tabs (Four Sovereign Pillars):
-       0. Home
-       1. WORKBENCH (Sovereign Harness, Deterministic Engine)
-       2. INTELLIGENCE (BharatGen Models, Knowledge Vaults)
-       3. AGENTS (Air Gapped Agents, Air Trusted Agents)
-       4. COMMUNITY (Network Websites & Ecosystem Resources)
-     Actions:
-       - Chamber Login (opens #login-account-modal)
-       - Download Hayagriva (opens #hayagriva-ide-modal)
+     6-Slot Navigation Architecture (Parity with Resolution Bazaar):
+       1. Title / Logo (agentic professionals)
+       2. Map (professionals)
+       3. Dropdown 1: AI Stack (knowledge, intelligence)
+       4. Dropdown 2: AI Agents (airgapped agents, trusted agents)
+       5. Advisor Button (IBC Forum / Co-counsel advisor)
+       6. Login Button (Sovereign SSO / Chamber Gate)
      ====================================================================== -->
 
 <header class="site-header" id="site-header">
   <div class="nav-container">
 
-    <!-- Brand Identity -->
+    <!-- 1. Brand Identity (Left) -->
     <a href="index.html#home" class="brand-block-wireframe" id="header-brand-logo" aria-label="agentic professionals Home">
-      <img src="branding/unicorn_emblem.png" alt="agentic professionals emblem" class="brand-logo-img" width="34" height="34" loading="eager" decoding="sync" />
+      <img src="branding/unicorn_emblem.svg" alt="agentic professionals emblem" class="brand-logo-img" width="34" height="34" loading="eager" decoding="sync" />
       <span class="brand-chakra-title">agentic professionals</span>
     </a>
 
-    <!-- Primary Navigation Menu -->
+    <!-- Primary Navigation Menu (Center) -->
     <ul class="nav-menu" id="header-nav-menu">
 
-      <!-- 1. knowledge -->
+      <!-- 2. Interactive Map (directory listing) -->
       <li class="nav-item">
-        <a href="knowledge.html" class="nav-link nav-link-wireframe" id="nav-knowledge">
-          <span class="nav-title-row">knowledge</span>
+        <a href="professionals.html" class="nav-link nav-link-wireframe" id="nav-professionals">
+          <span class="nav-title-row">directory listing</span>
         </a>
       </li>
 
-      <!-- 2. intelligence -->
-      <li class="nav-item">
-        <a href="intelligence.html" class="nav-link nav-link-wireframe" id="nav-intelligence">
-          <span class="nav-title-row">intelligence</span>
-        </a>
+      <!-- 3. Dropdown 1: Sovereign Intelligence -->
+      <li class="nav-item nav-item-dropdown" id="nav-dropdown-aistack">
+        <button type="button" class="nav-link nav-link-wireframe" id="nav-aistack" aria-expanded="false" aria-haspopup="true">
+          <span class="nav-title-row">sovereign intelligence</span>
+          <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-rich" id="aistack-dropdown-menu">
+          <a href="knowledge.html" class="dropdown-rich-item" id="nav-item-knowledge">
+            <div class="rich-item-icon bg-sky-50 border-sky-200 text-sky-600">
+              <i class="fa-solid fa-book-bookmark"></i>
+            </div>
+            <div class="rich-item-body">
+              <div class="rich-item-header">
+                <span class="rich-item-title">knowledge</span>
+                <span class="rich-item-badge badge-sky">Vaults</span>
+              </div>
+              <p class="rich-item-desc">Knowledge vaults, IBC statutes &amp; precedence</p>
+            </div>
+          </a>
+          <a href="intelligence.html" class="dropdown-rich-item" id="nav-item-intelligence">
+            <div class="rich-item-icon bg-purple-50 border-purple-200 text-purple-600">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="rich-item-body">
+              <div class="rich-item-header">
+                <span class="rich-item-title">intelligence</span>
+                <span class="rich-item-badge badge-purple">BharatGen</span>
+              </div>
+              <p class="rich-item-desc">BharatGen domain SLMs, embeddings &amp; rerankers</p>
+            </div>
+          </a>
+        </div>
       </li>
 
-      <!-- 3. co-counsels -->
-      <li class="nav-item">
-        <a href="counsels.html" class="nav-link nav-link-wireframe" id="nav-agents">
-          <span class="nav-title-row">co-counsels</span>
-        </a>
-      </li>
-
-      <!-- 4. professionals -->
-      <li class="nav-item">
-        <a href="professionals.html" class="nav-link nav-link-wireframe" id="nav-community">
-          <span class="nav-title-row">professionals</span>
-        </a>
-      </li>
-
-      <!-- 5. ibc forum -->
-      <li class="nav-item">
-        <a href="community.html" class="nav-link nav-link-wireframe nav-link-forum" id="nav-forum">
-          <span class="forum-live-dot"></span>
-          <span class="nav-title-row">ibc forum</span>
-        </a>
-      </li>
-
-      <!-- 6. Portal Login CTA -->
-      <li class="nav-item">
-        <a href="https://app-apnet-net.onrender.com/login" target="_blank" rel="noopener noreferrer" class="portal-cta-main" id="nav-portal-login">
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
-          <span>login</span>
-        </a>
+      <!-- 4. Dropdown 2: Sovereign Agents -->
+      <li class="nav-item nav-item-dropdown" id="nav-dropdown-aiagents">
+        <button type="button" class="nav-link nav-link-wireframe" id="nav-aiagents" aria-expanded="false" aria-haspopup="true">
+          <span class="nav-title-row">sovereign agents</span>
+          <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-rich" id="aiagents-dropdown-menu">
+          <a href="agents.html#airgapped" class="dropdown-rich-item" id="nav-item-airgapped">
+            <div class="rich-item-icon bg-emerald-50 border-emerald-200 text-emerald-600">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="rich-item-body">
+              <div class="rich-item-header">
+                <span class="rich-item-title">airgapped agents</span>
+                <span class="rich-item-badge badge-emerald">Zero-Egress</span>
+              </div>
+              <p class="rich-item-desc">Zero-egress, local on-premise execution nodes</p>
+            </div>
+          </a>
+          <a href="counsels.html" class="dropdown-rich-item" id="nav-item-trusted">
+            <div class="rich-item-icon bg-indigo-50 border-indigo-200 text-indigo-600">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="rich-item-body">
+              <div class="rich-item-header">
+                <span class="rich-item-title">trusted agents</span>
+                <span class="rich-item-badge badge-indigo">Air-Trusted</span>
+              </div>
+              <p class="rich-item-desc">Statutory co-counsels, auditors &amp; verified specialists</p>
+            </div>
+          </a>
+        </div>
       </li>
 
     </ul>
+
+    <!-- 5 & 6. Actions Tray (Right) -->
+    <div class="header-actions-tray" id="header-actions-tray">
+      <!-- 5. Answers Button (White Pill with Charcoal Border & Dark Unicorn Icon) -->
+      <a href="forum.html" class="nav-btn-answers" id="nav-portal-answers" aria-label="IBC Statutory Answers & Knowledge Graph">
+        <img src="branding/unicorn_emblem.svg" alt="" class="nav-btn-unicorn-icon dark" width="17" height="17" />
+        <span>answers</span>
+      </a>
+
+      <!-- 6. Downloads Button (Solid Black Pill with White Unicorn Icon) -->
+      <a href="https://app-apnet-net.onrender.com/login?tab=register" class="nav-btn-downloads" id="nav-portal-downloads" aria-label="Practitioner Chamber & Downloads">
+        <img src="branding/unicorn_emblem.svg" alt="" class="nav-btn-unicorn-icon light" width="17" height="17" />
+        <span>downloads</span>
+      </a>
+    </div>
+
   </div>
 </header>`;
 
@@ -112,6 +157,16 @@
 
     setupHeaderDropdowns();
     updateActiveNav();
+    syncPortalLinks();
+  }
+
+  function syncPortalLinks() {
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const portalUrl = isLocalhost ? 'http://localhost:3300/login?tab=register' : 'https://app-apnet-net.onrender.com/login?tab=register';
+    const downloadsBtn = document.getElementById('nav-portal-downloads');
+    if (downloadsBtn) {
+      downloadsBtn.href = portalUrl;
+    }
   }
 
   let docListenersBound = false;
@@ -213,24 +268,29 @@
       if (hash.startsWith('#home') || hash.startsWith('#context') || hash === '') {
         // Home route is represented by the top-left brand logo (#header-brand-logo)
       } else if (hash.startsWith('#knowledge')) {
-        setActive('nav-knowledge');
+        setActive('nav-aistack', 'nav-item-knowledge');
       } else if (hash.startsWith('#intelligence') || hash.startsWith('#workbench') || hash.startsWith('#models')) {
-        setActive('nav-intelligence');
-      } else if (hash.startsWith('#counsels') || hash.startsWith('#cocounsel') || hash.startsWith('#co-counsel') || hash.startsWith('#agents') || hash.startsWith('#coworkers') || hash.startsWith('#actions')) {
-        setActive('nav-agents');
+        setActive('nav-aistack', 'nav-item-intelligence');
+      } else if (hash.startsWith('#counsels') || hash.startsWith('#cocounsel') || hash.startsWith('#co-counsel')) {
+        setActive('nav-aiagents', 'nav-item-trusted');
+      } else if (hash.startsWith('#agents') || hash.startsWith('#airgapped') || hash.startsWith('#coworkers') || hash.startsWith('#actions')) {
+        setActive('nav-aiagents', 'nav-item-airgapped');
       } else if (hash.startsWith('#professionals') || hash.startsWith('#directory') || hash.startsWith('#directories') || hash.startsWith('#community') || hash.startsWith('#network')) {
-        setActive('nav-community');
+        setActive('nav-professionals');
       }
     } else if (path === 'knowledge.html' || path.startsWith('vaults_')) {
-      setActive('nav-knowledge');
+      setActive('nav-aistack', 'nav-item-knowledge');
     } else if (path === 'intelligence.html' || path.startsWith('models_') || path.startsWith('harness_haya_')) {
-      setActive('nav-intelligence');
-    } else if (path === 'counsels.html' || path === 'agents.html' || path === 'cocounsel.html' || path === 'co-counsel.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
-      setActive('nav-agents');
+      setActive('nav-aistack', 'nav-item-intelligence');
+    } else if (path === 'counsels.html' || path === 'cocounsel.html' || path === 'co-counsel.html') {
+      setActive('nav-aiagents', 'nav-item-trusted');
+    } else if (path === 'agents.html' || path.startsWith('agents_') || path.startsWith('marketplace_reporting_') || path.includes('telephone_cables')) {
+      setActive('nav-aiagents', 'nav-item-airgapped');
     } else if (path === 'community.html' || path === 'forum.html') {
-      setActive('nav-forum');
+      setActive('nav-portal-answers');
+      setActive('nav-portal-advisor');
     } else if (path === 'professionals.html' || path === 'directory.html' || path.startsWith('directories_') || path === 'directory_listing.html' || path === 'resolutionbazaar.html' || path === 'pipie_assets.html' || path.includes('FINAL_29A')) {
-      setActive('nav-community');
+      setActive('nav-professionals');
     }
   }
 
@@ -283,6 +343,7 @@
               mountContainer.appendChild(newModal);
             }
             updateActiveNav();
+            syncPortalLinks();
           } else if (!currentHeader) {
             applyHeader(html);
           }
@@ -365,10 +426,10 @@
     const badgeEl = document.getElementById('unified-modal-badge');
 
     if (!isAuthenticated) {
-      if (intent === 'download') {
-        if (titleEl) titleEl.textContent = 'Unlock Hayagriva Controller';
-        if (subEl) subEl.textContent = 'Sign in or register once to access sovereign installer binaries for Mac, Windows & Linux.';
-        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-gift"></i> FREE PROMOTION';
+      if (intent === 'download' || intent === 'downloads') {
+        if (titleEl) titleEl.textContent = 'Unlock Controller & Chamber Downloads';
+        if (subEl) subEl.textContent = 'Quick register below to immediately access sovereign installer binaries for Mac, Windows & Linux.';
+        if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-download"></i> DOWNLOADS ACCESS';
       } else if (intent === 'directory') {
         if (titleEl) titleEl.textContent = 'Accredited Practitioner Directory';
         if (subEl) subEl.textContent = 'Sign in or register to verify your professional credentials and join the national map.';
@@ -412,6 +473,7 @@
   }
 
   window.openUnifiedAuthModal = function(intent = 'download') {
+    if (intent === 'downloads') intent = 'download';
     currentModalIntent = intent;
     const modal = document.getElementById('unified-auth-modal');
     if (!modal) return;
@@ -598,7 +660,7 @@
   });
 
   // Seamless Legacy Bridges
-  window.openIdeDownloadModal = function() { window.openUnifiedAuthModal('download'); };
+  window.openIdeDownloadModal = function() { window.location.href = 'downloads.html'; };
   window.closeIdeDownloadModal = function() { window.closeUnifiedAuthModal(); };
   window.openAddMeModal = function() { window.openUnifiedAuthModal('directory'); };
   window.closeAddMeModal = function() { window.closeUnifiedAuthModal(); };

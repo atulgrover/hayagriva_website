@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROFESSIONALS: Directory Listing | AgenticProfessionals.Net</title>
+  <title>Agentic Professionals | Directory Listing</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="description"
     content="National Bench Directory of Insolvency Professionals, Registered Valuers, and Corporate Restructuring Advocates across NCLT benches in India with interactive Leaflet map.">
@@ -40,19 +41,8 @@
     <aside class="directory-sidebar" id="directory-sidebar" style="width: 440px !important; min-width: 440px !important; max-width: 440px !important; flex-shrink: 0 !important; display: flex !important; flex-direction: column !important; border-right: 1px solid #e2e8f0; background: #ffffff; height: 100%; box-sizing: border-box; z-index: 10; position: relative; transition: margin-left 0.28s cubic-bezier(0.16, 1, 0.3, 1);">
 
       <!-- Search Header -->
-      <div class="directory-search-header" style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; background: #ffffff; flex-shrink: 0;">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-          <div>
-            <h1 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0; letter-spacing: 0.02em;">
-              AGENTIC PROFESSIONALS
-            </h1>
-            <div style="font-size: 0.72rem; color: #64748b; margin-top: 2px;">
-              Directory Listing &bull; <span id="results-count-badge" style="color: #0f172a; font-weight: 600;">Loading...</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="search-input-group" style="margin-bottom: 0.75rem;">
+      <div class="directory-search-header" style="padding: 1rem 1.25rem; border-bottom: 1px solid #e2e8f0; background: #ffffff; flex-shrink: 0;">
+        <div class="search-input-group" style="margin-bottom: 0.65rem;">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <input type="text" id="dir-search-input" class="search-input"
             placeholder="Search by name, firm, reg no..." style="width: 100%; box-sizing: border-box;">
@@ -100,17 +90,9 @@
 
     </aside>
 
-    <!-- Sidebar Edge Toggle Tab -->
-    <button type="button" class="sidebar-edge-toggle" id="sidebar-edge-toggle" onclick="toggleDirectorySidebar()" title="Toggle Directory Roster" aria-label="Toggle Directory Roster">
+    <!-- Sidebar Edge Toggle Tab (< when open, > when collapsed) -->
+    <button type="button" class="sidebar-edge-toggle" id="sidebar-edge-toggle" onclick="toggleDirectorySidebar()" title="Toggle Directory Roster ([ or \])" aria-label="Toggle Directory Roster">
       <i class="fa-solid fa-chevron-left" id="sidebar-toggle-icon"></i>
-    </button>
-
-    <!-- Floating Expand Pill (Visible when collapsed) -->
-    <button type="button" class="floating-roster-pill" id="floating-roster-pill" onclick="toggleDirectorySidebar()" aria-label="Expand Directory Roster">
-      <i class="fa-solid fa-address-book" style="color: #0f172a;"></i>
-      <span style="font-weight: 700; color: #0f172a;">Show Directory</span>
-      <span id="floating-count-badge" style="font-size: 0.725rem; font-weight: 600; color: #0f172a; background: #f1f5f9; border: 1px solid #e2e8f0; padding: 2px 8px; border-radius: 9999px;">Loading...</span>
-      <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem; color: #64748b;"></i>
     </button>
 
     <!-- Directory Right Leaflet Map -->
@@ -122,6 +104,141 @@
 
   <!-- Shared Footer -->
   <div id="shared-footer"></div>
+
+  <!-- ─── Retain Practitioner Modal ─── -->
+  <div id="retain-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 99999; align-items: center; justify-content: center; padding: 1rem;">
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1rem; width: 100%; max-width: 500px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; display: flex; flex-direction: column; max-height: 90vh;">
+      
+      <!-- Modal Header -->
+      <div style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; background: #f8fafc; display: flex; align-items: flex-start; justify-content: space-between;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+            <span id="retain-modal-role" class="pro-role-pill pro-role-ip">IP</span>
+            <span id="retain-modal-bench" style="font-family: monospace; font-size: 0.72rem; color: #64748b;">Bench</span>
+          </div>
+          <h2 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0; line-height: 1.3;">
+            Retain Practitioner / Issue Mandate
+          </h2>
+          <div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">
+            Target: <strong id="retain-modal-name" style="color: #0f172a;">IP Atul Grover</strong>
+          </div>
+        </div>
+        <button type="button" onclick="closeRetainModal()" style="background: none; border: none; font-size: 1.1rem; color: #64748b; cursor: pointer; padding: 4px; line-height: 1;">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div style="padding: 1.25rem; overflow-y: auto;">
+        <!-- Success State -->
+        <div id="retain-success" style="display: none; flex-direction: column; gap: 1rem;">
+          <div style="padding: 1rem; border-radius: 0.75rem; border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">
+            <div style="display: flex; align-items: center; gap: 0.5rem; color: #059669; font-weight: 700; font-size: 0.875rem;">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Mandate Request Docketed Successfully</span>
+            </div>
+            <div style="font-family: monospace; font-size: 0.75rem; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem; color: #0f172a;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: #64748b;">Docket Ref:</span>
+                <span id="retain-docket-num" style="font-weight: 700;">RBZ-ADV-2026-XXXX</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: #64748b;">Counsel Review:</span>
+                <span style="color: #059669; font-weight: 700;">Within 24 Hours</span>
+              </div>
+            </div>
+          </div>
+          <p style="font-size: 0.75rem; color: #64748b; line-height: 1.5; margin: 0;">
+            Your mandate inquiry has been logged. The practitioner and senior insolvency counsel will review the brief and contact you directly via email and phone.
+          </p>
+          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+            <a id="retain-wa-btn" href="https://wa.me/919810000000" target="_blank" rel="noopener noreferrer" style="flex: 1; text-decoration: none;">
+              <button type="button" style="width: 100%; font-family: monospace; font-size: 0.75rem; font-weight: 700; padding: 0.6rem; border-radius: 6px; background: #0f172a; color: #ffffff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i>
+                <span>Priority WhatsApp Desk</span>
+              </button>
+            </a>
+            <button type="button" onclick="closeRetainModal()" style="font-family: monospace; font-size: 0.75rem; padding: 0.6rem 1rem; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
+              Close
+            </button>
+          </div>
+        </div>
+
+        <!-- Form State -->
+        <form id="retain-form" onsubmit="handleRetainSubmit(event)" style="display: flex; flex-direction: column; gap: 0.85rem;">
+          <div id="retain-error" style="display: none; padding: 0.6rem; font-size: 0.75rem; color: #dc2626; background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.3); border-radius: 6px;"></div>
+
+          <div>
+            <label style="display: block; font-family: monospace; font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 0.3rem;">
+              Mandate Category *
+            </label>
+            <select id="retain-mandate-type" required style="width: 100%; padding: 0.5rem 0.65rem; font-size: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; color: #0f172a; outline: none; box-sizing: border-box;">
+              <option value="CIRP / IRP Resolution Leadership">CIRP / IRP Appointment &amp; Resolution Leadership</option>
+              <option value="Registered Valuation Mandate (Reg 35)">Registered Valuation Mandate (Sec 35/Reg 35)</option>
+              <option value="NCLT / NCLAT Counsel Representation">NCLT / NCLAT Counsel Representation</option>
+              <option value="CoC Strategic Advisory &amp; Voting">CoC Strategic Advisory &amp; Voting Strategy</option>
+              <option value="Section 29A Eligibility Audit">Section 29A Eligibility Audit &amp; Cure</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
+            <div>
+              <label style="display: block; font-family: monospace; font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 0.3rem;">
+                Applicant Firm / Entity *
+              </label>
+              <input type="text" id="retain-applicant" required placeholder="e.g. Apex Strategic LLP" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; color: #0f172a; outline: none; box-sizing: border-box;">
+            </div>
+            <div>
+              <label style="display: block; font-family: monospace; font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 0.3rem;">
+                Contact Person
+              </label>
+              <input type="text" id="retain-contact" placeholder="e.g. Rahul Sharma" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; color: #0f172a; outline: none; box-sizing: border-box;">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
+            <div>
+              <label style="display: block; font-family: monospace; font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 0.3rem;">
+                Official Email *
+              </label>
+              <input type="email" id="retain-email" required placeholder="name@firm.com" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; color: #0f172a; outline: none; box-sizing: border-box;">
+            </div>
+            <div>
+              <label style="display: block; font-family: monospace; font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 0.3rem;">
+                Phone / WhatsApp
+              </label>
+              <input type="tel" id="retain-phone" placeholder="+91 98765 43210" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; color: #0f172a; outline: none; box-sizing: border-box;">
+            </div>
+          </div>
+
+          <div>
+            <label style="display: block; font-family: monospace; font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 0.3rem;">
+              Target Debtor / Asset Context (Optional)
+            </label>
+            <input type="text" id="retain-target" placeholder="e.g. Essar Power Gujarat Limited" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; color: #0f172a; outline: none; box-sizing: border-box;">
+          </div>
+
+          <div>
+            <label style="display: block; font-family: monospace; font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 0.3rem;">
+              Specific Mandate Objectives / Notes
+            </label>
+            <textarea id="retain-notes" rows="2" placeholder="Briefly specify filing timeline, bench jurisdiction, or mandate requirements..." style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; color: #0f172a; outline: none; resize: none; box-sizing: border-box;"></textarea>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.4rem; padding-top: 0.75rem; border-top: 1px solid #e2e8f0;">
+            <button type="button" onclick="closeRetainModal()" style="font-family: monospace; font-size: 0.75rem; padding: 0.5rem 0.85rem; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer; color: #64748b;">
+              Cancel
+            </button>
+            <button type="submit" id="retain-submit-btn" style="font-family: monospace; font-size: 0.75rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 6px; background: #0f172a; color: #ffffff; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+              <span>Submit Mandate</span>
+              <span style="color: #fbbf24;">➔</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
 
   <!-- JavaScript Libraries & Scripts -->
   <!-- Leaflet JS -->
@@ -135,6 +252,108 @@
   <script src="js/header.js"></script>
   <script src="js/footer.js"></script>
   <script>
+    let currentRetainProfessional = null;
+
+    function showProfessionalRetainModal(prof) {
+      currentRetainProfessional = prof;
+      const modal = document.getElementById('retain-modal');
+      if (!modal) return;
+
+      document.getElementById('retain-form').style.display = 'flex';
+      document.getElementById('retain-success').style.display = 'none';
+      document.getElementById('retain-error').style.display = 'none';
+
+      document.getElementById('retain-modal-name').textContent = prof.name;
+      document.getElementById('retain-modal-bench').textContent = prof.bench || prof.city || 'National';
+
+      const roleEl = document.getElementById('retain-modal-role');
+      const role = (prof.category || 'ip').toLowerCase();
+      roleEl.className = 'pro-role-pill ' + (role === 'rv' ? 'pro-role-rv' : (role === 'counsel' ? 'pro-role-counsel' : 'pro-role-ip'));
+      roleEl.textContent = role === 'rv' ? 'REGISTERED VALUER' : (role === 'counsel' ? 'RESTRUCTURING ADVOCATE' : 'INSOLVENCY PROFESSIONAL');
+
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRetainModal() {
+      const modal = document.getElementById('retain-modal');
+      if (modal) modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    window.showProfessionalRetainModal = showProfessionalRetainModal;
+    window.closeRetainModal = closeRetainModal;
+
+    window.addEventListener('open-retain-modal', (e) => {
+      if (e.detail) showProfessionalRetainModal(e.detail);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeRetainModal();
+    });
+
+    async function handleRetainSubmit(e) {
+      e.preventDefault();
+      if (!currentRetainProfessional) return;
+
+      const applicant = document.getElementById('retain-applicant').value.trim();
+      const email = document.getElementById('retain-email').value.trim();
+      const contact = document.getElementById('retain-contact').value.trim();
+      const phone = document.getElementById('retain-phone').value.trim();
+      const target = document.getElementById('retain-target').value.trim();
+      const mandateType = document.getElementById('retain-mandate-type').value;
+      const notes = document.getElementById('retain-notes').value.trim();
+      const errEl = document.getElementById('retain-error');
+      const submitBtn = document.getElementById('retain-submit-btn');
+
+      if (!applicant || !email) {
+        errEl.textContent = 'Please provide Applicant Entity Name and Official Email.';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      errEl.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Submitting...';
+
+      let apiBase = 'http://localhost:3000';
+      if (typeof resolveRbzApiBase === 'function') {
+        const resolved = await resolveRbzApiBase();
+        if (resolved) apiBase = resolved;
+      }
+
+      try {
+        const res = await fetch(`${apiBase}/api/advisory/intake`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            mandateType: 'PRACTITIONER_RETAINER: ' + mandateType,
+            targetCompanyName: target || `Direct Retainer: ${currentRetainProfessional.name}`,
+            applicantName: applicant,
+            contactPerson: contact,
+            email: email,
+            phone: phone,
+            ncltBench: currentRetainProfessional.bench || 'National Bench',
+            description: `[PRACTITIONER ENGAGEMENT] Mandate for: ${currentRetainProfessional.name} (${currentRetainProfessional.reg_no || 'IBBI'}). Role: ${currentRetainProfessional.designation}. Service: ${mandateType}. Notes: ${notes || 'None'}`
+          })
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to submit mandate.');
+
+        document.getElementById('retain-docket-num').textContent = data.mandateNumber || 'RBZ-ADV-2026-LIVE';
+        document.getElementById('retain-wa-btn').href = `https://wa.me/919810000000?text=Hello%20Resolution%20Bazaar,%20referencing%20Mandate%20${data.mandateNumber}%20to%20retain%20${encodeURIComponent(currentRetainProfessional.name)}`;
+        document.getElementById('retain-form').style.display = 'none';
+        document.getElementById('retain-success').style.display = 'flex';
+      } catch (err) {
+        errEl.textContent = err.message || 'Submission error. Please try again.';
+        errEl.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Submit Mandate</span><span style="color: #fbbf24;">➔</span>';
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof initDirectory === 'function') {
         initDirectory();

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Professionals | IBC Community Forum</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description"
+    content="Sovereign commercial law &amp; CIRP community forum for advocates, insolvency practitioners, and researchers. Pose statutory inquiries to our Azure LightRAG knowledge graph.">
+
+  <!-- Google Fonts: Inter, Chakra Petch & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/forum.css">
+</head>
+
+<body style="background: #f8fafc; color: #0f172a; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Shared Site Header Component -->
+  <div id="shared-header"></div>
+
+  <!-- Main Discourse Forum Application Wrap -->
+  <main class="forum-app-container">
+
+    <!-- ─── Discourse Sub-Navigation Header ─── -->
+    <div class="forum-subnav" id="forum-subnav">
+      <!-- Left: Category Dropdown & Filters -->
+      <div class="forum-subnav-left">
+        <!-- Category Selector Dropdown -->
+        <div class="category-dropdown-wrap" id="category-dropdown-wrap">
+          <button type="button" class="btn-category-trigger" id="btn-category-trigger" onclick="toggleCategoryDropdown()" aria-haspopup="true" aria-expanded="false">
+            <span class="cat-dot" id="active-cat-dot"></span>
+            <span id="active-cat-label">All Practice Categories</span>
+            <i class="fa-solid fa-chevron-down chevron-icon"></i>
+          </button>
+          
+          <div class="category-dropdown-menu" id="category-dropdown-menu">
+            <button type="button" class="cat-menu-item active" onclick="selectCategory('all', 'All Practice Categories', '#94a3b8')">
+              <span class="cat-dot" style="background: #94a3b8;"></span>
+              <span>All Practice Categories</span>
+            </button>
+            <button type="button" class="cat-menu-item" onclick="selectCategory('insolvency-ibc', 'IBC & CIRP', '#0284c7')">
+              <span class="cat-dot" style="background: #0284c7;"></span>
+              <span>IBC &amp; CIRP</span>
+            </button>
+            <button type="button" class="cat-menu-item" onclick="selectCategory('commercial-pleading', 'Commercial Pleading', '#6366f1')">
+              <span class="cat-dot" style="background: #6366f1;"></span>
+              <span>Commercial Pleading</span>
+            </button>
+            <button type="button" class="cat-menu-item" onclick="selectCategory('bare-acts', 'Bare Acts & Precedents', '#10b981')">
+              <span class="cat-dot" style="background: #10b981;"></span>
+              <span>Bare Acts &amp; Precedents</span>
+            </button>
+            <button type="button" class="cat-menu-item" onclick="selectCategory('general', 'General Legal', '#64748b')">
+              <span class="cat-dot" style="background: #64748b;"></span>
+              <span>General Legal</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- My Inquiries Filter Pill -->
+        <button type="button" class="btn-filter-pill" id="btn-my-threads" onclick="toggleMyThreadsFilter()">
+          My Inquiries
+        </button>
+      </div>
+
+      <!-- Right: Search Box & + New Topic CTA -->
+      <div class="forum-subnav-right">
+        <div class="forum-search-group">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="forum-search-input" class="forum-search-box" placeholder="Search inquiries or citations..." oninput="handleSearchInput(event)" />
+        </div>
+
+        <button type="button" class="btn-new-topic" onclick="openNewTopicModal()">
+          <i class="fa-solid fa-plus"></i>
+          <span>+ New Topic</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── Category Statutory Scope Banner ─── -->
+    <div class="category-pinned-banner" id="category-pinned-banner">
+      <div class="banner-icon">
+        <i class="fa-solid fa-sparkles"></i>
+      </div>
+      <div class="banner-body">
+        <div class="banner-title" id="banner-category-title">
+          Insolvency &amp; Commercial Law Knowledge Graph
+        </div>
+        <p class="banner-desc" id="banner-category-desc">
+          Verified practitioner inquiries, NCLT precedents, bare act analyses, and Section 29A screening queries synthesized via Azure LightRAG.
+        </p>
+      </div>
+    </div>
+
+    <!-- ─── Discourse High-Density Topics Table ─── -->
+    <div class="topic-table-card" id="topic-table-card">
+      <div class="table-responsive">
+        <table class="discourse-table" id="discourse-table">
+          <thead>
+            <tr>
+              <th class="col-topic">Topic</th>
+              <th class="col-users">Users</th>
+              <th class="col-replies text-right">Replies</th>
+              <th class="col-views text-right">Views</th>
+              <th class="col-activity text-right">Activity</th>
+            </tr>
+          </thead>
+          <tbody id="discourse-topics-tbody">
+            <!-- Dynamic rows populated via js/forum.js -->
+            <tr>
+              <td colspan="5" class="table-loading-cell">
+                <i class="fa-solid fa-circle-notch fa-spin"></i>
+                <span>Loading statutory discussions from shared registry...</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ─── Slide-over Thread Detail Drawer ─── -->
+  <div class="thread-drawer-backdrop" id="thread-drawer-backdrop" onclick="closeThreadDrawer()"></div>
+  <aside class="thread-drawer-panel" id="thread-drawer-panel" aria-label="Discussion details">
+    <!-- Drawer Header -->
+    <div class="drawer-header">
+      <div class="drawer-header-content">
+        <div class="drawer-badges-row">
+          <span class="cat-pill" id="drawer-cat-badge">IBC &amp; CIRP</span>
+          <span class="drawer-time" id="drawer-time-badge">Just now</span>
+        </div>
+        <h2 class="drawer-title" id="drawer-thread-title">Discussion Title</h2>
+        <div class="drawer-tags-row" id="drawer-tags-row"></div>
+      </div>
+      <button type="button" class="drawer-close-btn" onclick="closeThreadDrawer()" aria-label="Close drawer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Drawer Stream Body -->
+    <div class="drawer-stream-body" id="drawer-stream-body">
+      <!-- Original Topic Post -->
+      <div class="post-card post-author-card" id="drawer-original-post">
+        <div class="post-header">
+          <div class="post-avatar" id="drawer-author-avatar">AA</div>
+          <div class="post-author-meta">
+            <span class="post-author-name" id="drawer-author-name">Practitioner</span>
+            <span class="post-author-role" id="drawer-author-role">Insolvency Professional</span>
+          </div>
+        </div>
+        <div class="post-content" id="drawer-post-content">
+          Loading discussion text...
+        </div>
+      </div>
+
+      <!-- AI Statutory Synthesis Card (Azure LightRAG) -->
+      <div class="ai-synthesis-card" id="drawer-ai-synthesis-card">
+        <div class="ai-card-header">
+          <div class="ai-title-group">
+            <i class="fa-solid fa-sparkles ai-sparkle-icon"></i>
+            <span class="ai-title">Sovereign Legal Intelligence</span>
+            <span class="ai-badge">LightRAG Synthesis</span>
+          </div>
+          <span class="ai-citations-count" id="drawer-ai-citations-count">3 Bare Act Citations</span>
+        </div>
+        <div class="ai-card-body" id="drawer-ai-content">
+          Synthesizing statutory analysis and precedents...
+        </div>
+      </div>
+
+      <!-- Practitioner Replies Feed -->
+      <div class="replies-stream" id="drawer-replies-stream">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Reply Composer -->
+      <div class="reply-composer-card">
+        <h4 class="composer-title">Contribute Practitioner Opinion</h4>
+        <form id="thread-reply-form" onsubmit="handlePostReply(event)">
+          <div class="form-row">
+            <input type="text" id="reply-author-name" class="form-input" placeholder="Your Name / Practice Bench (e.g. Adv. R. Verma, NCLT Mumbai)" required />
+          </div>
+          <div class="form-row">
+            <textarea id="reply-body-text" class="form-textarea" rows="3" placeholder="State your jurisprudence, NCLT order citation, or statutory interpretation..." required></textarea>
+          </div>
+          <div class="composer-actions">
+            <button type="submit" id="btn-submit-reply" class="btn-submit-primary">
+              <span>Post Reply</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ─── New Topic Modal ─── -->
+  <div class="modal-overlay" id="new-topic-modal" style="display: none;" onclick="if(event.target === this) closeNewTopicModal();">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-pretitle">+ INQUIRY INTAKE</span>
+          <h3 class="modal-title">Create Statutory Discussion</h3>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeNewTopicModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="new-topic-form" onsubmit="handleCreateTopic(event)">
+        <div class="modal-body">
+          <div id="new-topic-error" class="form-error-alert" style="display: none;"></div>
+
+          <div class="form-group">
+            <label class="form-label" for="topic-title">Discussion Title *</label>
+            <input type="text" id="topic-title" class="form-input" placeholder="e.g. Can Section 29A disqualify an resolution applicant whose connected NPA was settled?" required />
+          </div>
+
+          <div class="form-group-grid">
+            <div class="form-group">
+              <label class="form-label" for="topic-category">Practice Category *</label>
+              <select id="topic-category" class="form-select">
+                <option value="insolvency-ibc">IBC &amp; CIRP</option>
+                <option value="commercial-pleading">Commercial Pleading</option>
+                <option value="bare-acts">Bare Acts &amp; Precedents</option>
+                <option value="general">General Legal</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="topic-tags">Statutory Tags (Comma separated)</label>
+              <input type="text" id="topic-tags" class="form-input" placeholder="Section 29A, CIRP Reg 36A, Supreme Court" value="Section 29A, IBC" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="topic-author">Your Name / Designation *</label>
+            <input type="text" id="topic-author" class="form-input" placeholder="e.g. CA Rajesh Sharma (Insolvency Professional)" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="topic-content">Inquiry Background / Facts *</label>
+            <textarea id="topic-content" class="form-textarea" rows="4" placeholder="Describe the factual matrix, specific sub-sections in dispute, and relevant NCLT bench context..." required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-modal-cancel" onclick="closeNewTopicModal()">Cancel</button>
+          <button type="submit" id="btn-submit-topic" class="btn-modal-submit">
+            <span>Create Discussion ➔</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Shared Site Footer -->
+  <div id="shared-footer"></div>
+
+  <!-- Core Scripts -->
+  <script src="js/auth.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/forum.js"></script>
+</body>
+
+</html>
+

@@ -1,6 +1,10 @@
 /**
  * AgenticProfessionals.Net - Interactive Directory & Leaflet Map Controller
- * Implements P1 (Executive CartoDB Positron Vector Tiles) + P2 (Two-Way Interactive Card ↔ Pin Sync)
+ * Implements 1:1 Design & Tech Parity with Resolution Bazaar:
+ * - CARTO Voyager Clean Vector Basemap Tiles
+ * - Sleek ~90px Compact Practitioner Cards
+ * - SVG Pulsing Role-Coded Pins (Blue IP, Amber RV, Emerald Counsel)
+ * - Minimalist Action Header with "Retain / Mandate ➔"
  */
 
 let mapInstance = null;
@@ -15,23 +19,25 @@ function initDirectory() {
   const mapContainer = document.getElementById('leaflet-map');
   if (!mapContainer) return;
 
-  // Center on India with zoom control neatly at top-right
+  // Center on India with zoom control at bottomright (matching Resolution Bazaar)
   mapInstance = L.map('leaflet-map', {
+    center: [21.7679, 78.8718],
+    zoom: 5,
     zoomControl: false,
     scrollWheelZoom: true,
-    attributionControl: true
-  }).setView([22.5, 78.9], 5);
+    attributionControl: false
+  });
 
-  L.control.zoom({ position: 'topright' }).addTo(mapInstance);
+  L.control.zoom({ position: 'bottomright' }).addTo(mapInstance);
 
-  // P1: Executive Light Gray Canvas Basemap (Zero watermark, high-contrast monochrome land with clean English labels)
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
-    maxZoom: 16
-  }).addTo(mapInstance);
+  // CARTO Voyager tiles with API key support (Exact match with Resolution Bazaar)
+  const cartoKey = 'cb1_4whn_1_0fe06bedf599b4851ba2a7cd';
+  const tileUrl = `https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${cartoKey}`;
 
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 16
+  L.tileLayer(tileUrl, {
+    maxZoom: 19,
+    subdomains: 'abcd',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
   }).addTo(mapInstance);
 
   markersLayer = L.layerGroup().addTo(mapInstance);
@@ -111,6 +117,7 @@ window.initDirectory = initDirectory;
 window.toggleDirectorySidebar = toggleDirectorySidebar;
 window.focusProfessional = focusProfessional;
 window.handleCardHover = handleCardHover;
+window.openRetainModal = openRetainModal;
 
 async function reloadDirectoryData(filters = {}) {
   const professionals = await fetchProfessionals(filters);
@@ -132,24 +139,21 @@ async function reloadDirectoryData(filters = {}) {
     const markerArray = Array.from(markersById.values());
     if (markerArray.length > 0) {
       const group = L.featureGroup(markerArray);
-      mapInstance.fitBounds(group.getBounds().pad(0.18), { maxZoom: 12, animate: true });
+      mapInstance.fitBounds(group.getBounds().pad(0.18), { maxZoom: 10, animate: true });
     }
   } else if (mapInstance && professionals.length === 1) {
     mapInstance.setView([professionals[0].lat, professionals[0].lng], 11);
   }
 }
 
-/**
- * Extracts compact 2-letter initials from name, stripping honorifics
- */
-function getInitials(name) {
-  if (!name) return 'AP';
-  const clean = name.replace(/^(IP|Adv\.|Advocate|Dr\.|CA|CS)\s+/i, '').trim();
-  const parts = clean.split(/\s+/).filter(Boolean);
-  if (parts.length >= 2) {
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  }
-  return clean.substring(0, 2).toUpperCase() || 'AP';
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 function renderCards(list) {
@@ -168,13 +172,15 @@ function renderCards(list) {
   }
 
   container.innerHTML = list.map(item => {
-    const designationClass = 
-      item.category === 'ip' ? 'designation-ip' :
-      item.category === 'rv' ? 'designation-rv' : 'designation-counsel';
-    const avatarClass =
-      item.category === 'ip' ? 'avatar-ip' :
-      item.category === 'rv' ? 'avatar-rv' : 'avatar-counsel';
     const isSelected = item.id === activeProfessionalId;
+    
+    const rolePillClass =
+      item.category === 'ip' ? 'pro-role-ip' :
+      item.category === 'rv' ? 'pro-role-rv' : 'pro-role-counsel';
+    
+    const roleLabel =
+      item.category === 'ip' ? 'INSOLVENCY PROFESSIONAL' :
+      item.category === 'rv' ? 'REGISTERED VALUER' : 'RESTRUCTURING ADVOCATE';
 
     return `
       <div class="professional-card ${isSelected ? 'selected' : ''}" 
@@ -183,25 +189,32 @@ function renderCards(list) {
            onmouseenter="handleCardHover('${item.id}', true)"
            onmouseleave="handleCardHover('${item.id}', false)"
            onclick="focusProfessional('${item.id}')">
-        <div class="card-inner-flex">
-          <div class="professional-avatar ${avatarClass}" title="${item.name}">
-            <span>${getInitials(item.name)}</span>
-          </div>
-          <div class="professional-content">
-            <div class="professional-card-header">
-              <div class="professional-name" title="${item.name}">${item.name}</div>
-              <span class="professional-designation ${designationClass}">${item.designation.split('(')[0].trim()}</span>
-            </div>
-            <div class="professional-reg" title="${item.reg_no}">${item.reg_no}</div>
-            <div class="professional-firm" title="${item.firm}">
-              <i class="fa-solid fa-briefcase" style="color: #64748b; font-size: 0.72rem;"></i>
-              <span>${item.firm}</span>
-            </div>
-            <div class="professional-location" title="${item.address || item.city}">
-              <i class="fa-solid fa-location-dot" style="color: #0284c7; font-size: 0.72rem;"></i>
-              <span>${item.address || item.city}</span>
-            </div>
-          </div>
+        
+        <!-- Header line: Role Badge on left & Subtle Retain / Mandate button on right -->
+        <div class="pro-card-top-row">
+          <span class="pro-role-pill ${rolePillClass}">${roleLabel}</span>
+          <button type="button" class="btn-pro-retain" onclick="event.stopPropagation(); window.openRetainModal('${item.id}');">
+            <span>Retain / Mandate</span>
+            <span style="color: #64748b;">➔</span>
+          </button>
+        </div>
+
+        <!-- Practitioner Name -->
+        <div class="pro-name-row" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</div>
+
+        <!-- Subtitle: Firm • NCLT Bench -->
+        <div class="pro-sub-row" title="${escapeHtml(item.firm)} • ${escapeHtml(item.bench || item.city)}">
+          <span style="font-weight: 600; color: #334155;">${escapeHtml(item.firm)}</span>
+          <span>•</span>
+          <span style="display: inline-flex; align-items: center; gap: 3px;">
+            <i class="fa-solid fa-location-dot" style="color: #64748b; font-size: 0.65rem;"></i>
+            ${escapeHtml(item.bench || item.city)}
+          </span>
+        </div>
+
+        <!-- Specialization Snippet -->
+        <div class="pro-snippet-row" title="${escapeHtml(item.specialization || item.designation)}">
+          ${escapeHtml(item.specialization || item.designation)}
         </div>
       </div>
     `;
@@ -214,82 +227,72 @@ function renderMarkers(list) {
   markersById.clear();
 
   list.forEach(item => {
-    const pinClass = 
-      item.category === 'ip' ? 'pin-ip' :
-      item.category === 'rv' ? 'pin-rv' : 'pin-counsel';
+    const isSelected = item.id === activeProfessionalId;
 
-    const categoryIcon = 
-      item.category === 'ip' ? 'fa-scale-balanced' :
-      item.category === 'rv' ? 'fa-chart-line' : 'fa-landmark';
+    let pinColor = "#0284c7"; // Blue IP
+    let roleLabel = "INSOLVENCY PROFESSIONAL";
 
-    const categoryBadgeClass =
-      item.category === 'ip' ? 'ip' :
-      item.category === 'rv' ? 'rv' : 'counsel';
+    if (item.category === "rv") {
+      pinColor = "#d97706"; // Amber RV
+      roleLabel = "REGISTERED VALUER";
+    } else if (item.category === "counsel") {
+      pinColor = "#10b981"; // Emerald Counsel
+      roleLabel = "RESTRUCTURING ADVOCATE";
+    }
 
-    const categoryLabel =
-      item.category === 'ip' ? 'Insolvency Professional' :
-      item.category === 'rv' ? 'Registered Valuer' : 'Restructuring Advocate';
-
-    const iconHtml = `
-      <div class="custom-marker-pin ${pinClass}" id="pin-${item.id}">
-        <i class="fa-solid ${categoryIcon}"></i>
-      </div>
-    `;
-
+    // High-clarity SVG Pin matching Resolution Bazaar
     const customIcon = L.divIcon({
-      html: iconHtml,
-      className: 'custom-div-icon',
-      iconSize: [34, 34],
-      iconAnchor: [17, 34],
-      popupAnchor: [0, -32]
+      className: 'custom-deal-pin',
+      iconSize: isSelected ? [36, 46] : [28, 38],
+      iconAnchor: isSelected ? [18, 46] : [14, 38],
+      popupAnchor: [0, -40],
+      html: `
+        <div style="position: relative; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s;">
+          ${isSelected ? `<div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: ${pinColor}33; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"></div>` : ''}
+          <svg width="${isSelected ? 36 : 28}" height="${isSelected ? 46 : 38}" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.37258 0 0 5.37258 0 12C0 19.5 12 32 12 32C12 32 24 19.5 24 12C24 5.37258 18.6274 0 12 0Z" fill="${pinColor}" stroke="#ffffff" stroke-width="1.5"/>
+            <circle cx="12" cy="11" r="5" fill="#ffffff" />
+            <circle cx="12" cy="11" r="2.5" fill="${pinColor}" />
+          </svg>
+        </div>
+      `
     });
 
+    // Decluttered Popup matching Resolution Bazaar DealMap
     const popupHtml = `
-      <div>
-        <div class="popup-header-strip">
-          <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; letter-spacing: 0.04em;">COMMUNITY MEMBER</span>
-          <span class="popup-role-badge ${categoryBadgeClass}">${categoryLabel}</span>
+      <div style="font-family: inherit; min-width: 250px; max-width: 280px; padding: 2px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; gap: 8px;">
+          <span style="font-size: 9px; font-family: monospace; font-weight: 700; color: #ffffff; background: ${pinColor}; padding: 2px 6px; border-radius: 4px;">
+            ${roleLabel.split(' ')[0]}
+          </span>
+          <button
+            type="button"
+            onclick="window.openRetainModal('${item.id}');"
+            style="font-family: monospace; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; line-height: 1.2;"
+          >
+            <span>Retain / Mandate</span>
+            <span style="color: #64748b;">➔</span>
+          </button>
         </div>
-        <div class="popup-body">
-          <div class="popup-title">${item.name}</div>
-          <div class="popup-reg">${item.reg_no}</div>
-          <div class="popup-meta">
-            <div class="popup-meta-row">
-              <i class="fa-solid fa-building"></i>
-              <span><strong>Firm:</strong> ${item.firm}</span>
-            </div>
-            <div class="popup-meta-row">
-              <i class="fa-solid fa-location-dot"></i>
-              <span>${item.address || item.city}</span>
-            </div>
-            ${item.phone ? `
-            <div class="popup-meta-row">
-              <i class="fa-solid fa-phone"></i>
-              <span>${item.phone}</span>
-            </div>` : ''}
-          </div>
-          <div class="popup-actions">
-            <a href="mailto:${item.email}" class="popup-cta">
-              <i class="fa-regular fa-envelope"></i> Contact
-            </a>
-            ${item.phone ? `
-            <a href="tel:${item.phone.replace(/[^0-9+]/g, '')}" class="popup-cta-secondary" title="Call">
-              <i class="fa-solid fa-phone"></i>
-            </a>` : ''}
-          </div>
-        </div>
+        <h4 style="font-size: 13px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; line-height: 1.3;">
+          ${escapeHtml(item.name)}
+        </h4>
+        <p style="font-size: 11px; color: #64748b; margin: 0 0 6px 0; font-weight: 500;">
+          ${escapeHtml(item.firm)} • ${escapeHtml(item.bench || item.city)}
+        </p>
+        <p style="font-size: 11px; color: #475569; line-height: 1.45; margin: 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+          ${escapeHtml(item.specialization || item.designation)}
+        </p>
       </div>
     `;
 
     const marker = L.marker([item.lat, item.lng], { icon: customIcon })
       .bindPopup(popupHtml);
 
-    // P2: Marker Click -> Select and Pulse Card in Sidebar
     marker.on('click', () => {
       selectProfessional(item.id, { fly: false, openPopup: false });
     });
 
-    // P2: Marker Hover -> Highlight Card in Sidebar
     marker.on('mouseover', () => {
       handleMarkerHover(item.id, true);
     });
@@ -304,71 +307,51 @@ function renderMarkers(list) {
   });
 }
 
-/**
- * P2: Hover handler on Card -> highlights Pin on Map
- */
 function handleCardHover(id, isHover) {
   const marker = markersById.get(id);
   if (!marker) return;
 
-  const pinEl = document.getElementById(`pin-${id}`) || marker.getElement()?.querySelector('.custom-marker-pin');
+  const pinEl = marker.getElement();
   if (!pinEl) return;
 
   if (isHover) {
-    pinEl.classList.add('pin-hovered');
+    pinEl.style.transform = 'scale(1.15)';
     marker.setZIndexOffset(600);
   } else {
-    pinEl.classList.remove('pin-hovered');
+    pinEl.style.transform = 'scale(1)';
     if (activeProfessionalId !== id) {
       marker.setZIndexOffset(0);
     }
   }
 }
 
-/**
- * P2: Hover handler on Pin -> highlights Card in Sidebar
- */
 function handleMarkerHover(id, isHover) {
   const card = document.getElementById(`card-${id}`);
   if (card) {
     card.classList.toggle('card-hovered', isHover);
   }
-  const marker = markersById.get(id);
-  const pinEl = document.getElementById(`pin-${id}`) || marker?.getElement()?.querySelector('.custom-marker-pin');
-  if (pinEl) {
-    pinEl.classList.toggle('pin-hovered', isHover);
-  }
 }
 
-/**
- * P2: Card Click -> Focus Pin on Map, fly to position, open popup
- */
 function focusProfessional(id, options = { fly: true, openPopup: true }) {
   activeProfessionalId = id;
   const item = professionalsCache.find(p => p.id === id);
   if (!item) return;
 
-  // 1. Update Card selection UI
   document.querySelectorAll('.professional-card').forEach(card => {
     card.classList.toggle('selected', card.dataset.id === id);
   });
 
-  // 2. Update Marker Pins: set active halo on selected pin, reset others
   markersById.forEach((marker, markerId) => {
-    const pinEl = document.getElementById(`pin-${markerId}`) || marker.getElement()?.querySelector('.custom-marker-pin');
     if (markerId === id) {
-      pinEl?.classList.add('active-pin');
       marker.setZIndexOffset(1000);
       if (options.openPopup) {
         marker.openPopup();
       }
     } else {
-      pinEl?.classList.remove('active-pin');
       marker.setZIndexOffset(0);
     }
   });
 
-  // 3. Smooth flyTo map navigation
   if (mapInstance && options.fly) {
     mapInstance.flyTo([item.lat, item.lng], 12, {
       duration: 1.0,
@@ -377,13 +360,9 @@ function focusProfessional(id, options = { fly: true, openPopup: true }) {
   }
 }
 
-/**
- * P2: Marker Click -> Highlight and scroll to Card in Sidebar
- */
 function selectProfessional(id, options = { fly: false, openPopup: false }) {
   activeProfessionalId = id;
 
-  // 1. Highlight and scroll to card in sidebar
   document.querySelectorAll('.professional-card').forEach(card => {
     card.classList.toggle('selected', card.dataset.id === id);
   });
@@ -392,7 +371,6 @@ function selectProfessional(id, options = { fly: false, openPopup: false }) {
   if (targetCard) {
     targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     targetCard.classList.remove('card-pulse-highlight');
-    // Force reflow for re-triggering animation
     void targetCard.offsetWidth;
     targetCard.classList.add('card-pulse-highlight');
     setTimeout(() => {
@@ -400,18 +378,24 @@ function selectProfessional(id, options = { fly: false, openPopup: false }) {
     }, 1200);
   }
 
-  // 2. Highlight Pin on map
   markersById.forEach((marker, markerId) => {
-    const pinEl = document.getElementById(`pin-${markerId}`) || marker.getElement()?.querySelector('.custom-marker-pin');
     if (markerId === id) {
-      pinEl?.classList.add('active-pin');
       marker.setZIndexOffset(1000);
       if (options.openPopup) {
         marker.openPopup();
       }
     } else {
-      pinEl?.classList.remove('active-pin');
       marker.setZIndexOffset(0);
     }
   });
+}
+
+function openRetainModal(id) {
+  const item = professionalsCache.find(p => p.id === id);
+  if (!item) return;
+  if (typeof window.showProfessionalRetainModal === 'function') {
+    window.showProfessionalRetainModal(item);
+  } else {
+    window.dispatchEvent(new CustomEvent('open-retain-modal', { detail: item }));
+  }
 }
